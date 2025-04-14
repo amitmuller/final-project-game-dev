@@ -1186,9 +1186,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  jumpingPower: 7.5
-  fallMultiplier: 3.4
-  lowJumpMultiplier: 2.19
+  jumpingPower: 10
+  fallMultiplier: 2
+  lowJumpMultiplier: 2.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -14,8 +14,8 @@ public class PlayerMove : MonoBehaviour
     [Header("Jump Tweaks")]
     [Range(0f, 18f)]
     public float jumpingPower = 8f; 
-    [Range(0f, 8f)]public  float fallMultiplier = 2.5f;
-    [Range(0f, 8f)]public float lowJumpMultiplier = 2f;
+    [Range(0f, 5f)]public  float fallMultiplier = 2.5f;
+    [Range(0f, 5f)]public float lowJumpMultiplier = 2f;
 
     private bool jumpHeld = false;
 
@@ -35,6 +35,10 @@ public class PlayerMove : MonoBehaviour
         if (rb.linearVelocity.y < 0)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (rb.linearVelocity.y > 0 && !jumpHeld)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 
