@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 1938853342}
   m_Layer: 0
   m_Name: breakable obj
-  m_TagString: Untagged
+  m_TagString: breakableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1120,6 +1120,7 @@ GameObject:
   - component: {fileID: 2112081661}
   - component: {fileID: 2112081660}
   - component: {fileID: 2112081662}
+  - component: {fileID: 2112081663}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1457,7 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f5c4a27a2a340669f7e5d89f3d02da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2112081659}
+  rb: {fileID: 0}
   groundCheck: {fileID: 861228762}
   groundLayer:
     serializedVersion: 2
@@ -1465,6 +1466,20 @@ MonoBehaviour:
   jumpingPower: 10
   fallMultiplier: 2
   lowJumpMultiplier: 2.5
+--- !u!114 &2112081663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112081655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40ae8408977b427895691ecac586fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 0
+  superAttackPower: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
