@@ -15,11 +15,16 @@ public class BreakObjects : MonoBehaviour
     {
         
     }
+    public void BreakObject()
+    {
+        Instantiate(breakObjects, transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player")) return;
-        Instantiate(breakObjects, transform.position, Quaternion.identity);
-        gameObject.SetActive(false);
+        // if (!collision.gameObject.CompareTag("Player")) return;
+        // Instantiate(breakObjects, transform.position, Quaternion.identity);
+        // gameObject.SetActive(false);
     }
 }
