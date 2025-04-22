@@ -780,7 +780,7 @@ Transform:
   m_GameObject: {fileID: 1429818686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.94, y: -4.14, z: -9.29}
+  m_LocalPosition: {x: -7.94, y: -3.904, z: -9.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1080,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 2002039177}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.94, y: -4.14, z: -9.29}
+  m_LocalPosition: {x: -7.94, y: -3.904, z: -9.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,6 +1121,9 @@ GameObject:
   - component: {fileID: 2112081660}
   - component: {fileID: 2112081662}
   - component: {fileID: 2112081663}
+  - component: {fileID: 2112081666}
+  - component: {fileID: 2112081665}
+  - component: {fileID: 2112081664}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1192,7 +1195,7 @@ Transform:
   m_GameObject: {fileID: 2112081655}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.94, y: -4.14, z: 0.71}
+  m_LocalPosition: {x: -7.94, y: -3.904, z: 0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1271,7 +1274,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &2112081660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1343,9 +1346,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2112081662}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
-        m_MethodName: Move
+      - m_Target: {fileID: 2112081666}
+        m_TargetAssemblyTypeName: characterMovement, Assembly-CSharp
+        m_MethodName: OnMovement
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1375,9 +1378,9 @@ MonoBehaviour:
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2112081662}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
-        m_MethodName: Jump
+      - m_Target: {fileID: 2112081665}
+        m_TargetAssemblyTypeName: characterJump, Assembly-CSharp
+        m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1453,13 +1456,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112081655}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37f5c4a27a2a340669f7e5d89f3d02da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  groundCheck: {fileID: 861228762}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -1480,6 +1481,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 0
   superAttackPower: 0
+  timeOfAttack: 0.3
+  attackRadius: 1
+--- !u!114 &2112081664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112081655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bbe0a0b7ad64afa8ceb82de42cccaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLength: 0.95
+  colliderOffset: {x: 0, y: 0, z: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &2112081665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112081655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61611e0a661c54798991e71b43f275df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  velocity: {x: 0, y: 0}
+  jumpHeight: 7.3
+  timeToJumpApex: 0
+  upwardMovementMultiplier: 1
+  downwardMovementMultiplier: 6.17
+  maxAirJumps: 0
+  variablejumpHeight: 0
+  jumpCutOff: 0
+  speedLimit: 0
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
+  jumpSpeed: 0
+  gravMultiplier: 0
+  canJumpAgain: 0
+  onGround: 0
+--- !u!114 &2112081666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112081655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c760a706a3654af4a4749265b88673a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 9
+  maxAcceleration: 79
+  maxDecceleration: 76
+  maxTurnSpeed: 76
+  maxAirAcceleration: 42.1
+  maxAirDeceleration: 64.2
+  maxAirTurnSpeed: 80
+  friction: 0
+  useAcceleration: 0
+  itsTheIntro: 0
+  directionX: 0
+  velocity: {x: 0, y: 0}
+  onGround: 0
+  pressingKey: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
