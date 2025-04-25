@@ -862,6 +862,71 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &1801807974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801807977}
+  - component: {fileID: 1801807976}
+  - component: {fileID: 1801807975}
+  m_Layer: 0
+  m_Name: Backround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1801807975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801807974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc120961d68a48108406a3fcf010113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParallaxAmountX: 0
+  ParallaxAmountY: 0
+  loop: 1
+  camStartPos: {x: 0, y: 0}
+--- !u!114 &1801807976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801807974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4e888124c494eb9aaa580dbecab6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParallaxAmountX: 0
+  ParallaxAmountY: 0
+  loop: 1
+  camStartPos: {x: 0, y: 0}
+--- !u!4 &1801807977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801807974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.166462, y: 2.9361358, z: 2.13732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938853338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,13 +1579,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 0}
   velocity: {x: 0, y: 0}
-  jumpHeight: 7.3
-  timeToJumpApex: 0
+  jumpHeight: 5.5
+  timeToJumpApex: 0.2
   upwardMovementMultiplier: 1
   downwardMovementMultiplier: 6.17
   maxAirJumps: 0
   variablejumpHeight: 0
-  jumpCutOff: 0
+  jumpCutOff: 1
   speedLimit: 0
   coyoteTime: 0.15
   jumpBuffer: 0.15
@@ -1565,3 +1630,4 @@ SceneRoots:
   - {fileID: 360758671}
   - {fileID: 2112081657}
   - {fileID: 1938853340}
+  - {fileID: 1801807977}
