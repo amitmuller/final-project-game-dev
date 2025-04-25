@@ -3,11 +3,12 @@ using UnityEngine;
 public class BreakObjects : MonoBehaviour
 {
     [SerializeField] private GameObject breakObjects;
+    private Explodable explodable;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        explodable = GetComponent<Explodable>();
     }
 
     // Update is called once per frame
@@ -18,7 +19,9 @@ public class BreakObjects : MonoBehaviour
     public void BreakObject()
     {
         Instantiate(breakObjects, transform.position, Quaternion.identity);
+        explodable.explode();
         gameObject.SetActive(false);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

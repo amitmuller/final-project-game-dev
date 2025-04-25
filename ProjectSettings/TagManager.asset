@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - breakableObject
+  - ground
+  - Obstacle
+  - BombPickup
+  - Enemy
+  - ExplosionFX
+  - Bullet
+  - HealthBar
   layers:
   - Default
   - TransparentFX
@@ -13,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - breakable
   - 
   - 
   - 
