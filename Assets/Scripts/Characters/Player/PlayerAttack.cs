@@ -70,6 +70,7 @@ public class PlayerAttack: MonoBehaviour
             {
                 Debug.Log("Broke object during attack");
                 hit.GetComponent<BreakObjects>()?.BreakObject();
+                hit.GetComponent<Rigidbody2D>().AddForce(10 * Vector2.right, ForceMode2D.Impulse);
             }
         }
     }
