@@ -21,6 +21,8 @@ public class BreakObjects : MonoBehaviour
         Instantiate(breakObjects, transform.position, Quaternion.identity);
         explodable.explode();
         gameObject.SetActive(false);
+        ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
+        ef.doExplosion(transform.position);
         
     }
 
