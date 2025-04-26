@@ -41,7 +41,7 @@ public class PlayerAttack: MonoBehaviour
         Debug.Log(hits.Length);
         foreach (var hit in hits)
         {
-            Debug.Log("hit", hit.gameObject);
+            Debug.Log("hit"+hit.gameObject.name);
             if (hit.CompareTag("breakableObject"))
             {
                 Debug.Log("Broke object during attack");

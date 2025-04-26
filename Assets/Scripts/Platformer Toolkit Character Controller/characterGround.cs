@@ -23,7 +23,7 @@ public class characterGround : MonoBehaviour
         private void OnDrawGizmos()
         {
             //Draw the ground colliders on screen for debug purposes
-            if (onGround) { Gizmos.color = Color.green; } else { Gizmos.color = Color.red; }
+            if (onGround) { Gizmos.color = Color.magenta; } else { Gizmos.color = Color.yellow; }
             Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLength);
             Gizmos.DrawLine(transform.position - colliderOffset, transform.position - colliderOffset + Vector3.down * groundLength);
         }
