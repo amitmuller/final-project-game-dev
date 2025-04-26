@@ -132,7 +132,6 @@ public class characterMovement : MonoBehaviour
 
         //Move our velocity towards the desired velocity, at the rate of the number calculated above
         velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
-        Debug.Log(velocity);
         //Update the Rigidbody with this new velocity
         
         body.linearVelocity = velocity;
