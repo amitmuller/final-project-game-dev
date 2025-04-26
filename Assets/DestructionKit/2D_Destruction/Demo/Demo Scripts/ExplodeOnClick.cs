@@ -13,7 +13,7 @@ public class ExplodeOnClick : MonoBehaviour {
 	void OnMouseDown()
 	{
 		_explodable.explode();
-		ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
+		ExplosionForce ef = FindFirstObjectByType<ExplosionForce>();
 		ef.doExplosion(transform.position);
 	}
 }
