@@ -83,6 +83,7 @@ public class characterMovement : MonoBehaviour
 
         //Get the Rigidbody's current velocity
         velocity = body.linearVelocity;
+        
 
         //Calculate movement, depending on whether "Instant Movement" has been checked
         if (useAcceleration)
@@ -100,6 +101,14 @@ public class characterMovement : MonoBehaviour
                 runWithAcceleration();
             }
         }
+        // if (onGround)
+        // {
+        //     body.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
+        // }
+        // else
+        // {
+        //     body.constraints = RigidbodyConstraints2D.FreezeRotation;
+        // }
     }
 
     private void runWithAcceleration()
@@ -109,7 +118,7 @@ public class characterMovement : MonoBehaviour
         acceleration = onGround ? maxAcceleration : maxAirAcceleration;
         deceleration = onGround ? maxDecceleration : maxAirDeceleration;
         turnSpeed = onGround ? maxTurnSpeed : maxAirTurnSpeed;
-
+        
         if (pressingKey)
         {
             //If the sign (i.e. positive or negative) of our input direction doesn't match our movement, it means we're turning around and so should use the turn speed stat.
@@ -133,7 +142,7 @@ public class characterMovement : MonoBehaviour
         //Move our velocity towards the desired velocity, at the rate of the number calculated above
         velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
         //Update the Rigidbody with this new velocity
-        
+        velocity.y = body.linearVelocity.y;
         body.linearVelocity = velocity;
 
     }
@@ -142,7 +151,9 @@ public class characterMovement : MonoBehaviour
     {
         //If we're not using acceleration and deceleration, just send our desired velocity (direction * max speed) to the Rigidbody
         velocity.x = desiredVelocity.x;
+        velocity.y = body.linearVelocity.y;
 
+        Debug.Log(velocity+" "+body.linearVelocity);
         body.linearVelocity = velocity;
     }
 
