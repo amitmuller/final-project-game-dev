@@ -135,6 +135,11 @@ public class characterJump : MonoBehaviour
             return;
         }
 
+        // if (!currentlyJumping && !desiredJump && onGround)
+        // {
+        //     body.constraints= RigidbodyConstraints2D.FreezePositionY;
+        // }
+
         calculateGravity();
     }
 
