@@ -23470,11 +23470,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1965623225461360176, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: attackRadius
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5480460543109864550, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563003898038140422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: jumpHeight
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563003898038140422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: timeToJumpApex
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563003898038140422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: upwardMovementMultiplier
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563003898038140422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: downwardMovementMultiplier
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 8497295401641567422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalPosition.x
