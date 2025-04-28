@@ -11,6 +11,8 @@ public abstract class Enemy : MonoBehaviour
     public float attackCooldown = 2f;
     public int health = 100;
     public float speed = 2f;
+    
+    
 
     private float lastAttackTime = Mathf.NegativeInfinity;
 

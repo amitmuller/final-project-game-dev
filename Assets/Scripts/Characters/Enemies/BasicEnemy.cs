@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class BasicEnemy : Enemy
 {
     private bool hasAttacked = false;
+    [SerializeField] private Vector2 initialPosition  = Vector2.zero;
 
     protected override void GoToPlayer()
     {
@@ -29,5 +31,13 @@ public class BasicEnemy : Enemy
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius/2);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.transform.position = initialPosition;
+        }
     }
 }
