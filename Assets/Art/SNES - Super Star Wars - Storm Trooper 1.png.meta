@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: c8521a17b7a9c42d19c54fb9d76149bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -917993591539503406
+    second: SNES - Super Star Wars - Storm Trooper 1_0
+  - first:
+      213: 4202832359107565639
+    second: SNES - Super Star Wars - Storm Trooper 1_1
+  - first:
+      213: -7171518609122290337
+    second: SNES - Super Star Wars - Storm Trooper 1_2
+  - first:
+      213: 7678151337049725125
+    second: SNES - Super Star Wars - Storm Trooper 1_3
+  - first:
+      213: 7593388042275022433
+    second: SNES - Super Star Wars - Storm Trooper 1_4
+  - first:
+      213: 2582751843932282115
+    second: SNES - Super Star Wars - Storm Trooper 1_5
+  - first:
+      213: 7570666347269211546
+    second: SNES - Super Star Wars - Storm Trooper 1_6
+  - first:
+      213: 3195213359728202006
+    second: SNES - Super Star Wars - Storm Trooper 1_7
+  - first:
+      213: -5769009754809182709
+    second: SNES - Super Star Wars - Storm Trooper 1_8
+  - first:
+      213: 6264419088431953254
+    second: SNES - Super Star Wars - Storm Trooper 1_9
+  - first:
+      213: -5217549745365980123
+    second: SNES - Super Star Wars - Storm Trooper 1_10
+  - first:
+      213: -3129706698324312727
+    second: SNES - Super Star Wars - Storm Trooper 1_11
+  - first:
+      213: 2737863818703981422
+    second: SNES - Super Star Wars - Storm Trooper 1_12
+  - first:
+      213: 7558750727912979491
+    second: SNES - Super Star Wars - Storm Trooper 1_13
+  - first:
+      213: 6578559022146753537
+    second: SNES - Super Star Wars - Storm Trooper 1_14
+  - first:
+      213: -7186901636490717898
+    second: SNES - Super Star Wars - Storm Trooper 1_15
+  - first:
+      213: -2319749510467560159
+    second: SNES - Super Star Wars - Storm Trooper 1_16
+  - first:
+      213: -3526312801429703466
+    second: SNES - Super Star Wars - Storm Trooper 1_17
+  - first:
+      213: -5726661691392471623
+    second: SNES - Super Star Wars - Storm Trooper 1_18
+  - first:
+      213: -8575426034629393033
+    second: SNES - Super Star Wars - Storm Trooper 1_19
+  - first:
+      213: 5563758048788584156
+    second: SNES - Super Star Wars - Storm Trooper 1_20
+  - first:
+      213: -8173191661427159480
+    second: SNES - Super Star Wars - Storm Trooper 1_21
+  - first:
+      213: -5257703636913640033
+    second: SNES - Super Star Wars - Storm Trooper 1_22
+  - first:
+      213: -2685174234704951319
+    second: SNES - Super Star Wars - Storm Trooper 1_23
+  - first:
+      213: 7867996587523162097
+    second: SNES - Super Star Wars - Storm Trooper 1_24
+  - first:
+      213: 6635793633366896107
+    second: SNES - Super Star Wars - Storm Trooper 1_25
+  - first:
+      213: -3949280834004021098
+    second: SNES - Super Star Wars - Storm Trooper 1_26
+  - first:
+      213: -4591251358219897980
+    second: SNES - Super Star Wars - Storm Trooper 1_27
+  - first:
+      213: 8167526066650120694
+    second: SNES - Super Star Wars - Storm Trooper 1_28
+  - first:
+      213: 1084035327085704082
+    second: SNES - Super Star Wars - Storm Trooper 1_29
+  - first:
+      213: -4679848328082449110
+    second: SNES - Super Star Wars - Storm Trooper 1_30
+  - first:
+      213: 6924373548643819104
+    second: SNES - Super Star Wars - Storm Trooper 1_31
+  - first:
+      213: 7453811226078710664
+    second: SNES - Super Star Wars - Storm Trooper 1_32
+  - first:
+      213: 537000008834559585
+    second: SNES - Super Star Wars - Storm Trooper 1_33
+  - first:
+      213: 3643659169339065189
+    second: SNES - Super Star Wars - Storm Trooper 1_34
+  - first:
+      213: -5180258970819934906
+    second: SNES - Super Star Wars - Storm Trooper 1_35
+  - first:
+      213: 1956343948116346917
+    second: SNES - Super Star Wars - Storm Trooper 1_36
+  - first:
+      213: 4663741988623180740
+    second: SNES - Super Star Wars - Storm Trooper 1_37
+  - first:
+      213: 8651467483744838063
+    second: SNES - Super Star Wars - Storm Trooper 1_38
+  - first:
+      213: 3445166084089273642
+    second: SNES - Super Star Wars - Storm Trooper 1_39
+  - first:
+      213: -7715453551257920129
+    second: SNES - Super Star Wars - Storm Trooper 1_40
+  - first:
+      213: -5116704335254425741
+    second: SNES - Super Star Wars - Storm Trooper 1_41
+  - first:
+      213: -6120530085353878271
+    second: SNES - Super Star Wars - Storm Trooper 1_42
+  - first:
+      213: -222016870633750570
+    second: SNES - Super Star Wars - Storm Trooper 1_43
+  - first:
+      213: 5531002061077519323
+    second: SNES - Super Star Wars - Storm Trooper 1_44
+  - first:
+      213: 2703078989815648215
+    second: SNES - Super Star Wars - Storm Trooper 1_45
+  - first:
+      213: -7471668015077521739
+    second: SNES - Super Star Wars - Storm Trooper 1_46
+  - first:
+      213: 4771348345629707164
+    second: SNES - Super Star Wars - Storm Trooper 1_47
+  - first:
+      213: -1801660223116358593
+    second: SNES - Super Star Wars - Storm Trooper 1_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 487
+        width: 24
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dee33631b1a243f0800000000000000
+      internalID: -917993591539503406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 543
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7489f1753c5735a30800000000000000
+      internalID: 4202832359107565639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 543
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f55992342d5a97c90800000000000000
+      internalID: -7171518609122290337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 545
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c81a80e5f54e8a60800000000000000
+      internalID: 7678151337049725125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 543
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16660856132216960800000000000000
+      internalID: 7593388042275022433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_5
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 543
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d91983e17c7d320800000000000000
+      internalID: 2582751843932282115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 543
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a954cf58ee8601960800000000000000
+      internalID: 7570666347269211546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 543
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6119e282f9da75c20800000000000000
+      internalID: 3195213359728202006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_8
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 542
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06d5da813c50ffa0800000000000000
+      internalID: -5769009754809182709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 487
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665b92a78ffafe650800000000000000
+      internalID: 6264419088431953254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_10
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 487
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ce78d762a8797b0800000000000000
+      internalID: -5217549745365980123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_11
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 487
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96df73bf65c0194d0800000000000000
+      internalID: -3129706698324312727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 487
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6bce3523a8def520800000000000000
+      internalID: 2737863818703981422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_13
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 487
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c7af23db316e860800000000000000
+      internalID: 7558750727912979491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_14
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 425
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1049ff0739cbb4b50800000000000000
+      internalID: 6578559022146753537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_15
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 425
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6351c491a0ff24c90800000000000000
+      internalID: -7186901636490717898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_16
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 425
+        width: 28
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12dd1bc5c189ecfd0800000000000000
+      internalID: -2319749510467560159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_17
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 425
+        width: 26
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4bed7b035001fc0800000000000000
+      internalID: -3526312801429703466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_18
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 424
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bdc6b7688fc680b0800000000000000
+      internalID: -5726661691392471623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_19
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 424
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7754740c477fdf880800000000000000
+      internalID: -8575426034629393033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 363
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd69342a770763d40800000000000000
+      internalID: 5563758048788584156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_21
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 363
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e0373cc7df29e80800000000000000
+      internalID: -8173191661427159480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_22
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 363
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9dab731662e807b0800000000000000
+      internalID: -5257703636913640033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_23
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 361
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7416c92485cbad0800000000000000
+      internalID: -2685174234704951319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_24
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 360
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffbd4db53db03d60800000000000000
+      internalID: 7867996587523162097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_25
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 341
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bede1afc623171c50800000000000000
+      internalID: 6635793633366896107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_26
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 341
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6909ee271065139c0800000000000000
+      internalID: -3949280834004021098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_27
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 342
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 483f5c617399840c0800000000000000
+      internalID: -4591251358219897980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_28
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 342
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f18c682fa1e85170800000000000000
+      internalID: 8167526066650120694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_29
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 269
+        width: 81
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 293fae2f2644b0f00800000000000000
+      internalID: 1084035327085704082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_30
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 269
+        width: 75
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d90f19db6dd0fb0800000000000000
+      internalID: -4679848328082449110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_31
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 271
+        width: 81
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e960b3e01581060800000000000000
+      internalID: 6924373548643819104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_32
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 198
+        width: 85
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b8d3171d1417760800000000000000
+      internalID: 7453811226078710664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_33
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 198
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e27f2b9aec37700800000000000000
+      internalID: 537000008834559585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_34
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 122
+        width: 78
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563cc07a5b0e09230800000000000000
+      internalID: 3643659169339065189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_35
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 122
+        width: 73
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6454fb789e50c18b0800000000000000
+      internalID: -5180258970819934906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_36
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 96
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528c5f5a474562b10800000000000000
+      internalID: 1956343948116346917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_37
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 96
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c365fb01a0f8b040800000000000000
+      internalID: 4663741988623180740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_38
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 96
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1247ac6df201870800000000000000
+      internalID: 8651467483744838063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_39
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 96
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d5d5adc40bfcf20800000000000000
+      internalID: 3445166084089273642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_40
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 96
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7dde349fd33de490800000000000000
+      internalID: -7715453551257920129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_41
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 96
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f657c3480ddf8b0800000000000000
+      internalID: -5116704335254425741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_42
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 96
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d0469b0528f0ba0800000000000000
+      internalID: -6120530085353878271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_43
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 96
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df3bbb15dc3becf0800000000000000
+      internalID: -222016870633750570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_44
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 96
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb9a7ee11112cc40800000000000000
+      internalID: 5531002061077519323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_45
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 96
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df88cb0504438520800000000000000
+      internalID: 2703078989815648215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_46
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 26
+        width: 174
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b608a1e68d4f4890800000000000000
+      internalID: -7471668015077521739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_47
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 220
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b08e86a0c373240800000000000000
+      internalID: 4771348345629707164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Star Wars - Storm Trooper 1_48
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 2
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3cc23b92973ff6e0800000000000000
+      internalID: -1801660223116358593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SNES - Super Star Wars - Storm Trooper 1_0: -917993591539503406
+      SNES - Super Star Wars - Storm Trooper 1_1: 4202832359107565639
+      SNES - Super Star Wars - Storm Trooper 1_10: -5217549745365980123
+      SNES - Super Star Wars - Storm Trooper 1_11: -3129706698324312727
+      SNES - Super Star Wars - Storm Trooper 1_12: 2737863818703981422
+      SNES - Super Star Wars - Storm Trooper 1_13: 7558750727912979491
+      SNES - Super Star Wars - Storm Trooper 1_14: 6578559022146753537
+      SNES - Super Star Wars - Storm Trooper 1_15: -7186901636490717898
+      SNES - Super Star Wars - Storm Trooper 1_16: -2319749510467560159
+      SNES - Super Star Wars - Storm Trooper 1_17: -3526312801429703466
+      SNES - Super Star Wars - Storm Trooper 1_18: -5726661691392471623
+      SNES - Super Star Wars - Storm Trooper 1_19: -8575426034629393033
+      SNES - Super Star Wars - Storm Trooper 1_2: -7171518609122290337
+      SNES - Super Star Wars - Storm Trooper 1_20: 5563758048788584156
+      SNES - Super Star Wars - Storm Trooper 1_21: -8173191661427159480
+      SNES - Super Star Wars - Storm Trooper 1_22: -5257703636913640033
+      SNES - Super Star Wars - Storm Trooper 1_23: -2685174234704951319
+      SNES - Super Star Wars - Storm Trooper 1_24: 7867996587523162097
+      SNES - Super Star Wars - Storm Trooper 1_25: 6635793633366896107
+      SNES - Super Star Wars - Storm Trooper 1_26: -3949280834004021098
+      SNES - Super Star Wars - Storm Trooper 1_27: -4591251358219897980
+      SNES - Super Star Wars - Storm Trooper 1_28: 8167526066650120694
+      SNES - Super Star Wars - Storm Trooper 1_29: 1084035327085704082
+      SNES - Super Star Wars - Storm Trooper 1_3: 7678151337049725125
+      SNES - Super Star Wars - Storm Trooper 1_30: -4679848328082449110
+      SNES - Super Star Wars - Storm Trooper 1_31: 6924373548643819104
+      SNES - Super Star Wars - Storm Trooper 1_32: 7453811226078710664
+      SNES - Super Star Wars - Storm Trooper 1_33: 537000008834559585
+      SNES - Super Star Wars - Storm Trooper 1_34: 3643659169339065189
+      SNES - Super Star Wars - Storm Trooper 1_35: -5180258970819934906
+      SNES - Super Star Wars - Storm Trooper 1_36: 1956343948116346917
+      SNES - Super Star Wars - Storm Trooper 1_37: 4663741988623180740
+      SNES - Super Star Wars - Storm Trooper 1_38: 8651467483744838063
+      SNES - Super Star Wars - Storm Trooper 1_39: 3445166084089273642
+      SNES - Super Star Wars - Storm Trooper 1_4: 7593388042275022433
+      SNES - Super Star Wars - Storm Trooper 1_40: -7715453551257920129
+      SNES - Super Star Wars - Storm Trooper 1_41: -5116704335254425741
+      SNES - Super Star Wars - Storm Trooper 1_42: -6120530085353878271
+      SNES - Super Star Wars - Storm Trooper 1_43: -222016870633750570
+      SNES - Super Star Wars - Storm Trooper 1_44: 5531002061077519323
+      SNES - Super Star Wars - Storm Trooper 1_45: 2703078989815648215
+      SNES - Super Star Wars - Storm Trooper 1_46: -7471668015077521739
+      SNES - Super Star Wars - Storm Trooper 1_47: 4771348345629707164
+      SNES - Super Star Wars - Storm Trooper 1_48: -1801660223116358593
+      SNES - Super Star Wars - Storm Trooper 1_5: 2582751843932282115
+      SNES - Super Star Wars - Storm Trooper 1_6: 7570666347269211546
+      SNES - Super Star Wars - Storm Trooper 1_7: 3195213359728202006
+      SNES - Super Star Wars - Storm Trooper 1_8: -5769009754809182709
+      SNES - Super Star Wars - Storm Trooper 1_9: 6264419088431953254
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
