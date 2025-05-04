@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 
@@ -6,7 +8,6 @@ using UnityEngine.InputSystem.Interactions;
 
 public class characterMovement : MonoBehaviour
 {
-
     [Header("Components")]
     private Rigidbody2D body;
     characterGround ground;
@@ -23,7 +24,7 @@ public class characterMovement : MonoBehaviour
 
     [Header("Options")]
     [Tooltip("When false, the charcter will skip acceleration and deceleration and instantly move and stop")] public bool useAcceleration;
-    public bool itsTheIntro = true;
+    // public bool itsTheIntro = true;
 
     [Header("Calculations")]
     public float directionX;
@@ -37,6 +38,19 @@ public class characterMovement : MonoBehaviour
     [Header("Current State")]
     public bool onGround;
     public bool pressingKey;
+    
+    [Header("Dash Settings")]
+    [SerializeField] private int dashSpeed = 20;
+    [SerializeField] private float dashDuration = 0.5f;
+    [SerializeField] private float dashCoolDown = 1f;
+    [SerializeField] private TrailRenderer tr;
+    private bool isDashing;
+    private bool canDash = true;
+    
+    [Header("Slowing Settings")]
+    private bool isSlowed = false;
+    public float slowFactor = 0.5f;
+    public float slowDuration = 2f;
 
     private void Awake()
     {
@@ -51,10 +65,25 @@ public class characterMovement : MonoBehaviour
         //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
         //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
     }
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (canDash)
+        {
+            Debug.Log("in dash");
+            StartCoroutine(dash());
+            
+        }
+        //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
+        //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
+    }
 
     private void Update()
     {
         //Used to stop movement when the character is playing her death animation
+        if (isDashing)
+        {
+            return;
+        }
 
         //Used to flip the character's sprite when she changes direction
         //Also tells us that we are currently pressing a direction button
@@ -77,6 +106,10 @@ public class characterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //Fixed update runs in sync with Unity's physics engine
+        if (isDashing)
+        {
+            return;
+        }
 
         //Get Kit's current ground status from her ground script
         onGround = ground.GetOnGround();
@@ -152,10 +185,47 @@ public class characterMovement : MonoBehaviour
         //If we're not using acceleration and deceleration, just send our desired velocity (direction * max speed) to the Rigidbody
         velocity.x = desiredVelocity.x;
         velocity.y = body.linearVelocity.y;
-
-        Debug.Log(velocity+" "+body.linearVelocity);
         body.linearVelocity = velocity;
     }
+
+    private IEnumerator dash()
+    {
+        Debug.Log("in dash");
+        Debug.Log(desiredVelocity);
+        canDash = false;
+        isDashing = true;
+        float originalGravity = body.gravityScale;
+        body.gravityScale = 0f;
+        body.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashDuration);
+        tr.emitting = false;
+        body.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCoolDown);
+        canDash = true;
+    }
+    
+    public void ApplySlow()
+    {
+        if (!isSlowed)
+            StartCoroutine(SlowCoroutine());
+    }
+    
+    private IEnumerator SlowCoroutine()
+    {
+        isSlowed = true;
+        float originalSpeed = maxSpeed;
+        maxSpeed *= slowFactor;
+
+        yield return new WaitForSeconds(slowDuration);
+
+        maxSpeed = originalSpeed;
+        isSlowed = false;
+    }
+    
+    
+    
 
 
 

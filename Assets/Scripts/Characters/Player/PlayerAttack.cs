@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerAttack: MonoBehaviour
 {
@@ -8,40 +9,68 @@ public class PlayerAttack: MonoBehaviour
     [SerializeField] private int attackPower;
     [SerializeField] private int superAttackPower;
     [SerializeField] private float timeOfAttack = 0.3f;
-    [SerializeField] private float attackRadius = 1f;
+    [FormerlySerializedAs("attackRadius")] [SerializeField] private float superAttackRadius = 1f;
+    [SerializeField] private float attackRadiusFactor = 0.3f;
     private bool isAttacking = false;
     
     
     private Rigidbody2D _rb;
     private bool superAttacked = false;
+    private characterGround _ground;
+    public bool onGround = true;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _ground = GetComponent<characterGround>();
     }
 
     public void onAttack(InputAction.CallbackContext context)
     {
-        if (context.performed && _rb.linearVelocity != Vector2.zero)
+        onGround = _ground.GetOnGround();
+        if (context.performed && !onGround)
         {
             superAttacked = true;
             superAttack();
         }
-        if (context.performed && _rb.linearVelocity == Vector2.zero && !superAttacked) attack();
+        if (context.performed && onGround && !superAttacked) attack();
     }
     
 
+    // private void attack()
+    // {
+    //     isAttacking = true;
+    //     Invoke("notAttacking", timeOfAttack);
+    //     Debug.Log("attack");
+    //
+    //     Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRadius); // Adjust radius as needed
+    //     Debug.Log(hits.Length);
+    //     foreach (var hit in hits)
+    //     {
+    //         Debug.Log("hit"+hit.gameObject.name);
+    //         if (hit.CompareTag("breakableObject"))
+    //         {
+    //             Debug.Log("Broke object during attack");
+    //             hit.GetComponent<BreakObjects>()?.BreakObject();
+    //         }
+    //     }
+    // }
+    
+    private Vector2 FacingDirection => transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+    
     private void attack()
     {
         isAttacking = true;
-        Invoke("notAttacking", timeOfAttack);
+        Invoke(nameof(notAttacking), timeOfAttack);
         Debug.Log("attack");
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRadius); // Adjust radius as needed
+        Vector2 center = (Vector2)transform.position + FacingDirection * (superAttackRadius * 0.7f); // attack in front
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(center, superAttackRadius * attackRadiusFactor);
         Debug.Log(hits.Length);
         foreach (var hit in hits)
         {
-            Debug.Log("hit"+hit.gameObject.name);
+            Debug.Log("hit " + hit.gameObject.name);
             if (hit.CompareTag("breakableObject"))
             {
                 Debug.Log("Broke object during attack");
@@ -49,7 +78,6 @@ public class PlayerAttack: MonoBehaviour
             }
         }
     }
-
 
     void notAttacking()
     {
@@ -62,7 +90,7 @@ public class PlayerAttack: MonoBehaviour
         Debug.Log("superattack");
         Invoke("notAttacking", timeOfAttack);
         isAttacking = true;
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRadius); // Adjust radius as needed
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, superAttackRadius); // Adjust radius as needed
         foreach (var hit in hits)
         {
             Debug.Log("hit", hit.gameObject);
@@ -77,9 +105,16 @@ public class PlayerAttack: MonoBehaviour
     
     private void OnDrawGizmos()
     {
+        // Regular attack gizmo - in front of player
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius); // Match the radius in attack()
+        Vector2 regularCenter = (Vector2)transform.position + FacingDirection * (superAttackRadius * 0.7f);
+        Gizmos.DrawWireSphere(regularCenter, superAttackRadius * attackRadiusFactor);
+
+        // Super attack gizmo - radial
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, superAttackRadius);
     }
+
     
 
     // private void OnCollisionEnter2D(Collision2D other)
