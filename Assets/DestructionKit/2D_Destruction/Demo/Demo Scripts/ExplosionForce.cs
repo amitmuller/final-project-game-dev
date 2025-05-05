@@ -27,7 +27,8 @@ public class ExplosionForce : MonoBehaviour {
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position,radius);
      
 		foreach(Collider2D coll in colliders){
-			if(coll.GetComponent<Rigidbody2D>()&&coll.name!="hero"){
+			Debug.Log(coll.gameObject.name);
+			if(coll.GetComponent<Rigidbody2D>()&&coll.gameObject.name!="Player"){
                 AddExplosionForce(coll.GetComponent<Rigidbody2D>(), force, transform.position, radius, upliftModifer);
 			}
 		}

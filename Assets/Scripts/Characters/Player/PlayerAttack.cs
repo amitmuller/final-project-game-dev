@@ -15,25 +15,29 @@ public class PlayerAttack: MonoBehaviour
     
     
     private Rigidbody2D _rb;
+    private PlayerMove _move;
     private bool superAttacked = false;
     private characterGround _ground;
     public bool onGround = true;
+    private bool inDash;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _ground = GetComponent<characterGround>();
+        _move = GetComponent<PlayerMove>();
     }
 
     public void onAttack(InputAction.CallbackContext context)
     {
-        onGround = _ground.GetOnGround();
-        if (context.performed && !onGround)
+        inDash = _move.isInDash();
+        if (context.performed && inDash)
         {
             superAttacked = true;
             superAttack();
         }
-        if (context.performed && onGround && !superAttacked) attack();
+        // if (context.performed && onGround && !superAttacked) attack();
+        if (context.performed && !superAttacked) attack();
     }
     
 
@@ -70,10 +74,9 @@ public class PlayerAttack: MonoBehaviour
         Debug.Log(hits.Length);
         foreach (var hit in hits)
         {
-            Debug.Log("hit " + hit.gameObject.name);
             if (hit.CompareTag("breakableObject"))
             {
-                Debug.Log("Broke object during attack");
+                Debug.Log("hit " + hit.gameObject.name);                Debug.Log("Broke object during attack");
                 hit.GetComponent<BreakObjects>()?.BreakObject();
             }
         }
@@ -102,6 +105,8 @@ public class PlayerAttack: MonoBehaviour
             }
         }
     }
+    
+    
     
     private void OnDrawGizmos()
     {
