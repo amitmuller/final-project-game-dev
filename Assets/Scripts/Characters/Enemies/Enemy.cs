@@ -31,7 +31,7 @@ public abstract class Enemy : MonoBehaviour
         }
         Debug.DrawRay(transform.position, player.position - transform.position, Color.green);
         Debug.Log("distance:"+ distance);
-        Debug.Log(attackRadius);
+        Debug.Log(distance < attackRadius);
         Debug.Log(Time.time - lastAttackTime > attackCooldown);
         if (distance < attackRadius && Time.time - lastAttackTime > attackCooldown)
         {

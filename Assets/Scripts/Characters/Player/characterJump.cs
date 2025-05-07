@@ -212,7 +212,7 @@ public class characterJump : MonoBehaviour
 
     private void DoAJump()
     {
-
+        Debug.Log("jumping");
         //Create the jump, provided we are on the ground, in coyote time, or have a double jump available
         if (onGround || (coyoteTimeCounter > 0.03f && coyoteTimeCounter < coyoteTime) || canJumpAgain)
         {
