@@ -288,17 +288,22 @@ public class playerMoveAxis : MonoBehaviour
     
     private void OnDrawGizmosSelected()
     {
-        if (indexList == null) return;
+        if (indexList == null || indexList.Length == 0) return;
 
         Gizmos.color = Color.yellow;
 
+        // Offset to draw the gizmos slightly *below* the character
+        float gizmoOffsetY = -1f; // adjust based on your sprite's size
+
         foreach (float y in indexList)
         {
-            Vector3 lineStart = new Vector3(transform.position.x - 1, y, 0f);
-            Vector3 lineEnd = new Vector3(transform.position.x + 1, y, 0f);
+            float yOffset = y + gizmoOffsetY;
+            Vector3 lineStart = new Vector3(transform.position.x - 1, yOffset, 0f);
+            Vector3 lineEnd = new Vector3(transform.position.x + 1, yOffset, 0f);
             Gizmos.DrawLine(lineStart, lineEnd);
         }
     }
+
 
     
     

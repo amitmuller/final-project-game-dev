@@ -38985,9 +38985,9 @@ MonoBehaviour:
   maxAirTurnSpeed: 80
   friction: 0
   indexList:
-  - -2.11
-  - -3
-  - -4.13
+  - -1.6
+  - -2.5
+  - -3.4
   directionY: 0
   axisChangeCooldown: 0.2
   directionX: 0
