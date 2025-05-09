@@ -8,7 +8,7 @@ public class BasicEnemy : Enemy
 
     protected override void GoToPlayer()
     {
-        Debug.Log("Going to player");
+        // Debug.Log("Going to player");
         if (hasAttacked) return;
 
         Vector3 direction = (player.position - transform.position).normalized;
@@ -19,7 +19,7 @@ public class BasicEnemy : Enemy
     {
         if (hasAttacked) return;
 
-        Debug.Log("BasicEnemy attacks the player!");
+        // Debug.Log("BasicEnemy attacks the player!");
         hasAttacked = true;
 
         Die();

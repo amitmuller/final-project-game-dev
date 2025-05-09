@@ -36,14 +36,14 @@ public class ShootingEnemy : Enemy
     protected override void Attack()
     {
         // Optional: keep melee or disable this if shooting only
-        Debug.Log("BasicEnemy performed melee attack!");
+        // Debug.Log("BasicEnemy performed melee attack!");
         // player.position = player.position + Vector3.right * 2; // Example knockback effect
         ShootAtPlayer();
     }
 
     private void ShootAtPlayer()
     {
-        Debug.Log("shoot");
+        // Debug.Log("shoot");
         if (projectilePrefab == null || player == null) return;
 
         Vector2 shootDirection = (player.position-transform.position).normalized;

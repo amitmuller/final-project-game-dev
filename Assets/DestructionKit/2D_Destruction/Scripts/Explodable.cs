@@ -38,7 +38,7 @@ public class Explodable : MonoBehaviour
         //otherwise unparent and activate them
         else
         {
-            Debug.Log("here "+fragments);
+            // Debug.Log("here "+fragments);
             foreach (GameObject frag in fragments)
             {
                 frag.transform.parent = null;
@@ -49,23 +49,23 @@ public class Explodable : MonoBehaviour
         //if fragments exist destroy the original
         if (fragments.Count > 0)
         {
-            Debug.Log(fragments);
+            // Debug.Log(fragments);
             Destroy(gameObject);
         }
     }
     
     private IEnumerator ChangeLayerDelayed(GameObject frag, float delay)
     {
-        Debug.Log("here1 " + frag);
+        // Debug.Log("here1 " + frag);
         yield return new WaitForSeconds(delay);
-        Debug.Log("here2 " + frag);
+        // Debug.Log("here2 " + frag);
         ChangeLayer(frag);
     }
 
 
     void ChangeLayer(GameObject frag)
     {
-        Debug.Log("change Layer");
+        // Debug.Log("change Layer");
         frag.layer = LayerMask.NameToLayer(fragmentLayer);
         frag.GetComponent<Renderer>().sortingLayerName = sortingLayerName;
         frag.GetComponent<Renderer>().sortingOrder = orderInLayer;
@@ -123,13 +123,13 @@ public class Explodable : MonoBehaviour
         }
         //sets additional aspects of the fragments
         
-        Debug.Log(fragments.Count + " fragments generated");
+        // Debug.Log(fragments.Count + " fragments generated");
         foreach (GameObject p in fragments)
         {
             if (p != null)
             {
-                Debug.Log(p.name);
-                Debug.Log(fragmentLayer);
+                // Debug.Log(p.name);
+                // Debug.Log(fragmentLayer);
                 p.layer = LayerMask.NameToLayer(fragmentLayer);
                 p.GetComponent<Renderer>().sortingLayerName = sortingLayerName;
                 p.GetComponent<Renderer>().sortingOrder = orderInLayer;

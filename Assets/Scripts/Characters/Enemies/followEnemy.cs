@@ -7,7 +7,7 @@ namespace Characters.Enemies
     {
         protected override void GoToPlayer()
         {
-            Debug.Log("Going to player");
+            // Debug.Log("Going to player");
             // if (hasAttacked) return;
 
             Vector3 direction = (player.position - transform.position).normalized;
@@ -18,7 +18,7 @@ namespace Characters.Enemies
         {
             // if (hasAttacked) return;
 
-            Debug.Log("BasicEnemy attacks the player!");
+            // Debug.Log("BasicEnemy attacks the player!");
             // hasAttacked = true;
 
             Die();

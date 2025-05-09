@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Interactions;
 
 //This script handles moving the character on the X axis, both on the ground and in the air.
 
-public class characterMovement : MonoBehaviour
+public class playerMoveAxis : MonoBehaviour
 {
     [Header("Components")]
     private Rigidbody2D body;
@@ -22,8 +22,17 @@ public class characterMovement : MonoBehaviour
     [SerializeField, Range(0f, 100f)][Tooltip("How fast to stop when changing direction when in mid-air")] public float maxAirTurnSpeed = 80f;
     [SerializeField][Tooltip("Friction to apply against movement on stick")] private float friction;
 
-    [Header("Options")]
-    [Tooltip("When false, the charcter will skip acceleration and deceleration and instantly move and stop")] public bool useAcceleration;
+    [Header("Axis Stats")] 
+    [SerializeField] private float[] indexList;
+    public float directionY;
+    private int currentAxis = 0;
+    private bool canChangeAxis = true;
+    [SerializeField] private float axisChangeCooldown = 0.2f; // prevent rapid switching
+
+    
+
+    // [Header("Options")]
+    // [Tooltip("When false, the charcter will skip acceleration and deceleration and instantly move and stop")] public bool useAcceleration;
     // public bool itsTheIntro = true;
 
     [Header("Calculations")]
@@ -53,13 +62,15 @@ public class characterMovement : MonoBehaviour
     public float slowDuration = 2f;
     
     private float size;
-
     private void Awake()
     {
         //Find the character's Rigidbody and ground detection script
         body = GetComponent<Rigidbody2D>();
         ground = GetComponent<characterGround>();
         size = transform.localScale.x;
+        Vector3 pos = transform.position;
+        pos.y = indexList[currentAxis];
+        transform.position = pos;
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -119,24 +130,26 @@ public class characterMovement : MonoBehaviour
 
         //Get the Rigidbody's current velocity
         velocity = body.linearVelocity;
+        move();
         
-
         //Calculate movement, depending on whether "Instant Movement" has been checked
-        if (useAcceleration)
-        {
-            runWithAcceleration();
-        }
-        else
-        {
-            if (onGround)
-            {
-                runWithoutAcceleration();
-            }
-            else
-            {
-                runWithAcceleration();
-            }
-        }
+        // if (useAcceleration)
+        // {
+        //     runWithAcceleration();
+        // }
+        // else
+        // {
+        //     if (onGround)
+        //     {
+        //         runWithoutAcceleration();
+        //     }
+        //     else
+        //     {
+        //         runWithAcceleration();
+        //     }
+        // }
+        
+        changeAxis();
         // if (onGround)
         // {
         //     body.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
@@ -146,6 +159,36 @@ public class characterMovement : MonoBehaviour
         //     body.constraints = RigidbodyConstraints2D.FreezeRotation;
         // }
     }
+
+    private void changeAxis()
+    {
+        // Debug.Log("changing direction"+directionY) ;
+        if (!canChangeAxis || directionY == 0) return;
+        int previousAxis = currentAxis;
+        if (directionY > 0 && currentAxis > 0)
+        {
+            currentAxis--; // down in list
+        }
+        else if (directionY < 0 && currentAxis < indexList.Length - 1)
+        {
+            currentAxis++; // up in list
+        }
+        if (currentAxis != previousAxis)
+        {
+            Vector3 pos = transform.position;
+            pos.y = indexList[currentAxis];
+            transform.position = pos;
+            StartCoroutine(ResetAxisChangeCooldown());
+            directionY = 0;
+        }
+    }
+    private IEnumerator ResetAxisChangeCooldown()
+    {
+        canChangeAxis = false;
+        yield return new WaitForSeconds(axisChangeCooldown);
+        canChangeAxis = true;
+    }
+
 
     private void runWithAcceleration()
     {
@@ -183,7 +226,7 @@ public class characterMovement : MonoBehaviour
 
     }
 
-    private void runWithoutAcceleration()
+    private void move()
     {
         //If we're not using acceleration and deceleration, just send our desired velocity (direction * max speed) to the Rigidbody
         velocity.x = desiredVelocity.x;
@@ -226,6 +269,42 @@ public class characterMovement : MonoBehaviour
         maxSpeed = originalSpeed;
         isSlowed = false;
     }
+    
+    public void OnChangeAxis(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            directionY = context.ReadValue<Vector2>().y;
+            Debug.Log("changeAxis() "+indexList[currentAxis]);
+            Debug.Log(currentAxis);
+            
+        }
+
+        
+        
+        //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
+        //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        if (indexList == null || indexList.Length == 0) return;
+
+        Gizmos.color = Color.yellow;
+
+        // Offset to draw the gizmos slightly *below* the character
+        float gizmoOffsetY = -1f; // adjust based on your sprite's size
+
+        foreach (float y in indexList)
+        {
+            float yOffset = y + gizmoOffsetY;
+            Vector3 lineStart = new Vector3(transform.position.x - 1, yOffset, 0f);
+            Vector3 lineEnd = new Vector3(transform.position.x + 1, yOffset, 0f);
+            Gizmos.DrawLine(lineStart, lineEnd);
+        }
+    }
+
+
     
     
     

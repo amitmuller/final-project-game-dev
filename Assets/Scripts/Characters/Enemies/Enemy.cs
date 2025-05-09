@@ -24,18 +24,15 @@ public abstract class Enemy : MonoBehaviour
         Debug.DrawRay(transform.position, player.position - transform.position, Color.red);
         if (distance < detectionRange)
         {
-            Debug.Log(distance);
+            // Debug.Log(distance);
             canAttack = true;
             // Debug.DrawRay(transform.position, player.position - transform.position, Color.red);
             GoToPlayer();
         }
         Debug.DrawRay(transform.position, player.position - transform.position, Color.green);
-        Debug.Log("distance:"+ distance);
-        Debug.Log(distance < attackRadius);
-        Debug.Log(Time.time - lastAttackTime > attackCooldown);
         if (distance < attackRadius && Time.time - lastAttackTime > attackCooldown)
         {
-            Debug.Log("shouldAttack");
+            // Debug.Log("shouldAttack");
             Attack();
             lastAttackTime = Time.time;
         }
