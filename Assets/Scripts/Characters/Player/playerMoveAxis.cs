@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -27,9 +28,11 @@ public class playerMoveAxis : MonoBehaviour
     public float directionY;
     private int currentAxis = 0;
     private bool canChangeAxis = true;
-    [SerializeField] private float axisChangeCooldown = 0.2f; // prevent rapid switching
+    [SerializeField] private float axisChangeCooldown = 0.2f;  // prevent rapid switching
+    [SerializeField, Tooltip("Minimum vertical input to trigger axis change")]
+    private float verticalThreshold = 0.5f;
 
-    
+    private bool canMove;
 
     // [Header("Options")]
     // [Tooltip("When false, the charcter will skip acceleration and deceleration and instantly move and stop")] public bool useAcceleration;
@@ -73,9 +76,38 @@ public class playerMoveAxis : MonoBehaviour
         transform.position = pos;
     }
 
+    private void OnDisable()
+    {
+        directionY = 0;
+        directionX = 0;
+        body.linearVelocity = Vector2.zero;
+        canMove = false;
+    }
+
+    private void OnEnable()
+    {
+        canMove = true;
+    }
+
     public void OnMovement(InputAction.CallbackContext context)
     {
-        directionX = context.ReadValue<Vector2>().x;
+        if (canMove)
+        {
+            directionX = context.ReadValue<Vector2>().x;
+            float input = context.ReadValue<Vector2>().y;
+            if (context.performed && canChangeAxis)
+            {
+                if (Mathf.Abs(input) > verticalThreshold)
+                {
+                    directionY = Mathf.Sign(input); // just +1 or -1
+                    Debug.Log("changeAxis() " + indexList[currentAxis]);
+                    Debug.Log(currentAxis);
+                }
+            
+            }
+            
+        }
+        
         //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
         //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
     }
@@ -89,6 +121,10 @@ public class playerMoveAxis : MonoBehaviour
         }
         //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
         //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
+    }
+    
+    public Vector3 GetPosition() {
+        return transform.position;
     }
 
     private void Update()
@@ -113,7 +149,7 @@ public class playerMoveAxis : MonoBehaviour
 
         //Calculate's the character's desired velocity - which is the direction you are facing, multiplied by the character's maximum speed
         //Friction is not used in this game
-        desiredVelocity = new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f);
+        desiredVelocity =canMove? new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f): Vector2.zero;
 
     }
 
@@ -126,11 +162,17 @@ public class playerMoveAxis : MonoBehaviour
         }
 
         //Get Kit's current ground status from her ground script
-        onGround = ground.GetOnGround();
+        // onGround = ground.GetOnGround();
 
         //Get the Rigidbody's current velocity
         velocity = body.linearVelocity;
-        move();
+        if (canMove)
+        {
+            changeAxis();
+            move();
+        }
+
+        
         
         //Calculate movement, depending on whether "Instant Movement" has been checked
         // if (useAcceleration)
@@ -149,7 +191,7 @@ public class playerMoveAxis : MonoBehaviour
         //     }
         // }
         
-        changeAxis();
+        
         // if (onGround)
         // {
         //     body.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
@@ -230,7 +272,7 @@ public class playerMoveAxis : MonoBehaviour
     {
         //If we're not using acceleration and deceleration, just send our desired velocity (direction * max speed) to the Rigidbody
         velocity.x = desiredVelocity.x;
-        velocity.y = body.linearVelocity.y;
+        // velocity.y = body.linearVelocity.y;
         body.linearVelocity = velocity;
     }
 
@@ -272,13 +314,13 @@ public class playerMoveAxis : MonoBehaviour
     
     public void OnChangeAxis(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            directionY = context.ReadValue<Vector2>().y;
-            Debug.Log("changeAxis() "+indexList[currentAxis]);
-            Debug.Log(currentAxis);
-            
-        }
+        // if (context.performed && canChangeAxis)
+        // {
+        //     directionY = context.ReadValue<Vector2>().y;
+        //     Debug.Log("changeAxis() "+indexList[currentAxis]);
+        //     Debug.Log(currentAxis);
+        //     
+        // }
 
         
         
