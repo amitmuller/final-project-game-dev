@@ -26,6 +26,10 @@ public class PlayerAttack: MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _ground = GetComponent<characterGround>();
         _move = GetComponent<PlayerMove>();
+        foreach (var device in InputSystem.devices)
+        {
+            Debug.Log("Device: " + device.displayName + " (" + device.name + ")");
+        }
     }
 
     public void onAttack(InputAction.CallbackContext context)
