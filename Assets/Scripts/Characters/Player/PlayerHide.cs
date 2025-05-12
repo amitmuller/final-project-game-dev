@@ -17,7 +17,7 @@ namespace Characters.Player
 
         private void Start()
         {
-            movementScript = GetComponent<playerMoveAxis>();
+            movementScript = GetComponent<characterMovement>();
             originalColor = bodyVisual.GetComponent<SpriteRenderer>().color;
         }
 
