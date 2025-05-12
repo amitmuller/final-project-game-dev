@@ -8,7 +8,7 @@ using UnityEngine.InputSystem.Interactions;
 
 public class characterMovement : MonoBehaviour
 {
-    [Header("Components")]
+     [Header("Components")]
     private Rigidbody2D body;
     characterGround ground;
 
@@ -21,9 +21,12 @@ public class characterMovement : MonoBehaviour
     [SerializeField, Range(0f, 100f)][Tooltip("How fast to stop in mid-air when no direction is used")] public float maxAirDeceleration;
     [SerializeField, Range(0f, 100f)][Tooltip("How fast to stop when changing direction when in mid-air")] public float maxAirTurnSpeed = 80f;
     [SerializeField][Tooltip("Friction to apply against movement on stick")] private float friction;
+    
 
-    [Header("Options")]
-    [Tooltip("When false, the charcter will skip acceleration and deceleration and instantly move and stop")] public bool useAcceleration;
+    private bool canMove;
+
+    // [Header("Options")]
+    // [Tooltip("When false, the charcter will skip acceleration and deceleration and instantly move and stop")] public bool useAcceleration;
     // public bool itsTheIntro = true;
 
     [Header("Calculations")]
@@ -53,7 +56,6 @@ public class characterMovement : MonoBehaviour
     public float slowDuration = 2f;
     
     private float size;
-
     private void Awake()
     {
         //Find the character's Rigidbody and ground detection script
@@ -62,9 +64,26 @@ public class characterMovement : MonoBehaviour
         size = transform.localScale.x;
     }
 
+    private void OnDisable()
+    {
+        directionX = 0;
+        body.linearVelocity = Vector2.zero;
+        canMove = false;
+    }
+
+    private void OnEnable()
+    {
+        canMove = true;
+    }
+
     public void OnMovement(InputAction.CallbackContext context)
     {
-        directionX = context.ReadValue<Vector2>().x;
+        if (canMove)
+        {
+            directionX = context.ReadValue<Vector2>().x;
+
+        }
+        
         //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
         //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
     }
@@ -78,6 +97,10 @@ public class characterMovement : MonoBehaviour
         }
         //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
         //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
+    }
+    
+    public Vector3 GetPosition() {
+        return transform.position;
     }
 
     private void Update()
@@ -102,7 +125,7 @@ public class characterMovement : MonoBehaviour
 
         //Calculate's the character's desired velocity - which is the direction you are facing, multiplied by the character's maximum speed
         //Friction is not used in this game
-        desiredVelocity = new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f);
+        desiredVelocity =canMove? new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f): Vector2.zero;
 
     }
 
@@ -115,28 +138,35 @@ public class characterMovement : MonoBehaviour
         }
 
         //Get Kit's current ground status from her ground script
-        onGround = ground.GetOnGround();
+        // onGround = ground.GetOnGround();
 
         //Get the Rigidbody's current velocity
         velocity = body.linearVelocity;
-        
+        if (canMove)
+        {
+            move();
+        }
 
+        
+        
         //Calculate movement, depending on whether "Instant Movement" has been checked
-        if (useAcceleration)
-        {
-            runWithAcceleration();
-        }
-        else
-        {
-            if (onGround)
-            {
-                runWithoutAcceleration();
-            }
-            else
-            {
-                runWithAcceleration();
-            }
-        }
+        // if (useAcceleration)
+        // {
+        //     runWithAcceleration();
+        // }
+        // else
+        // {
+        //     if (onGround)
+        //     {
+        //         runWithoutAcceleration();
+        //     }
+        //     else
+        //     {
+        //         runWithAcceleration();
+        //     }
+        // }
+        
+        
         // if (onGround)
         // {
         //     body.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
@@ -146,6 +176,8 @@ public class characterMovement : MonoBehaviour
         //     body.constraints = RigidbodyConstraints2D.FreezeRotation;
         // }
     }
+    
+
 
     private void runWithAcceleration()
     {
@@ -183,11 +215,11 @@ public class characterMovement : MonoBehaviour
 
     }
 
-    private void runWithoutAcceleration()
+    private void move()
     {
         //If we're not using acceleration and deceleration, just send our desired velocity (direction * max speed) to the Rigidbody
         velocity.x = desiredVelocity.x;
-        velocity.y = body.linearVelocity.y;
+        // velocity.y = body.linearVelocity.y;
         body.linearVelocity = velocity;
     }
 
@@ -227,7 +259,26 @@ public class characterMovement : MonoBehaviour
         isSlowed = false;
     }
     
+    public void OnChangeAxis(InputAction.CallbackContext context)
+    {
+        // if (context.performed && canChangeAxis)
+        // {
+        //     directionY = context.ReadValue<Vector2>().y;
+        //     Debug.Log("changeAxis() "+indexList[currentAxis]);
+        //     Debug.Log(currentAxis);
+        //     
+        // }
+
+        
+        
+        //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
+        //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
+    }
     
+    
+
+
+
     
 
 

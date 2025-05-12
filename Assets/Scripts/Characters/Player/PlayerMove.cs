@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     private float horizontal;
     private float speed = 8f;
     private bool isFacingRight = true;
+    
+    private bool canMove;
 
     [Header("Jump Tweaks")]
     [Range(0f, 18f)]
