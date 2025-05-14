@@ -49,5 +49,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Wall
+    uniqueID: 3128753359
+    locked: 0
+  - name: HiddenBackPlayer
+    uniqueID: 4022001477
+    locked: 0
+  - name: BackFurniture
+    uniqueID: 383551073
+    locked: 0
+  - name: Player
+    uniqueID: 3056378161
+    locked: 0
+  - name: FrontFurniture
+    uniqueID: 2974921079
+    locked: 0
+  - name: HiddenFrontPlayer
+    uniqueID: 3584274227
+    locked: 0
   m_RenderingLayers:
   - Default
