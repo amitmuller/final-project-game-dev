@@ -25,7 +25,7 @@ namespace Characters.Player
         [Range(-10, 10)][SerializeField] private float hideYFront;
 
         [Header("Edge-exit tolerance")]
-        [SerializeField, Min(0.01f)] private float edgeTolerance = 0.05f;
+        [SerializeField, Min(0.01f)] private float edgeTolerance = 0.1f;
 
         private HidableObject currentHidable;
         private bool isHiding;
@@ -55,7 +55,7 @@ namespace Characters.Player
         private void EnterHide()
         {
             // tint & sorting layer
-            bodyRenderer.color            = new Color(0.36f,0.4f,0.43f,1f);
+            bodyRenderer.color            = new Color(0.4f,0.43f,0.46f,1f);
             bodyRenderer.sortingLayerName = currentHidable.Layer == HideLayer.Back
                                                 ? layerHiddenBack
                                                 : layerHiddenFront;
@@ -83,12 +83,12 @@ namespace Characters.Player
         {
             if (!isHiding || currentHidable == null) return;
 
-            
+            // 1) clamp X within hide bounds
             float x = Mathf.Clamp(transform.position.x,
                                   currentHidable.LeftX,
                                   currentHidable.RightX);
 
-            
+            // 2) lock Y to the selected hide-lane
             transform.position = new Vector3(x, targetHideY, transform.position.z);
         }
 

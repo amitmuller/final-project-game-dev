@@ -6,11 +6,14 @@ namespace Interactable_objects
     [RequireComponent(typeof(Collider2D))]
     public class HidableObject : MonoBehaviour
     {
-        [Header("Hide boundaries")]
+        [Header("Hide boundaries (world-space)")]
+        [Tooltip("Empty at the LEFT edge of the sprite")]
         [SerializeField] private Transform leftEdge;
+        [Tooltip("Empty at the RIGHT edge of the sprite")]
         [SerializeField] private Transform rightEdge;
 
         [Header("Rendering")]
+        [Tooltip("Does the player hide BEHIND (Back) or IN FRONT (Front) of this furniture?")]
         [SerializeField] private HideLayer hideLayer = HideLayer.Back;
 
         /*  Properties for PlayerHide  */
