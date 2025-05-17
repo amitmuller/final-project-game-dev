@@ -3,9 +3,10 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] Transform player;      
-    [SerializeField] float timeOffset = 0.1f;
-    [SerializeField] Vector3 offsetPosition = Vector3.zero;
-
+    [Header("Smoothing 0 = snap, 1 = slow")]
+    [Range(0f, 1f)][SerializeField] float timeOffset = 0.15f;
+    [Tooltip("Offset from player in X/Y (rig’s Z stays at –10)")]
+    [SerializeField] Vector3 offsetPosition = new Vector3(0f, 0f, 0f);
     [Header("Horizontal Bounds")]
     [SerializeField] float minX = -10f;     // left boundary
     [SerializeField] float maxX =  10f;     // right boundary
