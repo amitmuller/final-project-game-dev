@@ -12,6 +12,7 @@ TagManager:
   - ExplosionFX
   - Bullet
   - HealthBar
+  - lightBolb
   layers:
   - Default
   - TransparentFX
