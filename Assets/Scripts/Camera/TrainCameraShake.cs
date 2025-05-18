@@ -10,7 +10,7 @@ public class TrainCameraShake : MonoBehaviour
     [Header("Shake profile")]
     [Tooltip("How far (in world-units) the camera jitters. 0.02–0.08 feels right.")]
     [Range(0f, 0.2f)] [SerializeField] private float amplitude = 0.05f;
-    [Tooltip("Bumps per second. 1–10 is a good range.")]
+    [Tooltip("Bumps per second 1–10 is a good range.")]
     [Range(1f, 10f)]   [SerializeField] private float frequency = 5f;
 
     // Private state
