@@ -22,9 +22,6 @@ namespace Characters.Enemies
         [Header("Hold Times")]
         public float holdTimeAtStart = 0.5f;
         public float holdTimeAtEnd = 0.5f;
-
-        [Header("Start Settings")]
-        public bool startMovingRight = true;
     }
 
 }
