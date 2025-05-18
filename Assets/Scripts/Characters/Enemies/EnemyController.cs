@@ -5,6 +5,7 @@ namespace Characters.Enemies
     public class EnemyPatrolController : MonoBehaviour
     {
         [SerializeField] private EnemyMovementData movementData;
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
         private Vector3 startPoint;
         private Vector3 endPoint;
@@ -24,10 +25,20 @@ namespace Characters.Enemies
                 return;
             }
 
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+                if (!spriteRenderer)
+                    Debug.LogWarning("No SpriteRenderer found for flipping!", this);
+            }
+
             startPoint = transform.position;
             endPoint = startPoint + (Vector3)(movementData.direction.normalized * movementData.moveDistance);
-            goingForward = movementData.startMovingRight;
-            FacingRight = goingForward;
+            goingForward = true;
+
+            // Set initial facing direction based on movement vector
+            FacingRight = movementData.direction.x >= 0f;
+            UpdateSpriteFacing();
 
             if (movementData.movementType == MovementType.OneDirection)
             {
@@ -89,12 +100,27 @@ namespace Characters.Enemies
             Vector3 target = goingForward ? endPoint : startPoint;
             transform.position = Vector3.MoveTowards(transform.position, target, movementData.speed * Time.deltaTime);
 
+            // Flip sprite if direction changes
+            bool newFacingRight = (target - transform.position).x > 0f;
+            if (newFacingRight != FacingRight)
+            {
+                FacingRight = newFacingRight;
+                UpdateSpriteFacing();
+            }
+
             if (Vector3.Distance(transform.position, target) < 0.01f)
             {
                 goingForward = !goingForward;
-                FacingRight = goingForward;
                 isHolding = true;
                 timer = goingForward ? movementData.holdTimeAtStart : movementData.holdTimeAtEnd;
+            }
+        }
+
+        private void UpdateSpriteFacing()
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = !FacingRight;
             }
         }
 
@@ -103,7 +129,6 @@ namespace Characters.Enemies
             if (movementData == null) return;
 
             Gizmos.color = Color.yellow;
-
             Vector3 start = transform.position;
             Vector3 direction = movementData.direction.normalized;
             Vector3 end = start + direction * movementData.moveDistance;

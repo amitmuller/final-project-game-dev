@@ -34,12 +34,14 @@ namespace Characters.Enemies
             {
                 StartCoroutine(SweepRoutine());
             }
+            float fwd = patrol != null && patrol.FacingRight ? 180f : 0f;
+            beamPivot.localRotation = Quaternion.Euler(0, 0, fwd + sweepOffset);
         }
 
         private void Update()
         {
             // Update beam facing every frame based on patrol direction
-            float fwd = patrol != null && patrol.FacingRight ? 0f : 180f;
+            float fwd = patrol != null && patrol.FacingRight ? 180f : 0f;
             beamPivot.localRotation = Quaternion.Euler(0, 0, fwd + sweepOffset);
         }
 
