@@ -50,8 +50,9 @@ namespace Characters.Enemies
         {
             sweepOffset = sweepLeft;
             sweepingRight = true;
+            float fwdOverride = -1f;
 
-            while (true)
+            while (!patrol.holding)
             {
                 float target = sweepingRight ? sweepRight : sweepLeft;
                 float sweepSpeed = Mathf.Abs(sweepRight - sweepLeft) / sweepDuration;
@@ -68,6 +69,36 @@ namespace Characters.Enemies
                     yield return null;
                 }
             }
+            
+            while (patrol.holding)
+            {
+                float target = sweepingRight ? sweepRight : sweepLeft;
+                float sweepSpeed = Mathf.Abs(sweepRight - sweepLeft) / sweepDuration;
+
+                // Occasionally randomize facing direction (0 or 180)
+                if (Random.value < 0.5f)
+                    fwdOverride = Random.value < 0.5f ? 0f : 180f;
+
+                // Smoothly rotate toward target offset
+                while (!Mathf.Approximately(sweepOffset, target) && patrol.holding)
+                {
+                    sweepOffset = Mathf.MoveTowards(sweepOffset, target, sweepSpeed * Time.deltaTime);
+
+                    float fwd = fwdOverride >= 0f
+                        ? fwdOverride
+                        : (patrol != null && patrol.FacingRight ? 180f : 0f);
+
+                    beamPivot.localRotation = Quaternion.Euler(0, 0, fwd + sweepOffset);
+                    yield return null;
+                }
+
+                // Wait a bit before flipping again
+                yield return new WaitForSeconds(Random.Range(pauseMin + 1f, pauseMax + 2f));
+
+                sweepingRight = !sweepingRight;
+            }
+            
+            StartCoroutine(SweepRoutine());
         }
 
         public void PlayerSpotted(GameObject player)

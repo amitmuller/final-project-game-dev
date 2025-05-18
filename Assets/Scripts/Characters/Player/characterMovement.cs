@@ -219,9 +219,5 @@ public class characterMovement : MonoBehaviour
         maxSpeed = originalSpeed;
         isSlowed = false;
     }
-
-    public void OnChangeAxis(InputAction.CallbackContext context)
-    {
-        // Reserved for other future inputs
-    }
+    
 }

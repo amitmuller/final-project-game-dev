@@ -15,6 +15,7 @@ namespace Characters.Enemies
         private float timer;
 
         public bool FacingRight { get; private set; }
+        public bool holding { get; private set; }
 
         private void Start()
         {
@@ -45,6 +46,12 @@ namespace Characters.Enemies
                 isHolding = true;
                 timer = movementData.holdTimeAtStart;
                 hasStartedMoving = false;
+                holding = true;
+            }
+            
+            if (movementData.movementType == MovementType.Static)
+            {
+                holding = true;
             }
         }
 
@@ -70,6 +77,7 @@ namespace Characters.Enemies
                 if (timer <= 0f)
                 {
                     hasStartedMoving = true;
+                    holding = false;
                 }
                 else
                 {
@@ -84,6 +92,10 @@ namespace Characters.Enemies
             {
                 transform.position += (Vector3)(movementData.direction.normalized * movementData.speed * Time.deltaTime);
             }
+            else
+            {
+                holding = true;
+            }
         }
 
         private void HandleBackAndForth()
@@ -92,7 +104,10 @@ namespace Characters.Enemies
             {
                 timer -= Time.deltaTime;
                 if (timer <= 0f)
+                {
                     isHolding = false;
+                    holding = false;
+                }
                 else
                     return;
             }
@@ -112,6 +127,7 @@ namespace Characters.Enemies
             {
                 goingForward = !goingForward;
                 isHolding = true;
+                holding = true;
                 timer = goingForward ? movementData.holdTimeAtStart : movementData.holdTimeAtEnd;
             }
         }
