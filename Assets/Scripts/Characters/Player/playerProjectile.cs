@@ -8,14 +8,15 @@ namespace Characters.Player
         [Header("Projectile Settings")]
         [SerializeField] private float speed = 15f;
         [SerializeField] private float lifetime = 7f;
-        // [SerializeField] private GameObject hitEffect;
 
         private Rigidbody2D rb;
         private Vector2 moveDirection;
+        private Vector3 initialScale;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            initialScale = transform.localScale; // store prefab scale
         }
 
         private void Start()
@@ -31,23 +32,21 @@ namespace Characters.Player
         public void SetDirection(Vector2 direction)
         {
             moveDirection = direction;
+
             if (direction.x < 0f)
-                transform.localScale = new Vector3(-1f, 1f, 1f); // flip sprite if going left
+                transform.localScale = new Vector3(-Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
+            else
+                transform.localScale = new Vector3(Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            // Optional: Add tag/layer checks here
             Debug.Log($"Projectile hit: {collision.name}");
-            if (collision.gameObject.CompareTag("lightBolb"))
+
+            if (collision.CompareTag("lightBolb"))
             {
                 Destroy(collision.gameObject);
             }
-
-            // if (hitEffect != null)
-            // {
-            //     Instantiate(hitEffect, transform.position, Quaternion.identity);
-            // }
 
             Destroy(gameObject);
         }

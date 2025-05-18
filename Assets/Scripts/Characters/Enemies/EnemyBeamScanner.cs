@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 namespace Characters.Enemies
 {
@@ -72,7 +73,7 @@ namespace Characters.Enemies
         public void PlayerSpotted(GameObject player)
         {
             Debug.Log(alarmMessage, player);
-            // Add alarm/alert logic here
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

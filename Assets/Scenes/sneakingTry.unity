@@ -75779,15 +75779,16 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.98830867
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.05556255
+        time: 0.027355619
+        value: 0.08334372
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -84330,7 +84331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2057914368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87879,6 +87880,10 @@ PrefabInstance:
       propertyPath: aimLine
       value: 
       objectReference: {fileID: 1876480607}
+    - target: {fileID: 8024341543966768318, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: aimLineLength
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8497295401641567422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
