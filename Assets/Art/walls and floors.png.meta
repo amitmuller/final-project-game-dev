@@ -154,11 +154,11 @@ TextureImporter:
         serializedVersion: 2
         x: 263
         y: 508
-        width: 766
+        width: 761
         height: 1400
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 6, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -180,7 +180,7 @@ TextureImporter:
         height: 1411
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 9, y: 0, z: 4, w: 0}
+      border: {x: 9, y: 0, z: 5, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2130
-        y: 92
-        width: 1384
-        height: 1828
+        y: 508
+        width: 1388
+        height: 1412
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 416, z: 0, w: 0}
+      border: {x: 8, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -246,7 +246,7 @@ TextureImporter:
         height: 412
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 6, y: 0, z: 4, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -264,11 +264,11 @@ TextureImporter:
         serializedVersion: 2
         x: 1044
         y: 91
-        width: 1032
+        width: 1029
         height: 412
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -346,6 +346,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: walls and floors_10
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 92
+        width: 1025
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d271c52bb364a198fb9f26d93155cf
+      internalID: -1415811887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -362,6 +384,7 @@ TextureImporter:
     nameFileIdTable:
       walls and floors_0: 6264863018027093636
       walls and floors_1: 7981651855609252687
+      walls and floors_10: -1415811887
       walls and floors_2: -6424486444995067223
       walls and floors_3: -5726516768923224183
       walls and floors_4: 1534696193197980235
