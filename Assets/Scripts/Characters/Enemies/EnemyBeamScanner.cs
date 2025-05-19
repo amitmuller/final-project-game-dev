@@ -24,6 +24,9 @@ namespace Characters.Enemies
         private EnemyPatrolController patrol;
         private float sweepOffset = 0f;
         private bool sweepingRight = true;
+        private Coroutine sweepRoutine;
+        [SerializeField] private float lookinDelay = 2f;
+
 
         private void Awake()
         {
@@ -33,7 +36,7 @@ namespace Characters.Enemies
 
             if (sweepLeft != 0f || sweepRight != 0f)
             {
-                StartCoroutine(SweepRoutine());
+                sweepRoutine = StartCoroutine(SweepRoutine());
             }
             float fwd = patrol != null && patrol.FacingRight ? 180f : 0f;
             beamPivot.localRotation = Quaternion.Euler(0, 0, fwd + sweepOffset);
@@ -98,7 +101,8 @@ namespace Characters.Enemies
                 sweepingRight = !sweepingRight;
             }
             
-            StartCoroutine(SweepRoutine());
+            sweepRoutine = StartCoroutine(SweepRoutine());
+
         }
 
         public void PlayerSpotted(GameObject player)
@@ -106,5 +110,37 @@ namespace Characters.Enemies
             Debug.Log(alarmMessage, player);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        
+        public void ReactToSound(Vector3 soundSource)
+        {
+            if (sweepRoutine != null)
+            {
+                StopCoroutine(sweepRoutine);
+                sweepRoutine = null;
+            }
+
+            StartCoroutine(LookTowardSoundRoutine(soundSource));
+        }
+        
+        private IEnumerator LookTowardSoundRoutine(Vector3 soundSource)
+        {
+            Vector3 direction = soundSource - beamPivot.position;
+
+            // Slightly bias the direction upward (e.g. +0.5 in Y)
+            direction.y += 0.5f;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            beamPivot.localRotation = Quaternion.Euler(0, 0, angle);
+            Debug.Log($"{name} heard a noise and is looking (slightly up) at {soundSource}");
+
+            yield return new WaitForSeconds(lookinDelay);
+
+            sweepRoutine = StartCoroutine(SweepRoutine());
+        }
+
+
+
+
     }
 }
