@@ -1576,6 +1576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 45888368}
   - component: {fileID: 45888367}
+  - component: {fileID: 45888370}
   - component: {fileID: 45888366}
   - component: {fileID: 45888365}
   - component: {fileID: 45888369}
@@ -1777,6 +1778,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &45888370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45888364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &54273740
 GameObject:
   m_ObjectHideFlags: 0
@@ -7234,6 +7249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 199960591}
   - component: {fileID: 199960590}
+  - component: {fileID: 199960593}
   - component: {fileID: 199960589}
   - component: {fileID: 199960588}
   - component: {fileID: 199960592}
@@ -7435,6 +7451,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &199960593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199960587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &203777667
 GameObject:
   m_ObjectHideFlags: 0
@@ -8306,6 +8336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 232094731}
   - component: {fileID: 232094730}
+  - component: {fileID: 232094733}
   - component: {fileID: 232094729}
   - component: {fileID: 232094728}
   - component: {fileID: 232094732}
@@ -8507,6 +8538,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &232094733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232094727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &232437071
 GameObject:
   m_ObjectHideFlags: 0
@@ -16842,6 +16887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422688050}
   - component: {fileID: 422688049}
+  - component: {fileID: 422688052}
   - component: {fileID: 422688048}
   - component: {fileID: 422688047}
   - component: {fileID: 422688051}
@@ -17043,6 +17089,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &422688052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422688046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &425462648
 GameObject:
   m_ObjectHideFlags: 0
@@ -18779,7 +18839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469296544}
   - component: {fileID: 469296545}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51827,6 +51887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321521096}
   - component: {fileID: 1321521095}
+  - component: {fileID: 1321521098}
   - component: {fileID: 1321521094}
   - component: {fileID: 1321521093}
   - component: {fileID: 1321521097}
@@ -52028,6 +52089,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1321521098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321521092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &1328208190
 GameObject:
   m_ObjectHideFlags: 0
@@ -58060,6 +58135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488773966}
   - component: {fileID: 1488773965}
+  - component: {fileID: 1488773968}
   - component: {fileID: 1488773964}
   - component: {fileID: 1488773963}
   - component: {fileID: 1488773967}
@@ -58261,6 +58337,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1488773968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488773962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &1489721009
 GameObject:
   m_ObjectHideFlags: 0
@@ -61310,6 +61400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1582537578}
   - component: {fileID: 1582537577}
+  - component: {fileID: 1582537580}
   - component: {fileID: 1582537576}
   - component: {fileID: 1582537575}
   - component: {fileID: 1582537579}
@@ -61511,6 +61602,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1582537580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582537574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &1585781613
 GameObject:
   m_ObjectHideFlags: 0
@@ -65033,6 +65138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664704843}
   - component: {fileID: 1664704842}
+  - component: {fileID: 1664704845}
   - component: {fileID: 1664704841}
   - component: {fileID: 1664704840}
   - component: {fileID: 1664704844}
@@ -65234,6 +65340,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1664704845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664704839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &1669858449
 GameObject:
   m_ObjectHideFlags: 0
@@ -68860,6 +68980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750579043}
   - component: {fileID: 1750579042}
+  - component: {fileID: 1750579045}
   - component: {fileID: 1750579041}
   - component: {fileID: 1750579040}
   - component: {fileID: 1750579044}
@@ -69019,7 +69140,7 @@ Transform:
   m_GameObject: {fileID: 1750579039}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.909787, y: -0.08242191, z: 0}
+  m_LocalPosition: {x: 15.9098, y: -0.0824, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69061,6 +69182,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1750579045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750579039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &1754285509
 GameObject:
   m_ObjectHideFlags: 0
@@ -71901,6 +72036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1809817060}
   - component: {fileID: 1809817059}
+  - component: {fileID: 1809817062}
   - component: {fileID: 1809817058}
   - component: {fileID: 1809817057}
   - component: {fileID: 1809817061}
@@ -72102,6 +72238,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1809817062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809817056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &1824267232
 GameObject:
   m_ObjectHideFlags: 0
@@ -76803,6 +76953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901974554}
   - component: {fileID: 1901974553}
+  - component: {fileID: 1901974556}
   - component: {fileID: 1901974552}
   - component: {fileID: 1901974551}
   - component: {fileID: 1901974555}
@@ -77004,6 +77155,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1901974556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901974550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 10
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &1906134419
 GameObject:
   m_ObjectHideFlags: 0
@@ -84323,11 +84488,11 @@ GameObject:
   - component: {fileID: 2057914369}
   - component: {fileID: 2057914368}
   - component: {fileID: 2057914373}
-  - component: {fileID: 2057914374}
   - component: {fileID: 2057914375}
+  - component: {fileID: 2057914376}
   m_Layer: 0
   m_Name: SecurityFlashlight (1)
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84345,7 +84510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: da175ecfa2ccf4ff1ae19f24393c038a, type: 2}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 469296545}
 --- !u!212 &2057914369
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84462,7 +84627,7 @@ Transform:
   m_GameObject: {fileID: 2057914367}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7056567, w: 0.7085539}
-  m_LocalPosition: {x: 24.25, y: -2.15, z: 0.1475127}
+  m_LocalPosition: {x: 24.25, y: -2.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84479,14 +84644,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057914367}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -84498,7 +84663,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &2057914374
+--- !u!114 &2057914375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057914367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b048cef368374d5aa8a78ac88a9b33f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beamPivot: {fileID: 1873891518}
+  detectionCollider: {fileID: 1873891513}
+  sweepLeft: -20
+  sweepRight: 20
+  sweepDuration: 3
+  pauseMin: 0.4
+  pauseMax: 1
+  alarmMessage: "\u26A0\uFE0F  Player Spotted!"
+  lookinDelay: 5
+--- !u!61 &2057914376
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84528,11 +84714,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.3374524, y: -0.1298581}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -84542,28 +84728,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1.6435122, y: 0.6644247}
   m_EdgeRadius: 0
---- !u!114 &2057914375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057914367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b048cef368374d5aa8a78ac88a9b33f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beamPivot: {fileID: 1873891518}
-  detectionCollider: {fileID: 1873891513}
-  sweepLeft: -20
-  sweepRight: 20
-  sweepDuration: 3
-  pauseMin: 0.4
-  pauseMax: 1
-  alarmMessage: "\u26A0\uFE0F  Player Spotted!"
 --- !u!1 &2059478322
 GameObject:
   m_ObjectHideFlags: 0
@@ -85857,6 +86023,7 @@ GameObject:
   - component: {fileID: 2086401984}
   - component: {fileID: 2086401983}
   - component: {fileID: 2086401987}
+  - component: {fileID: 2086401988}
   m_Layer: 0
   m_Name: Spot Light (11)
   m_TagString: lightBolb
@@ -86055,6 +86222,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2086401988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086401982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152d63f862534de596cd36ba7ec03563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 6
+  gizmoColor: {r: 1, g: 0.5, b: 0, a: 0.25}
 --- !u!1 &2096322915
 GameObject:
   m_ObjectHideFlags: 0

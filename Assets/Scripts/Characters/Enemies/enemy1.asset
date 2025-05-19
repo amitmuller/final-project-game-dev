@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825ea91abc6f4bf4b30d5037b4f50b8f, type: 3}
   m_Name: enemy1
   m_EditorClassIdentifier: 
-  movementType: 1
+  movementType: 0
   direction: {x: -1, y: 0}
   speed: 2
   moveDistance: 23

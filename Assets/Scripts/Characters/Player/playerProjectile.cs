@@ -1,3 +1,4 @@
+using Light;
 using UnityEngine;
 
 namespace Characters.Player
@@ -45,10 +46,34 @@ namespace Characters.Player
 
             if (collision.CompareTag("lightBolb"))
             {
+                var lamp = collision.GetComponent<LighBulb>();
+                if (lamp != null)
+                {
+                    lamp.AlertNearbyEnemies();
+                }
+
                 Destroy(collision.gameObject);
             }
 
             Destroy(gameObject);
         }
+
+        
+        private void NotifyNearbyEnemies(Vector3 lampPosition)
+        {
+            float hearingRadius = 50; // tune this value
+
+            Collider2D[] hits = Physics2D.OverlapCircleAll(lampPosition, hearingRadius);
+            foreach (var hit in hits)
+            {
+                var beamScanner = hit.GetComponent<Characters.Enemies.EnemyBeamScanner>();
+                if (beamScanner != null)
+                {
+                    Debug.Log("in hearing radius");
+                    beamScanner.ReactToSound(lampPosition);
+                }
+            }
+        }
+
     }
 }
