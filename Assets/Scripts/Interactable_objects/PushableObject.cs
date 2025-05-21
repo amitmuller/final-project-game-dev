@@ -3,7 +3,7 @@ using UnityEngine;
 public class PushableObject : MonoBehaviour
 {
     [SerializeField] private string playerLayer = "Player";
-    [SerializeField] private float fallGravity = 1f;
+    [SerializeField] private float fallGravity = 2f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -34,6 +34,7 @@ public class PushableObject : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         if (!isFalling) return;
+        Debug.Log("Collided with " + col.gameObject.name);
         if (col.collider.CompareTag("ground"))
             Destroy(gameObject);
     }
