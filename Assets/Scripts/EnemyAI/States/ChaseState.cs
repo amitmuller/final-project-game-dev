@@ -1,4 +1,4 @@
-// ChaseState.cs
+// Assets/Scripts/EnemyAI/States/ChaseState.cs
 using UnityEngine;
 
 namespace EnemyAI
@@ -10,38 +10,42 @@ namespace EnemyAI
 
         public void EnterState(EnemyAIController enemy)
         {
-            // e.g. play a run animation
+            // todo play chase animation here
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
-            // Move toward the player's current position
-            enemy.MoveTowards(
-                enemy.playerTransform.position,
-                enemy.chaseMoveSpeed
-            );
+            //  Abort chase immediately if player is hiding
+            if (enemy.IsPlayerHiding())
+            {
+                // Record last known player position, then switch to searching
+                enemy.lastKnownNoisePosition = enemy.playerTransform.position;
+                enemy.ChangeState(enemy.searchingState);
+                return;
+            }
 
-            // Lose player if they hide or go out of range
-            bool playerIsHiding = enemy.playerHideScript != null
-                                  && enemy.playerHideScript.IsHiding();
+            // Pursue the player
+            enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
+
+            // If player goes out of sight or range, switch to Searching
             float distanceToPlayer = Vector2.Distance(
                 enemy.transform.position,
                 enemy.playerTransform.position
             );
-            bool stillInSight = !playerIsHiding
+
+            bool stillInSight = !enemy.IsPlayerHiding()
                                 && distanceToPlayer <= enemy.detectionRange;
 
             if (!stillInSight)
             {
-                enemy.lastKnownNoisePosition = 
-                    enemy.playerTransform.position;
+                enemy.lastKnownNoisePosition = enemy.playerTransform.position;
                 enemy.ChangeState(enemy.searchingState);
             }
         }
 
         public void ExitState(EnemyAIController enemy)
         {
-            // e.g. stop run animation
+            // todo stop chase animation here
         }
     }
 }

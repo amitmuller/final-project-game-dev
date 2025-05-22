@@ -1,81 +1,101 @@
-// EnemyAIController.cs
+// Assets/Scripts/EnemyAI/EnemyAIController.cs
+using System.Collections.Generic;
 using UnityEngine;
-using Characters.Player;  // for PlayerHide
-using EnemyAI;           // for state interfaces & enums
+using EnemyAI;
+using Characters.Player;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
 {
+    // ── State Assets 
     [Header("State Assets")]
     public CalmState      calmState;
     public AlertState     alertState;
     public SearchingState searchingState;
     public ChaseState     chaseState;
 
-    [Header("Initial Settings")]
-    public EnemyStateType initialState       = EnemyStateType.Calm;
-    public Transform      playerTransform;    // assign your Player here
-    public float          detectionRange     = 5f;
-    public float          noiseDetectionRange = 5f;
+    // ── Player Reference 
+    [Header("Player Reference")]
+    [Tooltip("Drag your Player GameObject here")]
+    public Transform playerTransform;
+    private PlayerHide _playerHideScript;
 
-    [Header("Movement Speeds")]
-    public float calmMoveSpeed   = 2f;
-    public float chaseMoveSpeed  = 4f;
-    public float searchMoveSpeed = 2.5f;
+    // ── Patrol Settings (Calm)
+    [Header("Patrol Settings (Calm)")]
+    [Tooltip("X positions to patrol between")]
+    public float[] patrolPointsX;
+    [HideInInspector] public int currentPatrolIndex = 0;
+    [HideInInspector] public float patrolY;  // captured at Awake
+
+    // ── Detection & Movement 
+    [Header("Ranges & Speeds")]
+    public float detectionRange      = 5f;
+    public float noiseDetectionRange = 5f;
+    public float calmMoveSpeed       = 2f;
+    public float chaseMoveSpeed      = 4f;
+    public float searchMoveSpeed     = 2.5f;
 
     [Header("State Durations")]
     public float alertDuration  = 1.5f;
     public float searchDuration = 5f;
 
-    // Runtime-only fields
+    // ── Group Conversation Fields 
+    [HideInInspector] public bool isConversing  = false;
+    [HideInInspector] public bool conversationCompleted = false;
+    [HideInInspector] public float conversationTimer = 0f;
+
+    // ── State Colors 
+    [Header("State Colors (Sprite)")]
+    [Tooltip("Color when in Calm state")]
+    public Color calmStateColor = Color.white;
+    [Tooltip("Color when in Alert state")]
+    public Color alertStateColor = Color.yellow;
+    [Tooltip("Color when in Searching state")]
+    public Color searchingStateColor = Color.cyan;
+    [Tooltip("Color when in Chase state")]
+    public Color chaseStateColor = Color.red;
+
+    // ── Runtime State Tracking 
     [HideInInspector] public float alertTimer;
     [HideInInspector] public float searchTimer;
-    [HideInInspector] public Vector2 lastKnownNoisePosition = Vector2.zero;
+    [HideInInspector] public Vector2 lastKnownNoisePosition;
 
-    [HideInInspector] public PlayerHide playerHideScript;
+    public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
+    public EnemyStateType CurrentStateType { get; private set; }
 
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
+    private SpriteRenderer _spriteRenderer;
 
     void Awake()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _rigidbody2D    = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        patrolY         = transform.position.y;
 
-        // Cache PlayerHide if it exists
         if (playerTransform != null)
-            playerHideScript = playerTransform.GetComponent<PlayerHide>();
+            _playerHideScript = playerTransform.GetComponent<PlayerHide>();
     }
 
     void OnEnable()
     {
-        NoiseManager.OnNoiseRaised += HandleNoiseRaised;
+        NoiseManager.OnNoiseRaised += OnNoiseRaised;
+        AllEnemies.Add(this);
     }
 
     void OnDisable()
     {
-        NoiseManager.OnNoiseRaised -= HandleNoiseRaised;
+        NoiseManager.OnNoiseRaised -= OnNoiseRaised;
+        AllEnemies.Remove(this);
     }
 
     void Start()
     {
-        // Pick the initial state asset
-        switch (initialState)
-        {
-            case EnemyStateType.Alert:
-                _currentState = alertState;
-                break;
-            case EnemyStateType.Searching:
-                _currentState = searchingState;
-                break;
-            case EnemyStateType.Chase:
-                _currentState = chaseState;
-                break;
-            case EnemyStateType.Calm:
-            default:
-                _currentState = calmState;
-                break;
-        }
+        // Start in Calm
+        _currentState    = calmState;
+        CurrentStateType = EnemyStateType.Calm;
         _currentState.EnterState(this);
+        UpdateSpriteColor();
     }
 
     void Update()
@@ -83,15 +103,10 @@ public class EnemyAIController : MonoBehaviour
         _currentState.UpdateState(this);
     }
 
-    /// <summary>
-    /// Called when some object raises a noise.
-    /// </summary>
-    private void HandleNoiseRaised(Vector2 noisePosition)
+    private void OnNoiseRaised(Vector2 noisePosition)
     {
-        float distanceToNoise = Vector2.Distance(transform.position, noisePosition);
-        // Only investigate if within noiseDetectionRange and not already chasing
-        if (distanceToNoise <= noiseDetectionRange &&
-            _currentState != chaseState)
+        if (_currentState == chaseState) return;
+        if (Vector2.Distance(transform.position, noisePosition) <= noiseDetectionRange)
         {
             lastKnownNoisePosition = noisePosition;
             ChangeState(searchingState);
@@ -99,45 +114,69 @@ public class EnemyAIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Switch to a new state.
+    /// Switch to a new state and update sprite color.
     /// </summary>
     public void ChangeState(IEnemyState newState)
     {
         if (newState == null || newState == _currentState) return;
 
         _currentState.ExitState(this);
-        _currentState = newState;
-        Debug.Log($"[EnemyAI] {name} → {_currentState.StateType}");
+        _currentState    = newState;
+        CurrentStateType = newState.StateType;
+        Debug.Log($"[EnemyAI] {name} → {CurrentStateType}");
         _currentState.EnterState(this);
+        UpdateSpriteColor();
     }
 
     /// <summary>
-    /// Move toward targetPosition at given speed.
-    /// Uses Rigidbody2D if available, else falls back to Transform.
+    /// Set the sprite’s color based on CurrentStateType.
     /// </summary>
-    public void MoveTowards(Vector2 targetPosition, float moveSpeed)
+    private void UpdateSpriteColor()
+    {
+        if (_spriteRenderer == null) return;
+        switch (CurrentStateType)
+        {
+            case EnemyStateType.Calm:
+                _spriteRenderer.color = calmStateColor;
+                break;
+            case EnemyStateType.Alert:
+                _spriteRenderer.color = alertStateColor;
+                break;
+            case EnemyStateType.Searching:
+                _spriteRenderer.color = searchingStateColor;
+                break;
+            case EnemyStateType.Chase:
+                _spriteRenderer.color = chaseStateColor;
+                break;
+        }
+    }
+
+    public void MoveTowards(Vector2 targetPosition, float speed)
     {
         if (_rigidbody2D != null)
         {
-            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-            _rigidbody2D.velocity = direction * moveSpeed;
+            Vector2 dir = (targetPosition - (Vector2)transform.position).normalized;
+            _rigidbody2D.velocity = dir * speed;
         }
         else
         {
             transform.position = Vector2.MoveTowards(
                 transform.position,
                 targetPosition,
-                moveSpeed * Time.deltaTime
+                speed * Time.deltaTime
             );
         }
     }
 
-    /// <summary>
-    /// Stops all movement immediately.
-    /// </summary>
     public void StopMovement()
     {
         if (_rigidbody2D != null)
             _rigidbody2D.velocity = Vector2.zero;
     }
+
+    public bool IsPlayerHiding()
+        => _playerHideScript != null && _playerHideScript.IsHiding();
+
+    public bool IsVisibleOnCamera()
+        => _spriteRenderer != null && _spriteRenderer.isVisible;
 }

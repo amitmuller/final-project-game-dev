@@ -1,4 +1,4 @@
-// SearchingState.cs
+// Assets/Scripts/EnemyAI/States/SearchingState.cs
 using UnityEngine;
 
 namespace EnemyAI
@@ -10,46 +10,27 @@ namespace EnemyAI
 
         public void EnterState(EnemyAIController enemy)
         {
+            // Start the search timer
             enemy.searchTimer = enemy.searchDuration;
+            // Stop any existing movement
+            enemy.StopMovement();
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
-            // Walk to last known noise/player position
-            if (enemy.lastKnownNoisePosition != Vector2.zero)
-            {
-                float distance = Vector2.Distance(
-                    enemy.transform.position,
-                    enemy.lastKnownNoisePosition
-                );
-                if (distance > 0.1f)
-                {
-                    enemy.MoveTowards(
-                        enemy.lastKnownNoisePosition,
-                        enemy.searchMoveSpeed
-                    );
-                }
-                else
-                {
-                    enemy.StopMovement();
-                }
-            }
+            // 1) Move toward the last known noise spot, but only along X
+            float targetX = enemy.lastKnownNoisePosition.x;
+            Vector2 targetPosition = new Vector2(targetX, enemy.patrolY);
 
-            // If player reappears and not hiding, chase them again
-            bool playerIsHiding = enemy.playerHideScript != null
-                                  && enemy.playerHideScript.IsHiding();
-            float distanceToPlayer = Vector2.Distance(
-                enemy.transform.position,
-                enemy.playerTransform.position
-            );
-            if (!playerIsHiding
-                && distanceToPlayer <= enemy.detectionRange)
+            if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.1f)
             {
-                enemy.ChangeState(enemy.chaseState);
-                return;
+                enemy.MoveTowards(targetPosition, enemy.searchMoveSpeed);
             }
-
-            // Give up after timer
+            else
+            {
+                enemy.StopMovement();
+            }
+            // 2) Timer expired → return to Calm
             enemy.searchTimer -= Time.deltaTime;
             if (enemy.searchTimer <= 0f)
             {
@@ -59,7 +40,7 @@ namespace EnemyAI
 
         public void ExitState(EnemyAIController enemy)
         {
-            // nothing special
+            // pass
         }
     }
 }

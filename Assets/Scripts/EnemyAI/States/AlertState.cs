@@ -1,4 +1,3 @@
-// AlertState.cs
 using UnityEngine;
 
 namespace EnemyAI
@@ -19,14 +18,13 @@ namespace EnemyAI
             enemy.alertTimer -= Time.deltaTime;
             if (enemy.alertTimer <= 0f)
             {
-                // only chase if player still visible and not hiding
-                bool playerIsHiding = enemy.playerHideScript != null
-                                      && enemy.playerHideScript.IsHiding();
+                // check if player is both visible and not hiding
+                bool playerHidden      = enemy.IsPlayerHiding();
                 float distanceToPlayer = Vector2.Distance(
                     enemy.transform.position,
                     enemy.playerTransform.position
                 );
-                bool canSeePlayer = !playerIsHiding
+                bool canSeePlayer = !playerHidden
                                     && distanceToPlayer <= enemy.detectionRange;
 
                 if (canSeePlayer)
@@ -35,8 +33,8 @@ namespace EnemyAI
                 }
                 else
                 {
-                    enemy.lastKnownNoisePosition = 
-                        enemy.playerTransform.position;
+                    // lost sight → start searching at last known location
+                    enemy.lastKnownNoisePosition = enemy.playerTransform.position;
                     enemy.ChangeState(enemy.searchingState);
                 }
             }
@@ -44,7 +42,7 @@ namespace EnemyAI
 
         public void ExitState(EnemyAIController enemy)
         {
-            // nothing special
+            // pass
         }
     }
 }
