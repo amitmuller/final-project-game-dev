@@ -45,7 +45,7 @@ namespace Characters.Player
         public void OnHide(InputAction.CallbackContext ctx)
         {
             if (!ctx.performed || currentHidable == null) return;
-
+            Debug.Log(AtEdge());
             if (!isHiding)
                 EnterHide();
             else if (AtEdge())
@@ -70,6 +70,7 @@ namespace Characters.Player
 
         private void ExitHide()
         {
+            Debug.Log("Exiting Hide");
             // restore visuals
             bodyRenderer.color            = originalColor;
             bodyRenderer.sortingLayerName = layerDefault;
