@@ -95,6 +95,11 @@ namespace Characters.Enemies
             else
             {
                 holding = true;
+                holding = true;
+                hasStartedMoving = false;
+                timer = movementData.holdTimeAtEnd; // or holdTimeAtStart if you prefer
+                startPoint = transform.position; // update new "start"
+                endPoint = startPoint + (Vector3)(movementData.direction.normalized * movementData.moveDistance);
             }
         }
 

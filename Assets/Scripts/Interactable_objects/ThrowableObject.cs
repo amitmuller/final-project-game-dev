@@ -1,3 +1,4 @@
+using Light;
 using UnityEngine;
 
 public class ThrowableObject : MonoBehaviour
@@ -27,6 +28,17 @@ public class ThrowableObject : MonoBehaviour
     {
         // You can filter with collision.gameObject.tag if needed
         fall();
+        if (collision.gameObject.CompareTag("lightBolb"))
+        {
+            var lamp = collision.gameObject.GetComponent<LighBulb>();
+            if (lamp != null)
+            {
+                lamp.AlertNearbyEnemies();
+            }
+
+            Destroy(collision.gameObject);
+        }
+
     }
 }
 
