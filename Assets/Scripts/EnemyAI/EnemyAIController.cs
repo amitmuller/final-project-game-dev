@@ -156,7 +156,7 @@ public class EnemyAIController : MonoBehaviour
         if (_rigidbody2D != null)
         {
             Vector2 dir = (targetPosition - (Vector2)transform.position).normalized;
-            _rigidbody2D.velocity = dir * speed;
+            _rigidbody2D.linearVelocity = dir * speed;
         }
         else
         {
@@ -171,7 +171,7 @@ public class EnemyAIController : MonoBehaviour
     public void StopMovement()
     {
         if (_rigidbody2D != null)
-            _rigidbody2D.velocity = Vector2.zero;
+            _rigidbody2D.linearVelocity = Vector2.zero;
     }
 
     public bool IsPlayerHiding()

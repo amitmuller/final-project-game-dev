@@ -17,7 +17,6 @@ public class TailPushController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"OnTriggerEnter2D: {other.name}");
         if (other.TryGetComponent<PushableObject>(out var pushable))
         {
             if (!overlappedPushables.Contains(pushable))
