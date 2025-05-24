@@ -50,6 +50,8 @@ namespace Characters.Player
                 EnterHide();
             else if (AtEdge())
                 ExitHide();
+            // else
+            //     ExitHide();
         }
 
         private void EnterHide()
