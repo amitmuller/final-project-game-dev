@@ -12,7 +12,7 @@ namespace EnemyAI
         [Header("Group Conversation")]
         [Tooltip("If >0, two Calm enemies within this X-distance and on-screen will stop.")]
         [SerializeField] private float conversationProximityRange = 2f;
-        [Tooltip("Seconds to converse before resuming patrol")]
+        [Tooltip("Secon ds to converse before resuming patrol")]
         [SerializeField] private float conversationDuration = 10f;
         private const float PatrolThreshold = 0.1f;
 
