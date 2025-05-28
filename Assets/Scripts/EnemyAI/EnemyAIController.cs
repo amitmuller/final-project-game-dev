@@ -1,4 +1,6 @@
 // Assets/Scripts/EnemyAI/EnemyAIController.cs
+
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using EnemyAI;
@@ -19,6 +21,7 @@ public class EnemyAIController : MonoBehaviour
     [Tooltip("Drag your Player GameObject here")]
     public Transform playerTransform;
     private PlayerHide _playerHideScript;
+    private Vector2 _lastKnownPlayerPosition;
 
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
@@ -35,13 +38,14 @@ public class EnemyAIController : MonoBehaviour
     public float searchMoveSpeed     = 2.5f;
 
     [Header("State Durations")]
-    public float alertDuration  = 1.5f;
-    public float searchDuration = 5f;
+    public float alertDuration  = 10f;
+    public float searchDuration = 10f;
 
     // ── Group Conversation Fields 
     [HideInInspector] public bool isConversing  = false;
     [HideInInspector] public bool conversationCompleted = false;
     [HideInInspector] public float conversationTimer = 0f;
+    private bool _isInCameraSpace;
 
     // ── State Colors 
     [Header("State Colors (Sprite)")]
@@ -94,6 +98,7 @@ public class EnemyAIController : MonoBehaviour
 
     void Update()
     {
+        _lastKnownPlayerPosition = playerTransform.position;
         _currentState.UpdateState(this);
     }
     
@@ -145,11 +150,7 @@ public class EnemyAIController : MonoBehaviour
         }
         else
         {
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                targetPosition,
-                speed * Time.deltaTime
-            );
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
 
@@ -159,15 +160,26 @@ public class EnemyAIController : MonoBehaviour
             _rigidbody2D.linearVelocity = Vector2.zero;
     }
 
-    public bool IsPlayerHiding()
-        => _playerHideScript != null && _playerHideScript.IsHiding();
+    public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
 
-    public bool IsVisibleOnCamera()
-        => _spriteRenderer != null && _spriteRenderer.isVisible;
+    public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
+    public bool IsVisibleOnCamera() => _isInCameraSpace;
     
     private void HandleNoise(Vector2 worldPos)
     {
         // forward the event into whatever state we’re in
         _currentState.OnNoiseRaised(worldPos, this);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("MainCamera"))
+            _isInCameraSpace = true;
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("MainCamera"))
+            _isInCameraSpace = false;
     }
 }

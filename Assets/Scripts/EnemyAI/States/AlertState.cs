@@ -1,4 +1,5 @@
 using UnityEngine;
+using static EnemyUtils.EnemyUtils;
 
 namespace EnemyAI
 {
@@ -6,7 +7,8 @@ namespace EnemyAI
     public class AlertState : ScriptableObject, IEnemyState
     {
         public EnemyStateType StateType => EnemyStateType.Alert;
-
+        private const float ProximityPatrolRange = 5f;
+        private const float PatrolAlertSpeed = 1f;
         public void EnterState(EnemyAIController enemy)
         {
             enemy.StopMovement();
@@ -17,26 +19,10 @@ namespace EnemyAI
         {
             enemy.alertTimer -= Time.deltaTime;
             if (enemy.alertTimer <= 0f)
+                HandleAlertTransition(enemy); // moving to needed state base on player
+            else
             {
-                // check if player is both visible and not hiding
-                bool playerHidden      = enemy.IsPlayerHiding();
-                float distanceToPlayer = Vector2.Distance(
-                    enemy.transform.position,
-                    enemy.playerTransform.position
-                );
-                bool canSeePlayer = !playerHidden
-                                    && distanceToPlayer <= enemy.detectionRange;
-
-                if (canSeePlayer)
-                {
-                    enemy.ChangeState(enemy.chaseState);
-                }
-                else
-                {
-                    // lost sight → start searching at last known location
-                    enemy.lastKnownNoisePosition = enemy.playerTransform.position;
-                    enemy.ChangeState(enemy.searchingState);
-                }
+                HandleAlertPatrol(enemy, ProximityPatrolRange, enemy.alertDuration-3f, PatrolAlertSpeed); // patroling near last known plaayr pos
             }
         }
 

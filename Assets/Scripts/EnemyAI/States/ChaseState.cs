@@ -18,9 +18,9 @@ namespace EnemyAI
             //  Abort chase immediately if player is hiding
             if (enemy.IsPlayerHiding())
             {
-                // Record last known player position, then switch to searching
+                // Record last known player position, then switch to alert
                 enemy.lastKnownNoisePosition = enemy.playerTransform.position;
-                enemy.ChangeState(enemy.searchingState);
+                enemy.ChangeState(enemy.alertState);
                 return;
             }
 
@@ -28,18 +28,14 @@ namespace EnemyAI
             enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
 
             // If player goes out of sight or range, switch to Searching
-            float distanceToPlayer = Vector2.Distance(
-                enemy.transform.position,
-                enemy.playerTransform.position
-            );
+            var distanceToPlayer = Vector2.Distance(enemy.transform.position, enemy.playerTransform.position);
 
-            bool stillInSight = !enemy.IsPlayerHiding()
-                                && distanceToPlayer <= enemy.detectionRange;
+            var stillInSight = !enemy.IsPlayerHiding() && distanceToPlayer <= enemy.detectionRange;
 
             if (!stillInSight)
             {
                 enemy.lastKnownNoisePosition = enemy.playerTransform.position;
-                enemy.ChangeState(enemy.searchingState);
+                enemy.ChangeState(enemy.alertState);
             }
         }
 
