@@ -1,5 +1,6 @@
 // Assets/Scripts/EnemyAI/States/SearchingState.cs
 using UnityEngine;
+using static EnemyUtils.EnemyUtils;
 
 namespace EnemyAI
 {
@@ -10,18 +11,16 @@ namespace EnemyAI
 
         public void EnterState(EnemyAIController enemy)
         {
-            // Start the search timer
+            // Reset timer when state begins
             enemy.searchTimer = enemy.searchDuration;
-            // Stop any existing movement
             enemy.StopMovement();
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
-            // 1) Move toward the last known noise spot, but only along X
-            float targetX = enemy.lastKnownNoisePosition.x;
-            Vector2 targetPosition = new Vector2(targetX, enemy.patrolY);
-
+            var targetX = enemy.lastKnownNoisePosition.x;
+            var targetPosition = new Vector2(targetX, enemy.patrolY);
+            // moving towords sound last pos
             if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.1f)
             {
                 enemy.MoveTowards(targetPosition, enemy.searchMoveSpeed);
@@ -29,12 +28,19 @@ namespace EnemyAI
             else
             {
                 enemy.StopMovement();
-            }
-            // 2) Timer expired → return to Calm
-            enemy.searchTimer -= Time.deltaTime;
-            if (enemy.searchTimer <= 0f)
-            {
-                enemy.ChangeState(enemy.calmState);
+
+                // Only start search in place once, when timer is at full value
+                if (Mathf.Approximately(enemy.searchTimer, enemy.searchDuration))
+                {
+                    SearchInNoisePosition(enemy, enemy.searchDuration);
+                }
+
+                // Only count down after reaching the spot
+                enemy.searchTimer -= Time.deltaTime;
+                if (enemy.searchTimer <= 0f)
+                {
+                    enemy.ChangeState(enemy.calmState);
+                }
             }
         }
 
