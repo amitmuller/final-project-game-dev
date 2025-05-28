@@ -30,7 +30,6 @@ public class EnemyAIController : MonoBehaviour
     // ── Detection & Movement 
     [Header("Ranges & Speeds")]
     public float detectionRange      = 5f;
-    public float noiseDetectionRange = 5f;
     public float calmMoveSpeed       = 2f;
     public float chaseMoveSpeed      = 4f;
     public float searchMoveSpeed     = 2.5f;
@@ -77,18 +76,6 @@ public class EnemyAIController : MonoBehaviour
             _playerHideScript = playerTransform.GetComponent<PlayerHide>();
     }
 
-    void OnEnable()
-    {
-        NoiseManager.OnNoiseRaised += OnNoiseRaised;
-        AllEnemies.Add(this);
-    }
-
-    void OnDisable()
-    {
-        NoiseManager.OnNoiseRaised -= OnNoiseRaised;
-        AllEnemies.Remove(this);
-    }
-
     void Start()
     {
         // Start in Calm
@@ -96,22 +83,20 @@ public class EnemyAIController : MonoBehaviour
         CurrentStateType = EnemyStateType.Calm;
         _currentState.EnterState(this);
         UpdateSpriteColor();
+        NoiseManager.OnNoiseRaised += HandleNoise; //subscribe to noise manager
+    }
+    
+    void OnDestroy()
+    {
+        // unsubscribe
+        NoiseManager.OnNoiseRaised -= HandleNoise;
     }
 
     void Update()
     {
         _currentState.UpdateState(this);
     }
-
-    private void OnNoiseRaised(Vector2 noisePosition)
-    {
-        if (_currentState == chaseState) return;
-        if (Vector2.Distance(transform.position, noisePosition) <= noiseDetectionRange)
-        {
-            lastKnownNoisePosition = noisePosition;
-            ChangeState(searchingState);
-        }
-    }
+    
 
     /// <summary>
     /// Switch to a new state and update sprite color.
@@ -179,4 +164,10 @@ public class EnemyAIController : MonoBehaviour
 
     public bool IsVisibleOnCamera()
         => _spriteRenderer != null && _spriteRenderer.isVisible;
+    
+    private void HandleNoise(Vector2 worldPos)
+    {
+        // forward the event into whatever state we’re in
+        _currentState.OnNoiseRaised(worldPos, this);
+    }
 }

@@ -17,5 +17,8 @@ namespace EnemyAI
         void EnterState(EnemyAIController enemy);
         void UpdateState(EnemyAIController enemy);
         void ExitState(EnemyAIController enemy);
+        
+        void OnNoiseRaised(Vector2 noisePosition, EnemyAIController enemy) { } // don't need to implement in all states
+
     }
 }
