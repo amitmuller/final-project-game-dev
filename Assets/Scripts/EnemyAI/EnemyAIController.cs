@@ -22,6 +22,7 @@ public class EnemyAIController : MonoBehaviour
     public Transform playerTransform;
     private PlayerHide _playerHideScript;
     private Vector2 _lastKnownPlayerPosition;
+    [HideInInspector] public bool isAlertPatrolling = false;
 
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
@@ -75,6 +76,7 @@ public class EnemyAIController : MonoBehaviour
         _rigidbody2D    = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         patrolY         = transform.position.y;
+        AllEnemies.Add(this); 
 
         if (playerTransform != null)
             _playerHideScript = playerTransform.GetComponent<PlayerHide>();
@@ -93,10 +95,11 @@ public class EnemyAIController : MonoBehaviour
     void OnDestroy()
     {
         // unsubscribe
+        AllEnemies.Remove(this);
         NoiseManager.OnNoiseRaised -= HandleNoise;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         _lastKnownPlayerPosition = playerTransform.position;
         _currentState.UpdateState(this);
@@ -163,7 +166,7 @@ public class EnemyAIController : MonoBehaviour
     public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
-    public bool IsVisibleOnCamera() => _isInCameraSpace;
+    public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
     
     private void HandleNoise(Vector2 worldPos)
     {

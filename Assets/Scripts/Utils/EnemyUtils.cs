@@ -50,8 +50,8 @@ namespace EnemyUtils
             // nothing to do?
             if (proximityRange <= 0f) return false;
 
-            // any other calm enemy close & on‐screen?
-            bool nearby = AllEnemiesNearby(self, proximityRange);
+            // any other calm enemy close & on‐screen
+            var nearby = AllEnemiesNearby(self, proximityRange);
             if (nearby && !self.conversationCompleted)
             {
                 // just started
@@ -83,13 +83,14 @@ namespace EnemyUtils
 
         private static bool AllEnemiesNearby(EnemyAIController self, float range)
         {
+            Debug.Log( "vision: "+ self.IsVisibleOnCamera());
             return EnemyAIController.AllEnemies
                 .Where(e => e != self && e.CurrentStateType == EnemyStateType.Calm)
                 .Any(e =>
                     Mathf.Abs(self.transform.position.x - e.transform.position.x) <= range
                     && self.IsVisibleOnCamera()
-                    && e.IsVisibleOnCamera()
-                );
+                    && e.IsVisibleOnCamera());
+            
         }
         
         /// <summary>
@@ -126,8 +127,7 @@ namespace EnemyUtils
             var light2D = enemy.GetComponentInChildren<Light2D>();
             if (light2D == null)
                 return;
-
-            light2D.enabled = true;
+            
             // start looking left/right on the light transform only
             enemy.StartCoroutine(LookAroundLightCoroutine(light2D.transform, searchDuration));
         }
@@ -181,17 +181,20 @@ namespace EnemyUtils
         /// </summary>
         public static void HandleAlertPatrol(EnemyAIController enemy, float proximityRange, float duration, float speed)
         {
+            if (enemy.isAlertPatrolling)              // NEW ─ guard
+                return;
+            enemy.isAlertPatrolling = true;
             // begin at last known position target
             var targetX = enemy.GetLastKnownPlayerPosition().x;
             var targetPos = new Vector2(targetX, enemy.patrolY);
             enemy.MoveTowards(targetPos, speed);
             
             // once reached, start coroutine for patrolling
-            enemy.StartCoroutine(AlertPatrolCoroutine(enemy, proximityRange, duration, speed, targetX));
+            enemy.StartCoroutine(AlertPatrolCoroutine(enemy, proximityRange, duration, speed));
 
         }
         
-        private static IEnumerator AlertPatrolCoroutine(EnemyAIController enemy, float proximityRange, float duration, float speed, float lasttargetX)
+        private static IEnumerator AlertPatrolCoroutine(EnemyAIController enemy, float proximityRange, float duration, float speed)
         {
             var light2D = enemy.GetComponentInChildren<Light2D>();
             if (light2D != null)
@@ -220,8 +223,7 @@ namespace EnemyUtils
                 yield return null;
             }
 
-            if (light2D != null)
-                light2D.enabled = false;
+            enemy.isAlertPatrolling = false; 
         }
     }
 }

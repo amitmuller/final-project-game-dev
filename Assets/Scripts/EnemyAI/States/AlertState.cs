@@ -1,5 +1,6 @@
 using UnityEngine;
 using static EnemyUtils.EnemyUtils;
+using UnityEngine.Rendering.Universal;
 
 namespace EnemyAI
 {
@@ -13,6 +14,7 @@ namespace EnemyAI
         {
             enemy.StopMovement();
             enemy.alertTimer = enemy.alertDuration;
+            enemy.isAlertPatrolling = false;   
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -28,7 +30,9 @@ namespace EnemyAI
 
         public void ExitState(EnemyAIController enemy)
         {
-            // pass
+            var light2D = enemy.GetComponentInChildren<Light2D>();
+            light2D.enabled = false;
+            enemy.StopAllCoroutines();
         }
     }
 }
