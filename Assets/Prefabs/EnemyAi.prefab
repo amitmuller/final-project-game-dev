@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15676048547484250}
   - component: {fileID: 8068683617087998165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3100738301347825968}
   - component: {fileID: 6412847056704981215}
   - component: {fileID: 1658927907042441943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyAi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7934118251004724778}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -201,7 +201,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &6412847056704981215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,16 +218,18 @@ MonoBehaviour:
   alertState: {fileID: 11400000, guid: 0e52b503302e84f49ab27443927899ac, type: 2}
   searchingState: {fileID: 11400000, guid: 1d6a6898ef2dc464983b908bce18498c, type: 2}
   chaseState: {fileID: 11400000, guid: da996283596924c4bbc1f97e3cf9a556, type: 2}
-  playerTransform: {fileID: 8497295401641567422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
-  patrolPointsX: []
+  playerTransform: {fileID: 0}
+  isAlertPatrolling: 0
+  patrolPointsX:
+  - -100
   currentPatrolIndex: 0
   patrolY: 0
   detectionRange: 5
-  calmMoveSpeed: 2
-  chaseMoveSpeed: 3
-  searchMoveSpeed: 2.5
+  calmMoveSpeed: 1
+  chaseMoveSpeed: 1.25
+  searchMoveSpeed: 1
   alertDuration: 10
-  searchDuration: 5
+  searchDuration: 10
   isConversing: 0
   conversationCompleted: 0
   conversationTimer: 0
@@ -268,7 +270,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
