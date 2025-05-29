@@ -85988,7 +85988,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.13
+  m_Intensity: 0.19
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000cffc7cba45dfbaef6186dc1631a12cb677b151b133afa3d5
@@ -100774,6 +100774,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30c05dcf6f4164636b2f0c51c5be964d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1755180840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1759402199041895356, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+  m_PrefabInstance: {fileID: 4103068185793628137}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774eae73151c45cd9df19e4ae9727622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1756250656
@@ -126830,6 +126841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: takeThrowIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 1824725280226848054, guid: 7dc3df4ae57bf489fa3b345f73dd6fa5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8069601653835735037, guid: 7dc3df4ae57bf489fa3b345f73dd6fa5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -127218,7 +127233,7 @@ PrefabInstance:
     - target: {fileID: 1951231475404353444, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_ActionEvents.Array.data[22].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1755180840}
     - target: {fileID: 1951231475404353444, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 1
@@ -127357,6 +127372,10 @@ PrefabInstance:
     - target: {fileID: 6156571361049982765, guid: b973f9a3bbbba4109ad1e8b15d2dee20, type: 3}
       propertyPath: m_Name
       value: hideIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6156571361049982765, guid: b973f9a3bbbba4109ad1e8b15d2dee20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

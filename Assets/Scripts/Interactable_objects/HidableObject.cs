@@ -25,6 +25,7 @@ namespace Interactable_objects
             LeftX = bounds.min.x;
             RightX = bounds.max.x;
             var prefab = Resources.Load<GameObject>("hideIcon");
+            Debug.Log(prefab);
             if (prefab)
             {
                 indicatorInstance = Instantiate(prefab, transform);

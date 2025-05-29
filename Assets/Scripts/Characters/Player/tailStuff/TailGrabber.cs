@@ -57,6 +57,7 @@ public class TailGrabber : MonoBehaviour
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));
             StartCoroutine(DelayedThrow(force));
+            heldObject.gameObject.GetComponent<Collider2D>().isTrigger = false;
             isHolding = false;
         }
     }
@@ -79,7 +80,7 @@ public class TailGrabber : MonoBehaviour
         {
             float facing = Mathf.Sign(transform.lossyScale.x); // +1 right, -1 left
             Vector2 throwDir = new Vector2(-facing, 0f).normalized;
-            Vector2 baseDir = new Vector2(-facing * 1f, 0.5f);
+            Vector2 baseDir = new Vector2(-facing , 1.5f);
             connector.Detach();
             heldObject.isKinematic = false;
             heldObject.AddForce(baseDir * force, ForceMode2D.Impulse);
