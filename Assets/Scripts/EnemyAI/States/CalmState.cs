@@ -2,6 +2,8 @@
 using System.Linq;
 using UnityEngine;
 using static EnemyUtils.EnemyUtils;
+using UnityEngine.Rendering.Universal;
+
 
 namespace EnemyAI
 {
@@ -21,6 +23,9 @@ namespace EnemyAI
 
         public void EnterState(EnemyAIController enemy)
         {
+            var light2D = enemy.GetComponentInChildren<Light2D>();
+            if (light2D != null)
+                light2D.enabled = false;
             // Initialize conversation and patrol
             enemy.StopMovement();
             enemy.currentPatrolIndex    = 0;
@@ -35,8 +40,8 @@ namespace EnemyAI
             // 1) check first if player in range and not hiding to move into chase mode
             EnemyEnterChaseModeIfNeeded(enemy);
             // 2) check if there is another calm enemy in close for conversation and talk to them
-  
-            if (Random.value < TalkChance && TryHandleConversation(enemy, conversationProximityRange, conversationDuration, dt))
+            var random = Random.Range(0f, 1f);
+            if (random<TalkChance && TryHandleConversation(enemy, conversationProximityRange, conversationDuration, dt))
                 return;
             
             // 2) Patrol on X-axis
