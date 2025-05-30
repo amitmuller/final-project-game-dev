@@ -59,8 +59,6 @@ namespace Characters.Player
         public void OnHide(InputAction.CallbackContext ctx)
         {
             if (!ctx.performed || currentHidable == null) return;
-            Debug.Log(AtEdge());
-            Debug.Log("isHiding" +isHiding);
             if (!isHiding && AtEdge())
                 EnterHide();
             else if (AtEdge())
@@ -114,7 +112,6 @@ namespace Characters.Player
             Bounds bounds = playerCollider.bounds;
             float leftEdge = bounds.min.x;
             float rightEdge = bounds.max.x;
-            Debug.Log(Mathf.Abs(rightEdge - currentHidable.LeftX));
             return Mathf.Abs(rightEdge - currentHidable.LeftX) <= edgeTolerance ||
                    Mathf.Abs(leftEdge - currentHidable.RightX) <= edgeTolerance || 
                    Mathf.Abs(transform.position.x - currentHidable.LeftX) <= edgeTolerance || 

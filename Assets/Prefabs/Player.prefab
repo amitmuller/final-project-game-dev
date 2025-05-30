@@ -138,7 +138,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8497295401641567422}
-  - component: {fileID: 1648291865876643497}
   - component: {fileID: 1868192466876658353}
   - component: {fileID: 7011490158708580560}
   - component: {fileID: 8024341543966768318}
@@ -174,85 +173,6 @@ Transform:
   - {fileID: 9013764115468918947}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1648291865876643497
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480460543109864550}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -1.3, y: -0.01}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.3415275, y: 1.6917955}
-      - {x: 1.7746553, y: 1.594519}
-      - {x: 1.3577, y: 1.2928187}
-      - {x: 1.9475261, y: 0.84096074}
-      - {x: 1.8890281, y: 0.6400745}
-      - {x: 1.2154604, y: 0.7980535}
-      - {x: 0.5348622, y: 0.5476755}
-      - {x: -0.24705005, y: 0.7870258}
-      - {x: -0.3164178, y: 0.8346691}
-      - {x: -0.2026949, y: 0.8765795}
-      - {x: -0.19294524, y: 0.76208735}
-      - {x: -0.036493063, y: 0.469692}
-      - {x: 0.04323888, y: 0.16775538}
-      - {x: -0.10885441, y: 0.12223208}
-      - {x: 0.65598375, y: -0.13601863}
-      - {x: 0.09563899, y: -0.6142068}
-      - {x: -0.13138533, y: -1.2514737}
-      - {x: 0.23019218, y: -1.4228554}
-      - {x: 0.8106167, y: -1.438673}
-      - {x: 2.0871234, y: -1.4138634}
-      - {x: 1.7034149, y: -1.0406008}
-      - {x: 2.052729, y: -1.0276368}
-      - {x: 2.5122418, y: -0.70828795}
-      - {x: 2.544105, y: -0.32046604}
-      - {x: 2.416381, y: -0.07161689}
-      - {x: 2.097987, y: -0.07123637}
-      - {x: 2.2683446, y: 0.10554314}
-      - {x: 2.3800426, y: 0.6161797}
-      - {x: 2.7975001, y: 0.7142439}
-      - {x: 2.9872344, y: 0.6342311}
-      - {x: 3.3188963, y: 0.88780355}
-      - {x: 3.2357736, y: 1.121984}
-  m_UseDelaunayMesh: 0
 --- !u!50 &1868192466876658353
 Rigidbody2D:
   serializedVersion: 5
@@ -764,7 +684,8 @@ MonoBehaviour:
   layerHiddenFront: HiddenFrontPlayer
   hideYBack: -1.6
   hideYFront: -4
-  edgeTolerance: 0.1
+  edgeTolerance: 1
+  hideEdgeOffset: 1
 --- !u!120 &2413244360243787721
 LineRenderer:
   serializedVersion: 2

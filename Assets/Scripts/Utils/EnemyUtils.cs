@@ -15,6 +15,7 @@ namespace EnemyUtils
         /// <param name="enemy"></param>
         public static void EnemyEnterChaseModeIfNeeded(EnemyAIController enemy)
         {
+            Debug.Log("distand to playr: "+ Vector2.Distance(enemy.transform.position, enemy.playerTransform.position));
             var playerHidden  = enemy.IsPlayerHiding();
             var distToPlayer = Vector2.Distance(enemy.transform.position, enemy.playerTransform.position);
             if (!playerHidden && distToPlayer <= enemy.detectionRange)
@@ -98,9 +99,22 @@ namespace EnemyUtils
         /// </summary>
         public static void HandlePatrol(EnemyAIController self, float[] patrolPointsX, float patrolY, float speed, float threshold)
         {
-            if (patrolPointsX != null && patrolPointsX.Length > 0)
+            if (patrolPointsX == null)
             {
-                float targetX = patrolPointsX[self.currentPatrolIndex];
+                return;
+            }
+
+            if (patrolPointsX.Length == 1)
+            {
+                // peek very large number outside of screen -> moving one point
+                var targetX = patrolPointsX[0];
+                Vector2 target = new Vector2(targetX,patrolY);
+                self.MoveTowards(target , speed);
+            }
+                
+            else if (patrolPointsX.Length > 1)
+            {
+               var targetX = patrolPointsX[self.currentPatrolIndex];
                 Vector2 targetPos = new Vector2(targetX, patrolY);
                 self.MoveTowards(targetPos, speed);
 

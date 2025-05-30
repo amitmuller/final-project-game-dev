@@ -19,7 +19,7 @@ namespace EnemyAI
         [Tooltip("Seconds to converse before resuming patrol")]
         [SerializeField] private float conversationDuration = 10f;
         private const float PatrolThreshold = 0.1f;
-        private const float TalkChance = 0.2f;
+        private const float TalkChance = 0.5f;
 
         public void EnterState(EnemyAIController enemy)
         {

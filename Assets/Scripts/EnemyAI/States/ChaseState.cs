@@ -15,6 +15,7 @@ namespace EnemyAI
 
         public void UpdateState(EnemyAIController enemy)
         {
+            Debug.Log("player hide: " + enemy.IsPlayerHiding());
             //  Abort chase immediately if player is hiding
             if (enemy.IsPlayerHiding())
             {
