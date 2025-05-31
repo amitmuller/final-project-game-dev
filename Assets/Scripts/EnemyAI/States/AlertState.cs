@@ -8,7 +8,6 @@ namespace EnemyAI
     public class AlertState : ScriptableObject, IEnemyState
     {
         public EnemyStateType StateType => EnemyStateType.Alert;
-        private const float ProximityPatrolRange = 5f;
         private const float PatrolAlertSpeed = 1f;
         public void EnterState(EnemyAIController enemy)
         {
@@ -24,7 +23,8 @@ namespace EnemyAI
                 HandleAlertTransition(enemy); // moving to needed state base on player
             else
             {
-                HandleAlertPatrol(enemy, ProximityPatrolRange, enemy.alertDuration-3f, PatrolAlertSpeed); // patroling near last known plaayr pos
+                var proximityPatrolRange = Random.Range(7f,12f);
+                HandleAlertPatrol(enemy, proximityPatrolRange, enemy.alertDuration-3f, PatrolAlertSpeed); // patroling near last known plaayr pos
             }
         }
 

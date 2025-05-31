@@ -56,8 +56,7 @@ namespace EnemyAI
         // ------------------ Implementing Listener from interface in calm state ------------------ //
         public void OnNoiseRaised(Vector2 noisePosition, EnemyAIController enemy)
         {
-            if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange
-                && !enemy.IsPlayerHiding())
+            if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange)
             {
                 enemy.lastKnownNoisePosition = noisePosition;
                 enemy.ChangeState(enemy.searchingState);
