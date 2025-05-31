@@ -1,6 +1,6 @@
 // Assets/Scripts/EnemyAI/States/SearchingState.cs
 using UnityEngine;
-using static EnemyUtils.EnemyUtils;
+using static SerchingStateUtils.SerchingStateUtils;
 using UnityEngine.Rendering.Universal;
 
 namespace EnemyAI

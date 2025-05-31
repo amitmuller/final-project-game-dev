@@ -1,31 +1,31 @@
 using UnityEngine;
-using static EnemyUtils.EnemyUtils;
+using static AlertStateUtils.AlertStateUtils;
 using UnityEngine.Rendering.Universal;
+using static EnemyUtils.EnemyUtils;
 
 namespace EnemyAI
 {
     [CreateAssetMenu(menuName = "AI States/AlertState")]
     public class AlertState : ScriptableObject, IEnemyState
     {
+
         public EnemyStateType StateType => EnemyStateType.Alert;
-        private const float PatrolAlertSpeed = 1f;
         public void EnterState(EnemyAIController enemy)
         {
             enemy.StopMovement();
-            enemy.alertTimer = enemy.alertDuration;
+            AlertNearbyEnemies(enemy, enemy.spreadRadius);
             enemy.isAlertPatrolling = false;   
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
-            enemy.alertTimer -= Time.deltaTime;
-            if (enemy.alertTimer <= 0f)
-                HandleAlertTransition(enemy); // moving to needed state base on player
-            else
-            {
-                var proximityPatrolRange = Random.Range(7f,12f);
-                HandleAlertPatrol(enemy, proximityPatrolRange, enemy.alertDuration-3f, PatrolAlertSpeed); // patroling near last known plaayr pos
-            }
+            // 1) If player visible and not hiding → switch to Chase
+            EnemyEnterChaseModeIfNeeded(enemy);
+            if (enemy.CurrentStateType == EnemyStateType.Chase)
+                return;   
+
+            // 2) Otherwise patrol indefinitely across alertPatrolRadius
+            HandleAlertPatrol(enemy, enemy.alertPatrolRadius, enemy.alertSpeed);
         }
 
         public void ExitState(EnemyAIController enemy)

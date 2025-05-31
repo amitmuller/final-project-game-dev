@@ -30,7 +30,16 @@ public class EnemyAIController : MonoBehaviour
     public float[] patrolPointsX;
     [HideInInspector] public int currentPatrolIndex = 0;
     [HideInInspector] public float patrolY;  // captured at Awake
+    
+    // ── Patrol Settings (Alert)
+    [Header("Alert Patrol")]
+    [Tooltip("Half-width of the left/right sweep while the enemy is Alert")]
+    public float alertPatrolRadius = 8f;
 
+    [Header("vars for alert patrol")] 
+    public float spreadRadius = 10f;
+    public float alertSpeed = 0.75f;
+    
     // ── Detection & Movement 
     [Header("Ranges & Speeds")]
     public float detectionRange      = 5f;
@@ -39,7 +48,6 @@ public class EnemyAIController : MonoBehaviour
     public float searchMoveSpeed     = 2.5f;
 
     [Header("State Durations")]
-    public float alertDuration  = 10f;
     public float searchDuration = 10f;
 
     // ── Group Conversation Fields 

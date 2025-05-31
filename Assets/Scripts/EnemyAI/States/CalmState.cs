@@ -1,5 +1,6 @@
 // Assets/Scripts/EnemyAI/States/CalmState.cs
 using System.Linq;
+using static CalmStateUtils.CalmStateUtils;
 using UnityEngine;
 using static EnemyUtils.EnemyUtils;
 using UnityEngine.Rendering.Universal;
