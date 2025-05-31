@@ -8,6 +8,7 @@ namespace EnemyUtils
 {
     public static class EnemyUtils
     {
+        
         /// <summary>
         /// changes the state into chase mode if needed
         /// </summary>

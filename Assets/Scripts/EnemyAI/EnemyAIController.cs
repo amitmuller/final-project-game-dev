@@ -30,7 +30,7 @@ public class EnemyAIController : MonoBehaviour
     public float[] patrolPointsX;
     [HideInInspector] public int currentPatrolIndex = 0;
     [HideInInspector] public float patrolY;  // captured at Awake
-    
+    public static int ConversationEncounterCount = 5;
     // ── Patrol Settings (Alert)
     [Header("Alert Patrol")]
     [Tooltip("Half-width of the left/right sweep while the enemy is Alert")]

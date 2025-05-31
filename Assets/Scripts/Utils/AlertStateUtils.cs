@@ -37,7 +37,6 @@ namespace AlertStateUtils
             // if a patrol coroutine is already running, do nothing
             if (enemy.isAlertPatrolling)
                 return;
-
             enemy.isAlertPatrolling = true;
             enemy.StartCoroutine(AlertPatrolCoroutine(enemy, proximityRange, speed));
 
@@ -45,10 +44,6 @@ namespace AlertStateUtils
         
         private static IEnumerator AlertPatrolCoroutine(EnemyAIController enemy, float range, float speed)
         {
-            // turn flashlight on
-            var light2D = enemy.GetComponentInChildren<Light2D>();
-            if (light2D != null)
-                light2D.enabled = true;
 
             var centerX  = enemy.GetLastKnownPlayerPosition().x;
             var  toRight  = true;
@@ -68,11 +63,7 @@ namespace AlertStateUtils
 
                 yield return null;
             }
-
-            // clean-up when Alert ends
-            if (light2D != null)
-                light2D.enabled = false;
-
+            
             enemy.isAlertPatrolling = false;
         }
     

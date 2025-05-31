@@ -20,7 +20,6 @@ namespace EnemyAI
         [Tooltip("Seconds to converse before resuming patrol")]
         [SerializeField] private float conversationDuration = 10f;
         private const float PatrolThreshold = 0.1f;
-        private const float TalkChance = 0.5f;
 
         public void EnterState(EnemyAIController enemy)
         {
@@ -41,8 +40,7 @@ namespace EnemyAI
             // 1) check first if player in range and not hiding to move into chase mode
             EnemyEnterChaseModeIfNeeded(enemy);
             // 2) check if there is another calm enemy in close for conversation and talk to them
-            var random = Random.Range(0f, 1f);
-            if (random<TalkChance && TryHandleConversation(enemy, conversationProximityRange, conversationDuration, dt))
+            if (TryHandleConversation(enemy, conversationProximityRange, conversationDuration, dt))
                 return;
             
             // 2) Patrol on X-axis
