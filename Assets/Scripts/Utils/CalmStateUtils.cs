@@ -33,36 +33,41 @@ namespace CalmStateUtils
         public static bool TryHandleConversation(EnemyAIController self, float proximityRange, 
                                                     float conversationDuration, float deltaTime)
         {
-            // nothing to do?
-            if (proximityRange <= 0f) return false;
-
-            // any other calm enemy close & on‐screen
-            var nearby = AllEnemiesNearby(self, proximityRange);
+            bool nearby = AllEnemiesNearby(self, proximityRange);
             if (nearby && !self.conversationCompleted)
             {
-                // just started
                 if (!self.isConversing)
                 {
-                    self.isConversing      = true;
-                    self.conversationTimer = conversationDuration;
+                    EnemyAIController.ConversationEncounterCount ++;
+                    
+                    if (EnemyAIController.ConversationEncounterCount % 5 == 0)
+                    {
+                        self.isConversing      = true;
+                        self.conversationTimer = conversationDuration;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
 
-                // stand still & tick
+                // If isConversing==true, stand still and timer
                 self.conversationTimer -= deltaTime;
                 self.StopMovement();
-
-                // conversation done
+                
                 if (self.conversationTimer <= 0f)
                 {
                     self.isConversing          = false;
                     self.conversationCompleted = true;
                 }
-                return true;
-            }
 
-            // if we moved apart, allow future chats
+                return true; 
+            }
+            
             if (!nearby)
+            {
                 self.conversationCompleted = false;
+            }
 
             return false;
         }

@@ -21,6 +21,7 @@ namespace EnemyAI
         {
             // 1) If player visible and not hiding → switch to Chase
             EnemyEnterChaseModeIfNeeded(enemy);
+            AlertNearbyEnemies(enemy, enemy.spreadRadius);
             if (enemy.CurrentStateType == EnemyStateType.Chase)
                 return;   
 
