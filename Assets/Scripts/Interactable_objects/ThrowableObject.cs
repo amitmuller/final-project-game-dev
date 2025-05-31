@@ -35,19 +35,12 @@ public class ThrowableObject : MonoBehaviour
         }
     }
     
-    public void grab()
+    public void GrabObject()
     {
         indicatorInstance.SetActive(false);
     }
     
-    
-
-    public void fall()
-    {
-        NoiseManager.RaiseNoise(transform.position);
-        Debug.Log($"[PushableObject] NoiseRaised at {transform.position}");
-    }
-    
+    /*
     void OnCollisionEnter2D(Collision2D collision)
     {
         // You can filter with collision.gameObject.tag if needed
@@ -63,6 +56,26 @@ public class ThrowableObject : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+    }
+    */
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("lightBolb"))
+        {
+            var lamp = other.gameObject.GetComponent<LighBulb>();
+            if (lamp != null)
+            {
+                lamp.AlertNearbyEnemies();
+            }
+            NoiseManager.RaiseNoise(other.transform.position);
+            Destroy(other.gameObject);
+        }
+
+        else if (other.gameObject.CompareTag("ground"))
+        {
+            NoiseManager.RaiseNoise(transform.position);
+        }
     }
 }
 

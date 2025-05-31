@@ -116,7 +116,7 @@ public class EnemyAIController : MonoBehaviour
         _currentState.ExitState(this);
         _currentState    = newState;
         CurrentStateType = newState.StateType;
-        Debug.Log($"[EnemyAI] {name} → {CurrentStateType}");
+        Debug.Log($"[EnemyAI] {name} -> {CurrentStateType}");
         _currentState.EnterState(this);
         UpdateSpriteColor();
     }
@@ -156,17 +156,6 @@ public class EnemyAIController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
-
-    public void StopMovement()
-    {
-        if (_rigidbody2D != null)
-            _rigidbody2D.linearVelocity = Vector2.zero;
-    }
-
-    public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
-
-    public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
-    public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
     
     private void HandleNoise(Vector2 worldPos)
     {
@@ -185,4 +174,15 @@ public class EnemyAIController : MonoBehaviour
         if (other.CompareTag("MainCamera"))
             _isInCameraSpace = false;
     }
+    
+    public void StopMovement()
+    {
+        if (_rigidbody2D != null)
+            _rigidbody2D.linearVelocity = Vector2.zero;
+    }
+
+    public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
+
+    public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
+    public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
 }

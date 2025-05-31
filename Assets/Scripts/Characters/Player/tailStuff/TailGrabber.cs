@@ -67,7 +67,7 @@ public class TailGrabber : MonoBehaviour
         if (heldObject != null && !connector.IsConnected)
         {
             connector.Attach(heldObject);
-            heldObject.GetComponent<ThrowableObject>()?.grab();
+            heldObject.GetComponent<ThrowableObject>()?.GrabObject();
             
         }
     }

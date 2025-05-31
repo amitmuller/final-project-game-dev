@@ -15,7 +15,6 @@ namespace EnemyUtils
         /// <param name="enemy"></param>
         public static void EnemyEnterChaseModeIfNeeded(EnemyAIController enemy)
         {
-            Debug.Log("distand to playr: "+ Vector2.Distance(enemy.transform.position, enemy.playerTransform.position));
             var playerHidden  = enemy.IsPlayerHiding();
             var distToPlayer = Vector2.Distance(enemy.transform.position, enemy.playerTransform.position);
             if (!playerHidden && distToPlayer <= enemy.detectionRange)
@@ -84,7 +83,6 @@ namespace EnemyUtils
 
         private static bool AllEnemiesNearby(EnemyAIController self, float range)
         {
-            Debug.Log( "vision: "+ self.IsVisibleOnCamera());
             return EnemyAIController.AllEnemies
                 .Where(e => e != self && e.CurrentStateType == EnemyStateType.Calm)
                 .Any(e =>
@@ -195,7 +193,7 @@ namespace EnemyUtils
         /// </summary>
         public static void HandleAlertPatrol(EnemyAIController enemy, float proximityRange, float duration, float speed)
         {
-            if (enemy.isAlertPatrolling)              // NEW ─ guard
+            if (enemy.isAlertPatrolling)            
                 return;
             enemy.isAlertPatrolling = true;
             // begin at last known position target
