@@ -40,11 +40,10 @@ public class ThrowableObject : MonoBehaviour
         indicatorInstance.SetActive(false);
     }
     
-    /*
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         // You can filter with collision.gameObject.tag if needed
-        fall();
         if (collision.gameObject.CompareTag("lightBolb"))
         {
             var lamp = collision.gameObject.GetComponent<LighBulb>();
@@ -55,9 +54,13 @@ public class ThrowableObject : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.CompareTag("ground"))
+        {
+            NoiseManager.RaiseNoise(transform.position);
+            gameObject.layer = LayerMask.NameToLayer("notCollide");
+        }
 
     }
-    */
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -71,11 +74,8 @@ public class ThrowableObject : MonoBehaviour
             NoiseManager.RaiseNoise(other.transform.position);
             Destroy(other.gameObject);
         }
-
-        else if (other.gameObject.CompareTag("ground"))
-        {
-            NoiseManager.RaiseNoise(transform.position);
-        }
+        NoiseManager.RaiseNoise(transform.position);
+        
     }
 }
 
