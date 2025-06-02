@@ -74,7 +74,8 @@ namespace AlertStateUtils
             {
                 if (other == source) continue;                     // skip self
                 if (other.CurrentStateType == EnemyStateType.Alert) continue; // already alert
-                if (Vector2.Distance(source.transform.position, other.transform.position) > radius) continue;
+                if (Vector2.Distance(source.transform.position, other.transform.position) > radius && 
+                    Vector2.Distance(source.playerTransform.position, other.transform.position) > radius ) continue;
 
                 other.lastKnownNoisePosition = source.GetLastKnownPlayerPosition();
                 other.ChangeState(other.alertState);               // pull neighbour into Alert

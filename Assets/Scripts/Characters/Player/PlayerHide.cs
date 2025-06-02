@@ -96,7 +96,22 @@ namespace Characters.Player
 
         private void Update()
         {
-            if (!isHiding || currentHidable == null) return;
+            if(!isHiding && currentHidable != null && AtEdge())
+            {
+                currentHidable.GetComponent<HidableObject>().setIndicator(true);
+                return;
+            }
+
+            if (!isHiding && currentHidable != null && !AtEdge())
+            {
+                currentHidable.GetComponent<HidableObject>().setIndicator(false);
+            }
+            if (!isHiding || currentHidable == null)
+            {
+                return;
+            }
+            
+            currentHidable.GetComponent<HidableObject>().setIndicator(false);
 
 
             float x = Mathf.Clamp(transform.position.x,

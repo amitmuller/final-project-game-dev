@@ -74,7 +74,8 @@ public class EnemyAIController : MonoBehaviour
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     public EnemyStateType CurrentStateType { get; private set; }
-
+    
+    private bool walkingRight = false;
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
     private SpriteRenderer _spriteRenderer;
@@ -111,6 +112,12 @@ public class EnemyAIController : MonoBehaviour
     {
         _lastKnownPlayerPosition = playerTransform.position;
         _currentState.UpdateState(this);
+    }
+    private bool IsWalkingRight() => _rigidbody2D.linearVelocity.x > 0.01f;
+
+    private void Update()
+    {
+        walkingRight = IsWalkingRight();
     }
     
 
@@ -154,16 +161,19 @@ public class EnemyAIController : MonoBehaviour
 
     public void MoveTowards(Vector2 targetPosition, float speed)
     {
+        Vector2 dir = (targetPosition - (Vector2)transform.position).normalized;
         if (_rigidbody2D != null)
         {
-            Vector2 dir = (targetPosition - (Vector2)transform.position).normalized;
+           
             _rigidbody2D.linearVelocity = dir * speed;
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards
+                (transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
+    
     
     private void HandleNoise(Vector2 worldPos)
     {
@@ -193,4 +203,5 @@ public class EnemyAIController : MonoBehaviour
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
     public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
+    public bool getIsWalkingRight() => walkingRight; 
 }

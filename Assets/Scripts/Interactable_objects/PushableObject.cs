@@ -41,7 +41,7 @@ public class PushableObject : MonoBehaviour
         _rigidbody2D.gravityScale = fallGravityScale;
 
         // Notify enemies within range
-        NoiseManager.RaiseNoise(transform.position);
+        // NoiseManager.RaiseNoise(transform.position);
         Debug.Log($"[PushableObject] NoiseRaised at {transform.position}");
     }
 
