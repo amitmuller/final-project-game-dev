@@ -21,7 +21,6 @@ namespace EnemyUtils
 
             if (isPlayerInFront)
             {
-                Debug.Log("Player In Front");
                 return;
             }
             

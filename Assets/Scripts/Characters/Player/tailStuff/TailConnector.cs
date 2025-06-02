@@ -10,7 +10,7 @@ public class TailConnector : MonoBehaviour
         Debug.Log("Attach");
         heldObjectTransform = target.transform;
         heldRigidbody = target;
-
+        Debug.Log("Attached"+heldObjectTransform.name);
         // Disable physics so object follows tail exactly
         heldRigidbody.isKinematic = true;
         heldObjectTransform.SetParent(transform);

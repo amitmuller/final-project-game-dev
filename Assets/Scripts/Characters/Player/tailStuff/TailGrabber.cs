@@ -1,4 +1,5 @@
 using System.Collections;
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,22 +9,28 @@ public class TailGrabber : MonoBehaviour
     private TailConnector connector;
     private float holdStartTime;
     private bool isHolding;
+    private bool ishiding = false;
 
     [Range(0.5f, 5f)] public float maxChargeTime = 2f;
     [Range(0f, 10f)] public float minThrowForce = 5f;
     [Range(10f, 50f)] public float maxThrowForce = 25f;
     [Range(0f, 0.5f)] public float releaseDelay = 0.15f;
+    [SerializeField] private PlayerHide playerHide;
 
     void Awake()
     {
         connector = GetComponent<TailConnector>();
+        playerHide = GetComponentInParent<PlayerHide>();
+        
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Throwable") && heldObject == null)
+        if (other.CompareTag("Throwable") && heldObject == null && !playerHide.IsHiding())
         {
             heldObject = other.attachedRigidbody;
+            Debug.Log(heldObject.name+ "inTrigger");
             other.GetComponent<ThrowableObject>()?.Highlight(true);
         }
     }
@@ -39,23 +46,24 @@ public class TailGrabber : MonoBehaviour
 
     public void onGrab(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !playerHide.IsHiding())
         {
             if (connector.IsConnected)
             {
                 holdStartTime = Time.time;
                 isHolding = true;
-                heldObject.isKinematic = true; // lock in place
+                Debug.Log("Grab"+ heldObject);
             }
             else if (heldObject != null)
             {
                 Grab();
             }
         }
-        else if (context.canceled && isHolding)
+        else if (context.canceled && isHolding && !playerHide.IsHiding())
         {
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));
+            Debug.Log(heldObject.gameObject);
             StartCoroutine(DelayedThrow(force));
             heldObject.gameObject.GetComponent<Collider2D>().isTrigger = false;
             isHolding = false;
@@ -66,8 +74,11 @@ public class TailGrabber : MonoBehaviour
     {
         if (heldObject != null && !connector.IsConnected)
         {
+            Debug.Log("inGrab");
             connector.Attach(heldObject);
+            Debug.Log("Grab"+ heldObject.GetComponent<ThrowableObject>());
             heldObject.GetComponent<ThrowableObject>()?.GrabObject();
+            
             
         }
     }
