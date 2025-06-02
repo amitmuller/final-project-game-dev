@@ -25,7 +25,6 @@ namespace Interactable_objects
             LeftX = bounds.min.x;
             RightX = bounds.max.x;
             var prefab = Resources.Load<GameObject>("hideIcon");
-            Debug.Log(prefab);
             if (prefab)
             {
                 indicatorInstance = Instantiate(prefab, transform);
@@ -48,7 +47,7 @@ namespace Interactable_objects
             if (ph)
             {
                 ph.SetNearbyHidable(this);
-                indicatorInstance.SetActive(true);
+                // indicatorInstance.SetActive(true);
             
             }
         }
@@ -59,11 +58,11 @@ namespace Interactable_objects
             {
                 if (ph.IsHiding())
                 {
-                    indicatorInstance.SetActive(false);
+                    // indicatorInstance.SetActive(false);
                 }
                 else
                 {
-                    indicatorInstance.SetActive(true);
+                    // indicatorInstance.SetActive(true);
                 }
             }
         }
@@ -76,6 +75,12 @@ namespace Interactable_objects
                 ph.SetNearbyHidable(null);
                 indicatorInstance.SetActive(false);
             }
+        }
+
+        public void setIndicator(bool turnOn)
+        {
+            
+            indicatorInstance.SetActive(turnOn);
         }
     }
 }

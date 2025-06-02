@@ -16489,7 +16489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412847056704981215, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: spreadRadius
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6412847056704981215, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: calmMoveSpeed
@@ -16513,11 +16513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412847056704981215, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: 'patrolPointsX.Array.data[0]'
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6412847056704981215, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: 'patrolPointsX.Array.data[1]'
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7934118251004724778, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_Name
@@ -16525,7 +16525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7934118251004724778, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -110000,7 +110000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1873613435
 SpriteRenderer:
   m_ObjectHideFlags: 0

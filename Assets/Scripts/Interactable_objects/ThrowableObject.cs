@@ -43,9 +43,11 @@ public class ThrowableObject : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.name);
         // You can filter with collision.gameObject.tag if needed
         if (collision.gameObject.CompareTag("lightBolb"))
         {
+            
             var lamp = collision.gameObject.GetComponent<LighBulb>();
             if (lamp != null)
             {
@@ -57,6 +59,7 @@ public class ThrowableObject : MonoBehaviour
         else if (collision.gameObject.CompareTag("ground"))
         {
             NoiseManager.RaiseNoise(transform.position);
+            
             gameObject.layer = LayerMask.NameToLayer("notCollide");
         }
 
@@ -64,8 +67,10 @@ public class ThrowableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.CompareTag("lightBolb"))
         {
+            
             var lamp = other.gameObject.GetComponent<LighBulb>();
             if (lamp != null)
             {
@@ -74,7 +79,6 @@ public class ThrowableObject : MonoBehaviour
             NoiseManager.RaiseNoise(other.transform.position);
             Destroy(other.gameObject);
         }
-        NoiseManager.RaiseNoise(transform.position);
         
     }
 }

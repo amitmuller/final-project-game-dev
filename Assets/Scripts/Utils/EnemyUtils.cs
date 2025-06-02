@@ -15,6 +15,16 @@ namespace EnemyUtils
         /// <param name="enemy"></param>
         public static void EnemyEnterChaseModeIfNeeded(EnemyAIController enemy)
         {
+            bool isPlayerInFront =
+                (enemy.getIsWalkingRight() && enemy.playerTransform.position.x < enemy.transform.position.x) ||
+                (!enemy.getIsWalkingRight() && enemy.playerTransform.position.x > enemy.transform.position.x);
+
+            if (isPlayerInFront)
+            {
+                Debug.Log("Player In Front");
+                return;
+            }
+            
             var playerHidden  = enemy.IsPlayerHiding();
             var distToPlayer = Vector2.Distance(enemy.transform.position, enemy.playerTransform.position);
             if (!playerHidden && distToPlayer <= enemy.detectionRange)
