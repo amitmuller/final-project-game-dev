@@ -16443,6 +16443,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1658927907042441943, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.5740743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658927907042441943, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 18.207027
+      objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.756042
@@ -126483,7 +126491,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126480379}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 504c5b7686c04958921445238f01fa47, type: 3}
   m_Name: 
@@ -126498,7 +126506,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126480379}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

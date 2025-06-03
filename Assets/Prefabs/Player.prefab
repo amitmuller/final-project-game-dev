@@ -98,6 +98,7 @@ MonoBehaviour:
   minThrowForce: 5
   maxThrowForce: 25
   releaseDelay: 0.15
+  playerHide: {fileID: 0}
 --- !u!1 &2842720192828897933
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ MonoBehaviour:
   layerHiddenBack: HiddenBackPlayer
   layerDefault: Player
   layerHiddenFront: HiddenFrontPlayer
-  hideYBack: -1.6
+  hideYBack: -2
   hideYFront: -4
   edgeTolerance: 1
   hideEdgeOffset: 1
