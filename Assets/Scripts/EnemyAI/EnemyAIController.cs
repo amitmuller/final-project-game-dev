@@ -22,6 +22,7 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public Transform playerTransform;
     private PlayerHide _playerHideScript;
     private Vector2 _lastKnownPlayerPosition;
+    private Vector2 _playerStartPosition;
     [HideInInspector] public bool isAlertPatrolling = false;
 
     // ── Patrol Settings (Calm)
@@ -88,8 +89,13 @@ public class EnemyAIController : MonoBehaviour
         patrolY         = transform.position.y;
         AllEnemies.Add(this); 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = playerTransform.transform;
         if (playerTransform != null)
+        {
             _playerHideScript = playerTransform.GetComponent<PlayerHide>();
+            _playerStartPosition = playerTransform.position;
+        }
+
         size = transform.localScale.x;
     }
 
@@ -186,13 +192,16 @@ public class EnemyAIController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.CompareTag("Player"));
-        if (collision.CompareTag("Player")&& !IsPlayerHiding())
+        if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
-            Debug.Log(collision.gameObject.name);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+            var playerTra = collision.transform;
             
+            playerTra.position = new Vector3(_playerStartPosition.x, _playerStartPosition.y, playerTransform.position.z);
+
+            // Zero out velocity so it doest keep sliding
+            var rb2d = collision.GetComponent<Rigidbody2D>();
+            if (rb2d != null) rb2d.linearVelocity = Vector2.zero;
+        }
     }
     
     public void StopMovement()
