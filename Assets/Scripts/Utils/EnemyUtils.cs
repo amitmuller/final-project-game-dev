@@ -13,23 +13,25 @@ namespace EnemyUtils
         /// changes the state into chase mode if needed
         /// </summary>
         /// <param name="enemy"></param>
-        public static void EnemyEnterChaseModeIfNeeded(EnemyAIController enemy)
+        public static bool EnemyEnterChaseModeIfNeeded(EnemyAIController enemy)
         {
             bool isPlayerInFront =
                 (enemy.getIsWalkingRight() && enemy.playerTransform.position.x < enemy.transform.position.x) ||
                 (!enemy.getIsWalkingRight() && enemy.playerTransform.position.x > enemy.transform.position.x);
-
+            
             if (isPlayerInFront)
             {
-                return;
+                return true;
             }
             
             var playerHidden  = enemy.IsPlayerHiding();
-            var distToPlayer = Vector2.Distance(enemy.transform.position, enemy.playerTransform.position);
+            var distToPlayer = Mathf.Abs(enemy.transform.position.x-enemy.playerTransform.position.x);
             if (!playerHidden && distToPlayer <= enemy.detectionRange)
             {
                 enemy.ChangeState(enemy.chaseState);
+                return true;
             }
+            return false;
         }
         
         
