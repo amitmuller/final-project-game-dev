@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnemyAI;
 using Characters.Player;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
@@ -18,8 +19,7 @@ public class EnemyAIController : MonoBehaviour
 
     // ── Player Reference 
     [Header("Player Reference")]
-    [Tooltip("Drag your Player GameObject here")]
-    public Transform playerTransform;
+    [HideInInspector] public Transform playerTransform;
     private PlayerHide _playerHideScript;
     private Vector2 _lastKnownPlayerPosition;
     [HideInInspector] public bool isAlertPatrolling = false;
@@ -73,6 +73,7 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public Vector2 lastKnownNoisePosition;
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
+    private float size;
     public EnemyStateType CurrentStateType { get; private set; }
     
     private bool walkingRight = false;
@@ -86,9 +87,10 @@ public class EnemyAIController : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         patrolY         = transform.position.y;
         AllEnemies.Add(this); 
-
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         if (playerTransform != null)
             _playerHideScript = playerTransform.GetComponent<PlayerHide>();
+        size = transform.localScale.x;
     }
 
     void Start()
@@ -118,6 +120,7 @@ public class EnemyAIController : MonoBehaviour
     private void Update()
     {
         walkingRight = IsWalkingRight();
+        transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
     }
     
 
@@ -181,16 +184,15 @@ public class EnemyAIController : MonoBehaviour
         _currentState.OnNoiseRaised(worldPos, this);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("MainCamera"))
-            _isInCameraSpace = true;
-    }
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("MainCamera"))
-            _isInCameraSpace = false;
+        Debug.Log(collision.CompareTag("Player"));
+        if (collision.CompareTag("Player")&& !IsPlayerHiding())
+        {
+            Debug.Log(collision.gameObject.name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+            
     }
     
     public void StopMovement()

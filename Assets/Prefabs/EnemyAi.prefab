@@ -114,8 +114,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 33.1938, y: -2.7334, z: 0}
-  m_LocalScale: {x: 0.5345, y: 2.1638, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 15676048547484250}
   m_Father: {fileID: 0}
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: -1238589135
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -4013823817366597235, guid: 8785cf20990934b0db888a5b5d88eb8f, type: 3}
   m_Color: {r: 0.9622642, g: 0.48624665, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,11 +224,13 @@ MonoBehaviour:
   - -100
   currentPatrolIndex: 0
   patrolY: 0
+  alertPatrolRadius: 8
+  spreadRadius: 10
+  alertSpeed: 0.75
   detectionRange: 5
   calmMoveSpeed: 1
   chaseMoveSpeed: 1.25
   searchMoveSpeed: 1
-  alertDuration: 10
   searchDuration: 10
   isConversing: 0
   conversationCompleted: 0
@@ -270,19 +272,19 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0000009536743, y: -3.3982377}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.962963, y: 17.225368}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.6991177, y: 9.252864}
   m_EdgeRadius: 0
