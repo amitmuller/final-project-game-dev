@@ -173,8 +173,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< Updated upstream:Assets/Art/priority_high_96dp_1F1F1F_FILL0_wght400_GRAD0_opsz48.png.meta
       priority_high_96dp_1F1F1F_FILL0_wght400_GRAD0_opsz48_0: 3541621707850773135
       priority_high_96dp_1F1F1F_FILL0_wght400_GRAD0_opsz48_1: -3277231284016208820
+========
+      Untitled_Artwork_0: 1302723820812287101
+      Untitled_Artwork_1: 6146782616825927046
+      Untitled_Artwork_2: -5733780330723738835
+      Untitled_Artwork_3: 3766885766661273901
+>>>>>>>> Stashed changes:Assets/Art/test art/Untitled_Artwork.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
