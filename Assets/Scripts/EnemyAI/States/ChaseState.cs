@@ -1,4 +1,6 @@
 // Assets/Scripts/EnemyAI/States/ChaseState.cs
+
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace EnemyAI
@@ -8,9 +10,13 @@ namespace EnemyAI
     {
         public EnemyStateType StateType => EnemyStateType.Chase;
 
+        private GameObject _icon;
+
         public void EnterState(EnemyAIController enemy)
         {
             // todo play chase animation here
+            turnOnIconIfNeeded(enemy, true);
+
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -43,6 +49,26 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             // todo stop chase animation here
+            turnOnIconIfNeeded(enemy, false);
+        }
+
+        private void turnOnIconIfNeeded(EnemyAIController enemy, bool turnOn)
+        {
+            if (_icon != null)
+            {
+                _icon.GameObject().SetActive(turnOn);
+            }
+            else
+            {
+                var prefab = Resources.Load<GameObject>("Exclamation Mark");
+                Debug.Log(prefab);
+                if (prefab)
+                {
+                    _icon = Instantiate(prefab);
+                    _icon.transform.localPosition = new Vector3(enemy.transform.localPosition.x,
+                        enemy.transform.localPosition.y + 2.5f, 0f);
+                }
+            }
         }
     }
 }
