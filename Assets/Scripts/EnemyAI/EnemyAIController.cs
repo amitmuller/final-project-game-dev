@@ -194,13 +194,14 @@ public class EnemyAIController : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
-            var playerTra = collision.transform;
-            
-            playerTra.position = new Vector3(_playerStartPosition.x, _playerStartPosition.y, playerTransform.position.z);
-
-            // Zero out velocity so it doest keep sliding
-            var rb2d = collision.GetComponent<Rigidbody2D>();
-            if (rb2d != null) rb2d.linearVelocity = Vector2.zero;
+            // var playerTra = collision.transform;
+            //
+            // playerTra.position = new Vector3(_playerStartPosition.x, _playerStartPosition.y, playerTransform.position.z);
+            //
+            // // Zero out velocity so it doest keep sliding
+            // var rb2d = collision.GetComponent<Rigidbody2D>();
+            // if (rb2d != null) rb2d.linearVelocity = Vector2.zero;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     
