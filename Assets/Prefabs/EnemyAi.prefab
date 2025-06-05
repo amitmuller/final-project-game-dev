@@ -225,11 +225,11 @@ MonoBehaviour:
   currentPatrolIndex: 0
   patrolY: 0
   alertPatrolRadius: 8
-  spreadRadius: 10
-  alertSpeed: 0.75
-  detectionRange: 5
+  spreadRadius: 5
+  alertSpeed: 1
+  detectionRange: 10
   calmMoveSpeed: 1
-  chaseMoveSpeed: 1.25
+  chaseMoveSpeed: 1.4
   searchMoveSpeed: 1
   searchDuration: 10
   isConversing: 0

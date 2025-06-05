@@ -73,12 +73,8 @@ namespace AlertStateUtils
             foreach (var other in EnemyAIController.AllEnemies)
             {
                 if (other == source) continue;                     // skip self
-                if (other.CurrentStateType == EnemyStateType.Alert) continue;
-                if (other.CurrentStateType == EnemyStateType.Chase) continue;// already alert
-                if (Vector2.Distance(source.transform.position, other.transform.position) > radius && 
-                    Vector2.Distance(source.playerTransform.position, other.transform.position) > radius ) continue;
-
-                other.lastKnownNoisePosition = source.GetLastKnownPlayerPosition();
+                if (other.CurrentStateType == EnemyStateType.Alert || other.CurrentStateType == EnemyStateType.Chase) continue;
+                if (Mathf.Abs(source.transform.position.x - other.transform.position.x) > radius) continue;
                 other.ChangeState(other.alertState);               // pull neighbour into Alert
             }
         }
