@@ -1,5 +1,6 @@
 // Assets/Scripts/EnemyAI/States/ChaseState.cs
 using UnityEngine;
+using static ChaseStateUtils.ChaseStateUtils;
 
 namespace EnemyAI
 {
@@ -15,7 +16,6 @@ namespace EnemyAI
 
         public void UpdateState(EnemyAIController enemy)
         {
-            Debug.Log("player hide: " + enemy.IsPlayerHiding());
             //  Abort chase immediately if player is hiding
             if (enemy.IsPlayerHiding())
             {
@@ -24,20 +24,10 @@ namespace EnemyAI
                 enemy.ChangeState(enemy.alertState);
                 return;
             }
-
+            NearbyEnemiesTransitionToChase(enemy,7f);
             // Pursue the player
             enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
-
-            // If player goes out of sight or range, switch to Searching
-            var distanceToPlayer = Vector2.Distance(enemy.transform.position, enemy.playerTransform.position);
-
-            var stillInSight = !enemy.IsPlayerHiding() && distanceToPlayer <= enemy.detectionRange;
-
-            if (!stillInSight)
-            {
-                enemy.lastKnownNoisePosition = enemy.playerTransform.position;
-                enemy.ChangeState(enemy.alertState);
-            }
+            
         }
 
         public void ExitState(EnemyAIController enemy)
