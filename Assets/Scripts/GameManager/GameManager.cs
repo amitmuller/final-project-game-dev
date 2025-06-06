@@ -45,6 +45,24 @@ public class GameManager : MonoBehaviour
         // else: already activated before → do nothing
     }
 
+    public void PlayerLeftCart(int cartIndex)
+    {
+        if (cartIndex < 0 || cartIndex >= carts.Count)
+        {
+            Debug.LogError($"PlayerEnteredCart: invalid index {cartIndex} (must be 0..{carts.Count - 1}).");
+            return;
+        }
+        
+        CartData cart = carts[cartIndex];
+        
+        if (cart.hasActivated)
+        {
+            Debug.Log($"[GameManager] DActivated enemies for {cart.cartName} (index {cartIndex}).");
+            DisableEnemiesInCart(cart);
+            cart.hasActivated = false;
+        }
+    }
+
     private void ActivateEnemiesInCart(CartData cart)
     {
         if (cart.enemies == null || cart.enemies.Count == 0)
@@ -53,10 +71,20 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        foreach (GameObject enemyGO in cart.enemies)
+        foreach (var enemy in cart.enemies)
         {
-            if (enemyGO == null) continue;
-            enemyGO.SetActive(true);
+            if (enemy == null) continue;
+            enemy.SetActive(true);
+        }
+    }
+
+    private void DisableEnemiesInCart(CartData cart)
+    {
+        if (cart.enemies == null || cart.enemies.Count == 0) return;
+        foreach (var enemy in cart.enemies)
+        {
+            if (enemy == null) return;
+            enemy.SetActive(false);
         }
     }
 }
