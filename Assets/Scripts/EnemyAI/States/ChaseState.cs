@@ -7,6 +7,7 @@ namespace EnemyAI
     [CreateAssetMenu(menuName = "AI States/ChaseState")]
     public class ChaseState : ScriptableObject, IEnemyState
     {
+        private  const float CHASE_SPREAD = 8f;
         public EnemyStateType StateType => EnemyStateType.Chase;
 
         public void EnterState(EnemyAIController enemy)
@@ -24,7 +25,7 @@ namespace EnemyAI
                 enemy.ChangeState(enemy.alertState);
                 return;
             }
-            NearbyEnemiesTransitionToChase(enemy,7f);
+            NearbyEnemiesTransitionToChase(enemy,CHASE_SPREAD);
             // Pursue the player
             enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
             

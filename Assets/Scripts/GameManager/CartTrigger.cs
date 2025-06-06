@@ -25,4 +25,11 @@ public class CartTrigger : MonoBehaviour
 
         GameManager.Instance.PlayerEnteredCart(cartIndex);
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (GameManager.Instance == null) return;
+        GameManager.Instance.PlayerLeftCart(cartIndex);
+    }
 }
