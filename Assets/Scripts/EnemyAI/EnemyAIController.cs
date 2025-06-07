@@ -72,6 +72,8 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public float alertTimer;
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
+    [HideInInspector] public GameObject ExclamationIcon;
+    [HideInInspector] public GameObject QuestionIcon;
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     private float size;
@@ -95,9 +97,10 @@ public class EnemyAIController : MonoBehaviour
             _playerHideScript = playerTransform.GetComponent<PlayerHide>();
             _playerStartPosition = playerTransform.position;
         }
-
         size = transform.localScale.x;
+        initIcons();
     }
+    
 
     void Start()
     {
@@ -204,6 +207,26 @@ public class EnemyAIController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    private void initIcons()
+    {
+        GameObject exclamationIconPrefab = Resources.Load<GameObject>("ExclamationIcon");
+        GameObject questionIconPrefab =  Resources.Load<GameObject>("QuestionMarkIcon");
+        if (exclamationIconPrefab != null)
+        {
+            ExclamationIcon = Instantiate(exclamationIconPrefab, transform);
+            ExclamationIcon.transform.localPosition = new Vector3(0, 10f, 0);
+            exclamationIconSwitch(false);
+            
+        }
+        if (questionIconPrefab != null)
+        {
+            QuestionIcon = Instantiate(questionIconPrefab, transform);
+            QuestionIcon.transform.localPosition = new Vector3(0, 10f, 0);
+            quesitonIconSwitch(false);
+            
+        }   
+    }
     
     public void StopMovement()
     {
@@ -215,5 +238,14 @@ public class EnemyAIController : MonoBehaviour
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
     public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
-    public bool getIsWalkingRight() => walkingRight; 
+    public bool getIsWalkingRight() => walkingRight;
+
+    public void exclamationIconSwitch(bool turnOn)
+    {
+        ExclamationIcon.SetActive(turnOn);
+    }
+    public void quesitonIconSwitch(bool turnOn)
+    {
+        QuestionIcon.SetActive(turnOn);
+    }
 }

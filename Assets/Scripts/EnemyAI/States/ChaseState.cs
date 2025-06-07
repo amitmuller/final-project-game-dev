@@ -9,30 +9,9 @@ namespace EnemyAI
     public class ChaseState : ScriptableObject, IEnemyState
     {
         public EnemyStateType StateType => EnemyStateType.Chase;
-
-        private GameObject iconPrefab;
-        private GameObject iconInstance;
         public void EnterState(EnemyAIController enemy)
         {
-            iconPrefab = Resources.Load<GameObject>("ExclamationIcon");
-            
-            
-            if (iconPrefab != null)
-            {
-                Debug.Log("in ChaseState enter state", iconPrefab);
-                // Instantiate the icon as a child of the enemy
-                iconInstance = Instantiate(iconPrefab, enemy.transform);
-
-                // Set position slightly above the enemy
-                iconInstance.transform.localPosition = new Vector3(0, 10f, 0); // Adjust Y value as needed
-
-                // Optionally store reference for removal later
-                // enemy.activeStateIcon = iconInstance;
-            }
-            else
-            {
-                Debug.LogWarning("ChaseState: Could not load 'ExclamationIcon' from Resources.");
-            }
+            enemy.exclamationIconSwitch(true);
             // todo play chase animation here
             
         }
@@ -66,6 +45,7 @@ namespace EnemyAI
 
         public void ExitState(EnemyAIController enemy)
         {
+            enemy.exclamationIconSwitch(false);
             // todo stop chase animation here
         }
     }

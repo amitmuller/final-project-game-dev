@@ -13,6 +13,7 @@ namespace EnemyAI
         public void EnterState(EnemyAIController enemy)
         {
             enemy.StopMovement();
+            
             AlertNearbyEnemies(enemy, enemy.spreadRadius);
             enemy.isAlertPatrolling = false;   
         }
