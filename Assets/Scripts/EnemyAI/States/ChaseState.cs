@@ -1,6 +1,10 @@
 // Assets/Scripts/EnemyAI/States/ChaseState.cs
+
+using MoreMountains.Tools;
 using UnityEngine;
+using DG.Tweening;
 using static ChaseStateUtils.ChaseStateUtils;
+using Vector2 = System.Numerics.Vector2;
 
 namespace EnemyAI
 {
@@ -27,13 +31,19 @@ namespace EnemyAI
             }
             NearbyEnemiesTransitionToChase(enemy,CHASE_SPREAD);
             // Pursue the player
-            enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
-            
+            if (Mathf.Abs(enemy.transform.position.x - enemy.playerTransform.position.x) < 3f)
+            {
+                enemy.transform.DOMoveX(enemy.playerTransform.position.x,3f).SetEase(Ease.OutQuint);
+            }
+            else
+            {
+                enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
+            }
         }
 
         public void ExitState(EnemyAIController enemy)
         {
-            // todo stop chase animation here
+            DOTween.KillAll();
         }
     }
 }
