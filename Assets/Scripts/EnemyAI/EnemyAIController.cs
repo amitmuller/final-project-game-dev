@@ -6,6 +6,7 @@ using UnityEngine;
 using EnemyAI;
 using Characters.Player;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
@@ -71,6 +72,15 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public float alertTimer;
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
+    
+    [Header("Enemy UI")]
+    [SerializeField] public GameObject ExclamationIcon;
+    [SerializeField] public GameObject QuestionIcon;
+    [SerializeField] public Image filledQuestionIcon;
+    private Vector3 _exclamationOriginalScale;
+    private Vector3 _questionOriginalScale;
+    private Vector3 _filledQuestionOriginalScale;
+
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     private float size;
@@ -94,9 +104,10 @@ public class EnemyAIController : MonoBehaviour
             _playerHideScript = playerTransform.GetComponent<PlayerHide>();
             _playerStartPosition = playerTransform.position;
         }
-
         size = transform.localScale.x;
+        initIcons();
     }
+    
 
     void Start()
     {
@@ -125,7 +136,8 @@ public class EnemyAIController : MonoBehaviour
     private void Update()
     {
         walkingRight = IsWalkingRight();
-        transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
+        // transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
+        _spriteRenderer.flipX = walkingRight;
     }
     
 
@@ -196,6 +208,29 @@ public class EnemyAIController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+    // private void LateUpdate()
+    // {
+    //     if (ExclamationIcon != null)
+    //         ExclamationIcon.transform.localScale = _exclamationOriginalScale;
+    //
+    //     if (QuestionIcon != null)
+    //         QuestionIcon.transform.localScale = _questionOriginalScale;
+    //
+    //     if (filledQuestionIcon != null)
+    //         filledQuestionIcon.transform.localScale = _filledQuestionOriginalScale;
+    // }
+
+
+    private void initIcons()
+    {
+        ExclamationIcon.SetActive(false);
+        QuestionIcon.SetActive(false);
+        filledQuestionIcon.gameObject.SetActive(false);
+        _exclamationOriginalScale = ExclamationIcon.transform.localScale;
+        _questionOriginalScale = QuestionIcon.transform.localScale;
+        _filledQuestionOriginalScale = filledQuestionIcon.transform.localScale;
+    }
+
     
     public void StopMovement()
     {
@@ -206,5 +241,14 @@ public class EnemyAIController : MonoBehaviour
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
     public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
-    public bool getIsWalkingRight() => walkingRight; 
+    public bool getIsWalkingRight() => walkingRight;
+
+    public void exclamationIconSwitch(bool turnOn)
+    {
+        ExclamationIcon.SetActive(turnOn);
+    }
+    public void quesitonIconSwitch(bool turnOn)
+    {
+        QuestionIcon.SetActive(turnOn);
+    }
 }

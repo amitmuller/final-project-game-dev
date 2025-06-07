@@ -1,6 +1,8 @@
 // Assets/Scripts/EnemyAI/States/ChaseState.cs
 
 using MoreMountains.Tools;
+
+using System;
 using UnityEngine;
 using DG.Tweening;
 using static ChaseStateUtils.ChaseStateUtils;
@@ -16,11 +18,13 @@ namespace EnemyAI
 
         public void EnterState(EnemyAIController enemy)
         {
+            enemy.exclamationIconSwitch(true);
             // todo play chase animation here
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
+            Debug.Log("player hide: " + enemy.IsPlayerHiding());
             //  Abort chase immediately if player is hiding
             if (enemy.IsPlayerHiding())
             {
@@ -44,6 +48,7 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             DOTween.KillAll();
+            enemy.exclamationIconSwitch(false);
         }
     }
 }

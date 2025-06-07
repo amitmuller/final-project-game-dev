@@ -69,5 +69,8 @@ TagManager:
   - name: HiddenFrontPlayer
     uniqueID: 3584274227
     locked: 0
+  - name: UI
+    uniqueID: 986347413
+    locked: 0
   m_RenderingLayers:
   - Default

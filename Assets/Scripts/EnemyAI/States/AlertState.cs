@@ -13,7 +13,8 @@ namespace EnemyAI
         {
             enemy.StopMovement();
             enemy.isGoingToStarAlertPatrolling = true;
-            enemy.isAlertPatrolling = false;   
+            enemy.isAlertPatrolling = false;
+            enemy.quesitonIconSwitch(true);
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -27,7 +28,6 @@ namespace EnemyAI
             Debug.Log($"{enemy.name} going to last position = " + enemy.isGoingToStarAlertPatrolling + " enemy patrolling = " + enemy.isAlertPatrolling);
             if (enemy.isGoingToStarAlertPatrolling)
             {
-                alertUtils.HandleAlertGoingToLastKnownPlayerPosition(enemy);
                 return;
             }
             // 2) Otherwise patrol indefinitely across alertPatrolRadius
@@ -37,6 +37,7 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             enemy.StopAllCoroutines();
+            enemy.quesitonIconSwitch(false);
         }
     }
 }
