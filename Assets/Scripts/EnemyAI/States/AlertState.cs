@@ -28,6 +28,7 @@ namespace EnemyAI
             Debug.Log($"{enemy.name} going to last position = " + enemy.isGoingToStarAlertPatrolling + " enemy patrolling = " + enemy.isAlertPatrolling);
             if (enemy.isGoingToStarAlertPatrolling)
             {
+                alertUtils.HandleAlertGoingToLastKnownPlayerPosition(enemy);
                 return;
             }
             // 2) Otherwise patrol indefinitely across alertPatrolRadius
