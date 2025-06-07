@@ -1,19 +1,25 @@
 // Assets/Scripts/EnemyAI/States/ChaseState.cs
 
+using MoreMountains.Tools;
+
 using System;
 using UnityEngine;
+using DG.Tweening;
+using static ChaseStateUtils.ChaseStateUtils;
+using Vector2 = System.Numerics.Vector2;
 
 namespace EnemyAI
 {
     [CreateAssetMenu(menuName = "AI States/ChaseState")]
     public class ChaseState : ScriptableObject, IEnemyState
     {
+        private  const float CHASE_SPREAD = 8f;
         public EnemyStateType StateType => EnemyStateType.Chase;
+
         public void EnterState(EnemyAIController enemy)
         {
             enemy.exclamationIconSwitch(true);
             // todo play chase animation here
-            
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -27,26 +33,22 @@ namespace EnemyAI
                 enemy.ChangeState(enemy.alertState);
                 return;
             }
-
+            NearbyEnemiesTransitionToChase(enemy,CHASE_SPREAD);
             // Pursue the player
-            enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
-
-            // If player goes out of sight or range, switch to Searching
-            var distanceToPlayer = Vector2.Distance(enemy.transform.position, enemy.playerTransform.position);
-
-            var stillInSight = !enemy.IsPlayerHiding() && distanceToPlayer <= enemy.detectionRange;
-
-            if (!stillInSight)
+            if (Mathf.Abs(enemy.transform.position.x - enemy.playerTransform.position.x) < 3f)
             {
-                enemy.lastKnownNoisePosition = enemy.playerTransform.position;
-                enemy.ChangeState(enemy.alertState);
+                enemy.transform.DOMoveX(enemy.playerTransform.position.x,3f).SetEase(Ease.OutQuint);
+            }
+            else
+            {
+                enemy.MoveTowards(enemy.playerTransform.position, enemy.chaseMoveSpeed);
             }
         }
 
         public void ExitState(EnemyAIController enemy)
         {
+            DOTween.KillAll();
             enemy.exclamationIconSwitch(false);
-            // todo stop chase animation here
         }
     }
 }

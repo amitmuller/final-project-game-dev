@@ -24,7 +24,7 @@ public class EnemyAIController : MonoBehaviour
     private Vector2 _lastKnownPlayerPosition;
     private Vector2 _playerStartPosition;
     [HideInInspector] public bool isAlertPatrolling = false;
-
+    [HideInInspector] public bool isGoingToStarAlertPatrolling = false;
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
     [Tooltip("X positions to patrol between")]
@@ -39,7 +39,7 @@ public class EnemyAIController : MonoBehaviour
 
     [Header("vars for alert patrol")] 
     public float spreadRadius = 10f;
-    public float alertSpeed = 0.75f;
+    public float alertSpeed = 1.25f;
     
     // ── Detection & Movement 
     [Header("Ranges & Speeds")]
@@ -55,7 +55,6 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public bool isConversing  = false;
     [HideInInspector] public bool conversationCompleted = false;
     [HideInInspector] public float conversationTimer = 0f;
-    private bool _isInCameraSpace;
 
     // ── State Colors 
     [Header("State Colors (Sprite)")]
@@ -121,7 +120,7 @@ public class EnemyAIController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _lastKnownPlayerPosition = playerTransform.position;
+        if(!IsPlayerHiding()) _lastKnownPlayerPosition = playerTransform.position;
         _currentState.UpdateState(this);
     }
     private bool IsWalkingRight() => _rigidbody2D.linearVelocity.x > 0.01f;
@@ -197,13 +196,6 @@ public class EnemyAIController : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
-            // var playerTra = collision.transform;
-            //
-            // playerTra.position = new Vector3(_playerStartPosition.x, _playerStartPosition.y, playerTransform.position.z);
-            //
-            // // Zero out velocity so it doest keep sliding
-            // var rb2d = collision.GetComponent<Rigidbody2D>();
-            // if (rb2d != null) rb2d.linearVelocity = Vector2.zero;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
@@ -230,8 +222,7 @@ public class EnemyAIController : MonoBehaviour
     
     public void StopMovement()
     {
-        if (_rigidbody2D != null)
-            _rigidbody2D.linearVelocity = Vector2.zero;
+        if (_rigidbody2D != null) _rigidbody2D.linearVelocity = Vector2.zero;
     }
 
     public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
