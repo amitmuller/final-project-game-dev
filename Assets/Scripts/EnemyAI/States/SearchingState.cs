@@ -13,6 +13,11 @@ namespace EnemyAI
         public void EnterState(EnemyAIController enemy)
         {
             // Reset timer when state begins
+            if (enemy.filledQuestionIcon != null)
+            {
+                enemy.filledQuestionIcon.fillAmount = 0f;
+                enemy.filledQuestionIcon.gameObject.SetActive(false);
+            }
             enemy.searchTimer = enemy.searchDuration;
             enemy.StopMovement();
         }
@@ -38,8 +43,15 @@ namespace EnemyAI
 
                 // Only count down after reaching the spot
                 enemy.searchTimer -= Time.deltaTime;
+                if (enemy.filledQuestionIcon != null)
+                {
+                    float fillPercent = 1 - (enemy.searchTimer / enemy.searchDuration);
+                    enemy.filledQuestionIcon.fillAmount = Mathf.Clamp01(fillPercent);
+                }
+
                 if (enemy.searchTimer <= 0f)
                 {
+                    enemy.filledQuestionIcon.gameObject.SetActive(false);
                     enemy.ChangeState(enemy.calmState);
                 }
             }

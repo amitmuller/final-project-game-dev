@@ -6,6 +6,7 @@ using UnityEngine;
 using EnemyAI;
 using Characters.Player;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
@@ -73,6 +74,7 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public Vector2 lastKnownNoisePosition;
     [HideInInspector] public GameObject ExclamationIcon;
     [HideInInspector] public GameObject QuestionIcon;
+    [HideInInspector] public Image filledQuestionIcon;
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     private float size;
@@ -204,6 +206,7 @@ public class EnemyAIController : MonoBehaviour
     {
         GameObject exclamationIconPrefab = Resources.Load<GameObject>("ExclamationIcon");
         GameObject questionIconPrefab =  Resources.Load<GameObject>("QuestionMarkIcon");
+        GameObject filledQuestionMarkIcon =  Resources.Load<GameObject>("FilledQuestionMarkIcon");
         if (exclamationIconPrefab != null)
         {
             ExclamationIcon = Instantiate(exclamationIconPrefab, transform);
@@ -217,7 +220,15 @@ public class EnemyAIController : MonoBehaviour
             QuestionIcon.transform.localPosition = new Vector3(0, 10f, 0);
             quesitonIconSwitch(false);
             
-        }   
+        }
+
+        if (filledQuestionMarkIcon != null)
+        {
+            GameObject filledIconGO = Instantiate(filledQuestionMarkIcon, transform);
+            filledIconGO.transform.localPosition = new Vector3(0, 10f, 0);
+            filledQuestionIcon = filledIconGO.GetComponentInChildren<Image>();
+            filledQuestionIcon.gameObject.SetActive(false);
+        }
     }
     
     public void StopMovement()
@@ -236,6 +247,10 @@ public class EnemyAIController : MonoBehaviour
         ExclamationIcon.SetActive(turnOn);
     }
     public void quesitonIconSwitch(bool turnOn)
+    {
+        QuestionIcon.SetActive(turnOn);
+    }
+    public void filledQuesitonIconSwitch(bool turnOn)
     {
         QuestionIcon.SetActive(turnOn);
     }
