@@ -250,8 +250,4 @@ public class EnemyAIController : MonoBehaviour
     {
         QuestionIcon.SetActive(turnOn);
     }
-    public void filledQuesitonIconSwitch(bool turnOn)
-    {
-        QuestionIcon.SetActive(turnOn);
-    }
 }

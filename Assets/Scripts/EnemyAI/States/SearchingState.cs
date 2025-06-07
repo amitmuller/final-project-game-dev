@@ -15,8 +15,8 @@ namespace EnemyAI
             // Reset timer when state begins
             if (enemy.filledQuestionIcon != null)
             {
-                enemy.filledQuestionIcon.fillAmount = 0f;
-                enemy.filledQuestionIcon.gameObject.SetActive(false);
+                enemy.filledQuestionIcon.fillAmount = 1f;
+                enemy.filledQuestionIcon.gameObject.SetActive(true);
             }
             enemy.searchTimer = enemy.searchDuration;
             enemy.StopMovement();
@@ -45,13 +45,12 @@ namespace EnemyAI
                 enemy.searchTimer -= Time.deltaTime;
                 if (enemy.filledQuestionIcon != null)
                 {
-                    float fillPercent = 1 - (enemy.searchTimer / enemy.searchDuration);
+                    float fillPercent = (enemy.searchTimer / enemy.searchDuration);
                     enemy.filledQuestionIcon.fillAmount = Mathf.Clamp01(fillPercent);
                 }
 
                 if (enemy.searchTimer <= 0f)
                 {
-                    enemy.filledQuestionIcon.gameObject.SetActive(false);
                     enemy.ChangeState(enemy.calmState);
                 }
             }
@@ -60,6 +59,7 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             enemy.StopAllCoroutines();
+            enemy.filledQuestionIcon.gameObject.SetActive(false);
         }
     }
 }

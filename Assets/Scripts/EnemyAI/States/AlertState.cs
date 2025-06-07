@@ -13,7 +13,8 @@ namespace EnemyAI
         {
             enemy.StopMovement();
             enemy.isGoingToStarAlertPatrolling = true;
-            enemy.isAlertPatrolling = false;   
+            enemy.isAlertPatrolling = false;
+            enemy.quesitonIconSwitch(true);
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -38,6 +39,7 @@ namespace EnemyAI
             var light2D = enemy.GetComponentInChildren<Light2D>();
             light2D.enabled = false;
             enemy.StopAllCoroutines();
+            enemy.quesitonIconSwitch(false);
         }
     }
 }
