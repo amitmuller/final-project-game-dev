@@ -72,9 +72,15 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public float alertTimer;
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
-    [HideInInspector] public GameObject ExclamationIcon;
-    [HideInInspector] public GameObject QuestionIcon;
-    [HideInInspector] public Image filledQuestionIcon;
+    
+    [Header("Enemy UI")]
+    [SerializeField] public GameObject ExclamationIcon;
+    [SerializeField] public GameObject QuestionIcon;
+    [SerializeField] public Image filledQuestionIcon;
+    private Vector3 _exclamationOriginalScale;
+    private Vector3 _questionOriginalScale;
+    private Vector3 _filledQuestionOriginalScale;
+
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     private float size;
@@ -130,7 +136,8 @@ public class EnemyAIController : MonoBehaviour
     private void Update()
     {
         walkingRight = IsWalkingRight();
-        transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
+        // transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
+        _spriteRenderer.flipX = walkingRight;
     }
     
 
@@ -201,35 +208,29 @@ public class EnemyAIController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+    // private void LateUpdate()
+    // {
+    //     if (ExclamationIcon != null)
+    //         ExclamationIcon.transform.localScale = _exclamationOriginalScale;
+    //
+    //     if (QuestionIcon != null)
+    //         QuestionIcon.transform.localScale = _questionOriginalScale;
+    //
+    //     if (filledQuestionIcon != null)
+    //         filledQuestionIcon.transform.localScale = _filledQuestionOriginalScale;
+    // }
+
 
     private void initIcons()
     {
-        GameObject exclamationIconPrefab = Resources.Load<GameObject>("ExclamationIcon");
-        GameObject questionIconPrefab =  Resources.Load<GameObject>("QuestionMarkIcon");
-        GameObject filledQuestionMarkIcon =  Resources.Load<GameObject>("FilledQuestionMarkIcon");
-        if (exclamationIconPrefab != null)
-        {
-            ExclamationIcon = Instantiate(exclamationIconPrefab, transform);
-            ExclamationIcon.transform.localPosition = new Vector3(0, 10f, 0);
-            exclamationIconSwitch(false);
-            
-        }
-        if (questionIconPrefab != null)
-        {
-            QuestionIcon = Instantiate(questionIconPrefab, transform);
-            QuestionIcon.transform.localPosition = new Vector3(0, 10f, 0);
-            quesitonIconSwitch(false);
-            
-        }
-
-        if (filledQuestionMarkIcon != null)
-        {
-            GameObject filledIconGO = Instantiate(filledQuestionMarkIcon, transform);
-            filledIconGO.transform.localPosition = new Vector3(0, 10f, 0);
-            filledQuestionIcon = filledIconGO.GetComponentInChildren<Image>();
-            filledQuestionIcon.gameObject.SetActive(false);
-        }
+        ExclamationIcon.SetActive(false);
+        QuestionIcon.SetActive(false);
+        filledQuestionIcon.gameObject.SetActive(false);
+        _exclamationOriginalScale = ExclamationIcon.transform.localScale;
+        _questionOriginalScale = QuestionIcon.transform.localScale;
+        _filledQuestionOriginalScale = filledQuestionIcon.transform.localScale;
     }
+
     
     public void StopMovement()
     {

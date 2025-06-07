@@ -36,8 +36,6 @@ namespace EnemyAI
 
         public void ExitState(EnemyAIController enemy)
         {
-            var light2D = enemy.GetComponentInChildren<Light2D>();
-            light2D.enabled = false;
             enemy.StopAllCoroutines();
             enemy.quesitonIconSwitch(false);
         }
