@@ -30,7 +30,7 @@ TagManager:
   - front furniture
   - notCollide
   - player
-  - 
+  - Default2
   - 
   - 
   - 
@@ -71,6 +71,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 986347413
+    locked: 0
+  - name: break
+    uniqueID: 889823279
     locked: 0
   m_RenderingLayers:
   - Default

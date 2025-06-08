@@ -37,7 +37,6 @@ public class TailGrabber : MonoBehaviour
     void Awake()
     {
         connector = GetComponent<TailConnector>();
-        playerHide = GetComponentInParent<PlayerHide>();
         if (impactMarkerPrefab != null)
         {
             impactMarkerInstance = Instantiate(impactMarkerPrefab);
@@ -78,12 +77,14 @@ public class TailGrabber : MonoBehaviour
         {
             if (connector.IsConnected)
             {
+                Debug.Log("Grabbing1 " + connector.name);
                 holdStartTime = Time.time;
                 isHolding = true;
                 aimLine.enabled = true;
             }
             else if (heldObject != null)
             {
+                Debug.Log("Grabbing2 " + heldObject.name);
                 Grab();
             }
         }
