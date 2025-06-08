@@ -38,7 +38,6 @@ public class AlertStateUtils
             yield return null;
         }
         enemy.isGoingToStarAlertPatrolling = false;
-        enemy.StopMovement();
     }
     
     private static IEnumerator AlertPatrolCoroutine(EnemyAIController enemy, float range, float speed)
