@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5119550457620580084
 Transform:
   m_ObjectHideFlags: 0
@@ -210,18 +210,21 @@ MonoBehaviour:
   searchingState: {fileID: 11400000, guid: 1d6a6898ef2dc464983b908bce18498c, type: 2}
   chaseState: {fileID: 11400000, guid: da996283596924c4bbc1f97e3cf9a556, type: 2}
   playerTransform: {fileID: 0}
+  _camera: {fileID: 0}
   isAlertPatrolling: 0
   isGoingToStarAlertPatrolling: 0
   patrolPointsX:
-  - -100
+  - 0
+  - 50
+  - 25
   currentPatrolIndex: 0
   patrolY: 0
   alertPatrolRadius: 8
   spreadRadius: 5
   alertSpeed: 1
-  detectionRange: 10
+  detectionRange: 5
   calmMoveSpeed: 1
-  chaseMoveSpeed: 1.4
+  chaseMoveSpeed: 1.25
   searchMoveSpeed: 1
   searchDuration: 10
   isConversing: 0
@@ -237,6 +240,7 @@ MonoBehaviour:
   ExclamationIcon: {fileID: 5040745081074570052}
   QuestionIcon: {fileID: 8237637187768591071}
   filledQuestionIcon: {fileID: 6835028534080668006}
+  _spriteRenderer: {fileID: 8589876648168497750}
 --- !u!61 &1658927907042441943
 BoxCollider2D:
   m_ObjectHideFlags: 0
