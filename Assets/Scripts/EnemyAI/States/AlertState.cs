@@ -14,7 +14,7 @@ namespace EnemyAI
             enemy.StopMovement();
             enemy.isGoingToStarAlertPatrolling = true;
             enemy.isAlertPatrolling = false;
-            enemy.quesitonIconSwitch(true);
+            enemy.QuesitonIconSwitch(true);
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -38,7 +38,7 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             enemy.StopAllCoroutines();
-            enemy.quesitonIconSwitch(false);
+            enemy.QuesitonIconSwitch(false);
         }
     }
 }

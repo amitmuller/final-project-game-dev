@@ -24,6 +24,7 @@ public class EnemyAIController : MonoBehaviour
     private PlayerHide _playerHideScript;
     private Vector2 _lastKnownPlayerPosition;
     private Vector2 _playerStartPosition;
+    [SerializeField] private Camera _camera; 
     [HideInInspector] public bool isAlertPatrolling = false;
     [HideInInspector] public bool isGoingToStarAlertPatrolling = false;
     // ── Patrol Settings (Calm)
@@ -44,7 +45,7 @@ public class EnemyAIController : MonoBehaviour
     
     // ── Detection & Movement 
     [Header("Ranges & Speeds")]
-    public float detectionRange      = 5f;
+    public float detectionRange      = 15f;
     public float calmMoveSpeed       = 2f;
     public float chaseMoveSpeed      = 4f;
     public float searchMoveSpeed     = 2.5f;
@@ -89,7 +90,7 @@ public class EnemyAIController : MonoBehaviour
     private bool walkingRight = false;
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] SpriteRenderer _spriteRenderer;
 
     void Awake()
     {
@@ -129,7 +130,6 @@ public class EnemyAIController : MonoBehaviour
     private void FixedUpdate()
     {
         if(!IsPlayerHiding()) _lastKnownPlayerPosition = playerTransform.position;
-        _currentState.UpdateState(this);
     }
     private bool IsWalkingRight() => _rigidbody2D.linearVelocity.x > 0.01f;
 
@@ -138,6 +138,7 @@ public class EnemyAIController : MonoBehaviour
         walkingRight = IsWalkingRight();
         // transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
         _spriteRenderer.flipX = walkingRight;
+        _currentState.UpdateState(this);
     }
     
 
@@ -240,14 +241,18 @@ public class EnemyAIController : MonoBehaviour
     public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
-    public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
-    public bool getIsWalkingRight() => walkingRight;
+    public bool IsVisibleOnCamera()
+    {
+        var planes = GeometryUtility.CalculateFrustumPlanes(_camera);
+        return GeometryUtility.TestPlanesAABB(planes, _spriteRenderer.bounds);
+    }
+    public bool GetIsWalkingRight() => walkingRight;
 
-    public void exclamationIconSwitch(bool turnOn)
+    public void ExclamationIconSwitch(bool turnOn)
     {
         ExclamationIcon.SetActive(turnOn);
     }
-    public void quesitonIconSwitch(bool turnOn)
+    public void QuesitonIconSwitch(bool turnOn)
     {
         QuestionIcon.SetActive(turnOn);
     }

@@ -18,7 +18,7 @@ namespace EnemyAI
 
         public void EnterState(EnemyAIController enemy)
         {
-            enemy.exclamationIconSwitch(true);
+            enemy.ExclamationIconSwitch(true);
             // todo play chase animation here
         }
 
@@ -48,7 +48,7 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             DOTween.KillAll();
-            enemy.exclamationIconSwitch(false);
+            enemy.ExclamationIconSwitch(false);
         }
     }
 }
