@@ -15,9 +15,9 @@ namespace EnemyUtils
         /// <param name="enemy"></param>
         public static bool EnemyEnterChaseModeIfNeeded(EnemyAIController enemy)
         {
-            bool isPlayerInFront =
-                (enemy.getIsWalkingRight() && enemy.playerTransform.position.x < enemy.transform.position.x) ||
-                (!enemy.getIsWalkingRight() && enemy.playerTransform.position.x > enemy.transform.position.x);
+            var isPlayerInFront =
+                (enemy.GetIsWalkingRight() && enemy.playerTransform.position.x < enemy.transform.position.x) ||
+                (!enemy.GetIsWalkingRight() && enemy.playerTransform.position.x > enemy.transform.position.x);
             
             if (isPlayerInFront)
             {
@@ -26,7 +26,7 @@ namespace EnemyUtils
             
             var playerHidden  = enemy.IsPlayerHiding();
             var distToPlayer = Mathf.Abs(enemy.transform.position.x-enemy.playerTransform.position.x);
-            if (!playerHidden && distToPlayer <= enemy.detectionRange)
+            if (!playerHidden && enemy.IsVisibleOnCamera())
             {
                 enemy.ChangeState(enemy.chaseState);
                 return true;

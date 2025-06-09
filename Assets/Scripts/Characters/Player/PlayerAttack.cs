@@ -34,14 +34,14 @@ public class PlayerAttack: MonoBehaviour
 
     public void onAttack(InputAction.CallbackContext context)
     {
-        inDash = _move.isInDash();
-        if (context.performed && inDash)
-        {
-            superAttacked = true;
-            superAttack();
-        }
+        // inDash = _move.isInDash();
+        // if (context.performed && inDash)
+        // {
+        //     superAttacked = true;
+        //     superAttack();
+        // }
         // if (context.performed && onGround && !superAttacked) attack();
-        if (context.performed && !superAttacked) attack();
+        if (context.performed ) superAttack();
     }
     
 
@@ -105,7 +105,7 @@ public class PlayerAttack: MonoBehaviour
             {
                 Debug.Log("Broke object during attack");
                 hit.GetComponent<BreakObjects>()?.BreakObject();
-                hit.GetComponent<Rigidbody2D>().AddForce(10 * Vector2.right, ForceMode2D.Impulse);
+                hit.GetComponent<Rigidbody2D>().AddForce(20 * Vector2.right, ForceMode2D.Impulse);
             }
         }
     }

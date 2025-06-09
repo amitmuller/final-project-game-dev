@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnemyAI;
 using Characters.Player;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
@@ -18,12 +20,13 @@ public class EnemyAIController : MonoBehaviour
 
     // ── Player Reference 
     [Header("Player Reference")]
-    [Tooltip("Drag your Player GameObject here")]
-    public Transform playerTransform;
+    [HideInInspector] public Transform playerTransform;
     private PlayerHide _playerHideScript;
     private Vector2 _lastKnownPlayerPosition;
+    private Vector2 _playerStartPosition;
+    [SerializeField] private Camera _camera; 
     [HideInInspector] public bool isAlertPatrolling = false;
-
+    [HideInInspector] public bool isGoingToStarAlertPatrolling = false;
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
     [Tooltip("X positions to patrol between")]
@@ -38,11 +41,11 @@ public class EnemyAIController : MonoBehaviour
 
     [Header("vars for alert patrol")] 
     public float spreadRadius = 10f;
-    public float alertSpeed = 0.75f;
+    public float alertSpeed = 1.25f;
     
     // ── Detection & Movement 
     [Header("Ranges & Speeds")]
-    public float detectionRange      = 5f;
+    public float detectionRange      = 15f;
     public float calmMoveSpeed       = 2f;
     public float chaseMoveSpeed      = 4f;
     public float searchMoveSpeed     = 2.5f;
@@ -54,7 +57,6 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public bool isConversing  = false;
     [HideInInspector] public bool conversationCompleted = false;
     [HideInInspector] public float conversationTimer = 0f;
-    private bool _isInCameraSpace;
 
     // ── State Colors 
     [Header("State Colors (Sprite)")]
@@ -71,14 +73,24 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public float alertTimer;
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
+    
+    [Header("Enemy UI")]
+    [SerializeField] public GameObject ExclamationIcon;
+    [SerializeField] public GameObject QuestionIcon;
+    [SerializeField] public Image filledQuestionIcon;
+    private Vector3 _exclamationOriginalScale;
+    private Vector3 _questionOriginalScale;
+    private Vector3 _filledQuestionOriginalScale;
+
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
+    private float size;
     public EnemyStateType CurrentStateType { get; private set; }
     
     private bool walkingRight = false;
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] SpriteRenderer _spriteRenderer;
 
     void Awake()
     {
@@ -86,10 +98,17 @@ public class EnemyAIController : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         patrolY         = transform.position.y;
         AllEnemies.Add(this); 
-
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = playerTransform.transform;
         if (playerTransform != null)
+        {
             _playerHideScript = playerTransform.GetComponent<PlayerHide>();
+            _playerStartPosition = playerTransform.position;
+        }
+        size = transform.localScale.x;
+        initIcons();
     }
+    
 
     void Start()
     {
@@ -110,14 +129,16 @@ public class EnemyAIController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _lastKnownPlayerPosition = playerTransform.position;
-        _currentState.UpdateState(this);
+        if(!IsPlayerHiding()) _lastKnownPlayerPosition = playerTransform.position;
     }
     private bool IsWalkingRight() => _rigidbody2D.linearVelocity.x > 0.01f;
 
     private void Update()
     {
         walkingRight = IsWalkingRight();
+        // transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
+        _spriteRenderer.flipX = walkingRight;
+        _currentState.UpdateState(this);
     }
     
 
@@ -181,27 +202,58 @@ public class EnemyAIController : MonoBehaviour
         _currentState.OnNoiseRaised(worldPos, this);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("MainCamera"))
-            _isInCameraSpace = true;
+        if (collision.CompareTag("Player") && !IsPlayerHiding())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
-    
-    private void OnTriggerExit(Collider other)
+    // private void LateUpdate()
+    // {
+    //     if (ExclamationIcon != null)
+    //         ExclamationIcon.transform.localScale = _exclamationOriginalScale;
+    //
+    //     if (QuestionIcon != null)
+    //         QuestionIcon.transform.localScale = _questionOriginalScale;
+    //
+    //     if (filledQuestionIcon != null)
+    //         filledQuestionIcon.transform.localScale = _filledQuestionOriginalScale;
+    // }
+
+
+    private void initIcons()
     {
-        if (other.CompareTag("MainCamera"))
-            _isInCameraSpace = false;
+        ExclamationIcon.SetActive(false);
+        QuestionIcon.SetActive(false);
+        filledQuestionIcon.gameObject.SetActive(false);
+        _exclamationOriginalScale = ExclamationIcon.transform.localScale;
+        _questionOriginalScale = QuestionIcon.transform.localScale;
+        _filledQuestionOriginalScale = filledQuestionIcon.transform.localScale;
     }
+
     
     public void StopMovement()
     {
-        if (_rigidbody2D != null)
-            _rigidbody2D.linearVelocity = Vector2.zero;
+        if (_rigidbody2D != null) _rigidbody2D.linearVelocity = Vector2.zero;
     }
 
     public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
-    public bool IsVisibleOnCamera() => _spriteRenderer.isVisible;
-    public bool getIsWalkingRight() => walkingRight; 
+    public bool IsVisibleOnCamera()
+    {
+        var planes = GeometryUtility.CalculateFrustumPlanes(_camera);
+        return GeometryUtility.TestPlanesAABB(planes, _spriteRenderer.bounds);
+    }
+    public bool GetIsWalkingRight() => walkingRight;
+
+    public void ExclamationIconSwitch(bool turnOn)
+    {
+        ExclamationIcon.SetActive(turnOn);
+    }
+    public void QuesitonIconSwitch(bool turnOn)
+    {
+        QuestionIcon.SetActive(turnOn);
+    }
 }

@@ -16,6 +16,7 @@ namespace Interactable_objects
         [Header("Hide boundaries")]
         public float LeftX;
         public float RightX;
+        public float TopY;
 
         /*  Properties for PlayerHide  */
 
@@ -24,11 +25,27 @@ namespace Interactable_objects
             var bounds = GetComponent<Collider2D>().bounds;
             LeftX = bounds.min.x;
             RightX = bounds.max.x;
+            TopY = bounds.max.y;
             var prefab = Resources.Load<GameObject>("hideIcon");
             if (prefab)
             {
-                indicatorInstance = Instantiate(prefab, transform);
-                indicatorInstance.transform.localPosition = new Vector3(0, 1f, 0); // adjust offset as needed
+                indicatorInstance = Instantiate(prefab);
+                indicatorInstance.transform.localPosition = new Vector3((LeftX + RightX)/2,
+                    TopY +0.5f, 0f);
+
+// // Reset transform BEFORE parenting
+//                 indicatorInstance.transform.localScale = Vector3.one;
+//                 indicatorInstance.transform.rotation = Quaternion.identity;
+//
+// // Parent safely: this avoids inheriting world scale
+//                 indicatorInstance.transform.SetParent(transform, worldPositionStays: false);
+//
+// // Set final local position relative to parent
+//                 indicatorInstance.transform.localPosition = new Vector3(0f, 1f, 0f);
+//                 indicatorInstance.transform.localRotation = Quaternion.identity;
+//                 indicatorInstance.transform.localScale = Vector3.one; // defensive second call
+
+
             }
             else
             {
