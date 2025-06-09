@@ -26,7 +26,7 @@ namespace EnemyAI
         {
             Debug.Log("player hide: " + enemy.IsPlayerHiding());
             //  Abort chase immediately if player is hiding
-            if (enemy.IsPlayerHiding())
+            if (enemy.IsPlayerHiding() || !enemy.IsInChasingDistanceFromPlayer())
             {
                 // Record last known player position, then switch to alert
                 enemy.lastKnownNoisePosition = enemy.playerTransform.position;

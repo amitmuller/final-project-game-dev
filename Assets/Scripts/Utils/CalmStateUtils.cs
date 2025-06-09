@@ -19,8 +19,8 @@ namespace CalmStateUtils
                 .Where(e => e != self && e.CurrentStateType == EnemyStateType.Calm)
                 .Any(e =>
                     Mathf.Abs(self.transform.position.x - e.transform.position.x) <= proximityRange
-                    && self.IsVisibleOnCamera()
-                    && e.IsVisibleOnCamera()
+                    && self.IsInChasingDistanceFromPlayer()
+                    && e.IsInChasingDistanceFromPlayer()
                 );
         }
         
@@ -78,8 +78,8 @@ namespace CalmStateUtils
                 .Where(e => e != self && e.CurrentStateType == EnemyStateType.Calm)
                 .Any(e =>
                     Mathf.Abs(self.transform.position.x - e.transform.position.x) <= range
-                    && self.IsVisibleOnCamera()
-                    && e.IsVisibleOnCamera());
+                    && self.IsInChasingDistanceFromPlayer()
+                    && e.IsInChasingDistanceFromPlayer());
             
         }
         

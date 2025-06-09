@@ -13,7 +13,7 @@ public class ExplosionForce : MonoBehaviour {
     /// </summary>
     /// <param name="position">location of the explosion</param>
 	public void doExplosion(Vector3 position){
-		Debug.Log($"Explosion triggered at position: {position}");
+		// Debug.Log($"Explosion triggered at position: {position}");
 		transform.localPosition = position;
 		StartCoroutine(waitAndExplode());
 	}
@@ -26,11 +26,11 @@ public class ExplosionForce : MonoBehaviour {
 		yield return new WaitForFixedUpdate();
 		
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position,radius);
-		Debug.Log($"Found {colliders.Length} colliders in explosion radius");
+		// Debug.Log($"Found {colliders.Length} colliders in explosion radius");
      
 		foreach(Collider2D coll in colliders){
 			if(coll.GetComponent<Rigidbody2D>()&&coll.gameObject.name!="Player"){
-				Debug.Log($"Applying explosion force to: {coll.gameObject.name}");
+				// Debug.Log($"Applying explosion force to: {coll.gameObject.name}");
                 AddExplosionForce(coll.GetComponent<Rigidbody2D>(), force, transform.position, radius, upliftModifer);
 			}
 		}
@@ -50,7 +50,7 @@ public class ExplosionForce : MonoBehaviour {
 		float wearoff = 1 - (dir.magnitude / explosionRadius);
         Vector3 baseForce = dir.normalized * explosionForce * wearoff;
         baseForce.z = 0;
-		Debug.Log($"Adding force {baseForce} to {body.gameObject.name}");
+		// Debug.Log($"Adding force {baseForce} to {body.gameObject.name}");
 		body.AddForce(baseForce);
 
         if (upliftModifier != 0)
@@ -59,7 +59,7 @@ public class ExplosionForce : MonoBehaviour {
             Vector3 upliftForce = Vector2.up * explosionForce * upliftWearoff;
             upliftForce.z = 0;
             body.AddForce(upliftForce);
-			Debug.Log($"Adding uplift force {upliftForce} to {body.gameObject.name}");
+			// Debug.Log($"Adding uplift force {upliftForce} to {body.gameObject.name}");
         }
 	}
 }

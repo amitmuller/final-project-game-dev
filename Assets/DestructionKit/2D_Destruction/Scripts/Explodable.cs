@@ -39,7 +39,7 @@ public class Explodable : MonoBehaviour
         //otherwise unparent and activate them
         else
         {
-            Debug.Log("here "+fragments);
+            // Debug.Log("here "+fragments);
             foreach (GameObject frag in fragments)
             {
                 frag.transform.parent = null;
