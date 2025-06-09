@@ -99,6 +99,7 @@ public class EnemyAIController : MonoBehaviour
         patrolY         = transform.position.y;
         AllEnemies.Add(this); 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        Debug.Log(playerTransform);
         playerTransform = playerTransform.transform;
         if (playerTransform != null)
         {
@@ -238,14 +239,39 @@ public class EnemyAIController : MonoBehaviour
         if (_rigidbody2D != null) _rigidbody2D.linearVelocity = Vector2.zero;
     }
 
-    public bool IsPlayerHiding() => _playerHideScript != null && _playerHideScript.IsHiding();
+    public bool IsPlayerHiding(){
+        return _playerHideScript != null && _playerHideScript.IsHiding();
+    }
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
-    public bool IsVisibleOnCamera()
+    
+    public bool IsInChasingDistanceFromPlayer()
     {
-        var planes = GeometryUtility.CalculateFrustumPlanes(_camera);
-        return GeometryUtility.TestPlanesAABB(planes, _spriteRenderer.bounds);
+        Vector2 origin = transform.position;
+        Vector2 toPlayer = new Vector2(playerTransform.position.x, playerTransform.position.y) - origin;
+
+        if (toPlayer.magnitude > detectionRange)
+            return false;
+
+        Vector2 facing = GetFacingDirection();
+        float angle = Vector2.Angle(facing, toPlayer.normalized);
+
+        if (angle <= 30f && !IsPlayerHiding()) // half of 60°
+        {
+            return true;
+        }
+
+        return false;
     }
+
+
+    
+    private Vector2 GetFacingDirection()
+    {
+        return walkingRight ? Vector2.right : Vector2.left;
+    }
+
+
     public bool GetIsWalkingRight() => walkingRight;
 
     public void ExclamationIconSwitch(bool turnOn)
@@ -255,5 +281,20 @@ public class EnemyAIController : MonoBehaviour
     public void QuesitonIconSwitch(bool turnOn)
     {
         QuestionIcon.SetActive(turnOn);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Vector2 origin = transform.position;
+        Vector2 facing = Application.isPlaying ? GetFacingDirection() : Vector2.right;
+
+        float range = detectionRange;
+        float angle = 30f;
+
+        Vector2 leftDir = Quaternion.Euler(0, 0, -angle) * facing;
+        Vector2 rightDir = Quaternion.Euler(0, 0, angle) * facing;
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(origin, origin + leftDir * range);
+        Gizmos.DrawLine(origin, origin + rightDir * range);
     }
 }

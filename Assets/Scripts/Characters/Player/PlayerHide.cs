@@ -49,7 +49,6 @@ namespace Characters.Player
             originalColor = bodyRenderer.color;
             originalY = transform.position.y;
             playerCollider = GetComponent<Collider2D>();
-            Debug.Log(playerCollider);
 
         }
 
