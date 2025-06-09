@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Interactable_objects;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -38,12 +39,12 @@ public class Explodable : MonoBehaviour
         //otherwise unparent and activate them
         else
         {
-            // Debug.Log("here "+fragments);
+            Debug.Log("here "+fragments);
             foreach (GameObject frag in fragments)
             {
                 frag.transform.parent = null;
                 frag.SetActive(true);
-                StartCoroutine(ChangeLayerDelayed(frag, 0.1f));
+                StartCoroutine(ChangeLayerDelayed(frag, 1f));
             }
         }
         //if fragments exist destroy the original
@@ -56,17 +57,17 @@ public class Explodable : MonoBehaviour
     
     private IEnumerator ChangeLayerDelayed(GameObject frag, float delay)
     {
-        // Debug.Log("here1 " + frag);
+        Debug.Log("here1 " + frag);
         yield return new WaitForSeconds(delay);
-        // Debug.Log("here2 " + frag);
+        Debug.Log("here2 " + frag);
         ChangeLayer(frag);
     }
 
 
     void ChangeLayer(GameObject frag)
     {
-        // Debug.Log("change Layer");
-        frag.layer = LayerMask.NameToLayer(fragmentLayer);
+        Debug.Log("change Layer");
+        frag.layer = LayerMask.NameToLayer("breakable");
         frag.GetComponent<Renderer>().sortingLayerName = sortingLayerName;
         frag.GetComponent<Renderer>().sortingOrder = orderInLayer;
     }
@@ -131,6 +132,10 @@ public class Explodable : MonoBehaviour
                 // Debug.Log(p.name);
                 // Debug.Log(fragmentLayer);
                 p.layer = LayerMask.NameToLayer(fragmentLayer);
+                if (!p.GetComponent<FragmentBehavior>())
+                {
+                    p.AddComponent<FragmentBehavior>();
+                }
                 p.GetComponent<Renderer>().sortingLayerName = sortingLayerName;
                 p.GetComponent<Renderer>().sortingOrder = orderInLayer;
             }

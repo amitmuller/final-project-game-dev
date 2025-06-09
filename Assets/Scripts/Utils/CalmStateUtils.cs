@@ -33,7 +33,7 @@ namespace CalmStateUtils
         public static bool TryHandleConversation(EnemyAIController self, float proximityRange, 
                                                     float conversationDuration, float deltaTime)
         {
-            bool nearby = AllEnemiesNearby(self, proximityRange);
+            var nearby = AllEnemiesNearby(self, proximityRange);
             if (nearby && !self.conversationCompleted)
             {
                 if (!self.isConversing)

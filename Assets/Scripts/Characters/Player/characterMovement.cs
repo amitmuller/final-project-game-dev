@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class characterMovement : MonoBehaviour
 {
@@ -219,5 +222,4 @@ public class characterMovement : MonoBehaviour
         maxSpeed = originalSpeed;
         isSlowed = false;
     }
-    
 }

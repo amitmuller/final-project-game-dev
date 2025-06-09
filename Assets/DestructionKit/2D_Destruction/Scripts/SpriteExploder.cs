@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Delaunay;
 using Delaunay.Geo;
-using UnityEngine.InputSystem.Utilities;
 
 public static class SpriteExploder {
     public static List<GameObject> GenerateTriangularPieces(GameObject source, int extraPoints = 0, int subshatterSteps = 0, Material mat = null)
@@ -155,7 +154,7 @@ public static class SpriteExploder {
         //Create and Add Rigidbody
         Rigidbody2D rigidbody = piece.AddComponent<Rigidbody2D>();
         rigidbody.linearVelocity = origVelocity;
-        FragmentLayerSetter layerSetter = piece.AddComponent<FragmentLayerSetter>();
+
         
 
         return piece;
@@ -297,7 +296,6 @@ public static class SpriteExploder {
         //Create and Add Rigidbody
         Rigidbody2D rigidbody = piece.AddComponent<Rigidbody2D>();
         rigidbody.linearVelocity = origVelocity;
-        FragmentLayerSetter layerSetter = piece.AddComponent<FragmentLayerSetter>();
 
 
 
