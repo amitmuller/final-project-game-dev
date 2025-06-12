@@ -9,127 +9,137 @@ namespace Characters.Player
     [RequireComponent(typeof(Collider2D))]
     public class PlayerHide : MonoBehaviour
     {
-        [Header("References")] [SerializeField]
-        private GameObject bodyVisual;
-
+        [Header("References")]
+        [SerializeField] private GameObject bodyVisual;
         [SerializeField] private MonoBehaviour movementScript;
         [SerializeField] private SpriteRenderer bodyRenderer;
 
-        [Header("Sorting Layers")] [SerializeField]
-        private string layerHiddenBack = "HiddenBackPlayer";
-
-        [SerializeField] private string layerDefault = "Player";
-        [SerializeField] private string layerHiddenFront = "HiddenFrontPlayer";
+        [Header("Hide Orders (within Default layer)")]
+        [Tooltip("Player’s normal drawing order")]
+        [SerializeField] private int normalOrder      = 3;
+        [Tooltip("Order to use when hiding behind back furniture (back furniture = 2)")]
+        [SerializeField] private int hiddenBackOrder  = 1;
+        [Tooltip("Order to use when hiding in front of front furniture (front furniture = 4)")]
+        [SerializeField] private int hiddenFrontOrder = 5;
 
         [Header("Hide Lanes (Y positions)")]
         [Tooltip("Y when hiding behind back furniture (higher line)")]
         [Range(-10, 10)]
-        [SerializeField]
-        private float hideYBack;
+        [SerializeField] private float hideYBack;
+        [Tooltip("Y when hiding in front of front furniture (lower line)")]
+        [Range(-10, 10)]
+        [SerializeField] private float hideYFront;
 
-        [Tooltip("Y when hiding in front of front furniture (lower line)")] [Range(-10, 10)] [SerializeField]
-        private float hideYFront;
-
-        [Header("Edge-exit tolerance")] [SerializeField, Min(0.01f)]
-        private float edgeTolerance = 1f;
-
+        [Header("Edge-exit tolerance")]
+        [SerializeField, Min(0.01f)] private float edgeTolerance = 1f;
         [SerializeField] private float hideEdgeOffset = 1f;
 
         private HidableObject currentHidable;
-        private bool isHiding;
-        private Color originalColor;
-        private float targetHideY;
-        private float originalY;
-        private Collider2D playerCollider;
-
+        private bool          isHiding;
+        private Color         originalColor;
+        private int           originalOrder;
+        private float         targetHideY;
+        private float         originalY;
+        private Collider2D    playerCollider;
 
         private void Awake()
         {
-            if (!bodyRenderer) bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
-            originalColor = bodyRenderer.color;
-            originalY = transform.position.y;
-            playerCollider = GetComponent<Collider2D>();
+            // Grab the SpriteRenderer if not assigned
+            if (!bodyRenderer)
+                bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
 
+            originalColor   = bodyRenderer.color;
+            originalOrder   = bodyRenderer.sortingOrder;
+            originalY       = transform.position.y;
+            playerCollider  = GetComponent<Collider2D>();
+
+            // Ensure we start at our normal order
+            bodyRenderer.sortingOrder = normalOrder;
         }
 
+        // Called by HidableObject when player comes near
         public void SetNearbyHidable(HidableObject hidable) => currentHidable = hidable;
         public bool IsHiding() => isHiding;
 
+        // Bound to your InputAction for "Hide"
         public void OnHide(InputAction.CallbackContext ctx)
         {
             if (!ctx.performed || currentHidable == null) return;
+
             if (!isHiding && AtEdge())
                 EnterHide();
-            else if (AtEdge())
+            else if (isHiding && AtEdge())
                 ExitHide();
-            // else
-            //     ExitHide();
         }
 
         private void EnterHide()
         {
-            // tint & sorting layer
+            // Darken sprite
             bodyRenderer.color = new Color(0.36f, 0.4f, 0.43f, 1f);
-            bodyRenderer.sortingLayerName = currentHidable.Layer == HideLayer.Back
-                ? layerHiddenBack
-                : layerHiddenFront;
 
-            // choose the Y-lane
-            targetHideY = currentHidable.Layer == HideLayer.Back
-                ? hideYBack
-                : hideYFront;
+            // Behind or in front?
+            if (currentHidable.Layer == HideLayer.Back)
+            {
+                bodyRenderer.sortingOrder = hiddenBackOrder;
+                targetHideY               = hideYBack;
+            }
+            else
+            {
+                bodyRenderer.sortingOrder = hiddenFrontOrder;
+                targetHideY               = hideYFront;
+            }
 
             isHiding = true;
         }
 
         private void ExitHide()
         {
-            // restore visuals
-            bodyRenderer.color = originalColor;
-            bodyRenderer.sortingLayerName = layerDefault;
-            // restore position
-            Vector3 pos = transform.position;
+            // Restore visuals
+            bodyRenderer.color        = originalColor;
+            bodyRenderer.sortingOrder = originalOrder;
+
+            // Snap back to original Y
+            var pos = transform.position;
             transform.position = new Vector3(pos.x, originalY, pos.z);
+
             isHiding = false;
         }
 
         private void Update()
         {
-            if(!isHiding && currentHidable != null && AtEdge())
+            // Show/hide indicator when near edge
+            if (!isHiding && currentHidable != null)
             {
-                currentHidable.GetComponent<HidableObject>().setIndicator(true);
+                currentHidable.setIndicator(AtEdge());
                 return;
             }
 
-            if (!isHiding && currentHidable != null && !AtEdge())
+            // While hiding, lock to hide-lane and within bounds
+            if (isHiding && currentHidable != null)
             {
-                currentHidable.GetComponent<HidableObject>().setIndicator(false);
+                currentHidable.setIndicator(false);
+
+                float clampedX = Mathf.Clamp(transform.position.x,
+                                             currentHidable.LeftX,
+                                             currentHidable.RightX);
+
+                transform.position = new Vector3(clampedX, targetHideY, transform.position.z);
             }
-            if (!isHiding || currentHidable == null)
-            {
-                return;
-            }
-            
-            currentHidable.GetComponent<HidableObject>().setIndicator(false);
-
-
-            float x = Mathf.Clamp(transform.position.x,
-                currentHidable.LeftX,
-                currentHidable.RightX);
-
-
-            transform.position = new Vector3(x, targetHideY, transform.position.z);
         }
 
+        // True if player collider is within edgeTolerance of hidable’s edges
         private bool AtEdge()
         {
-            Bounds bounds = playerCollider.bounds;
-            float leftEdge = bounds.min.x;
-            float rightEdge = bounds.max.x;
-            return Mathf.Abs(rightEdge - currentHidable.LeftX) <= edgeTolerance ||
-                   Mathf.Abs(leftEdge - currentHidable.RightX) <= edgeTolerance || 
-                   Mathf.Abs(transform.position.x - currentHidable.LeftX) <= edgeTolerance || 
-                   Mathf.Abs(transform.position.x  - currentHidable.RightX) <= edgeTolerance;
+            var bounds    = playerCollider.bounds;
+            var leftEdge  = bounds.min.x;
+            var rightEdge = bounds.max.x;
+            var px        = transform.position.x;
+
+            return
+                Mathf.Abs(rightEdge - currentHidable.LeftX)  <= edgeTolerance ||
+                Mathf.Abs(leftEdge  - currentHidable.RightX) <= edgeTolerance ||
+                Mathf.Abs(px        - currentHidable.LeftX)  <= edgeTolerance ||
+                Mathf.Abs(px        - currentHidable.RightX) <= edgeTolerance;
         }
 
         private void OnDrawGizmos()
@@ -137,36 +147,34 @@ namespace Characters.Player
             if (!playerCollider)
                 playerCollider = GetComponent<Collider2D>();
 
-            Bounds bounds = playerCollider.bounds;
-            float y = transform.position.y;
+            var bounds = playerCollider.bounds;
+            var y      = transform.position.y;
 
-            // Draw player collider edges (left and right)
+            // Player collider edges
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(new Vector3(bounds.min.x, y - 0.25f, 0), new Vector3(bounds.min.x, y + 0.25f, 0));
-            Gizmos.DrawLine(new Vector3(bounds.max.x, y - 0.25f, 0), new Vector3(bounds.max.x, y + 0.25f, 0));
+            Gizmos.DrawLine(new Vector3(bounds.min.x, y - 0.25f, 0),
+                            new Vector3(bounds.min.x, y + 0.25f, 0));
+            Gizmos.DrawLine(new Vector3(bounds.max.x, y - 0.25f, 0),
+                            new Vector3(bounds.max.x, y + 0.25f, 0));
+            Gizmos.DrawLine(new Vector3(bounds.min.x, y, 0),
+                            new Vector3(bounds.max.x, y, 0));
 
-            // Draw line connecting the edges (optional)
-            Gizmos.DrawLine(new Vector3(bounds.min.x, y, 0), new Vector3(bounds.max.x, y, 0));
-
-            // Draw edge tolerance zones near HidableObject edges
             if (currentHidable != null)
             {
+                // Tolerance zones
                 Gizmos.color = Color.yellow;
-
-                // Left edge + tolerance
-                Gizmos.DrawWireCube(new Vector3(currentHidable.LeftX, y, 0),
-                    new Vector3(edgeTolerance * 2, 0.5f, 0));
-
-                // Right edge + tolerance
+                Gizmos.DrawWireCube(new Vector3(currentHidable.LeftX,  y, 0),
+                                    new Vector3(edgeTolerance * 2, 0.5f, 0));
                 Gizmos.DrawWireCube(new Vector3(currentHidable.RightX, y, 0),
-                    new Vector3(edgeTolerance * 2, 0.5f, 0));
+                                    new Vector3(edgeTolerance * 2, 0.5f, 0));
 
-                // Draw exact left/right edges of the hidable
+                // Exact hidable edges
                 Gizmos.color = Color.green;
-                Gizmos.DrawLine(new Vector3(currentHidable.LeftX, y - 0.5f, 0),
-                    new Vector3(currentHidable.LeftX, y + 0.5f, 0));
+                Gizmos.DrawLine(new Vector3(currentHidable.LeftX,  y - 0.5f, 0),
+                                new Vector3(currentHidable.LeftX,  y + 0.5f, 0));
+                Gizmos.DrawLine(new Vector3(currentHidable.RightX, y - 0.5f, 0),
+                                new Vector3(currentHidable.RightX, y + 0.5f, 0));
             }
-
         }
     }
 }
