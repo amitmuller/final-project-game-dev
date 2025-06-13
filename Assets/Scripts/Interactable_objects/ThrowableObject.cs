@@ -58,6 +58,7 @@ public class ThrowableObject : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("ground"))
         {
+            Debug.Log("Ground");
             NoiseManager.RaiseNoise(transform.position);
             
             gameObject.layer = LayerMask.NameToLayer("notCollide");

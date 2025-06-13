@@ -55,6 +55,7 @@ public class TailGrabber : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.CompareTag("Throwable") && heldObject == null && !playerHide.IsHiding())
         {
             heldObject = other.attachedRigidbody;
@@ -77,14 +78,12 @@ public class TailGrabber : MonoBehaviour
         {
             if (connector.IsConnected)
             {
-                Debug.Log("Grabbing1 " + connector.name);
                 holdStartTime = Time.time;
                 isHolding = true;
                 aimLine.enabled = true;
             }
             else if (heldObject != null)
             {
-                Debug.Log("Grabbing2 " + heldObject.name);
                 Grab();
             }
         }
@@ -92,7 +91,7 @@ public class TailGrabber : MonoBehaviour
         {
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));
-
+            Debug.Log("Grabbing2 " + heldObject.name);
             StartCoroutine(DelayedThrow(force));
             heldObject.GetComponent<Collider2D>().isTrigger = false;
             isHolding = false;

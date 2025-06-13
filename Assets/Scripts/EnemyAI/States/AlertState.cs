@@ -8,6 +8,7 @@ namespace EnemyAI
     public class AlertState : ScriptableObject, IEnemyState
     {
         private AlertStateUtils alertUtils = new AlertStateUtils();
+        public float noiseDetectionRange = 5f;
         public EnemyStateType StateType => EnemyStateType.Alert;
         public void EnterState(EnemyAIController enemy)
         {
@@ -39,6 +40,14 @@ namespace EnemyAI
         {
             enemy.StopAllCoroutines();
             enemy.QuesitonIconSwitch(false);
+        }
+        public void OnNoiseRaised(Vector2 noisePosition, EnemyAIController enemy)
+        {
+            if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange)
+            {
+                enemy.lastKnownNoisePosition = noisePosition;
+                enemy.ChangeState(enemy.searchingState);
+            }
         }
     }
 }
