@@ -11,6 +11,7 @@ public class PlayerAttack: MonoBehaviour
     [SerializeField] private float timeOfAttack = 0.3f;
     [FormerlySerializedAs("attackRadius")] [SerializeField] private float superAttackRadius = 1f;
     [SerializeField] private float attackRadiusFactor = 0.3f;
+    [SerializeField] private float attackBacklashForce = 5f;
     private bool isAttacking = false;
     
     
@@ -41,7 +42,7 @@ public class PlayerAttack: MonoBehaviour
         //     superAttack();
         // }
         // if (context.performed && onGround && !superAttacked) attack();
-        if (context.performed ) superAttack();
+        if (context.performed ) attack();
     }
     
 
@@ -65,26 +66,6 @@ public class PlayerAttack: MonoBehaviour
     // }
     
     private Vector2 FacingDirection => transform.localScale.x > 0 ? Vector2.right : Vector2.left;
-    
-    private void attack()
-    {
-        isAttacking = true;
-        Invoke(nameof(notAttacking), timeOfAttack);
-        Debug.Log("attack");
-
-        Vector2 center = (Vector2)transform.position + FacingDirection * (superAttackRadius * 0.7f); // attack in front
-
-        Collider2D[] hits = Physics2D.OverlapCircleAll(center, superAttackRadius * attackRadiusFactor);
-        Debug.Log(hits.Length);
-        foreach (var hit in hits)
-        {
-            if (hit.CompareTag("breakableObject"))
-            {
-                Debug.Log("hit " + hit.gameObject.name);                Debug.Log("Broke object during attack");
-                hit.GetComponent<BreakObjects>()?.BreakObject();
-            }
-        }
-    }
 
     void notAttacking()
     {
@@ -92,18 +73,17 @@ public class PlayerAttack: MonoBehaviour
         superAttacked = false;
     }
 
-    private void superAttack()
+    private void attack()
     {
         Debug.Log("superattack");
         Invoke("notAttacking", timeOfAttack);
         isAttacking = true;
+        _rb.AddForce(-FacingDirection * attackBacklashForce, ForceMode2D.Impulse);
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, superAttackRadius); // Adjust radius as needed
         foreach (var hit in hits)
         {
-            Debug.Log("hit", hit.gameObject);
             if (hit.CompareTag("breakableObject"))
             {
-                Debug.Log("Broke object during attack");
                 hit.GetComponent<BreakObjects>()?.BreakObject();
                 hit.GetComponent<Rigidbody2D>().AddForce(20 * Vector2.right, ForceMode2D.Impulse);
             }
