@@ -32,22 +32,15 @@ public class BreakObjects : MonoBehaviour
     }
     public void BreakObject()
     {
-        Debug.Log($"Breaking object: {gameObject.name} at position {transform.position}");
-        
+        Debug.Log(gameObject);
         // Apply explosion force first
         ExplosionForce ef = GameObject.FindFirstObjectByType<ExplosionForce>();
-        Debug.Log(ef+  "ef");
-        if (ef == null)
-        {
-            Debug.LogError("No ExplosionForce component found in scene!");
-            return;
-        }
-        
-        Debug.DrawLine(gameObject.transform.position, transform.position + Vector3.up * 2, Color.red, 1f);
+        Debug.DrawLine(transform.position, transform.position + Vector3.up * 2, Color.red, 1f);
+
         ef.doExplosion(gameObject.transform.position);
         
         // Then break the object
-        Instantiate(breakObjects, gameObject.transform.position, Quaternion.identity);
+        Instantiate(breakObjects, transform.position, Quaternion.identity);
         explodable.explode();
         
         // Optionally disable the original object
