@@ -81,6 +81,9 @@ public class EnemyAIController : MonoBehaviour
     private Vector3 _exclamationOriginalScale;
     private Vector3 _questionOriginalScale;
     private Vector3 _filledQuestionOriginalScale;
+    
+    private Vector2 _initialPosition;
+    private IEnemyState _initialState;
 
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
@@ -107,6 +110,8 @@ public class EnemyAIController : MonoBehaviour
             _playerStartPosition = playerTransform.position;
         }
         size = transform.localScale.x;
+        _initialPosition = transform.position;
+        _initialState = calmState;
         initIcons();
     }
     
@@ -210,17 +215,6 @@ public class EnemyAIController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-    // private void LateUpdate()
-    // {
-    //     if (ExclamationIcon != null)
-    //         ExclamationIcon.transform.localScale = _exclamationOriginalScale;
-    //
-    //     if (QuestionIcon != null)
-    //         QuestionIcon.transform.localScale = _questionOriginalScale;
-    //
-    //     if (filledQuestionIcon != null)
-    //         filledQuestionIcon.transform.localScale = _filledQuestionOriginalScale;
-    // }
 
 
     private void initIcons()
@@ -281,6 +275,12 @@ public class EnemyAIController : MonoBehaviour
     public void QuesitonIconSwitch(bool turnOn)
     {
         QuestionIcon.SetActive(turnOn);
+    }
+    public void ResetEnemy()
+    {
+        transform.position = _initialPosition;
+        ChangeState(_initialState);
+        StopMovement();
     }
     private void OnDrawGizmosSelected()
     {

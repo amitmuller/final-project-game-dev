@@ -87,4 +87,20 @@ public class GameManager : MonoBehaviour
             enemy.SetActive(false);
         }
     }
+    
+    public void ResetEnemiesInCart(int cartIndex)
+    {
+        if (cartIndex < 0 || cartIndex >= carts.Count) return;
+        var cart = carts[cartIndex];
+        foreach (var enemy in cart.enemies)
+        {
+            if (enemy == null) continue;
+            var controller = enemy.GetComponent<EnemyAIController>();
+            if (controller != null)
+            {
+                controller.ResetEnemy();
+            }
+        }
+    }
+
 }
