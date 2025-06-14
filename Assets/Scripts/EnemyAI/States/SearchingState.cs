@@ -1,6 +1,7 @@
 // Assets/Scripts/EnemyAI/States/SearchingState.cs
 using UnityEngine;
 using static SerchingStateUtils.SerchingStateUtils;
+using static EnemyUtils.EnemyUtils;
 using UnityEngine.Rendering.Universal;
 
 namespace EnemyAI
@@ -26,6 +27,7 @@ namespace EnemyAI
         {
             var targetX = enemy.lastKnownNoisePosition.x;
             var targetPosition = new Vector2(targetX, enemy.patrolY);
+            if (EnemyEnterChaseModeIfNeeded(enemy)) return;
             // moving towords sound last pos
             if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.1f)
             {

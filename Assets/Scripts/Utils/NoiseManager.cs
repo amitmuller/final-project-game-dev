@@ -14,6 +14,7 @@ public static class NoiseManager
     /// </summary>
     public static void RaiseNoise(Vector2 worldPosition)
     {
+        Debug.Log("in raiseNoise");
         OnNoiseRaised?.Invoke(worldPosition);
     }
 }
