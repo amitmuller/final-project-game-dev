@@ -37,7 +37,6 @@ public class NoiseUIManager : MonoBehaviour
     private void Update()
     {
         noiseTimer -= Time.deltaTime;
-        Debug.Log(currentNoise);
 
         if (currentNoise > 0f)
         {
