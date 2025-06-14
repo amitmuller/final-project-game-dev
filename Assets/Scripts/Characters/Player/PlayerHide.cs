@@ -41,6 +41,7 @@ namespace Characters.Player
         private float         targetHideY;
         private float         originalY;
         private Collider2D    playerCollider;
+        private Transform blurTf;
 
         private void Awake()
         {
@@ -52,7 +53,7 @@ namespace Characters.Player
             originalOrder   = bodyRenderer.sortingOrder;
             originalY       = transform.position.y;
             playerCollider  = GetComponent<Collider2D>();
-
+            blurTf = transform.Find("BlurScreen");
             // Ensure we start at our normal order
             bodyRenderer.sortingOrder = normalOrder;
         }
@@ -88,6 +89,8 @@ namespace Characters.Player
                 bodyRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
             }
+            if(blurTf != null)
+                blurTf.gameObject.SetActive(true);
 
             isHiding = true;
         }
@@ -101,7 +104,8 @@ namespace Characters.Player
             // Snap back to original Y
             var pos = transform.position;
             transform.position = new Vector3(pos.x, originalY, pos.z);
-
+            if(blurTf != null)
+                blurTf.gameObject.SetActive(false);
             isHiding = false;
         }
 
