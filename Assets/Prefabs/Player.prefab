@@ -421,6 +421,8 @@ MonoBehaviour:
   firePoint: {fileID: 9013764115468918947}
   aimLine: {fileID: 0}
   aimLineLength: 2
+  noiseLevelToAdd: 0.1
+  noiseTriggerSpeed: 4
 --- !u!114 &1965623225461360176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,9 +697,9 @@ MonoBehaviour:
   bodyVisual: {fileID: 7784580629175702652}
   movementScript: {fileID: 7011490158708580560}
   bodyRenderer: {fileID: 8783346436292675640}
-  layerHiddenBack: HiddenBackPlayer
-  layerDefault: Player
-  layerHiddenFront: HiddenFrontPlayer
+  normalOrder: 11
+  hiddenBackOrder: 1
+  hiddenFrontOrder: 21
   hideYBack: -2
   hideYFront: -4
   edgeTolerance: 1
@@ -776,9 +778,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1238589135
-  m_SortingLayer: 4
-  m_SortingOrder: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: -6408386052193842568, guid: 7d514a8d076e140a1a65bafaa60626e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
