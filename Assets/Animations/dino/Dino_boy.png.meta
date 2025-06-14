@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: fbf023e4216a14e7a8abf8ee24c672e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2582773922540371327
+    second: Dino_boy_0
+  - first:
+      213: -6152280574384768994
+    second: Dino_boy_1
+  - first:
+      213: 8472884720984661767
+    second: Dino_boy_2
+  - first:
+      213: -3126686652040314033
+    second: Dino_boy_3
+  - first:
+      213: -2101098263362935063
+    second: Dino_boy_4
+  - first:
+      213: -8938690619132233182
+    second: Dino_boy_5
+  - first:
+      213: -1302652055887005296
+    second: Dino_boy_6
+  - first:
+      213: -7209757486811461948
+    second: Dino_boy_7
+  - first:
+      213: -1361637597629333577
+    second: Dino_boy_8
+  - first:
+      213: -8997832649230960019
+    second: Dino_boy_9
+  - first:
+      213: 3929213630917815062
+    second: Dino_boy_10
+  - first:
+      213: 74591901990327953
+    second: Dino_boy_11
+  - first:
+      213: -2721554244730608742
+    second: Dino_boy_12
+  - first:
+      213: -8129269937179690789
+    second: Dino_boy_13
+  - first:
+      213: 8923437278792837704
+    second: Dino_boy_14
+  - first:
+      213: 1811639168896742629
+    second: Dino_boy_15
+  - first:
+      213: -6911371185108860058
+    second: Dino_boy_16
+  - first:
+      213: 3090508492905070045
+    second: Dino_boy_17
+  - first:
+      213: -5858230672533164423
+    second: Dino_boy_18
+  - first:
+      213: 3551550363630908173
+    second: Dino_boy_19
+  - first:
+      213: 1540998618725276467
+    second: Dino_boy_20
+  - first:
+      213: 2141341306981079102
+    second: Dino_boy_21
+  - first:
+      213: -2516949144262818189
+    second: Dino_boy_22
+  - first:
+      213: 5973445842337600239
+    second: Dino_boy_23
+  - first:
+      213: 3595996866673699898
+    second: Dino_boy_24
+  - first:
+      213: 377964352703265433
+    second: Dino_boy_25
+  - first:
+      213: -3006215217423403350
+    second: Dino_boy_26
+  - first:
+      213: -1262624933846056833
+    second: Dino_boy_27
+  - first:
+      213: 6536796849849063162
+    second: Dino_boy_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dino_boy_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 182c6d33dc4282cd0800000000000000
+      internalID: -2582773922540371327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 154
+        width: 110
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18724de965be9aa0800000000000000
+      internalID: -6152280574384768994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 154
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f102133cbb59570800000000000000
+      internalID: 8472884720984661767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_3
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 154
+        width: 91
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f438e2d4e07cb94d0800000000000000
+      internalID: -3126686652040314033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_4
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 143
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e6ef06f24667d2e0800000000000000
+      internalID: -2101098263362935063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_5
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 143
+        width: 62
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ab189bd3463f380800000000000000
+      internalID: -8938690619132233182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_6
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 143
+        width: 60
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0993cee5bdc0cede0800000000000000
+      internalID: -1302652055887005296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_7
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 132
+        width: 77
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c6c3e1c3cbc1fb90800000000000000
+      internalID: -7209757486811461948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_8
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 122
+        width: 102
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfbc78b1dd7a1de0800000000000000
+      internalID: -1361637597629333577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_9
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 106
+        width: 217
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a3d2ac0e6412380800000000000000
+      internalID: -8997832649230960019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_10
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 106
+        width: 74
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61baa7dbafe578630800000000000000
+      internalID: 3929213630917815062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_11
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 106
+        width: 53
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196114d80f0090100800000000000000
+      internalID: 74591901990327953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_12
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 106
+        width: 102
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9320e575d81b3ad0800000000000000
+      internalID: -2721554244730608742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_13
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 97
+        width: 237
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8742710180f2f80800000000000000
+      internalID: -8129269937179690789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_14
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 2
+        width: 125
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84aece93dea66db70800000000000000
+      internalID: 8923437278792837704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_15
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 2
+        width: 36
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e43643c93c342910800000000000000
+      internalID: 1811639168896742629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_16
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 2
+        width: 66
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66347b07680e510a0800000000000000
+      internalID: -6911371185108860058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_17
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 2
+        width: 100
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd3fee9911b3ea20800000000000000
+      internalID: 3090508492905070045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_18
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 42
+        width: 95
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97eec57dd3263bea0800000000000000
+      internalID: -5858230672533164423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_19
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 2
+        width: 94
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0331222d34a94130800000000000000
+      internalID: 3551550363630908173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_20
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 106
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bdc74441ab26510800000000000000
+      internalID: 1540998618725276467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_21
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 2
+        width: 412
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e385a79c29297bd10800000000000000
+      internalID: 2141341306981079102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_22
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 2
+        width: 83
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376cd72b610021dd0800000000000000
+      internalID: -2516949144262818189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_23
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 65
+        width: 49
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2119d4851f5e250800000000000000
+      internalID: 5973445842337600239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_24
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 65
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ce08b091c87e130800000000000000
+      internalID: 3595996866673699898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_25
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 2
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a73a4839cce3500800000000000000
+      internalID: 377964352703265433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_26
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 2
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6ba17ff27c746d0800000000000000
+      internalID: -3006215217423403350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_27
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 2
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f700e85ff414a7ee0800000000000000
+      internalID: -1262624933846056833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dino_boy_28
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 2
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6552cf91e57ba50800000000000000
+      internalID: 6536796849849063162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dino_boy_0: -2582773922540371327
+      Dino_boy_1: -6152280574384768994
+      Dino_boy_10: 3929213630917815062
+      Dino_boy_11: 74591901990327953
+      Dino_boy_12: -2721554244730608742
+      Dino_boy_13: -8129269937179690789
+      Dino_boy_14: 8923437278792837704
+      Dino_boy_15: 1811639168896742629
+      Dino_boy_16: -6911371185108860058
+      Dino_boy_17: 3090508492905070045
+      Dino_boy_18: -5858230672533164423
+      Dino_boy_19: 3551550363630908173
+      Dino_boy_2: 8472884720984661767
+      Dino_boy_20: 1540998618725276467
+      Dino_boy_21: 2141341306981079102
+      Dino_boy_22: -2516949144262818189
+      Dino_boy_23: 5973445842337600239
+      Dino_boy_24: 3595996866673699898
+      Dino_boy_25: 377964352703265433
+      Dino_boy_26: -3006215217423403350
+      Dino_boy_27: -1262624933846056833
+      Dino_boy_28: 6536796849849063162
+      Dino_boy_3: -3126686652040314033
+      Dino_boy_4: -2101098263362935063
+      Dino_boy_5: -8938690619132233182
+      Dino_boy_6: -1302652055887005296
+      Dino_boy_7: -7209757486811461948
+      Dino_boy_8: -1361637597629333577
+      Dino_boy_9: -8997832649230960019
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
