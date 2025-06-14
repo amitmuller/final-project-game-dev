@@ -75,7 +75,6 @@ public class PlayerAttack: MonoBehaviour
 
     private void attack()
     {
-        Debug.Log("superattack");
         Invoke("notAttacking", timeOfAttack);
         isAttacking = true;
         _rb.AddForce(-FacingDirection * attackBacklashForce, ForceMode2D.Impulse);

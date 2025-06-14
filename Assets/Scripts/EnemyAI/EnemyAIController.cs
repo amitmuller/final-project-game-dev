@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnemyAI;
 using Characters.Player;
+using CodeMonkey;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -85,6 +86,11 @@ public class EnemyAIController : MonoBehaviour
     private Vector2 _initialPosition;
     private IEnemyState _initialState;
 
+    
+    [Header("FOV Settings")]
+    private float fovYOffset = 6.5f;
+    private GameObject _fovMeshObject;
+    private Vector3 _fovOriginalLocalScale;
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     private float size;
@@ -110,6 +116,7 @@ public class EnemyAIController : MonoBehaviour
             _playerStartPosition = playerTransform.position;
         }
         size = transform.localScale.x;
+        CreateFOVMesh();
         _initialPosition = transform.position;
         _initialState = calmState;
         initIcons();
@@ -144,6 +151,14 @@ public class EnemyAIController : MonoBehaviour
         walkingRight = IsWalkingRight();
         // transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
         _spriteRenderer.flipX = walkingRight;
+        if (_fovMeshObject != null)
+        {
+            _fovMeshObject.transform.localScale = new Vector3(
+                _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
+                _fovOriginalLocalScale.y,
+                _fovOriginalLocalScale.z
+            );
+        }
         _currentState.UpdateState(this);
     }
     
@@ -215,6 +230,17 @@ public class EnemyAIController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+    // private void LateUpdate()
+    // {
+    //     if (ExclamationIcon != null)
+    //         ExclamationIcon.transform.localScale = _exclamationOriginalScale;
+    //
+    //     if (QuestionIcon != null)
+    //         QuestionIcon.transform.localScale = _questionOriginalScale;
+    //
+    //     if (filledQuestionIcon != null)
+    //         filledQuestionIcon.transform.localScale = _filledQuestionOriginalScale;
+    // }
 
 
     private void initIcons()
@@ -241,9 +267,14 @@ public class EnemyAIController : MonoBehaviour
     
     public bool IsInChasingDistanceFromPlayer()
     {
-        Vector2 origin = transform.position;
+        
+        
+        Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
         Vector2 toPlayer = new Vector2(playerTransform.position.x, playerTransform.position.y) - origin;
+        Vector2 direction = GetFacingDirection(); // or any direction you want
+        float length = detectionRange;
 
+        Debug.DrawLine(origin, origin + direction * length, Color.red);
         if (toPlayer.magnitude > detectionRange)
             return false;
 
@@ -284,7 +315,7 @@ public class EnemyAIController : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-        Vector2 origin = transform.position;
+        Vector2 origin = (Vector2)transform.position+new Vector2(0, 1.5f);
         Vector2 facing = Application.isPlaying ? GetFacingDirection() : Vector2.right;
 
         float range = detectionRange;
@@ -297,4 +328,58 @@ public class EnemyAIController : MonoBehaviour
         Gizmos.DrawLine(origin, origin + leftDir * range);
         Gizmos.DrawLine(origin, origin + rightDir * range);
     }
+
+    private void CreateFOVMesh()
+    {
+        _fovMeshObject = new GameObject("FOVMesh");
+        _fovMeshObject.transform.SetParent(transform);
+        _fovMeshObject.transform.localPosition = new Vector3(0f, fovYOffset, 0f);
+
+        MeshFilter meshFilter = _fovMeshObject.AddComponent<MeshFilter>();
+        MeshRenderer meshRenderer = _fovMeshObject.AddComponent<MeshRenderer>();
+        meshRenderer.material = meshRenderer.material = Resources.Load<Material>("Sprite-Lit-Default");
+        // Set color with reduced alpha (0 = transparent, 1 = opaque)
+        Color newColor = meshRenderer.material.color;
+        newColor.a = 0.3f; // for example, 30% visible
+        meshRenderer.material.color = newColor;
+        _fovMeshObject.GetComponent<Renderer>().sortingLayerName = "Player";
+        _fovMeshObject.GetComponent<Renderer>().sortingOrder =10;
+        _fovOriginalLocalScale = _fovMeshObject.transform.localScale;
+
+        Mesh mesh = new Mesh();
+        meshFilter.mesh = mesh;
+
+        int rayCount = 30;
+        float fov = 60f;
+        float viewDistance = detectionRange;
+
+        Vector3[] vertices = new Vector3[rayCount + 2];
+        int[] triangles = new int[rayCount * 3];
+
+        vertices[0] = Vector3.zero;
+        float angleStep = fov / rayCount;
+        float startAngle = -fov / 2f;
+
+        for (int i = 0; i <= rayCount; i++)
+        {
+            float angle = startAngle + i * angleStep;
+            float rad = angle * Mathf.Deg2Rad;
+            Vector3 dir = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad));
+            vertices[i + 1] = dir * viewDistance;
+
+            if (i < rayCount)
+            {
+                int idx = i * 3;
+                triangles[idx] = 0;
+                triangles[idx + 1] = i + 1;
+                triangles[idx + 2] = i + 2;
+            }
+        }
+
+        mesh.Clear();
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+        mesh.RecalculateNormals();
+    }
+
 }

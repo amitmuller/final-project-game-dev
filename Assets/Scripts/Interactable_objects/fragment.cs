@@ -19,7 +19,6 @@ namespace Interactable_objects
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log(other.gameObject.tag);
             if (stuck) return;
             
             if (other.CompareTag(stickySurfaceTag))

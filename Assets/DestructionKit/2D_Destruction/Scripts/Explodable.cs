@@ -137,7 +137,6 @@ public class Explodable : MonoBehaviour
                     p.AddComponent<FragmentBehavior>();
                 }
                 p.GetComponent<Renderer>().sortingLayerName = sortingLayerName;
-                Debug.Log(p.GetComponent<Renderer>().sortingLayerName);
                 p.GetComponent<Renderer>().sortingOrder = orderInLayer;
             }
         }

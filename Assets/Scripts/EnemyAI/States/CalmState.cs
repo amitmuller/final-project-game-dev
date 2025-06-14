@@ -57,6 +57,7 @@ namespace EnemyAI
         {
             if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange)
             {
+                Debug.Log("inside calm range");
                 enemy.lastKnownNoisePosition = noisePosition;
                 enemy.ChangeState(enemy.searchingState);
             }
