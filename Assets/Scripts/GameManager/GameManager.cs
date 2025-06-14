@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     [Header("each Cart’s data size = number of carts")]
     public List<CartData> carts = new List<CartData>();
+    
+    private int currentCart = 0;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PlayerEnteredCart(int cartIndex)
     {
+        currentCart = cartIndex;
         if (cartIndex < 0 || cartIndex >= carts.Count)
         {
             Debug.LogError($"PlayerEnteredCart: invalid index {cartIndex} (must be 0..{carts.Count - 1}).");
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLeftCart(int cartIndex)
     {
+        currentCart = cartIndex;
         if (cartIndex < 0 || cartIndex >= carts.Count)
         {
             Debug.LogError($"PlayerEnteredCart: invalid index {cartIndex} (must be 0..{carts.Count - 1}).");
@@ -87,4 +91,28 @@ public class GameManager : MonoBehaviour
             enemy.SetActive(false);
         }
     }
+
+    public void checkpoint(Transform Player)
+    {
+        if (Player == null) return;
+        Debug.Log($"[GameManager] Checkpoint"+ Player.gameObject+ currentCart);
+        var cart = carts[currentCart];
+        ResetEnemiesInCart();
+        Player.transform.position = cart.checkpointPosition;
+    }
+    
+    private void ResetEnemiesInCart()
+    {
+        var cart = carts[currentCart];
+        foreach (var enemy in cart.enemies)
+        {
+            if (enemy == null) continue;
+            var controller = enemy.GetComponent<EnemyAIController>();
+            if (controller != null)
+            {
+                controller.ResetEnemy();
+            }
+        }
+    }
+
 }

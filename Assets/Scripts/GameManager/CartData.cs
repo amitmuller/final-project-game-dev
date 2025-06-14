@@ -15,6 +15,8 @@ public class CartData
 
     [Tooltip("All existing enemy GameObjects under this cart (initially disabled).")]
     public List<GameObject> enemies = new List<GameObject>();
+    
+    public Vector2 checkpointPosition;
 
     [HideInInspector]
     public bool hasActivated = false;

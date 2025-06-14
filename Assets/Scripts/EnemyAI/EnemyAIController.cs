@@ -83,6 +83,10 @@ public class EnemyAIController : MonoBehaviour
     private Vector3 _questionOriginalScale;
     private Vector3 _filledQuestionOriginalScale;
     
+    private Vector2 _initialPosition;
+    private IEnemyState _initialState;
+
+    
     [Header("FOV Settings")]
     private float fovYOffset = 6.5f;
     private GameObject _fovMeshObject;
@@ -113,6 +117,8 @@ public class EnemyAIController : MonoBehaviour
         }
         size = transform.localScale.x;
         CreateFOVMesh();
+        _initialPosition = transform.position;
+        _initialState = calmState;
         initIcons();
     }
     
@@ -221,7 +227,8 @@ public class EnemyAIController : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.checkpoint(collision.transform);
         }
     }
     // private void LateUpdate()
@@ -300,6 +307,12 @@ public class EnemyAIController : MonoBehaviour
     public void QuesitonIconSwitch(bool turnOn)
     {
         QuestionIcon.SetActive(turnOn);
+    }
+    public void ResetEnemy()
+    {
+        transform.position = _initialPosition;
+        ChangeState(_initialState);
+        StopMovement();
     }
     private void OnDrawGizmosSelected()
     {
