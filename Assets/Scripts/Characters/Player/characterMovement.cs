@@ -4,6 +4,8 @@ using Characters.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class characterMovement : MonoBehaviour
 {
@@ -11,7 +13,9 @@ public class characterMovement : MonoBehaviour
     private Rigidbody2D body;
     characterGround ground;
 
+    [FormerlySerializedAs("maxSpeed")]
     [Header("Movement Stats")]
+    [SerializeField] private float speed = 10f;
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float maxAcceleration = 52f;
     [SerializeField] private float maxDecceleration = 52f;
@@ -56,8 +60,14 @@ public class characterMovement : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private LineRenderer aimLine;
     [SerializeField] private float aimLineLength = 5f;
+    
+    [Header("raise noise Settings")]
+    [SerializeField] private float noiseLevelToAdd = 0.1f;
+    [SerializeField] private float noiseTriggerSpeed = 4f;
+    
 
     private float size;
+    private Vector2 rawMoveInput;
 
     private void Awake()
     {
@@ -92,6 +102,8 @@ public class characterMovement : MonoBehaviour
         else if (canMove)
         {
             directionX = input.x;
+            rawMoveInput = input;
+            
         }
     }
 
@@ -100,7 +112,6 @@ public class characterMovement : MonoBehaviour
         if (context.started)
         {
             isHoldingAim = true;
-            Debug.Log("Started aiming");
             canMove = false;
             if (aimLine != null) aimLine.enabled = true;
         }
@@ -108,7 +119,6 @@ public class characterMovement : MonoBehaviour
         if (context.canceled)
         {
             isHoldingAim = false;
-            Debug.Log("Released aim. Firing at: " + aimDirection);
             canMove = true;
             directionX = 0f;
 
@@ -133,7 +143,15 @@ public class characterMovement : MonoBehaviour
     private void Update()
     {
         if (isDashing) return;
+        
+        float horizontalSpeed = Mathf.Abs(body.linearVelocity.x);
+        // noiseTimer -= Time.deltaTime;
+        if (horizontalSpeed >= noiseTriggerSpeed)
+        {
+            NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd); // Add normalized noise level
+        }
 
+        
         if (directionX != 0)
         {
             transform.localScale = new Vector3(directionX > 0 ? size : -size, size, size);
@@ -144,7 +162,15 @@ public class characterMovement : MonoBehaviour
             pressingKey = false;
         }
 
-        desiredVelocity = canMove ? new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f) : Vector2.zero;
+        // desiredVelocity = canMove
+        //     ? Vector2.Lerp(desiredVelocity, new Vector2(rawMoveInput.x, 0f) * speed, Time.deltaTime * 10f)
+        //     : Vector2.zero;
+        desiredVelocity = Vector2.Lerp(
+            desiredVelocity,
+            new Vector2(rawMoveInput.x, 0f) * maxSpeed,
+            Time.deltaTime * 10f
+        );
+
 
         // Draw aim line
         if (isHoldingAim && aimLine != null && aimDirection != Vector2.zero)
@@ -214,12 +240,12 @@ public class characterMovement : MonoBehaviour
     private IEnumerator SlowCoroutine()
     {
         isSlowed = true;
-        float originalSpeed = maxSpeed;
-        maxSpeed *= slowFactor;
+        float originalSpeed = speed;
+        speed *= slowFactor;
 
         yield return new WaitForSeconds(slowDuration);
 
-        maxSpeed = originalSpeed;
+        speed = originalSpeed;
         isSlowed = false;
     }
 }
