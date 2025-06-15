@@ -16,11 +16,11 @@ namespace Characters.Player
 
         [Header("Hide Orders (within Default layer)")]
         [Tooltip("Player’s normal drawing order")]
-        [SerializeField] private int normalOrder      = 3;
-        [Tooltip("Order to use when hiding behind back furniture (back furniture = 2)")]
+        [SerializeField] private int normalOrder      = 11;
+        [Tooltip("Order to use when hiding behind back furniture (back furniture = 10)")]
         [SerializeField] private int hiddenBackOrder  = 1;
-        [Tooltip("Order to use when hiding in front of front furniture (front furniture = 4)")]
-        [SerializeField] private int hiddenFrontOrder = 5;
+        [Tooltip("Order to use when hiding in front of front furniture (front furniture = 20)")]
+        [SerializeField] private int hiddenFrontOrder = 21;
 
         [Header("Hide Lanes (Y positions)")]
         [Tooltip("Y when hiding behind back furniture (higher line)")]
