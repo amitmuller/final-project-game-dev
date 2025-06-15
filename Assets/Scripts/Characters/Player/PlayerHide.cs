@@ -10,6 +10,7 @@ namespace Characters.Player
     public class PlayerHide : MonoBehaviour
     {
         [Header("References")]
+        private characterMovement playerMove;
         [SerializeField] private GameObject bodyVisual;
         [SerializeField] private MonoBehaviour movementScript;
         [SerializeField] private SpriteRenderer bodyRenderer;
@@ -33,6 +34,8 @@ namespace Characters.Player
         [Header("Edge-exit tolerance")]
         [SerializeField, Min(0.01f)] private float edgeTolerance = 1f;
         [SerializeField] private float hideEdgeOffset = 1f;
+        
+        private const float  PeekThreshold = 0.95f;
 
         private HidableObject currentHidable;
         private bool          isHiding;
@@ -45,6 +48,7 @@ namespace Characters.Player
 
         private void Awake()
         {
+            playerMove = GetComponent<characterMovement>();
             // Grab the SpriteRenderer if not assigned
             if (!bodyRenderer)
                 bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
@@ -61,7 +65,7 @@ namespace Characters.Player
         // Called by HidableObject when player comes near
         public void SetNearbyHidable(HidableObject hidable) => currentHidable = hidable;
         public bool IsHiding() => isHiding;
-
+        
         // Bound to your InputAction for "Hide"
         public void OnHide(InputAction.CallbackContext ctx)
         {
@@ -111,6 +115,7 @@ namespace Characters.Player
 
         private void Update()
         {
+            Debug.Log("moveinput : "+ playerMove.MoveInput);
             // Show/hide indicator when near edge
             if (!isHiding && currentHidable != null)
             {
@@ -128,6 +133,24 @@ namespace Characters.Player
                                              currentHidable.RightX);
 
                 transform.position = new Vector3(clampedX, targetHideY, transform.position.z);
+            }
+
+            if (isHiding)
+            {
+                PeekWhileHiding();
+            }
+        }
+
+
+        private void PeekWhileHiding()
+        {
+            if (playerMove != null)
+            {
+                var move = playerMove.MoveInput;
+                var peek   = move.y > PeekThreshold;
+                if (peek) playerMove.SetCanMove(false); else playerMove.SetCanMove(true);
+                if (blurTf != null)
+                    blurTf.gameObject.SetActive(!peek);
             }
         }
 
