@@ -132,8 +132,6 @@ public class PlayerMove : MonoBehaviour
     
     private IEnumerator dash()
     {
-        Debug.Log("in dash");
-        Debug.Log(_moveInput);
         canDash = false;
         isDashing = true;
         float originalGravity = _rb.gravityScale;

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Interactable_objects;
 using Interactable_objects.object_utills.enums;
+using Spine.Unity;
 
 namespace Characters.Player
 {
@@ -10,17 +11,18 @@ namespace Characters.Player
     public class PlayerHide : MonoBehaviour
     {
         [Header("References")]
+        private characterMovement playerMove;
         [SerializeField] private GameObject bodyVisual;
         [SerializeField] private MonoBehaviour movementScript;
         [SerializeField] private SpriteRenderer bodyRenderer;
 
         [Header("Hide Orders (within Default layer)")]
         [Tooltip("Player’s normal drawing order")]
-        [SerializeField] private int normalOrder      = 3;
-        [Tooltip("Order to use when hiding behind back furniture (back furniture = 2)")]
+        [SerializeField] private int normalOrder      = 11;
+        [Tooltip("Order to use when hiding behind back furniture (back furniture = 10)")]
         [SerializeField] private int hiddenBackOrder  = 1;
-        [Tooltip("Order to use when hiding in front of front furniture (front furniture = 4)")]
-        [SerializeField] private int hiddenFrontOrder = 5;
+        [Tooltip("Order to use when hiding in front of front furniture (front furniture = 20)")]
+        [SerializeField] private int hiddenFrontOrder = 21;
 
         [Header("Hide Lanes (Y positions)")]
         [Tooltip("Y when hiding behind back furniture (higher line)")]
@@ -33,6 +35,10 @@ namespace Characters.Player
         [Header("Edge-exit tolerance")]
         [SerializeField, Min(0.01f)] private float edgeTolerance = 1f;
         [SerializeField] private float hideEdgeOffset = 1f;
+        
+        [SerializeField] private SkeletonAnimation rendereSkeletonAnimation;
+        [SerializeField] private MeshRenderer meshRenderer;
+        private const float  PeekThreshold = 0.95f;
 
         private HidableObject currentHidable;
         private bool          isHiding;
@@ -45,23 +51,26 @@ namespace Characters.Player
 
         private void Awake()
         {
+            playerMove = GetComponent<characterMovement>();
             // Grab the SpriteRenderer if not assigned
-            if (!bodyRenderer)
-                bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
-
-            originalColor   = bodyRenderer.color;
-            originalOrder   = bodyRenderer.sortingOrder;
+            //if (!bodyRenderer)
+              //  bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
+            
+            //rendereSkeletonAnimation = GetComponent<SkeletonAnimation>();
+            meshRenderer = GetComponent<MeshRenderer>();
+            //originalColor   = bodyRenderer.color;
+            originalOrder   = meshRenderer.sortingOrder;
             originalY       = transform.position.y;
             playerCollider  = GetComponent<Collider2D>();
             blurTf = transform.Find("BlurScreen");
             // Ensure we start at our normal order
-            bodyRenderer.sortingOrder = normalOrder;
+            meshRenderer.sortingOrder = normalOrder;
         }
 
         // Called by HidableObject when player comes near
         public void SetNearbyHidable(HidableObject hidable) => currentHidable = hidable;
         public bool IsHiding() => isHiding;
-
+        
         // Bound to your InputAction for "Hide"
         public void OnHide(InputAction.CallbackContext ctx)
         {
@@ -81,12 +90,13 @@ namespace Characters.Player
             // Behind or in front?
             if (currentHidable.Layer == HideLayer.Back)
             {
-                bodyRenderer.sortingOrder = hiddenBackOrder;
+                meshRenderer.sortingOrder = hiddenBackOrder;
                 targetHideY               = hideYBack;
             }
             else
             {
-                bodyRenderer.sortingOrder = hiddenFrontOrder;
+                //bodyRenderer.sortingOrder = hiddenFrontOrder;
+                meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
             }
             if(blurTf != null)
@@ -98,8 +108,8 @@ namespace Characters.Player
         private void ExitHide()
         {
             // Restore visuals
-            bodyRenderer.color        = originalColor;
-            bodyRenderer.sortingOrder = originalOrder;
+            //bodyRenderer.color        = originalColor;
+            meshRenderer.sortingOrder = originalOrder;
 
             // Snap back to original Y
             var pos = transform.position;
@@ -111,6 +121,7 @@ namespace Characters.Player
 
         private void Update()
         {
+            Debug.Log("moveinput : "+ playerMove.MoveInput);
             // Show/hide indicator when near edge
             if (!isHiding && currentHidable != null)
             {
@@ -128,6 +139,24 @@ namespace Characters.Player
                                              currentHidable.RightX);
 
                 transform.position = new Vector3(clampedX, targetHideY, transform.position.z);
+            }
+
+            if (isHiding)
+            {
+                PeekWhileHiding();
+            }
+        }
+
+
+        private void PeekWhileHiding()
+        {
+            if (playerMove != null)
+            {
+                var move = playerMove.MoveInput;
+                var peek   = move.y > PeekThreshold;
+                if (peek) playerMove.SetCanMove(false); else playerMove.SetCanMove(true);
+                if (blurTf != null)
+                    blurTf.gameObject.SetActive(!peek);
             }
         }
 

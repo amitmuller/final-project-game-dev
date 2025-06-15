@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _ShockWaveStrength: -0.1
     - _Size: 0.05
-    - _WaveDisntanceFromCenter: 1
+    - _WaveDisntanceFromCenter: 0.4
     m_Colors:
     - _RingSpawnPosition: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
