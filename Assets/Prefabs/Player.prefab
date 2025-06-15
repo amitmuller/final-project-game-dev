@@ -115,12 +115,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653231066507788696}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.55, y: 1.03, z: -0.08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.008649651, y: 0.008802041, z: 0.008802042, w: 0.99988514}
+  m_LocalPosition: {x: -5.27, y: 1.82, z: 0.00068724155}
+  m_LocalScale: {x: -0.76, y: 0.76, z: 0.7600001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2050433937076220370}
+  m_Father: {fileID: 8497295401641567422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &536094045801773382
 CircleCollider2D:
@@ -552,6 +552,9 @@ GameObject:
   - component: {fileID: 395701750817063682}
   - component: {fileID: 5665994334471902652}
   - component: {fileID: 1087059997028390949}
+  - component: {fileID: 95930020756722382}
+  - component: {fileID: 6936487663286771488}
+  - component: {fileID: 3096734688186961851}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -572,6 +575,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 7369461547751264453}
   - {fileID: 2050433937076220370}
   - {fileID: 9013764115468918947}
   - {fileID: 4055917351828364746}
@@ -685,6 +689,10 @@ MonoBehaviour:
   aimLineLength: 2
   noiseLevelToAdd: 0.1
   noiseTriggerSpeed: 4
+  skeletonAnimation: {fileID: 6936487663286771488}
+  idle: {fileID: 11400000, guid: 926a6793932aa4fecac4bb0b4589ee3d, type: 2}
+  walking: {fileID: 11400000, guid: 931cbc4361b7e498ab1eb87517c36f4f, type: 2}
+  currentAnimationName: 
 --- !u!114 &1965623225461360176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,6 +881,10 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: 1c14f0f2-5324-4039-8582-ffe65111a40e
     m_ActionName: 'Player/Break[/Keyboard/leftMeta,/Keyboard/alt]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f7a37ca3-6dc0-4dc9-a350-e008c32ff828
+    m_ActionName: Player/Peek
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -932,7 +944,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.1718502, y: -1.2270117}
+  m_Offset: {x: 0.16496634, y: 0.7646223}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -942,7 +954,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1737976, y: 1.8399405}
+  m_Size: {x: 2.3287082, y: 1.662907}
   m_EdgeRadius: 0
 --- !u!114 &1087059997028390949
 MonoBehaviour:
@@ -966,6 +978,104 @@ MonoBehaviour:
   hideYFront: -4
   edgeTolerance: 1
   hideEdgeOffset: 1
+  rendereSkeletonAnimation: {fileID: 0}
+  meshRenderer: {fileID: 0}
+--- !u!23 &95930020756722382
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480460543109864550}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b5857fd5eb30041d5a61a7cc472070f2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6936487663286771488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480460543109864550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: 8f671b1897c754b068c9f359afd3956d, type: 2}
+  initialSkinName: 
+  fixPrefabOverrideViaMeshFilter: 2
+  initialFlipX: 1
+  initialFlipY: 0
+  updateWhenInvisible: 3
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  fixDrawOrder: 0
+  addNormals: 0
+  calculateTangents: 0
+  maskInteraction: 0
+  maskMaterials:
+    materialsMaskDisabled: []
+    materialsInsideMask: []
+    materialsOutsideMask: []
+  disableRenderingOnOverride: 1
+  physicsPositionInheritanceFactor: {x: 1, y: 1}
+  physicsRotationInheritanceFactor: 1
+  physicsMovementRelativeTo: {fileID: 0}
+  updateTiming: 1
+  unscaledTime: 0
+  _animationName: idle
+  loop: 0
+  timeScale: 1
+--- !u!33 &3096734688186961851
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480460543109864550}
+  m_Mesh: {fileID: 0}
 --- !u!1 &6439537108068108220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2050433937076220370
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,8 +1227,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -0.76, y: 0.76, z: 0.7600001}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7369461547751264453}
+  m_Children: []
   m_Father: {fileID: 8497295401641567422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8783346436292675640

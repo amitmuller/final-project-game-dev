@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Spine.Unity;
+using Spine.Unity.Examples;
 
 public class characterMovement : MonoBehaviour
 {
@@ -66,12 +68,19 @@ public class characterMovement : MonoBehaviour
     [SerializeField] private float noiseLevelToAdd = 0.1f;
     [SerializeField] private float noiseTriggerSpeed = 4f;
     
-
+    [Header("Animation Settings")]
+    public SkeletonAnimation skeletonAnimation;
+    public AnimationReferenceAsset idle, walking;
+    public string currentAnimationName;
+    
     private float size;
     private Vector2 rawMoveInput;
+    
 
     private void Awake()
     {
+        currentAnimationName = "idle";
+        SetCharacterState(currentAnimationName);
         body = GetComponent<Rigidbody2D>();
         ground = GetComponent<characterGround>();
         size = transform.localScale.x;
@@ -100,11 +109,12 @@ public class characterMovement : MonoBehaviour
             aimDirection = _input;
         }
         else if (canMove)
-        {
+        { 
             directionX = _input.x;
             rawMoveInput = _input;
             
         }
+        
     }
 
     public void OnSpit(InputAction.CallbackContext context)
@@ -141,7 +151,9 @@ public class characterMovement : MonoBehaviour
 
     private void Update()
     {
+        
         if (isDashing) return;
+
         
         float horizontalSpeed = Mathf.Abs(body.linearVelocity.x);
         // noiseTimer -= Time.deltaTime;
@@ -165,6 +177,17 @@ public class characterMovement : MonoBehaviour
         desiredVelocity = canMove ?  
             Vector2.Lerp(desiredVelocity, new Vector2(rawMoveInput.x, 0f) * maxSpeed, Time.deltaTime * 10f) 
             : Vector2.zero;
+        if (desiredVelocity == Vector2.zero)
+        {
+            Debug.Log("Can't move");
+            SetCharacterState("idle");
+        }
+        else if (desiredVelocity != Vector2.zero)
+        {
+            Debug.Log("CAN MOVE");
+            SetCharacterState("walking");
+        }
+        
 
         // Draw aim line
         if (isHoldingAim && aimLine != null && aimDirection != Vector2.zero)
@@ -261,7 +284,31 @@ public class characterMovement : MonoBehaviour
             rawMoveInput = Vector2.zero;
             desiredVelocity = Vector2.zero;
             velocity = Vector2.zero;
-            body.velocity = Vector2.zero;
+            body.linearVelocity = Vector2.zero;
+        }
+    }
+
+    public void SetAnimation(AnimationReferenceAsset animation, bool loop)
+    {
+        if (skeletonAnimation == null || animation == null)
+            return;
+
+        if (currentAnimationName == animation.name)
+            return; // Avoid restarting same animation
+
+        skeletonAnimation.state.SetAnimation(0, animation, loop);
+        currentAnimationName = animation.name;
+    }
+
+    public void SetCharacterState(string state)
+    {
+        if (state.Equals("idle"))
+        {
+            SetAnimation(idle, true);
+        }
+        else if (state.Equals("walking"))
+        {
+            SetAnimation(walking, true);
         }
     }
 }

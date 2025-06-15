@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Interactable_objects;
 using Interactable_objects.object_utills.enums;
+using Spine.Unity;
 
 namespace Characters.Player
 {
@@ -35,6 +36,8 @@ namespace Characters.Player
         [SerializeField, Min(0.01f)] private float edgeTolerance = 1f;
         [SerializeField] private float hideEdgeOffset = 1f;
         
+        [SerializeField] private SkeletonAnimation rendereSkeletonAnimation;
+        [SerializeField] private MeshRenderer meshRenderer;
         private const float  PeekThreshold = 0.95f;
 
         private HidableObject currentHidable;
@@ -52,7 +55,9 @@ namespace Characters.Player
             // Grab the SpriteRenderer if not assigned
             if (!bodyRenderer)
                 bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
-
+            
+            rendereSkeletonAnimation = GetComponent<SkeletonAnimation>();
+            meshRenderer = rendereSkeletonAnimation?.GetComponent<MeshRenderer>();
             originalColor   = bodyRenderer.color;
             originalOrder   = bodyRenderer.sortingOrder;
             originalY       = transform.position.y;
@@ -85,12 +90,13 @@ namespace Characters.Player
             // Behind or in front?
             if (currentHidable.Layer == HideLayer.Back)
             {
-                bodyRenderer.sortingOrder = hiddenBackOrder;
+                meshRenderer.sortingOrder = hiddenBackOrder;
                 targetHideY               = hideYBack;
             }
             else
             {
-                bodyRenderer.sortingOrder = hiddenFrontOrder;
+                //bodyRenderer.sortingOrder = hiddenFrontOrder;
+                meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
             }
             if(blurTf != null)
@@ -103,7 +109,7 @@ namespace Characters.Player
         {
             // Restore visuals
             bodyRenderer.color        = originalColor;
-            bodyRenderer.sortingOrder = originalOrder;
+            meshRenderer.sortingOrder = originalOrder;
 
             // Snap back to original Y
             var pos = transform.position;
