@@ -15,7 +15,8 @@ public class NoiseUIManager : MonoBehaviour
     [SerializeField] private float noiseThreshold = 0.8f; // normalized 0–1
     [SerializeField] private float decayRate = 0.5f;       // how fast it fades down
     [SerializeField] private float noiseCooldown = 1f;
-
+    [SerializeField] private GameObject player;
+    
     private float currentNoise = 0f;
     private float noiseTimer = 0f;
 
@@ -48,7 +49,7 @@ public class NoiseUIManager : MonoBehaviour
         // Trigger noise event if over threshold
         if (currentNoise >= noiseThreshold && noiseTimer <= 0f)
         {
-            NoiseManager.RaiseNoise(transform.position); // Or another global point
+            NoiseManager.RaiseNoise(player.transform.position); // Or another global point
             noiseTimer = noiseCooldown;
         }
     }
@@ -82,8 +83,7 @@ public class NoiseUIManager : MonoBehaviour
         Vector2 newPos = thresholdMarkerRect.anchoredPosition;
         newPos.x = localX;
         thresholdMarkerRect.anchoredPosition = newPos;
-
-        Debug.Log($"Threshold marker set to {localX} px ({thresholdPercent * 100}% of bar width)");
+        
     }
 
 
