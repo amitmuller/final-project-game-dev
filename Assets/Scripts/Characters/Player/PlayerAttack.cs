@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using MoreMountains.Feedbacks;
+
 
 public class PlayerAttack: MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerAttack: MonoBehaviour
     [FormerlySerializedAs("attackRadius")] [SerializeField] private float superAttackRadius = 1f;
     [SerializeField] private float attackRadiusFactor = 0.3f;
     [SerializeField] private float attackBacklashForce = 5f;
+    [SerializeField] private MMF_Player attackFeedback;
     private bool isAttacking = false;
     
     
@@ -77,6 +80,10 @@ public class PlayerAttack: MonoBehaviour
     {
         Invoke("notAttacking", timeOfAttack);
         isAttacking = true;
+        if (attackFeedback != null)
+        {
+            attackFeedback.PlayFeedbacks();
+        }
         _rb.AddForce(-FacingDirection * attackBacklashForce, ForceMode2D.Impulse);
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, superAttackRadius); // Adjust radius as needed
         foreach (var hit in hits)

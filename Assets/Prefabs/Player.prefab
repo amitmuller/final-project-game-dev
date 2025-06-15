@@ -711,6 +711,7 @@ MonoBehaviour:
   superAttackRadius: 4
   attackRadiusFactor: 0.3
   attackBacklashForce: 5
+  attackFeedback: {fileID: 1339770100807432576, guid: c06ae3110694f498e9f1fe15294972e3, type: 3}
   onGround: 1
 --- !u!114 &1951231475404353444
 MonoBehaviour:
