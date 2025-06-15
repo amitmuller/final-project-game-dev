@@ -13748,7 +13748,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.13
+  m_Intensity: 0.8
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000cffc7cba45dfbaef6186dc1631a12cb677b151b133afa3d59577ca3a
@@ -19513,6 +19513,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    checkpointPosition: {x: 0, y: 0}
     hasActivated: 0
   - cartName: Cart 1
     enemies:
@@ -19521,6 +19522,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    checkpointPosition: {x: 0, y: 0}
     hasActivated: 0
   - cartName: Cart 2
     enemies:
@@ -19530,6 +19532,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    checkpointPosition: {x: 0, y: 0}
     hasActivated: 0
 --- !u!4 &135797782
 Transform:
