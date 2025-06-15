@@ -35,6 +35,7 @@ public class characterMovement : MonoBehaviour
     private float acceleration;
     private float deceleration;
     private float turnSpeed;
+    private Vector2 _input;
 
     [Header("Current State")]
     public bool onGround;
@@ -93,16 +94,15 @@ public class characterMovement : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        Vector2 input = context.ReadValue<Vector2>();
-
+        _input = context.ReadValue<Vector2>();
         if (isHoldingAim)
         {
-            aimDirection = input;
+            aimDirection = _input;
         }
         else if (canMove)
         {
-            directionX = input.x;
-            rawMoveInput = input;
+            directionX = _input.x;
+            rawMoveInput = _input;
             
         }
     }
@@ -133,7 +133,6 @@ public class characterMovement : MonoBehaviour
     {
         if (canDash)
         {
-            Debug.Log("in dash");
             StartCoroutine(dash());
         }
     }
@@ -162,15 +161,10 @@ public class characterMovement : MonoBehaviour
             pressingKey = false;
         }
 
-        // desiredVelocity = canMove
-        //     ? Vector2.Lerp(desiredVelocity, new Vector2(rawMoveInput.x, 0f) * speed, Time.deltaTime * 10f)
-        //     : Vector2.zero;
-        desiredVelocity = Vector2.Lerp(
-            desiredVelocity,
-            new Vector2(rawMoveInput.x, 0f) * maxSpeed,
-            Time.deltaTime * 10f
-        );
 
+        desiredVelocity = canMove ?  
+            Vector2.Lerp(desiredVelocity, new Vector2(rawMoveInput.x, 0f) * maxSpeed, Time.deltaTime * 10f) 
+            : Vector2.zero;
 
         // Draw aim line
         if (isHoldingAim && aimLine != null && aimDirection != Vector2.zero)
@@ -188,7 +182,7 @@ public class characterMovement : MonoBehaviour
 
         velocity = body.linearVelocity;
 
-        if (canMove)
+        if (canMove || _input.y <= 0.8f)
         {
             move();
         }
@@ -196,7 +190,17 @@ public class characterMovement : MonoBehaviour
 
     private void move()
     {
-        velocity.x = desiredVelocity.x;
+        if (Mathf.Abs(directionX) > 0.01f)
+        {
+            // Apply desired movement
+            velocity.x = desiredVelocity.x;
+        }
+        else
+        {
+            // Apply friction to stop sliding
+            velocity.x = Mathf.MoveTowards(velocity.x, 0f, friction * Time.fixedDeltaTime);
+        }
+
         body.linearVelocity = velocity;
     }
 
@@ -204,15 +208,12 @@ public class characterMovement : MonoBehaviour
     {
         if (direction.sqrMagnitude < 0.1f)
         {
-            Debug.Log("No aim direction — did not shoot.");
             return;
         }
 
         var projectileGO = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         var projectile = projectileGO.GetComponent<Characters.Player.PlayerProjectile>();
         projectile.SetDirection(direction);
-
-        Debug.Log("Fired projectile in direction: " + direction.normalized);
     }
 
     private IEnumerator dash()
@@ -247,5 +248,20 @@ public class characterMovement : MonoBehaviour
 
         speed = originalSpeed;
         isSlowed = false;
+    }
+    public Vector2 MoveInput => _input;
+
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
+
+        if (!canMove)
+        {
+            directionX = 0;
+            rawMoveInput = Vector2.zero;
+            desiredVelocity = Vector2.zero;
+            velocity = Vector2.zero;
+            body.velocity = Vector2.zero;
+        }
     }
 }
