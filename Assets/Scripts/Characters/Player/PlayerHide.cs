@@ -121,7 +121,6 @@ namespace Characters.Player
 
         private void Update()
         {
-            Debug.Log("moveinput : "+ playerMove.MoveInput);
             // Show/hide indicator when near edge
             if (!isHiding && currentHidable != null)
             {
