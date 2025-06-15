@@ -53,18 +53,18 @@ namespace Characters.Player
         {
             playerMove = GetComponent<characterMovement>();
             // Grab the SpriteRenderer if not assigned
-            if (!bodyRenderer)
-                bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
+            //if (!bodyRenderer)
+              //  bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
             
-            rendereSkeletonAnimation = GetComponent<SkeletonAnimation>();
-            meshRenderer = rendereSkeletonAnimation?.GetComponent<MeshRenderer>();
-            originalColor   = bodyRenderer.color;
-            originalOrder   = bodyRenderer.sortingOrder;
+            //rendereSkeletonAnimation = GetComponent<SkeletonAnimation>();
+            meshRenderer = GetComponent<MeshRenderer>();
+            //originalColor   = bodyRenderer.color;
+            originalOrder   = meshRenderer.sortingOrder;
             originalY       = transform.position.y;
             playerCollider  = GetComponent<Collider2D>();
             blurTf = transform.Find("BlurScreen");
             // Ensure we start at our normal order
-            bodyRenderer.sortingOrder = normalOrder;
+            meshRenderer.sortingOrder = normalOrder;
         }
 
         // Called by HidableObject when player comes near
@@ -108,7 +108,7 @@ namespace Characters.Player
         private void ExitHide()
         {
             // Restore visuals
-            bodyRenderer.color        = originalColor;
+            //bodyRenderer.color        = originalColor;
             meshRenderer.sortingOrder = originalOrder;
 
             // Snap back to original Y
