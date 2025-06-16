@@ -91,6 +91,7 @@ public class EnemyAIController : MonoBehaviour
     private float fovYOffset = 6.5f;
     private GameObject _fovMeshObject;
     private Vector3 _fovOriginalLocalScale;
+    [SerializeField] private float fieldOfViewAngle = 120f;
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     private float size;
@@ -225,10 +226,11 @@ public class EnemyAIController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            GameManager.Instance.checkpoint(collision.transform);
+            // GameManager.Instance.checkpoint(collision.transform);
         }
     }
     // private void LateUpdate()
@@ -266,29 +268,48 @@ public class EnemyAIController : MonoBehaviour
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
     
+    // public bool IsInChasingDistanceFromPlayer()
+    // {
+    //     Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
+    //     Vector2 toPlayer = new Vector2(playerTransform.position.x, playerTransform.position.y) - origin;
+    //     Vector2 direction = GetFacingDirection(); // or any direction you want
+    //     float length = detectionRange;
+    //
+    //     Debug.DrawLine(origin, origin + direction * length, Color.red);
+    //     if (toPlayer.magnitude > detectionRange)
+    //         return false;
+    //
+    //     Vector2 facing = GetFacingDirection();
+    //     float angle = Vector2.Angle(facing, toPlayer.normalized);
+    //
+    //     if (angle <= fieldOfViewAngle / 2f && !IsPlayerHiding())
+    //     {
+    //         return true;
+    //     }
+    //
+    //     return false;
+    // }
     public bool IsInChasingDistanceFromPlayer()
     {
-        
-        
-        Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
-        Vector2 toPlayer = new Vector2(playerTransform.position.x, playerTransform.position.y) - origin;
-        Vector2 direction = GetFacingDirection(); // or any direction you want
-        float length = detectionRange;
+        if (IsPlayerHiding()) return false;
 
-        Debug.DrawLine(origin, origin + direction * length, Color.red);
-        if (toPlayer.magnitude > detectionRange)
+        Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
+        Vector2 toPlayer = (Vector2)playerTransform.position - origin;
+
+        // 1. Early out by distance
+        if (toPlayer.sqrMagnitude > detectionRange * detectionRange)
             return false;
 
+        // 2. Use dot product instead of expensive angle math
+        Vector2 dirToPlayer = toPlayer.normalized;
         Vector2 facing = GetFacingDirection();
-        float angle = Vector2.Angle(facing, toPlayer.normalized);
 
-        if (angle <= 30f && !IsPlayerHiding()) // half of 60°
-        {
-            return true;
-        }
+        float dot = Vector2.Dot(facing, dirToPlayer);
+        float minDot = Mathf.Cos(fieldOfViewAngle * 0.5f * Mathf.Deg2Rad); // precompute for performance
 
-        return false;
+        return dot >= minDot;
     }
+
 
 
     
@@ -316,19 +337,38 @@ public class EnemyAIController : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-        Vector2 origin = (Vector2)transform.position+new Vector2(0, 1.5f);
+        Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
         Vector2 facing = Application.isPlaying ? GetFacingDirection() : Vector2.right;
 
         float range = detectionRange;
-        float angle = 30f;
 
-        Vector2 leftDir = Quaternion.Euler(0, 0, -angle) * facing;
-        Vector2 rightDir = Quaternion.Euler(0, 0, angle) * facing;
+        // Actual detection logic cone (half angle)
+        float detectionHalfAngle = fieldOfViewAngle / 2f;
 
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(origin, origin + leftDir * range);
-        Gizmos.DrawLine(origin, origin + rightDir * range);
+        // Visual: detection cone (used for logic)
+        Vector2 leftLogic = Quaternion.Euler(0, 0, -detectionHalfAngle) * facing;
+        Vector2 rightLogic = Quaternion.Euler(0, 0, detectionHalfAngle) * facing;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(origin, origin + leftLogic * range);
+        Gizmos.DrawLine(origin, origin + rightLogic * range);
+
+        // Visual: mesh cone (entire cone) for reference
+        Gizmos.color = new Color(0, 1, 0, 0.5f); // green
+        int rays = 20;
+        float angleStep = fieldOfViewAngle / rays;
+        for (int i = 0; i <= rays; i++)
+        {
+            float angle = -fieldOfViewAngle / 2f + i * angleStep;
+            Vector2 dir = Quaternion.Euler(0, 0, angle) * facing;
+            Gizmos.DrawLine(origin, origin + dir * range);
+        }
+
+        // Draw base arc (optional)
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(origin, range);
     }
+
 
     private void CreateFOVMesh()
     {
@@ -346,12 +386,21 @@ public class EnemyAIController : MonoBehaviour
         _fovMeshObject.GetComponent<Renderer>().sortingLayerName = "Player";
         _fovMeshObject.GetComponent<Renderer>().sortingOrder =10;
         _fovOriginalLocalScale = _fovMeshObject.transform.localScale;
+        PolygonCollider2D polyCollider = _fovMeshObject.AddComponent<PolygonCollider2D>();
+        _fovMeshObject.AddComponent<EnemyFOVTrigger>();
+        polyCollider.isTrigger = true;
+        
+        Rigidbody2D rb = _fovMeshObject.AddComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.simulated = true;
+        rb.gravityScale = 0;
+        rb.interpolation = RigidbodyInterpolation2D.None;
 
         Mesh mesh = new Mesh();
         meshFilter.mesh = mesh;
 
         int rayCount = 30;
-        float fov = 60f;
+        float fov = fieldOfViewAngle;
         float viewDistance = detectionRange;
 
         Vector3[] vertices = new Vector3[rayCount + 2];
@@ -376,11 +425,18 @@ public class EnemyAIController : MonoBehaviour
                 triangles[idx + 2] = i + 2;
             }
         }
+        
 
         mesh.Clear();
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
+        Vector2[] colliderPoints = new Vector2[vertices.Length];
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            colliderPoints[i] = vertices[i];
+        }
+        polyCollider.SetPath(0, colliderPoints);
     }
 
 }
