@@ -675,7 +675,6 @@ MonoBehaviour:
   friction: 0
   directionX: 0
   velocity: {x: 0, y: 0}
-  onGround: 0
   pressingKey: 0
   dashSpeed: 20
   dashDuration: 0.5
@@ -975,8 +974,8 @@ MonoBehaviour:
   normalOrder: 11
   hiddenBackOrder: 1
   hiddenFrontOrder: 21
-  hideYBack: -0.98
-  hideYFront: -4
+  hideYBack: -2.2
+  hideYFront: -4.1
   edgeTolerance: 1
   hideEdgeOffset: 1
   rendereSkeletonAnimation: {fileID: 0}
