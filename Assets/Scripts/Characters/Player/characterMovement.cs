@@ -14,7 +14,8 @@ public class characterMovement : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D body;
     characterGround ground;
-
+    private PlayerHide hide;
+    
     [FormerlySerializedAs("maxSpeed")]
     [Header("Movement Stats")]
     [SerializeField] private float speed = 10f;
@@ -69,7 +70,7 @@ public class characterMovement : MonoBehaviour
     
     [Header("Animation Settings")]
     public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, walking;
+    public AnimationReferenceAsset idle, walking, walkingHiding, intoHidingDown, intoHiding;
     public string currentAnimationName;
     
     private float size;
@@ -81,6 +82,7 @@ public class characterMovement : MonoBehaviour
         currentAnimationName = "idle";
         SetCharacterState(currentAnimationName);
         body = GetComponent<Rigidbody2D>();
+        hide = GetComponent<PlayerHide>();
         size = transform.localScale.x;
 
         if (aimLine != null)
@@ -175,17 +177,8 @@ public class characterMovement : MonoBehaviour
         desiredVelocity = canMove ?  
             Vector2.Lerp(desiredVelocity, new Vector2(rawMoveInput.x, 0f) * maxSpeed, Time.deltaTime * 10f) 
             : Vector2.zero;
-        if (desiredVelocity == Vector2.zero)
-        {
-            Debug.Log("Can't move");
-            SetCharacterState("idle");
-        }
-        else if (desiredVelocity != Vector2.zero)
-        {
-            Debug.Log("CAN MOVE");
-            SetCharacterState("walking");
-        }
         
+        AnimationHandler();
 
         // Draw aim line
         if (isHoldingAim && aimLine != null && aimDirection != Vector2.zero)
@@ -285,8 +278,29 @@ public class characterMovement : MonoBehaviour
             body.linearVelocity = Vector2.zero;
         }
     }
+    
+    
+    // ------------------------ Animations -------------------------- //
+    private void AnimationHandler()
+    {
+        if (desiredVelocity == Vector2.zero)
+        {
+            SetCharacterState("idle");
+        }
+        else if (desiredVelocity != Vector2.zero)
+        {
+            if (!hide.IsHiding())
+            {
+                SetCharacterState("walking");
+            }
+            else
+            {
+                SetCharacterState("walkingHiding");
+            }
+        }
+    }
 
-    public void SetAnimation(AnimationReferenceAsset animation, bool loop)
+    private void SetAnimation(AnimationReferenceAsset animation, bool loop)
     {
         if (skeletonAnimation == null || animation == null)
             return;
@@ -308,5 +322,18 @@ public class characterMovement : MonoBehaviour
         {
             SetAnimation(walking, true);
         }
+        else if (state.Equals("intoHidingDown"))
+        {
+            SetAnimation(intoHidingDown, true);
+        }
+        else if (state.Equals("intoHiding"))
+        {
+            SetAnimation(intoHiding, false);
+        }
+        else if (state.Equals("walkingHiding"))
+        {
+            SetAnimation(walkingHiding, true);
+        }
+        
     }
 }

@@ -90,12 +90,13 @@ namespace Characters.Player
             // Behind or in front?
             if (currentHidable.Layer == HideLayer.Back)
             {
+                playerMove.SetCharacterState("intoHiding");
                 meshRenderer.sortingOrder = hiddenBackOrder;
                 targetHideY               = hideYBack;
             }
             else
             {
-                //bodyRenderer.sortingOrder = hiddenFrontOrder;
+                playerMove.SetCharacterState("intoHidingDown");
                 meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
             }

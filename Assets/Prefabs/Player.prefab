@@ -691,6 +691,9 @@ MonoBehaviour:
   skeletonAnimation: {fileID: 6936487663286771488}
   idle: {fileID: 11400000, guid: 926a6793932aa4fecac4bb0b4589ee3d, type: 2}
   walking: {fileID: 11400000, guid: 931cbc4361b7e498ab1eb87517c36f4f, type: 2}
+  walkingHiding: {fileID: 11400000, guid: ed55fa31620e446f883265b11cafebe0, type: 2}
+  intoHidingDown: {fileID: 11400000, guid: 5eb4e07b6f4ba48f8bc0b9fbd8a95ad5, type: 2}
+  intoHiding: {fileID: 11400000, guid: d15223fffa2e142ffb493f0c0e3512c0, type: 2}
   currentAnimationName: 
 --- !u!114 &1965623225461360176
 MonoBehaviour:
@@ -974,7 +977,7 @@ MonoBehaviour:
   normalOrder: 11
   hiddenBackOrder: 1
   hiddenFrontOrder: 21
-  hideYBack: -2.2
+  hideYBack: -3
   hideYFront: -4.1
   edgeTolerance: 1
   hideEdgeOffset: 1
