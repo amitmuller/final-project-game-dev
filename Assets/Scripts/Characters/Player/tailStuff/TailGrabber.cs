@@ -127,6 +127,8 @@ public class TailGrabber : MonoBehaviour
             Vector2 throwDir = new Vector2(-facing, verticalThrowAngle).normalized;
 
             connector.Detach();
+            impactMarkerInstance.SetActive(false);
+            
             heldObject.isKinematic = false;
             heldObject.AddForce(throwDir * force, ForceMode2D.Impulse);
             heldObject = null;
