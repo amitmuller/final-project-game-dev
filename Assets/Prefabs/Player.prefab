@@ -549,7 +549,6 @@ GameObject:
   - component: {fileID: 8024341543966768318}
   - component: {fileID: 1965623225461360176}
   - component: {fileID: 1951231475404353444}
-  - component: {fileID: 395701750817063682}
   - component: {fileID: 5665994334471902652}
   - component: {fileID: 1087059997028390949}
   - component: {fileID: 95930020756722382}
@@ -589,11 +588,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480460543109864550}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -672,7 +671,7 @@ MonoBehaviour:
   maxAirAcceleration: 10
   maxAirDeceleration: 24.7
   maxAirTurnSpeed: 81.6
-  friction: 0
+  friction: 15
   directionX: 0
   velocity: {x: 0, y: 0}
   pressingKey: 0
@@ -702,7 +701,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480460543109864550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b40ae8408977b427895691ecac586fdb, type: 3}
   m_Name: 
@@ -893,26 +892,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &395701750817063682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480460543109864550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4bbe0a0b7ad64afa8ceb82de42cccaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLength: 1.5
-  colliderOffset: {x: 0, y: 0, z: 0}
-  width: 1.5
-  height: 0.8
-  yOffset: 1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!61 &5665994334471902652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -947,7 +926,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.16496634, y: 0.7646223}
+  m_Offset: {x: 0.14218748, y: 0.87893444}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -957,7 +936,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.3287082, y: 1.662907}
+  m_Size: {x: 1.7343223, y: 2.0784264}
   m_EdgeRadius: 0
 --- !u!114 &1087059997028390949
 MonoBehaviour:
@@ -977,7 +956,7 @@ MonoBehaviour:
   normalOrder: 11
   hiddenBackOrder: 1
   hiddenFrontOrder: 21
-  hideYBack: -3.1
+  hideYBack: -2.2
   hideYFront: -4.1
   edgeTolerance: 1
   hideEdgeOffset: 1
@@ -1069,7 +1048,7 @@ MonoBehaviour:
   updateTiming: 1
   unscaledTime: 0
   _animationName: idle
-  loop: 0
+  loop: 1
   timeScale: 1
 --- !u!33 &3096734688186961851
 MeshFilter:

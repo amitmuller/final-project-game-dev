@@ -230,7 +230,7 @@ public class EnemyAIController : MonoBehaviour
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            // GameManager.Instance.checkpoint(collision.transform);
+            GameManager.Instance.checkpoint(collision.transform);
         }
     }
     // private void LateUpdate()

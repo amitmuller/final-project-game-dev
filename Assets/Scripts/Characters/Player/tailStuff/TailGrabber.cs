@@ -74,7 +74,7 @@ public class TailGrabber : MonoBehaviour
 
     public void onGrab(InputAction.CallbackContext context)
     {
-        if (context.started && !playerHide.IsHiding())
+        if (context.started)
         {
             if (connector.IsConnected)
             {
@@ -87,7 +87,7 @@ public class TailGrabber : MonoBehaviour
                 Grab();
             }
         }
-        else if (context.canceled && isHolding && !playerHide.IsHiding())
+        else if (context.canceled && isHolding)
         {
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));

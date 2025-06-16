@@ -12,7 +12,9 @@ public class TailConnector : MonoBehaviour
         // Disable physics so object follows tail exactly
         heldRigidbody.isKinematic = true;
         heldObjectTransform.SetParent(transform);
-        heldObjectTransform.localPosition = Vector3.zero; // Snap to tail
+        // heldObjectTransform.localPosition = new Vector3(0,0,0); // Snap to tail
+        
+        heldObjectTransform.localPosition = new Vector3(-0.5f,1,0); // Snap to tail
     }
 
     public void Detach()

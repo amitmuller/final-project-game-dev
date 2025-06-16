@@ -1,3 +1,4 @@
+using System;
 using Light;
 using UnityEngine;
 
@@ -63,6 +64,7 @@ public class ThrowableObject : MonoBehaviour
             noiseParticles.gameObject.transform.position = transform.position;
             noiseParticles.Play();
             gameObject.layer = LayerMask.NameToLayer("notCollide");
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
     }
@@ -82,8 +84,14 @@ public class ThrowableObject : MonoBehaviour
             Destroy(other.gameObject);
         }
         
-
         
+        
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, 5);
     }
 }
 
