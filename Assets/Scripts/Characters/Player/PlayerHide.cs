@@ -101,8 +101,9 @@ namespace Characters.Player
             }
             if(blurTf != null)
                 blurTf.gameObject.SetActive(true);
-
+            
             isHiding = true;
+            UpdateHeldObjectSorting();
         }
 
         private void ExitHide()
@@ -117,6 +118,7 @@ namespace Characters.Player
             if(blurTf != null)
                 blurTf.gameObject.SetActive(false);
             isHiding = false;
+            UpdateHeldObjectSorting();
         }
 
         private void Update()
@@ -206,6 +208,23 @@ namespace Characters.Player
                                 new Vector3(currentHidable.LeftX,  y + 0.5f, 0));
                 Gizmos.DrawLine(new Vector3(currentHidable.RightX, y - 0.5f, 0),
                                 new Vector3(currentHidable.RightX, y + 0.5f, 0));
+            }
+        }
+        
+        public void UpdateHeldObjectSorting()
+        {
+            var grabber = GetComponentInChildren<TailGrabber>();
+            Debug.Log(grabber != null);
+            Debug.Log(grabber.HasObject);
+            if (grabber != null && grabber.HasObject)
+            {
+                var objRenderer = grabber.GetHeldObjectRenderer();
+                if (objRenderer != null)
+                {
+                    Debug.Log(isHiding);
+                    Debug.Log(isHiding ? meshRenderer.sortingOrder + 1 : normalOrder + 1);
+                    objRenderer.sortingOrder = isHiding ? meshRenderer.sortingOrder + 1 : normalOrder + 1;
+                }
             }
         }
     }

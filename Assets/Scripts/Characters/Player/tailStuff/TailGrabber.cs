@@ -91,7 +91,6 @@ public class TailGrabber : MonoBehaviour
         {
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));
-            Debug.Log("Grabbing2 " + heldObject.name);
             StartCoroutine(DelayedThrow(force));
             heldObject.GetComponent<Collider2D>().isTrigger = false;
             isHolding = false;
@@ -105,6 +104,16 @@ public class TailGrabber : MonoBehaviour
         {
             connector.Attach(heldObject);
             heldObject.GetComponent<ThrowableObject>()?.GrabObject();
+            var playerRenderer = GetComponentInParent<Renderer>();
+            
+            var objRenderer = heldObject.GetComponent<Renderer>();
+            if (playerRenderer != null && objRenderer != null)
+            {
+                
+                objRenderer.sortingLayerName = "Default";
+                Debug.Log(playerRenderer.sortingOrder);
+                objRenderer.sortingOrder = playerRenderer.sortingOrder+1; // Appear above player
+            }
         }
     }
 
@@ -135,6 +144,10 @@ public class TailGrabber : MonoBehaviour
         float force = Mathf.Lerp(minThrowForce, maxThrowForce, t);
 
         DrawTrajectory(force);
+    }
+    public Renderer GetHeldObjectRenderer()
+    {
+        return heldObject != null ? heldObject.GetComponent<Renderer>() : null;
     }
 
     private void DrawTrajectory(float force)
