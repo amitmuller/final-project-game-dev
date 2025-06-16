@@ -15,6 +15,7 @@ TagManager:
   - lightBolb
   - Throwable
   - sticky
+  - EnemyFOV
   layers:
   - Default
   - TransparentFX

@@ -40,7 +40,6 @@ public class characterMovement : MonoBehaviour
     private Vector2 _input;
 
     [Header("Current State")]
-    public bool onGround;
     public bool pressingKey;
 
     [Header("Dash Settings")]
@@ -82,7 +81,6 @@ public class characterMovement : MonoBehaviour
         currentAnimationName = "idle";
         SetCharacterState(currentAnimationName);
         body = GetComponent<Rigidbody2D>();
-        ground = GetComponent<characterGround>();
         size = transform.localScale.x;
 
         if (aimLine != null)

@@ -7,10 +7,14 @@ public class ThrowableObject : MonoBehaviour
     private Color originalColor;
     public Color highlightColor = Color.yellow;
     private GameObject indicatorInstance;
+    public bool IsHeld { get; set; } = false;
+    private ParticleSystem noiseParticles;
+    
 
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        noiseParticles = GetComponentInChildren<ParticleSystem>();
         originalColor = sr.color;
         var prefab = Resources.Load<GameObject>("takeThrowIcon");
         if (prefab)
@@ -40,14 +44,11 @@ public class ThrowableObject : MonoBehaviour
         indicatorInstance.SetActive(false);
     }
     
-    
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         // You can filter with collision.gameObject.tag if needed
         if (collision.gameObject.CompareTag("lightBolb"))
         {
-            
             var lamp = collision.gameObject.GetComponent<LighBulb>();
             if (lamp != null)
             {
@@ -58,9 +59,9 @@ public class ThrowableObject : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("ground"))
         {
-            Debug.Log("Ground");
             NoiseManager.RaiseNoise(transform.position);
-            
+            noiseParticles.gameObject.transform.position = transform.position;
+            noiseParticles.Play();
             gameObject.layer = LayerMask.NameToLayer("notCollide");
         }
 
@@ -68,7 +69,7 @@ public class ThrowableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
+        
         if (other.gameObject.CompareTag("lightBolb"))
         {
             
@@ -80,6 +81,8 @@ public class ThrowableObject : MonoBehaviour
             NoiseManager.RaiseNoise(other.transform.position);
             Destroy(other.gameObject);
         }
+        
+
         
     }
 }
