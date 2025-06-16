@@ -67,6 +67,8 @@ public class characterMovement : MonoBehaviour
     [Header("raise noise Settings")]
     [SerializeField] private float noiseLevelToAdd = 0.1f;
     [SerializeField] private float noiseTriggerSpeed = 4f;
+    private float noiseCooldown = 0.01f; // Raise noise at most every 0.2 seconds
+    private float lastNoiseTime = -Mathf.Infinity;
     
     [Header("Animation Settings")]
     public SkeletonAnimation skeletonAnimation;
@@ -157,9 +159,10 @@ public class characterMovement : MonoBehaviour
         
         float horizontalSpeed = Mathf.Abs(body.linearVelocity.x);
         // noiseTimer -= Time.deltaTime;
-        if (horizontalSpeed >= noiseTriggerSpeed)
+        if (horizontalSpeed >= noiseTriggerSpeed && Time.time - lastNoiseTime >= noiseCooldown)
         {
-            NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd); // Add normalized noise level
+            NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
+            lastNoiseTime = Time.time;
         }
 
         
