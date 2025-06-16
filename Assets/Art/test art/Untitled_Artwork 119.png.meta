@@ -1106,9 +1106,9 @@ TextureImporter:
       name: Untitled_Artwork 119_40
       rect:
         serializedVersion: 2
-        x: 2693
+        x: 2695
         y: 50
-        width: 1083
+        width: 1078
         height: 433
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
