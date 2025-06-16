@@ -977,7 +977,7 @@ MonoBehaviour:
   normalOrder: 11
   hiddenBackOrder: 1
   hiddenFrontOrder: 21
-  hideYBack: -3
+  hideYBack: -3.1
   hideYFront: -4.1
   edgeTolerance: 1
   hideEdgeOffset: 1
