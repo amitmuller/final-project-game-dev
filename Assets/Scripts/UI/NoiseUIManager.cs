@@ -1,3 +1,4 @@
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ public class NoiseUIManager : MonoBehaviour
     [SerializeField] private float noiseThreshold = 0.8f; // normalized 0–1
     [SerializeField] private float decayRate = 0.5f;       // how fast it fades down
     [SerializeField] private float noiseCooldown = 1f;
-    [SerializeField] private GameObject player;
+    [SerializeField] private PlayerHide player;
     
     private float currentNoise = 0f;
     private float noiseTimer = 0f;
@@ -47,7 +48,7 @@ public class NoiseUIManager : MonoBehaviour
         }
 
         // Trigger noise event if over threshold
-        if (currentNoise >= noiseThreshold && noiseTimer <= 0f)
+        if (currentNoise >= noiseThreshold && noiseTimer <= 0f&& !player.IsHiding())
         {
             NoiseManager.RaiseNoise(player.transform.position); // Or another global point
             noiseTimer = noiseCooldown;
