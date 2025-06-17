@@ -4,16 +4,17 @@ using UnityEngine;
 
 public static class NoiseManager
 {
-    /// <summary>
-    /// Raised whenever something makes noise that enemies can investigate.
-    /// </summary>
     public static event Action<Vector2> OnNoiseRaised;
 
-    /// <summary>
-    /// Call this to notify all listeners that a noise occurred at worldPosition.
-    /// </summary>
+    /// <summary>Most recent noise position.</summary>
+    public static Vector2 LastNoisePosition { get; private set; }
+    /// <summary>Time.time when that noise happened.</summary>
+    public static float   LastNoiseTime     { get; private set; }
+
     public static void RaiseNoise(Vector2 worldPosition)
     {
+        LastNoisePosition = worldPosition;
+        LastNoiseTime     = Time.time;
         OnNoiseRaised?.Invoke(worldPosition);
     }
 }

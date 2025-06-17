@@ -24,9 +24,8 @@ namespace EnemyAI
 
         public void UpdateState(EnemyAIController enemy)
         {
-            Debug.Log("player hide: " + enemy.IsPlayerHiding());
             //  Abort chase immediately if player is hiding
-            if (enemy.IsPlayerHiding() || !enemy.IsInChasingDistanceFromPlayer())
+            if (enemy.IsPlayerHiding())
             {
                 // Record last known player position, then switch to alert
                 enemy.lastKnownNoisePosition = enemy.playerTransform.position;
@@ -47,6 +46,7 @@ namespace EnemyAI
 
         public void ExitState(EnemyAIController enemy)
         {
+            enemy.prevState = EnemyStateType.Chase;
             DOTween.KillAll();
             enemy.ExclamationIconSwitch(false);
         }
