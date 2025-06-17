@@ -29,7 +29,7 @@ namespace EnemyAI
             var targetPosition = new Vector2(targetX, enemy.patrolY);
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
             // moving towords sound last pos
-            if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.1f)
+            if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.5f)
             {
                 enemy.MoveTowards(targetPosition, enemy.searchMoveSpeed);
             }
@@ -50,16 +50,25 @@ namespace EnemyAI
                     float fillPercent = (enemy.searchTimer / enemy.searchDuration);
                     enemy.filledQuestionIcon.fillAmount = Mathf.Clamp01(fillPercent);
                 }
-
+                
                 if (enemy.searchTimer <= 0f)
                 {
-                    enemy.ChangeState(enemy.calmState);
+                    if (enemy.prevState == EnemyStateType.Calm)
+                    {
+                        enemy.ChangeState(enemy.calmState);
+                    }
+                    else
+                    {
+                        enemy.ChangeState(enemy.alertState);
+                    }
+                    
                 }
             }
         }
 
         public void ExitState(EnemyAIController enemy)
         {
+            enemy.prevState = EnemyStateType.Searching;
             enemy.StopAllCoroutines();
             enemy.filledQuestionIcon.gameObject.SetActive(false);
         }

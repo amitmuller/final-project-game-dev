@@ -32,6 +32,7 @@ public class AlertStateUtils
     private static IEnumerator GoToLastKnownPlayerPositionToStartAlertPatrol(EnemyAIController enemy, float speed)
     {
         var target = enemy.GetLastKnownPlayerPosition();
+        const float range = 1f;
         while (Mathf.Abs(target.x - enemy.transform.position.x) > 1f)
         {
             enemy.MoveTowards(target, speed);

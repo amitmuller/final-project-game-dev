@@ -86,7 +86,7 @@ namespace CalmStateUtils
         /// <summary>
         /// Handles X-axis patrol and index advancement.
         /// </summary>
-        public static void HandlePatrol(EnemyAIController self, float[] patrolPointsX, float patrolY, float speed, float threshold)
+        public static void HandlePatrol(EnemyAIController self, Transform[] patrolPointsX, float patrolY, float speed, float threshold)
         {
             if (patrolPointsX == null)
             {
@@ -96,19 +96,21 @@ namespace CalmStateUtils
             if (patrolPointsX.Length == 1)
             {
                 // peek very large number outside of screen -> moving one point
-                var targetX = patrolPointsX[0];
-                Vector2 target = new Vector2(targetX,patrolY);
-                self.MoveTowards(target , speed);
+                var target = patrolPointsX[0];
+                var moveTo = new Vector2(target.position.x,patrolY);
+                self.MoveTowards(moveTo, speed);
             }
                 
             else if (patrolPointsX.Length > 1)
             {
-               var targetX = patrolPointsX[self.currentPatrolIndex];
-                Vector2 targetPos = new Vector2(targetX, patrolY);
-                self.MoveTowards(targetPos, speed);
-
-                if (Mathf.Abs(self.transform.position.x - targetX) < threshold)
+               var target = patrolPointsX[self.currentPatrolIndex];
+               var moveTo = new Vector2(target.position.x, patrolY);
+                var rb = self.GetComponent<Rigidbody2D>();
+                var next = Vector2.MoveTowards(rb.position, moveTo, speed * Time.fixedDeltaTime);
+                rb.MovePosition(next);
+                if (Mathf.Abs(self.transform.position.x - moveTo.x) < threshold)
                 {
+                    
                     self.currentPatrolIndex =
                         (self.currentPatrolIndex + 1) % patrolPointsX.Length;
                 }
@@ -118,7 +120,5 @@ namespace CalmStateUtils
                 self.StopMovement();
             }
         }
-        
-        
     }
 }

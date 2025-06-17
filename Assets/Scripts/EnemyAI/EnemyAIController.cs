@@ -19,6 +19,7 @@ public class EnemyAIController : MonoBehaviour
     public SearchingState searchingState;
     public ChaseState     chaseState;
 
+    public EnemyStateType prevState = EnemyStateType.Calm;
     // ── Player Reference 
     [Header("Player Reference")]
     [HideInInspector] public Transform playerTransform;
@@ -31,7 +32,7 @@ public class EnemyAIController : MonoBehaviour
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
     [Tooltip("X positions to patrol between")]
-    public float[] patrolPointsX;
+    public Transform[] patrolPoints;
     [HideInInspector] public int currentPatrolIndex = 0;
     [HideInInspector] public float patrolY;  // captured at Awake
     public static int ConversationEncounterCount = 5;
@@ -109,7 +110,6 @@ public class EnemyAIController : MonoBehaviour
         patrolY         = transform.position.y;
         AllEnemies.Add(this); 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        Debug.Log(playerTransform);
         playerTransform = playerTransform.transform;
         if (playerTransform != null)
         {
@@ -131,7 +131,7 @@ public class EnemyAIController : MonoBehaviour
         CurrentStateType = EnemyStateType.Calm;
         _currentState.EnterState(this);
         UpdateSpriteColor();
-        NoiseManager.OnNoiseRaised += HandleNoise; //subscribe to noise manager
+        NoiseManager.OnNoiseRaised += HandleNoise;
     }
     
     void OnDestroy()

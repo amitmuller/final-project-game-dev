@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using static EnemyUtils.EnemyUtils;
-
+using static NoiseManager;
 namespace EnemyAI
 {
     [CreateAssetMenu(menuName = "AI States/AlertState")]
@@ -24,7 +24,14 @@ namespace EnemyAI
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
             
             alertUtils.AlertNearbyEnemies(enemy, enemy.spreadRadius);
-            
+            const float noiseStaleDuration = 2f;
+            if (Time.time - LastNoiseTime <= noiseStaleDuration
+                && Vector2.Distance(enemy.transform.position, LastNoisePosition) <= noiseDetectionRange)
+            {
+                enemy.lastKnownNoisePosition = LastNoisePosition;
+                enemy.ChangeState(enemy.searchingState);
+                return;
+            }
             if (enemy.CurrentStateType == EnemyStateType.Chase) return;
             Debug.Log($"{enemy.name} going to last position = " + enemy.isGoingToStarAlertPatrolling + " enemy patrolling = " + enemy.isAlertPatrolling);
             if (enemy.isGoingToStarAlertPatrolling)
@@ -38,16 +45,22 @@ namespace EnemyAI
 
         public void ExitState(EnemyAIController enemy)
         {
+            enemy.prevState = EnemyStateType.Alert;
             enemy.StopAllCoroutines();
             enemy.QuesitonIconSwitch(false);
         }
+        
+        // ------------------ Implementing Listener from interface in Alert state ------------------ //
+       
         public void OnNoiseRaised(Vector2 noisePosition, EnemyAIController enemy)
         {
+            if (enemy.CurrentStateType != EnemyStateType.Alert) return;
             if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange)
             {
                 enemy.lastKnownNoisePosition = noisePosition;
                 enemy.ChangeState(enemy.searchingState);
             }
         }
+        
     }
 }
