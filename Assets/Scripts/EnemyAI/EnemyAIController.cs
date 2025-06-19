@@ -32,7 +32,7 @@ public class EnemyAIController : MonoBehaviour
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
     [Tooltip("X positions to patrol between")]
-    public Transform[] patrolPoints;
+    public float[] patrolPoints;
     [HideInInspector] public int currentPatrolIndex = 0;
     [HideInInspector] public float patrolY;  // captured at Awake
     public static int ConversationEncounterCount = 5;
@@ -149,7 +149,8 @@ public class EnemyAIController : MonoBehaviour
 
     private void Update()
     {
-        walkingRight = IsWalkingRight();
+        // walkingRight = IsWalkingRight();
+        // Debug.Log("walking right+"+ _rigidbody2D.linearVelocity.x );
         // transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
         _spriteRenderer.flipX = walkingRight;
         if (_fovMeshObject != null)
@@ -205,6 +206,7 @@ public class EnemyAIController : MonoBehaviour
     public void MoveTowards(Vector2 targetPosition, float speed)
     {
         Vector2 dir = (targetPosition - (Vector2)transform.position).normalized;
+        walkingRight = dir.x > 0;
         if (_rigidbody2D != null)
         {
            

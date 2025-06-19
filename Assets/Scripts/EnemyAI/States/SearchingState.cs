@@ -20,6 +20,7 @@ namespace EnemyAI
                 enemy.filledQuestionIcon.gameObject.SetActive(true);
             }
             enemy.searchTimer = enemy.searchDuration;
+            Debug.Log("search ti,er"+ enemy.searchTimer);
             enemy.StopMovement();
         }
 
@@ -37,14 +38,9 @@ namespace EnemyAI
             {
                 enemy.StopMovement();
 
-                // Only start search in place once, when timer is at full value
-                if (Mathf.Approximately(enemy.searchTimer, enemy.searchDuration))
-                {
-                    SearchInNoisePosition(enemy, enemy.searchDuration);
-                }
-
                 // Only count down after reaching the spot
                 enemy.searchTimer -= Time.deltaTime;
+                Debug.Log("amit works in the morning " +enemy.searchTimer);
                 if (enemy.filledQuestionIcon != null)
                 {
                     float fillPercent = (enemy.searchTimer / enemy.searchDuration);

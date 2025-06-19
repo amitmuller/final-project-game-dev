@@ -36,8 +36,11 @@ public class AlertStateUtils
         while (Mathf.Abs(target.x - enemy.transform.position.x) > 1f)
         {
             enemy.MoveTowards(target, speed);
+            Debug.Log("here");
             yield return null;
+            Debug.Log("here1");
         }
+        Debug.Log("here2");
         enemy.isGoingToStarAlertPatrolling = false;
     }
     
