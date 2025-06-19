@@ -31,18 +31,36 @@ public class AlertStateUtils
 
     private static IEnumerator GoToLastKnownPlayerPositionToStartAlertPatrol(EnemyAIController enemy, float speed)
     {
-        var target = enemy.GetLastKnownPlayerPosition();
+        // Cache only the X component of the target
+        float targetX = enemy.GetLastKnownPlayerPosition().x;
         const float range = 1f;
-        while (Mathf.Abs(target.x - enemy.transform.position.x) > 1f)
+        const float maxDuration = 5f;   // bail-out time
+        float timer = 0f;
+
+        // Loop until we’re within `range` on the X axis
+        while (Mathf.Abs(enemy.transform.position.x - targetX) > range)
         {
-            enemy.MoveTowards(target, speed);
+            // Move only along X so we ignore Y entirely
+            Vector3 pos = enemy.transform.position;
+            float newX = Mathf.MoveTowards(pos.x, targetX, speed * Time.deltaTime);
+            enemy.transform.position = new Vector3(newX, pos.y, pos.z);
+
             Debug.Log("here");
             yield return null;
+            timer += Time.deltaTime;
             Debug.Log("here1");
+
+            if (timer > maxDuration)
+            {
+                Debug.LogWarning("GoToLastKnownPlayerPositionToStartAlertPatrol: timed out before reaching target X.");
+                break;
+            }
         }
+
         Debug.Log("here2");
         enemy.isGoingToStarAlertPatrolling = false;
     }
+
     
     private static IEnumerator AlertPatrolCoroutine(EnemyAIController enemy, float range, float speed)
     {

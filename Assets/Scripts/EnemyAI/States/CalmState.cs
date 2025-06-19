@@ -53,9 +53,12 @@ namespace EnemyAI
         public void OnNoiseRaised(Vector2 noisePosition, EnemyAIController enemy)
         {
             if (enemy.CurrentStateType != EnemyStateType.Calm) return;
+            Debug.Log("noise raised on calm state distance from noise: " + 
+                      Vector2.Distance(enemy.transform.position, noisePosition) + 
+                      "noise detection range is: " +noiseDetectionRange);
             if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange)
             {
-                Debug.Log("inside calm range");
+                Debug.Log("inside noise range");
                 enemy.lastKnownNoisePosition = noisePosition;
                 enemy.ChangeState(enemy.searchingState);
             }

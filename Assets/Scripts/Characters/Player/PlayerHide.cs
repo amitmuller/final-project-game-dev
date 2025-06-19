@@ -100,8 +100,8 @@ namespace Characters.Player
                 meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
             }
-            // if(blurTf != null)
-            //     blurTf.gameObject.SetActive(true);
+            if(blurTf != null)
+                 blurTf.gameObject.SetActive(true);
             
             isHiding = true;
             UpdateHeldObjectSorting();
