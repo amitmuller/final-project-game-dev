@@ -100,8 +100,8 @@ namespace Characters.Player
                 meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
             }
-            if(blurTf != null)
-                blurTf.gameObject.SetActive(true);
+            // if(blurTf != null)
+            //     blurTf.gameObject.SetActive(true);
             
             isHiding = true;
             UpdateHeldObjectSorting();
@@ -157,8 +157,8 @@ namespace Characters.Player
                 var move = playerMove.MoveInput;
                 var peek   = move.y > PeekThreshold;
                 if (peek) playerMove.SetCanMove(false); else playerMove.SetCanMove(true);
-                if (blurTf != null)
-                    blurTf.gameObject.SetActive(!peek);
+                // if (blurTf != null)
+                //     blurTf.gameObject.SetActive(!peek);
             }
         }
 

@@ -29,6 +29,7 @@ namespace EnemyAI
                 && Vector2.Distance(enemy.transform.position, LastNoisePosition) <= noiseDetectionRange)
             {
                 enemy.lastKnownNoisePosition = LastNoisePosition;
+                enemy.StopMovement();
                 enemy.ChangeState(enemy.searchingState);
                 return;
             }
