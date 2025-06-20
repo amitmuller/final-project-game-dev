@@ -56,7 +56,7 @@ public class TailGrabber : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         
-        if (other.CompareTag("Throwable") && heldObject == null && !playerHide.IsHiding())
+        if (other.CompareTag("Throwable") && heldObject == null)
         {
             heldObject = other.attachedRigidbody;
             other.GetComponent<ThrowableObject>()?.Highlight(true);
@@ -107,12 +107,10 @@ public class TailGrabber : MonoBehaviour
             var playerRenderer = GetComponentInParent<Renderer>();
             
             var objRenderer = heldObject.GetComponent<Renderer>();
-            if (playerRenderer != null && objRenderer != null)
+            if (playerRenderer != null && objRenderer != null && playerHide.IsHiding())
             {
-                
-                objRenderer.sortingLayerName = "Default";
-                Debug.Log(playerRenderer.sortingOrder);
-                objRenderer.sortingOrder = playerRenderer.sortingOrder+1; // Appear above player
+
+                playerHide.UpdateHeldObjectSorting();
             }
         }
     }
@@ -160,7 +158,7 @@ public class TailGrabber : MonoBehaviour
         Vector2 gravity = Physics2D.gravity;
 
         Vector3[] points = new Vector3[trajectoryPoints];
-        Vector3 startPos = transform.position;
+        Vector3 startPos = heldObject.transform.position;
 
         points[0] = startPos;
 
@@ -172,7 +170,7 @@ public class TailGrabber : MonoBehaviour
             // Check for collision between previous point and next point
             Vector2 prevPos = points[i - 1];
             RaycastHit2D hit = Physics2D.Linecast(prevPos, nextPos, LayerMask.GetMask("Ground")); // or use your own layer
-
+            
             if (hit.collider != null)
             {
                 points[i] = hit.point;

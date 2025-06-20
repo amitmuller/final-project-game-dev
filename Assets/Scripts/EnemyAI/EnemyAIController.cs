@@ -337,6 +337,12 @@ public class EnemyAIController : MonoBehaviour
         ChangeState(_initialState);
         StopMovement();
     }
+    public void PatrolEnemy()
+    {
+        transform.position = _initialPosition;
+        ChangeState(_initialState);
+        // StopMovement();
+    }
     private void OnDrawGizmosSelected()
     {
         Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
