@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLeftCart(int cartIndex)
     {
-        currentCart = cartIndex;
+        // currentCart = cartIndex;
         if (cartIndex < 0 || cartIndex >= carts.Count)
         {
             Debug.LogError($"PlayerEnteredCart: invalid index {cartIndex} (must be 0..{carts.Count - 1}).");
@@ -88,7 +88,12 @@ public class GameManager : MonoBehaviour
         foreach (var enemy in cart.enemies)
         {
             if (enemy == null) return;
-            enemy.SetActive(false);
+            // enemy.SetActive(false);
+            var controller = enemy.GetComponent<EnemyAIController>();
+            if (controller != null)
+            {
+                controller.PatrolEnemy();
+            }
         }
     }
 
@@ -98,6 +103,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"[GameManager] Checkpoint"+ Player.gameObject+ currentCart);
         var cart = carts[currentCart];
         ResetEnemiesInCart();
+        Debug.Log($"[GameManager] Current cart: {cart.cartName}");
         Player.transform.position = cart.checkpointPosition;
     }
     

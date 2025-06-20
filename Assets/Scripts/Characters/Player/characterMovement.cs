@@ -181,7 +181,7 @@ public class characterMovement : MonoBehaviour
             Vector2.Lerp(desiredVelocity, new Vector2(rawMoveInput.x, 0f) * maxSpeed, Time.deltaTime * 10f) 
             : Vector2.zero;
         
-        AnimationHandler();
+        // AnimationHandler();
 
         // Draw aim line
         if (isHoldingAim && aimLine != null && aimDirection != Vector2.zero)
@@ -281,6 +281,10 @@ public class characterMovement : MonoBehaviour
             body.linearVelocity = Vector2.zero;
         }
     }
+    private void LateUpdate()
+    {
+        AnimationHandler();  // now readings-body.velocity is already updated
+    }
     
     
     // ------------------------ Animations -------------------------- //
@@ -301,6 +305,12 @@ public class characterMovement : MonoBehaviour
                 SetCharacterState("walkingHiding");
             }
         }
+        // now adjust playback speed based on actual movement speed
+        float currentSpeed = Mathf.Abs(body.linearVelocity.x);
+        float t = currentSpeed / maxSpeed; // 0 at standstill, 1 at full-speed
+        // map t to a reasonable timeScale: walk at 1× when slow, up to 1.5× at full speed
+        float playbackSpeed = Mathf.Lerp(1f, 1.5f, t);
+        skeletonAnimation.timeScale = playbackSpeed;
     }
 
     private void SetAnimation(AnimationReferenceAsset animation, bool loop)
