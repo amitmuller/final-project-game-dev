@@ -25,7 +25,6 @@ namespace EnemyUtils
             }
             
             var playerHidden  = enemy.IsPlayerHiding();
-            var distToPlayer = Mathf.Abs(enemy.transform.position.x-enemy.playerTransform.position.x);
             if (!playerHidden && enemy.IsInChasingDistanceFromPlayer())
             {
                 enemy.ChangeState(enemy.chaseState);

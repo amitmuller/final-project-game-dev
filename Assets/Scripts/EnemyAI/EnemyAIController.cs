@@ -50,6 +50,7 @@ public class EnemyAIController : MonoBehaviour
     public float detectionRange      = 15f;
     public float calmMoveSpeed       = 2f;
     public float chaseMoveSpeed      = 4f;
+    public float chaseDashSpeed      = 6f;
     public float searchMoveSpeed     = 2.5f;
 
     [Header("State Durations")]
@@ -102,6 +103,10 @@ public class EnemyAIController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
     [SerializeField] SpriteRenderer _spriteRenderer;
+    
+    [Header("Searching state")]
+    [HideInInspector] public float moveToNoiseTimer;
+    
 
     void Awake()
     {
@@ -175,7 +180,7 @@ public class EnemyAIController : MonoBehaviour
         _currentState.ExitState(this);
         _currentState    = newState;
         CurrentStateType = newState.StateType;
-        Debug.Log($"[EnemyAI] {name} -> {CurrentStateType}");
+        Debug.Log($"[Enemy] {name} -> {CurrentStateType}");
         _currentState.EnterState(this);
         UpdateSpriteColor();
     }

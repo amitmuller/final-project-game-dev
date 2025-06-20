@@ -36,9 +36,7 @@ namespace EnemyAI
             var dt = Time.deltaTime;
             // 1) check first if player in range and not hiding to move into chase mode
             EnemyEnterChaseModeIfNeeded(enemy);
-            // 2) check if there is another calm enemy in close for conversation and talk to them
-            //if (TryHandleConversation(enemy, conversationProximityRange, conversationDuration, dt))
-             //   return;
+
             // 2) Patrol on X-axis
             HandlePatrol(enemy, enemy.patrolPoints, enemy.patrolY, enemy.calmMoveSpeed, PatrolThreshold);
         }
