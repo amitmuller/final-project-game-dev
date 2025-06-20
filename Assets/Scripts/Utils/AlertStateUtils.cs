@@ -7,6 +7,18 @@ using EnemyAI;
 
 public class AlertStateUtils
 {
+    // ------------------------------- HANDLERS ------------------------------- //
+    public void AlertNearbyEnemies(EnemyAIController source, float radius)
+    {
+        foreach (var other in EnemyAIController.AllEnemies)
+        {
+            if (other == source) continue;                     // skip self
+            if (other.CurrentStateType == EnemyStateType.Alert || other.CurrentStateType == EnemyStateType.Chase) continue;
+            if (Mathf.Abs(source.transform.position.x - other.transform.position.x) > radius) continue;
+            other.ChangeState(other.alertState);               // pull neighbour into Alert
+        }
+    }
+    
     /// <summary>
     /// After alert timer expires, transition to Chase if the player is visible;
     /// otherwise set lastKnownNoisePosition and switch to Searching.
@@ -28,36 +40,37 @@ public class AlertStateUtils
         enemy.StartCoroutine(AlertPatrolCoroutine(enemy, proximityRange, speed));
 
     }
-
+    
+    
+    // ------------------------------- Coroutines ------------------------------- //
+    
+    
     private static IEnumerator GoToLastKnownPlayerPositionToStartAlertPatrol(EnemyAIController enemy, float speed)
     {
-        // Cache only the X component of the target
-        float targetX = enemy.GetLastKnownPlayerPosition().x;
         const float range = 1f;
         const float maxDuration = 5f;   // bail-out time
-        float timer = 0f;
+        
+        // Cache only the X component of the target
+        var targetX = enemy.GetLastKnownPlayerPosition().x;
+        var timer = 0f;
 
         // Loop until we’re within `range` on the X axis
         while (Mathf.Abs(enemy.transform.position.x - targetX) > range)
         {
-            // Move only along X so we ignore Y entirely
-            Vector3 pos = enemy.transform.position;
-            float newX = Mathf.MoveTowards(pos.x, targetX, speed * Time.deltaTime);
+            // Move only along x
+            var pos = enemy.transform.position;
+            var newX = Mathf.MoveTowards(pos.x, targetX, speed * Time.deltaTime);
             enemy.transform.position = new Vector3(newX, pos.y, pos.z);
 
-            Debug.Log("here");
             yield return null;
             timer += Time.deltaTime;
-            Debug.Log("here1");
 
             if (timer > maxDuration)
             {
-                Debug.LogWarning("GoToLastKnownPlayerPositionToStartAlertPatrol: timed out before reaching target X.");
+                Debug.LogWarning("GoToLastKnownPlayerPositionToStartAlertPatrol: timed out before reaching target");
                 break;
             }
         }
-
-        Debug.Log("here2");
         enemy.isGoingToStarAlertPatrolling = false;
     }
 
@@ -74,7 +87,7 @@ public class AlertStateUtils
         while (enemy.CurrentStateType == EnemyStateType.Alert)
         {
             var targetX = toRight ? rightX : leftX;
-            Vector2 targetPos = new Vector2(targetX, enemy.patrolY);
+            var targetPos = new Vector2(targetX, enemy.patrolY);
 
             if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.1f)
                 enemy.MoveTowards(targetPos, speed);
@@ -85,18 +98,5 @@ public class AlertStateUtils
         }
         
         enemy.isAlertPatrolling = false;
-    }
-
-    
-    public void AlertNearbyEnemies(EnemyAIController source, float radius)
-    {
-        foreach (var other in EnemyAIController.AllEnemies)
-        {
-            Debug.Log("enemy count: " + EnemyAIController.AllEnemies.Count);
-            if (other == source) continue;                     // skip self
-            if (other.CurrentStateType == EnemyStateType.Alert || other.CurrentStateType == EnemyStateType.Chase) continue;
-            if (Mathf.Abs(source.transform.position.x - other.transform.position.x) > radius) continue;
-            other.ChangeState(other.alertState);               // pull neighbour into Alert
-        }
     }
 }

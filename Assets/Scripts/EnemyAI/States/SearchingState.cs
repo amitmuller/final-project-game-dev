@@ -9,6 +9,7 @@ namespace EnemyAI
     [CreateAssetMenu(menuName = "AI States/SearchingState")]
     public class SearchingState : ScriptableObject, IEnemyState
     {
+        private const float MaxMoveTime = 3f;
         public EnemyStateType StateType => EnemyStateType.Searching;
 
         public void EnterState(EnemyAIController enemy)
@@ -20,46 +21,54 @@ namespace EnemyAI
                 enemy.filledQuestionIcon.gameObject.SetActive(true);
             }
             enemy.searchTimer = enemy.searchDuration;
-            Debug.Log("search ti,er"+ enemy.searchTimer);
+            enemy.moveToNoiseTimer = 0f;
+            Debug.Log("search timer"+ enemy.searchTimer);
             enemy.StopMovement();
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
+            // some vars
             var targetX = enemy.lastKnownNoisePosition.x;
+            var deltaX  = Mathf.Abs(enemy.transform.position.x - targetX);
             var targetPosition = new Vector2(targetX, enemy.patrolY);
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
+            
             // moving towords sound last pos
-            if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.5f)
+            if (deltaX > 0.5f && enemy.moveToNoiseTimer < MaxMoveTime)
             {
-                enemy.MoveTowards(targetPosition, enemy.searchMoveSpeed);
-            }
-            else
-            {
-                enemy.StopMovement();
+                enemy.MoveTowards(new Vector2(targetX, enemy.patrolY),
+                    enemy.searchMoveSpeed);
 
-                // Only count down after reaching the spot
-                enemy.searchTimer -= Time.deltaTime;
-                Debug.Log("amit works in the morning " +enemy.searchTimer);
-                if (enemy.filledQuestionIcon != null)
+                enemy.moveToNoiseTimer += Time.deltaTime;
+                Debug.Log($"Moving to noise movind time: {enemy.moveToNoiseTimer}");
+                return;
+            }
+            
+            enemy.StopMovement();
+
+            // Only count down after reaching the spot
+            enemy.searchTimer -= Time.deltaTime;
+            Debug.Log("search timer in noise position is: " +enemy.searchTimer);
+            if (enemy.filledQuestionIcon != null)
+            {
+                var fillPercent = (enemy.searchTimer / enemy.searchDuration);
+                enemy.filledQuestionIcon.fillAmount = Mathf.Clamp01(fillPercent);
+            }
+            
+            if (enemy.searchTimer <= 0f)
+            {
+                if (enemy.prevState == EnemyStateType.Calm)
                 {
-                    float fillPercent = (enemy.searchTimer / enemy.searchDuration);
-                    enemy.filledQuestionIcon.fillAmount = Mathf.Clamp01(fillPercent);
+                    enemy.ChangeState(enemy.calmState);
+                }
+                else
+                {
+                    enemy.ChangeState(enemy.alertState);
                 }
                 
-                if (enemy.searchTimer <= 0f)
-                {
-                    if (enemy.prevState == EnemyStateType.Calm)
-                    {
-                        enemy.ChangeState(enemy.calmState);
-                    }
-                    else
-                    {
-                        enemy.ChangeState(enemy.alertState);
-                    }
-                    
-                }
             }
+        
         }
 
         public void ExitState(EnemyAIController enemy)
