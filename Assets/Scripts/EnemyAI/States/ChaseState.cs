@@ -21,7 +21,7 @@ namespace EnemyAI
             // reset any previous tween
             _dashTween?.Kill();
             _dashTween = null;
-
+            enemy.StopMovement();
             enemy.ExclamationIconSwitch(true);
         }
 
@@ -30,7 +30,15 @@ namespace EnemyAI
             // 1) If player hides, switch immediately
             if (enemy.IsPlayerHiding())
             {
-                _dashTween?.Kill();
+                Debug.Log("got here");
+                // kill only this transform’s tweens
+                DOTween.Kill(enemy.transform);
+                _dashTween.Kill();
+                _dashTween = null;
+                // clear any physics velocity as well
+                enemy.StopMovement();
+
+                // then switch
                 enemy.ChangeState(enemy.alertState);
                 return;
             }
@@ -62,11 +70,11 @@ namespace EnemyAI
                         .SetEase(Ease.OutQuint)
                         .OnComplete(() => { _dashTween = null; });
                 }
-                else
-                {
+                //else
+                //{
                     // if player moved, update the tween end‐value on the fly
-                    _dashTween.ChangeEndValue(playerX, true);
-                }
+                    //_dashTween.ChangeEndValue(playerX, true);
+                //}
             }
             // 4) Otherwise keep walking normally
             else
@@ -87,8 +95,9 @@ namespace EnemyAI
 
             // clean up any running dash
             _dashTween?.Kill();
+            DOTween.Kill(enemy.transform);
             _dashTween = null;
-
+            enemy.StopMovement();
             enemy.ExclamationIconSwitch(false);
         }
     }

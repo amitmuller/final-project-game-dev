@@ -958,7 +958,7 @@ MonoBehaviour:
   hiddenFrontOrder: 21
   hideYBack: -2.2
   hideYFront: -4.1
-  edgeTolerance: 1
+  edgeTolerance: 1.3
   hideEdgeOffset: 1
   rendereSkeletonAnimation: {fileID: 0}
   meshRenderer: {fileID: 0}

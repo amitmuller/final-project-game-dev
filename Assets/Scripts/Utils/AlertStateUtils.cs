@@ -79,7 +79,8 @@ public class AlertStateUtils
     {
 
         var centerX  = enemy.transform.position.x;
-        var  toRight  = true;
+        var toRight = (enemy.GetIsWalkingRight()); 
+        
         var leftX    = centerX - range;
         var rightX   = centerX + range;
 
