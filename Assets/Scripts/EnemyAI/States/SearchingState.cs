@@ -1,4 +1,3 @@
-// Assets/Scripts/EnemyAI/States/SearchingState.cs
 using UnityEngine;
 using static SerchingStateUtils.SerchingStateUtils;
 using static EnemyUtils.EnemyUtils;
@@ -9,73 +8,85 @@ namespace EnemyAI
     [CreateAssetMenu(menuName = "AI States/SearchingState")]
     public class SearchingState : ScriptableObject, IEnemyState
     {
-        private const float MaxMoveTime = 3f;
+        private const float MaxMoveTime = 3f;   // how long we try to move on X
+        private const float ArrivalThreshold = 0.5f;
+
+        // snapshot of where the noise was when we entered
+        private float _targetX;
+
         public EnemyStateType StateType => EnemyStateType.Searching;
 
         public void EnterState(EnemyAIController enemy)
         {
-            // Reset timer when state begins
+            // 1) Record the exact spot where the noise happened
+            _targetX = enemy.lastKnownNoisePosition.x;
+
+            // 2) Reset both timers
+            enemy.moveToNoiseTimer = 0f;
+            enemy.searchTimer      = enemy.searchDuration;
+
+            // 3) Reset UI
             if (enemy.filledQuestionIcon != null)
             {
                 enemy.filledQuestionIcon.fillAmount = 1f;
                 enemy.filledQuestionIcon.gameObject.SetActive(true);
             }
-            enemy.searchTimer = enemy.searchDuration;
-            enemy.moveToNoiseTimer = 0f;
-            Debug.Log("search timer"+ enemy.searchTimer);
+
+            // 4) Stop any residual motion
             enemy.StopMovement();
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
-            // some vars
-            var targetX = enemy.lastKnownNoisePosition.x;
-            var deltaX  = Mathf.Abs(enemy.transform.position.x - targetX);
-            var targetPosition = new Vector2(targetX, enemy.patrolY);
-            if (EnemyEnterChaseModeIfNeeded(enemy)) return;
+            // log every frame so you can watch this flood the console
+            var deltaX = Mathf.Abs(enemy.transform.position.x - _targetX);
+            Debug.Log(
+                $"[Searching] Δx={deltaX:F2}, movedFor={enemy.moveToNoiseTimer:F2}s, " +
+                $"searchLeft={enemy.searchTimer:F2}s"
+            );
+
+            // First: if the player suddenly becomes visible → bail into Chase
+            // (but only after we’ve had our turn moving/timed out)
+            var stillMoving = deltaX > ArrivalThreshold && enemy.moveToNoiseTimer < MaxMoveTime;
             
-            // moving towords sound last pos
-            if (deltaX > 0.5f && enemy.moveToNoiseTimer < MaxMoveTime)
+            if (!stillMoving && EnemyEnterChaseModeIfNeeded(enemy)) return;
+
+            // If we haven’t yet closed to within 0.5 on X and haven’t timed out
+            if (stillMoving)
             {
-                enemy.MoveTowards(new Vector2(targetX, enemy.patrolY),
-                    enemy.searchMoveSpeed);
+                // move only in X
+                enemy.MoveTowards(new Vector2(_targetX, enemy.patrolY), enemy.searchMoveSpeed);
 
                 enemy.moveToNoiseTimer += Time.deltaTime;
-                Debug.Log($"Moving to noise movind time: {enemy.moveToNoiseTimer}");
                 return;
             }
-            
-            enemy.StopMovement();
 
-            // Only count down after reaching the spot
+            // Otherwise: either we’ve arrived or we ran out of move-time.
+            // Stop, and start our “look around” countdown
+            enemy.StopMovement();
             enemy.searchTimer -= Time.deltaTime;
-            Debug.Log("search timer in noise position is: " +enemy.searchTimer);
+
+            // update the question icon
             if (enemy.filledQuestionIcon != null)
             {
-                var fillPercent = (enemy.searchTimer / enemy.searchDuration);
-                enemy.filledQuestionIcon.fillAmount = Mathf.Clamp01(fillPercent);
+                enemy.filledQuestionIcon.fillAmount =
+                    Mathf.Clamp01(enemy.searchTimer / enemy.searchDuration);
             }
-            
+
+            // when time’s up, go back to Calm or Alert
             if (enemy.searchTimer <= 0f)
             {
                 if (enemy.prevState == EnemyStateType.Calm)
-                {
                     enemy.ChangeState(enemy.calmState);
-                }
                 else
-                {
                     enemy.ChangeState(enemy.alertState);
-                }
-                
             }
-        
         }
 
         public void ExitState(EnemyAIController enemy)
         {
             enemy.prevState = EnemyStateType.Searching;
-            enemy.StopAllCoroutines();
-            enemy.filledQuestionIcon.gameObject.SetActive(false);
+            enemy.filledQuestionIcon?.gameObject.SetActive(false);
         }
     }
 }

@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using static EnemyUtils.EnemyUtils;
 using static NoiseManager;
+using DG.Tweening;
+
 namespace EnemyAI
 {
     [CreateAssetMenu(menuName = "AI States/AlertState")]
@@ -12,6 +14,7 @@ namespace EnemyAI
         public EnemyStateType StateType => EnemyStateType.Alert;
         public void EnterState(EnemyAIController enemy)
         {
+            DOTween.Kill(enemy.transform);
             enemy.StopMovement();
             enemy.isGoingToStarAlertPatrolling = true;
             enemy.isAlertPatrolling = false;
@@ -20,7 +23,8 @@ namespace EnemyAI
 
         public void UpdateState(EnemyAIController enemy)
         {
-            // 1) If player visible and not hiding → switch to Chase
+            // 1) If player visible and not hiding → switch to Chase and start alert routine
+            
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
             
             // 2) if enemy is alert he will alert his friend in proximity
@@ -39,12 +43,7 @@ namespace EnemyAI
             if (enemy.CurrentStateType == EnemyStateType.Chase) return;
             
             // 4) Otherwise patrol across alert patrol radius
-            Debug.Log($"{enemy.name} going to last position = " + enemy.isGoingToStarAlertPatrolling + " enemy patrolling = " + enemy.isAlertPatrolling);
-            if (enemy.isGoingToStarAlertPatrolling)
-            {
-                alertUtils.HandleAlertGoingToLastKnownPlayerPosition(enemy);
-                return;
-            }
+            Debug.Log($"enemy patrolling = " + enemy.isAlertPatrolling);
             alertUtils.HandleAlertPatrol(enemy, enemy.alertPatrolRadius, enemy.alertSpeed);
         }
 
@@ -53,6 +52,7 @@ namespace EnemyAI
             enemy.prevState = EnemyStateType.Alert;
             enemy.StopAllCoroutines();
             enemy.QuesitonIconSwitch(false);
+            enemy.StopMovement();
         }
         
         // ------------------ Implementing Listener from interface in Alert state ------------------ //

@@ -13,7 +13,7 @@ public class EnemyFOVTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && !enemy.IsPlayerHiding())
         {
-            enemy.ChangeState(enemy.alertState);
+            enemy.ChangeState(enemy.chaseState);
         }
     }
 }

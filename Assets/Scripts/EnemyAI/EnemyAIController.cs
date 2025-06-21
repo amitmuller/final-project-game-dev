@@ -105,8 +105,7 @@ public class EnemyAIController : MonoBehaviour
     [SerializeField] SpriteRenderer _spriteRenderer;
     
     [Header("Searching state")]
-    [HideInInspector] public float moveToNoiseTimer;
-    
+    public float moveToNoiseTimer;
 
     void Awake()
     {
@@ -266,6 +265,7 @@ public class EnemyAIController : MonoBehaviour
     
     public void StopMovement()
     {
+        Debug.Log("Stop Movement");
         if (_rigidbody2D != null) _rigidbody2D.linearVelocity = Vector2.zero;
     }
 
