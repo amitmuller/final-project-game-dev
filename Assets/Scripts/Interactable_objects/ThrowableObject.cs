@@ -1,5 +1,6 @@
 using System;
 using Light;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ThrowableObject : MonoBehaviour
@@ -10,6 +11,9 @@ public class ThrowableObject : MonoBehaviour
     private GameObject indicatorInstance;
     public bool IsHeld { get; set; } = false;
     private ParticleSystem noiseParticles;
+    private Vector3 initialPosition;
+    private LayerMask originalLayer;
+    private GameObject initialParent;
     
 
     void Awake()
@@ -28,7 +32,10 @@ public class ThrowableObject : MonoBehaviour
         {
             Debug.LogError("Couldn't load hideIcon prefab from Resources", this);
         }
-        
+        initialPosition = transform.position;
+        originalLayer = gameObject.layer;
+        initialParent = transform.parent.gameObject;
+
     }
 
     public void Highlight(bool enable)
@@ -60,13 +67,14 @@ public class ThrowableObject : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("ground"))
         {
-            NoiseManager.RaiseNoise(transform.position);
-            noiseParticles.gameObject.transform.position = transform.position;
-            noiseParticles.Play();
-            gameObject.layer = LayerMask.NameToLayer("notCollide");
+            
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
-
+        NoiseManager.RaiseNoise(transform.position);
+        noiseParticles.gameObject.transform.position = transform.position;
+        noiseParticles.Play();
+        gameObject.layer = LayerMask.NameToLayer("notCollide");
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 11;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -92,6 +100,15 @@ public class ThrowableObject : MonoBehaviour
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, 5);
+    }
+
+    public void reset()
+    {
+        gameObject.transform.SetParent(initialParent.transform);
+        gameObject.transform.position = initialPosition;
+        gameObject.layer = originalLayer;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().isKinematic = true;
     }
 }
 

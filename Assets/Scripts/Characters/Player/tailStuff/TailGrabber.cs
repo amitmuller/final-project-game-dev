@@ -169,9 +169,24 @@ public class TailGrabber : MonoBehaviour
 
             // Check for collision between previous point and next point
             Vector2 prevPos = points[i - 1];
-            RaycastHit2D hit = Physics2D.Linecast(prevPos, nextPos, LayerMask.GetMask("Ground")); // or use your own layer
             
-            if (hit.collider != null)
+            // RaycastHit2D hit = Physics2D.Linecast(prevPos, nextPos, hits); // or use your own layer
+            // before your loop, build a filter that ignores triggers
+            ContactFilter2D filter = new ContactFilter2D();
+            filter.useTriggers = false;           // ← don’t hit triggers
+            filter.useLayerMask = false;         // ← optional: you can also add layer filtering
+
+            RaycastHit2D[] hits = new RaycastHit2D[1];
+            
+            int count = Physics2D.Linecast(prevPos, nextPos, filter, hits);
+            if (count > 0)
+            {
+                var hit = hits[0];
+                points[i] = hit.point;
+                Debug.Log(hit.collider.name);
+            
+            
+            if (hit.collider != null && !(hit.collider.gameObject == heldObject || hit.collider.transform.IsChildOf(heldObject.transform)))
             {
                 points[i] = hit.point;
                 if (impactMarkerInstance != null)
@@ -183,8 +198,11 @@ public class TailGrabber : MonoBehaviour
                 aimLine.SetPositions(points);
                 return;
             }
-
-            points[i] = nextPos;
+            }
+            else
+            {
+                points[i] = nextPos;
+            }
         }
 
         aimLine.positionCount = trajectoryPoints;

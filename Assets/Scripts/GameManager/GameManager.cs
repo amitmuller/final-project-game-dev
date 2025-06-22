@@ -71,7 +71,6 @@ public class GameManager : MonoBehaviour
     {
         if (cart.enemies == null || cart.enemies.Count == 0)
         {
-            Debug.LogWarning($"Cart '{cart.cartName}' has no enemy references set in the inspector.");
             return;
         }
 
@@ -100,10 +99,9 @@ public class GameManager : MonoBehaviour
     public void checkpoint(Transform Player)
     {
         if (Player == null) return;
-        Debug.Log($"[GameManager] Checkpoint"+ Player.gameObject+ currentCart);
         var cart = carts[currentCart];
         ResetEnemiesInCart();
-        Debug.Log($"[GameManager] Current cart: {cart.cartName}");
+        ResetThrowables();
         Player.transform.position = cart.checkpointPosition;
     }
     
@@ -118,6 +116,15 @@ public class GameManager : MonoBehaviour
             {
                 controller.ResetEnemy();
             }
+        }
+    }
+
+    private void ResetThrowables()
+    {
+        var cart = carts[currentCart];
+        foreach (var throwable in cart.throwables)
+        {
+            throwable.reset();
         }
     }
 
