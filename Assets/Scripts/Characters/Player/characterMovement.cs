@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Spine.Unity;
 using Spine.Unity.Examples;
+using Unity.VisualScripting;
 
 public class characterMovement : MonoBehaviour
 {
@@ -158,7 +159,6 @@ public class characterMovement : MonoBehaviour
 
         
         float horizontalSpeed = Mathf.Abs(body.linearVelocity.x);
-        // noiseTimer -= Time.deltaTime;
         if (horizontalSpeed >= noiseTriggerSpeed && Time.time - lastNoiseTime >= noiseCooldown)
         {
             NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
@@ -181,7 +181,7 @@ public class characterMovement : MonoBehaviour
             Vector2.Lerp(desiredVelocity, new Vector2(rawMoveInput.x, 0f) * maxSpeed, Time.deltaTime * 10f) 
             : Vector2.zero;
         
-        // AnimationHandler();
+        AnimationHandler();
 
         // Draw aim line
         if (isHoldingAim && aimLine != null && aimDirection != Vector2.zero)
@@ -281,37 +281,30 @@ public class characterMovement : MonoBehaviour
             body.linearVelocity = Vector2.zero;
         }
     }
-    private void LateUpdate()
-    {
-        AnimationHandler();  // now readings-body.velocity is already updated
-    }
-    
-    
     // ------------------------ Animations -------------------------- //
     private void AnimationHandler()
     {
-        if (desiredVelocity == Vector2.zero)
+        // use real-world horizontal speed instead of desiredVelocity
+        float currentSpeed = Mathf.Abs(body.linearVelocity.x);
+
+        if (currentSpeed < 0.01f)
         {
             SetCharacterState("idle");
         }
-        else if (desiredVelocity != Vector2.zero)
+        else if (!hide.IsHiding())
         {
-            if (!hide.IsHiding())
-            {
-                SetCharacterState("walking");
-            }
-            else
-            {
-                SetCharacterState("walkingHiding");
-            }
+            SetCharacterState("walking");
         }
-        // now adjust playback speed based on actual movement speed
-        float currentSpeed = Mathf.Abs(body.linearVelocity.x);
-        float t = currentSpeed / maxSpeed; // 0 at standstill, 1 at full-speed
-        // map t to a reasonable timeScale: walk at 1× when slow, up to 1.5× at full speed
-        float playbackSpeed = Mathf.Lerp(1f, 1.5f, t);
-        skeletonAnimation.timeScale = playbackSpeed;
+        else
+        {
+            SetCharacterState("walkingHiding");
+        }
+
+        // then adjust playback speed as before
+        float t = currentSpeed / maxSpeed;  
+        skeletonAnimation.timeScale = Mathf.Lerp(1f, 1.5f, t);
     }
+
 
     private void SetAnimation(AnimationReferenceAsset animation, bool loop)
     {

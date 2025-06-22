@@ -15,6 +15,7 @@ public class CartData
 
     [Tooltip("All existing enemy GameObjects under this cart (initially disabled).")]
     public List<GameObject> enemies = new List<GameObject>();
+    public List<ThrowableObject> throwables = new List<ThrowableObject>();
     
     public Vector2 checkpointPosition;
 

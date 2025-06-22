@@ -29,6 +29,7 @@ public class NoiseUIManager : MonoBehaviour
             return;
         }
         Instance = this;
+        UpdateUI();
     }
 
     private void Start()
@@ -39,7 +40,6 @@ public class NoiseUIManager : MonoBehaviour
     private void Update()
     {
         noiseTimer -= Time.deltaTime;
-
         if (currentNoise > 0f)
         {
             currentNoise -= decayRate * Time.deltaTime;
@@ -48,21 +48,23 @@ public class NoiseUIManager : MonoBehaviour
         }
 
         // Trigger noise event if over threshold
-        if (currentNoise >= noiseThreshold && noiseTimer <= 0f&& !player.IsHiding())
+        if (currentNoise >= noiseThreshold && noiseTimer <= 0f && !player.IsHiding())
         {
-            // NoiseManager.RaiseNoise(player.transform.position); // Or another global point
+            NoiseManager.RaiseNoise(player.transform.position); 
             noiseTimer = noiseCooldown;
         }
     }
 
     public void AddNoise(float intensity)
     {
+        Debug.Log($"Adding noise {intensity}");
         currentNoise = Mathf.Clamp01(currentNoise + intensity);
         UpdateUI();
     }
 
     private void UpdateUI()
     {
+        Debug.Log("Updating UI");
         if (noiseBarFill != null)
         {
             noiseBarFill.fillAmount = currentNoise;
