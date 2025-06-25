@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6870525432809985726}
   - component: {fileID: 6724500940877480584}
   - component: {fileID: 5122229096279406211}
+  - component: {fileID: 7789602781175567593}
   m_Layer: 12
   m_Name: throwableNew
   m_TagString: Throwable
@@ -190,7 +191,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  noiseParticles: {fileID: 0}
+--- !u!114 &7789602781175567593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083921820617774230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75953d6b31f574644be1238b08e89b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowRuntimeFragmentation: 0
+  extraPoints: 0
+  subshatterSteps: 0
+  dontDestroyOnBreak: 0
+  fragmentLayer: Default
+  sortingLayerName: Default
+  orderInLayer: 0
+  shatterType: 0
+  fragments: []
 --- !u!1001 &2429145733676975504
 PrefabInstance:
   m_ObjectHideFlags: 0

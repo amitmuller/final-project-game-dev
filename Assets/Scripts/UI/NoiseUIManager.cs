@@ -57,14 +57,12 @@ public class NoiseUIManager : MonoBehaviour
 
     public void AddNoise(float intensity)
     {
-        Debug.Log($"Adding noise {intensity}");
         currentNoise = Mathf.Clamp01(currentNoise + intensity);
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        Debug.Log("Updating UI");
         if (noiseBarFill != null)
         {
             noiseBarFill.fillAmount = currentNoise;
@@ -87,6 +85,11 @@ public class NoiseUIManager : MonoBehaviour
         newPos.x = localX;
         thresholdMarkerRect.anchoredPosition = newPos;
         
+    }
+
+    public void reset()
+    {
+        noiseTimer = 0f;
     }
 
 
