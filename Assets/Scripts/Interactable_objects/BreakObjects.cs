@@ -32,8 +32,6 @@ public class BreakObjects : MonoBehaviour
     }
     public void BreakObject()
     {
-        Debug.Log(gameObject);
-        // Apply explosion force first
         ExplosionForce ef = GameObject.FindFirstObjectByType<ExplosionForce>();
         Debug.DrawLine(transform.position, transform.position + Vector3.up * 2, Color.red, 1f);
 

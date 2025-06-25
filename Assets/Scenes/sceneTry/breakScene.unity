@@ -148519,6 +148519,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1965623225461360176, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965623225461360176, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: attackFeedback
       value: 
       objectReference: {fileID: 1585016621}

@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Interactable_objects;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Explodable : MonoBehaviour
+public class Shatter : MonoBehaviour
 {
     public System.Action<List<GameObject>> OnFragmentsGenerated;
 
@@ -51,7 +51,7 @@ public class Explodable : MonoBehaviour
         if (fragments.Count > 0)
         {
             // Debug.Log(fragments);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     

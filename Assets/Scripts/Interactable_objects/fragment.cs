@@ -10,6 +10,7 @@ namespace Interactable_objects
         private bool stuck = false;
 
         private Collider2D col;
+        private float noiseLevelToAdd = 0.1f;
 
         void Awake()
         {
@@ -19,18 +20,24 @@ namespace Interactable_objects
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (stuck) return;
+            
             
             if (other.CompareTag(stickySurfaceTag))
             {
-                // Stick to closest point on the collider
+                if (stuck) return;
                 StartCoroutine(stickToPoint(other));
             }
+
+            if (stuck && other.CompareTag("Player"))
+            {
+                NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
+            }
+            
         }
 
         private IEnumerator stickToPoint(Collider2D other)
         {
-            float delay = Random.Range(0.1f, 1f); // Random delay between 0.1 and 0.5 seconds
+            float delay = Random.Range(0.1f, 0.5f); // Random delay between 0.1 and 0.5 seconds
             yield return new WaitForSeconds(delay);
             
             Vector2 closest = other.ClosestPoint(transform.position);
