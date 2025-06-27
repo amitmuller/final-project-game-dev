@@ -11,10 +11,46 @@ namespace Interactable_objects
 
         private Collider2D col;
         private float noiseLevelToAdd = 0.1f;
+        private static Material s_blackUnlit;
 
         void Awake()
         {
             col = GetComponent<Collider2D>();
+            if (s_blackUnlit == null)
+            {
+                s_blackUnlit = new Material(Shader.Find("Unlit/Color"));
+                s_blackUnlit.color = Color.black;
+            }
+
+            CreateBackMeshOutline();
+        }
+        
+        private void CreateBackMeshOutline()
+        {
+            // grab the existing mesh
+            var mf = GetComponent<MeshFilter>();
+            if (mf == null || mf.mesh == null) return;
+
+            // make a child that uses the same mesh
+            var go = new GameObject("Outline");
+            go.transform.SetParent(transform, false);
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localRotation = Quaternion.identity;
+            // scale it up slightly so the black peeks out
+            go.transform.localScale = Vector3.one * 1.3f;
+
+            // copy mesh
+            var of = go.AddComponent<MeshFilter>();
+            of.mesh = mf.mesh;
+
+            // give it our black material
+            var or = go.AddComponent<MeshRenderer>();
+            or.material = s_blackUnlit;
+
+            // match sorting so it sits behind the fragment
+            var myRenderer = GetComponent<MeshRenderer>();
+            or.sortingLayerID = myRenderer.sortingLayerID;
+            or.sortingOrder   = myRenderer.sortingOrder - 1;
         }
             
 

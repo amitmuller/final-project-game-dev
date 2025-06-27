@@ -596,6 +596,7 @@ public static class SpriteExploder {
         {
             return source.GetComponent<MeshRenderer>().sharedMaterial;
         }
-
+    
     }
+    
 }
