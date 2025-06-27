@@ -9,7 +9,6 @@ public class NoiseUIManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private Image noiseBarFill;
-    [SerializeField] private RectTransform thresholdMarkerRect;
     [FormerlySerializedAs("speedBarRect")] [SerializeField] private RectTransform noiseBarRect;
 
     [Header("Noise Settings")]
@@ -18,8 +17,25 @@ public class NoiseUIManager : MonoBehaviour
     [SerializeField] private float noiseCooldown = 1f;
     [SerializeField] private PlayerHide player;
     
+    [Header("Waveform Settings")]
+    [SerializeField] private LineRenderer waveformLine;
+    private int     waveformPoints     = 256;
+    [SerializeField] private float   envelopeSpeed      = 0.5f;  // burst travel speed
+    [SerializeField] private float   envelopePower      = 4f;    // higher = sharper bursts
+    [SerializeField] private float   burstFrequency     = 6f;    // base cycles in a burst
+    [SerializeField] private float   burstVariation     = 12f;   // extra freq added in peaks
+    [SerializeField] private float   amplitudeBoost     = 2.5f;  // global boost for drama
+
+    [Header("Micro-Wave Settings")]
+    [SerializeField] private float   microCycles        = 30f;   // tiny fast ripples
+    [SerializeField] private float   microSpeed         = 3f;    // how fast those ripples scroll
+    [SerializeField] private float   microAmp           = 0.15f; // ripple amplitude fraction
+
+    [Header("Jitter")]
+    [SerializeField] private float   jitterAmount       = 0f;  // hand-drawn wobble
     private float currentNoise = 0f;
     private float noiseTimer = 0f;
+    private float waveOffset   = 0f;
 
     private void Awake()
     {
@@ -29,12 +45,18 @@ public class NoiseUIManager : MonoBehaviour
             return;
         }
         Instance = this;
+        if (waveformLine != null)
+        {
+            waveformLine.positionCount = waveformPoints;
+            waveformLine.useWorldSpace = false;
+        }
         UpdateUI();
+
     }
 
     private void Start()
     {
-        PositionThresholdMarker();
+        
     }
 
     private void Update()
@@ -44,6 +66,7 @@ public class NoiseUIManager : MonoBehaviour
         {
             currentNoise -= decayRate * Time.deltaTime;
             currentNoise = Mathf.Max(0f, currentNoise);
+            waveOffset += Time.deltaTime * envelopeSpeed;
             UpdateUI();
         }
 
@@ -68,24 +91,52 @@ public class NoiseUIManager : MonoBehaviour
             noiseBarFill.fillAmount = currentNoise;
             noiseBarFill.color = Color.Lerp(Color.white, Color.red, currentNoise);
         }
+        if (noiseBarFill   != null) noiseBarFill.enabled = false;
+        if (waveformLine   != null) DrawWaveform(currentNoise);
     }
-
-    private void PositionThresholdMarker()
+    
+    private void DrawWaveform(float level)
     {
-        if (thresholdMarkerRect == null || noiseBarRect == null) return;
+        var r      = noiseBarRect.rect;
+        float halfW = r.width  * 0.5f;
+        float halfH = r.height * 0.5f;
 
-        float thresholdPercent = Mathf.Clamp01(noiseThreshold); // Value from 0 to 1
-        float barWidth = noiseBarRect.rect.width;
+        // color
+        Color c = level >= noiseThreshold 
+            ? Color.red 
+            : Color.Lerp(Color.green, Color.yellow, level);
+        waveformLine.startColor = waveformLine.endColor = c;
 
-        // Calculate X offset from left edge
-        float localX = barWidth * thresholdPercent;
+        for (int i = 0; i < waveformPoints; i++)
+        {
+            float t = i / (float)(waveformPoints - 1);
 
-        // Set anchored position
-        Vector2 newPos = thresholdMarkerRect.anchoredPosition;
-        newPos.x = localX;
-        thresholdMarkerRect.anchoredPosition = newPos;
-        
+            // 1) envelope for bursts
+            float env = Mathf.PerlinNoise(t * envelopeSpeed + waveOffset, waveOffset);
+            env = Mathf.Pow(env, envelopePower);
+
+            // 2) dynamic frequency & amplitude
+            float freq = burstFrequency + env * burstVariation;
+            float amp  = halfH * level * env * amplitudeBoost;
+
+            // 3) core wave + scrolling
+            float phase = t * freq * Mathf.PI * 2f + waveOffset;
+            float y1    = Mathf.Sin(phase);
+
+            // 4) micro-ripples on top
+            float microPhase = t * microCycles * Mathf.PI * 2f + waveOffset * microSpeed;
+            float y2         = Mathf.Sin(microPhase) * microAmp;
+
+            // 5) jitter for organic feel
+            float j = (Mathf.PerlinNoise(t * 10f, waveOffset * 2f) * 2f - 1f) * jitterAmount;
+
+            float x = Mathf.Lerp(-halfW, +halfW, t);
+            float y = (y1 + y2 + j) * amp;
+
+            waveformLine.SetPosition(i, new Vector3(x, y, 0f));
+        }
     }
+    
 
     public void reset()
     {
