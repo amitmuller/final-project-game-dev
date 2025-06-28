@@ -17,9 +17,8 @@ public class characterMovement : MonoBehaviour
     characterGround ground;
     private PlayerHide hide;
     
-    [FormerlySerializedAs("maxSpeed")]
+
     [Header("Movement Stats")]
-    [SerializeField] private float speed = 10f;
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float maxAcceleration = 52f;
     [SerializeField] private float maxDecceleration = 52f;
@@ -86,7 +85,7 @@ public class characterMovement : MonoBehaviour
         SetCharacterState(currentAnimationName);
         body = GetComponent<Rigidbody2D>();
         hide = GetComponent<PlayerHide>();
-        size = transform.localScale.x;
+        size = transform.localScale.y;
 
         if (aimLine != null)
         {
@@ -251,23 +250,23 @@ public class characterMovement : MonoBehaviour
 
     public void ApplySlow()
     {
-        if (!isSlowed)
-            StartCoroutine(SlowCoroutine());
+        // if (!isSlowed)
+        //     StartCoroutine(SlowCoroutine());
     }
 
-    private IEnumerator SlowCoroutine()
-    {
-        isSlowed = true;
-        float originalSpeed = speed;
-        speed *= slowFactor;
-
-        yield return new WaitForSeconds(slowDuration);
-
-        speed = originalSpeed;
-        isSlowed = false;
-    }
+    // private IEnumerator SlowCoroutine()
+    // {
+    //     // isSlowed = true;
+    //     // float originalSpeed = speed;
+    //     // speed *= slowFactor;
+    //     //
+    //     // yield return new WaitForSeconds(slowDuration);
+    //     //
+    //     // speed = originalSpeed;
+    //     // isSlowed = false;
+    // }
     public Vector2 MoveInput => _input;
-
+    
     public void SetCanMove(bool move)
     {
         canMove = move;

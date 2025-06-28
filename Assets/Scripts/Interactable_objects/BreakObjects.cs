@@ -35,11 +35,12 @@ public class BreakObjects : MonoBehaviour
         ExplosionForce ef = GameObject.FindFirstObjectByType<ExplosionForce>();
         Debug.DrawLine(transform.position, transform.position + Vector3.up * 2, Color.red, 1f);
 
-        ef.doExplosion(gameObject.transform.position);
+        
         
         // Then break the object
         Instantiate(breakObjects, transform.position, Quaternion.identity);
         explodable.explode();
+        ef.doExplosion(gameObject.transform.position);
         
         // Optionally disable the original object
         // gameObject.SetActive(false);

@@ -9952,8 +9952,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 383551073
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 6971710692006094044, guid: b5cc24044a1a04310a664f53090709b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10100,11 +10100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowRuntimeFragmentation: 0
-  extraPoints: 10
+  extraPoints: 3
   subshatterSteps: 0
-  fragmentLayer: Default2
-  sortingLayerName: UI
-  orderInLayer: 1000
+  fragmentLayer: Default
+  sortingLayerName: Default
+  orderInLayer: 11
   shatterType: 1
   fragments:
   - {fileID: 1058409911591829418}
