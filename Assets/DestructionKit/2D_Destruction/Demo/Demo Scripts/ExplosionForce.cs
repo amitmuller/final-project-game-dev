@@ -29,7 +29,7 @@ public class ExplosionForce : MonoBehaviour {
 		// Debug.Log($"Found {colliders.Length} colliders in explosion radius");
      
 		foreach(Collider2D coll in colliders){
-			if(coll.GetComponent<Rigidbody2D>()&&coll.gameObject.name!="Player"){
+			if(coll.GetComponent<Rigidbody2D>()&& coll.gameObject.name!="Player"){
 				// Debug.Log($"Applying explosion force to: {coll.gameObject.name}");
                 AddExplosionForce(coll.GetComponent<Rigidbody2D>(), force, transform.position, radius, upliftModifer);
 			}
