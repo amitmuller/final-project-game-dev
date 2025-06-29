@@ -1,4 +1,7 @@
+using System;
 using Characters.Player;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -20,23 +23,32 @@ public class NoiseUIManager : MonoBehaviour
     
     [Header("Waveform Settings")]
     [SerializeField] private LineRenderer waveformLine;
-    private int     waveformPoints     = 256;
-    [SerializeField] private float   envelopeSpeed      = 0.5f;  // burst travel speed
-    [SerializeField] private float   envelopePower      = 4f;    // higher = sharper bursts
-    [SerializeField] private float   burstFrequency     = 6f;    // base cycles in a burst
-    [SerializeField] private float   burstVariation     = 12f;   // extra freq added in peaks
-    [SerializeField] private float   amplitudeBoost     = 2.5f;  // global boost for drama
+    [SerializeField] NoiseSO noiseSO;
 
-    [Header("Micro-Wave Settings")]
-    [SerializeField] private float   microCycles        = 30f;   // tiny fast ripples
-    [SerializeField] private float   microSpeed         = 3f;    // how fast those ripples scroll
-    [SerializeField] private float   microAmp           = 0.15f; // ripple amplitude fraction
-
-    [Header("Jitter")]
-    [SerializeField] private float   jitterAmount       = 0f;  // hand-drawn wobble
     private float currentNoise = 0f;
     private float noiseTimer = 0f;
     private float waveOffset   = 0f;
+
+    [Header("Initial SO values (from inspector)")]
+    [Tooltip("Amplitude of the sine wave, controls the height of the wave")]
+    [SerializeField] private float initialAmplitude  = 0;
+    [Tooltip("Frequency of the sine wave, controls the cycles of the wave")]
+    [SerializeField] private float initialFrequency  =  2.27f;
+    [Tooltip("How many points in the wave")]
+    [SerializeField] private int   initialResolution = 422;
+    [Tooltip("Scroll speed of the wave")]
+    [SerializeField] private float initialSpeed      = 16.88f;
+    [Tooltip("Micro-ripple amplitude")]
+    [SerializeField] private float initialAmplitude2 =  0f;
+    [Tooltip("Micro-ripple frequency")]
+    [SerializeField] private float initialFrequency2 =  1.52f;
+    [Tooltip("Anchor index (custom use)")]
+    [SerializeField] private int   initialAnchor     = 23;
+    [Header("Max SO values (for level==1)")]
+    [SerializeField] private float maxAmplitude       =  1f;
+    [SerializeField] private float maxAmplitude2      =  0.72f;
+    [SerializeField] private float maxFrequency2      = 2.14f;
+
     
     private ParticleSystem burst;
 
@@ -50,7 +62,6 @@ public class NoiseUIManager : MonoBehaviour
         Instance = this;
         if (waveformLine != null)
         {
-            waveformLine.positionCount = waveformPoints;
             waveformLine.useWorldSpace = false;
         }
         burst = Instantiate(
@@ -60,6 +71,7 @@ public class NoiseUIManager : MonoBehaviour
             player.transform
         );
         burst.transform.localPosition = Vector3.zero;
+        ResetSOValues();
         UpdateUI();
 
     }
@@ -76,7 +88,6 @@ public class NoiseUIManager : MonoBehaviour
         {
             currentNoise -= decayRate * Time.deltaTime;
             currentNoise = Mathf.Max(0f, currentNoise);
-            waveOffset += Time.deltaTime * envelopeSpeed;
             UpdateUI();
         }
 
@@ -110,67 +121,42 @@ public class NoiseUIManager : MonoBehaviour
     
     private void DrawWaveform(float level)
     {
-        var r      = noiseBarRect.rect;
-        float halfW = r.width  * 0.5f;
-        float halfH = r.height * 0.5f;
-
-        // base amplitude is *only* driven by level
-        float baseAmp = halfH * level * amplitudeBoost;
-
-        // pick colour once
         Color c = level >= noiseThreshold
             ? Color.red
             : Color.Lerp(Color.green, Color.yellow, level);
         waveformLine.startColor = waveformLine.endColor = c;
-
-        // if no noise, draw a perfectly flat line
-        if (level <= Mathf.Epsilon)
-        {
-            for (int i = 0; i < waveformPoints; i++)
-            {
-                float t = i / (float)(waveformPoints - 1);
-                float x = Mathf.Lerp(-halfW, +halfW, t);
-                waveformLine.SetPosition(i, new Vector3(x, 0f, 0f));
-            }
-            return;
-        }
-
-        // otherwise draw the wiggly line
-        for (int i = 0; i < waveformPoints; i++)
-        {
-            float t = i / (float)(waveformPoints - 1);
-
-            // use Perlin only to modulate frequency (you can still Pow() it)
-            float envRaw = Mathf.PerlinNoise(t * envelopeSpeed + waveOffset,
-                waveOffset);
-            float env    = Mathf.Pow(envRaw, envelopePower);
-
-            float freq = burstFrequency + env * burstVariation;
-            float phase = t * freq * Mathf.PI * 2f + waveOffset;
-            float y1    = Mathf.Sin(phase) * baseAmp;
-
-            // micro‐ripples still scale with baseAmp so they vanish at zero
-            float microPhase = t * microCycles * Mathf.PI * 2f
-                               + waveOffset * microSpeed;
-            float y2         = Mathf.Sin(microPhase) * microAmp * baseAmp;
-
-            // a little jitter, also scaled by level
-            float j = (Mathf.PerlinNoise(t * 10f, waveOffset * 2f) * 2f - 1f)
-                      * jitterAmount * level;
-
-            float x = Mathf.Lerp(-halfW, +halfW, t);
-            float y = y1 + y2 + j;
-
-            waveformLine.SetPosition(i, new Vector3(x, y, 0f));
-        }
-
-        waveOffset += Time.deltaTime * envelopeSpeed;
+        noiseSO.amplitude   = Mathf.Lerp(initialAmplitude,  maxAmplitude,  level);
+        noiseSO.amplitude2  = Mathf.Lerp(initialAmplitude2, maxAmplitude2, level);
+        noiseSO.frequency2  = Mathf.Lerp(initialFrequency2, maxFrequency2, level);
     }
     
+    /// <summary>
+    /// Call this to blast your SO back to the original, inspector-set values.
+    /// </summary>
+    [ContextMenu("Reset SO Values")]
+    public void ResetSOValues()
+    {
+        if (noiseSO == null) return;
 
+        noiseSO.amplitude   = initialAmplitude;
+        noiseSO.frequency   = initialFrequency;
+        noiseSO.resolution  = initialResolution;
+        noiseSO.speed       = initialSpeed;
+        noiseSO.amplitude2  = initialAmplitude2;
+        noiseSO.frequency2  = initialFrequency2;
+        noiseSO.anchor      = initialAnchor;
+    }
+
+    /// <summary>
+    /// Your existing checkpoint‐callable reset: resets timer, waveOffset AND SO.
+    /// </summary>
     public void reset()
     {
         noiseTimer = 0f;
+        waveOffset = 0f;
+        currentNoise = 0f;
+        ResetSOValues();
+        UpdateUI();
     }
 
 

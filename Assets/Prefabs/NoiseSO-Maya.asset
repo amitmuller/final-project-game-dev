@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d489b39056e4ef745bdfc3b82a852baa, type: 3}
+  m_Name: NoiseSO-Maya
+  m_EditorClassIdentifier: 
+  amplitude: 0
+  frequency: 2.27
+  resolution: 422
+  speed: 16.88
+  amplitude2: 0
+  frequency2: 1.52
+  anchor: 23
