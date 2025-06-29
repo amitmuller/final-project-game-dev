@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     // Spare templates (_Spare) per cart
     private List<List<GameObject>> _spareThrowableRoots = new List<List<GameObject>>();
-
+    
+    [SerializeField] private NoiseUIManager _noiseUIManager;
     private int currentCart = 0;
 
     private void Awake()
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
         NoiseUIManager.Instance?.reset();
         ResetEnemiesInCart();
         ResetThrowables();
+        _noiseUIManager.reset();
         player.position = carts[currentCart].checkpointPosition;
     }
 
