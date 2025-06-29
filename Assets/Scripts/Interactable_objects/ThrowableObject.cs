@@ -28,6 +28,11 @@ public class ThrowableObject : MonoBehaviour
         {
             noiseParticles = Instantiate(noisePrefab, transform.position, Quaternion.identity);
             noiseParticles.gameObject.name = "noisePS_Instance";
+
+            // IMMEDIATELY OVERRIDE ANY PREFAB DELAY:
+            var main = noiseParticles.main;
+            main.startDelay = 0f;
+
             noiseParticles.Stop();
             noiseParticles.gameObject.SetActive(false);
             noiseParticles.Simulate(0.001f, withChildren: true, restart: true);
@@ -91,6 +96,9 @@ public class ThrowableObject : MonoBehaviour
         {
             noiseParticles.transform.position = transform.position;
             noiseParticles.gameObject.SetActive(true);
+
+            // ensure no old delay or particles remain
+            noiseParticles.Clear(true);
             noiseParticles.Play();
         }
 
