@@ -39,7 +39,7 @@ namespace Characters.Player
         [SerializeField] private SkeletonAnimation rendereSkeletonAnimation;
         [SerializeField] private MeshRenderer meshRenderer;
         private const float  PeekThreshold = 0.95f;
-
+        private const int HiddenEnemyOrder = -100;
         private HidableObject currentHidable;
         private bool          isHiding;
         private Color         originalColor;
@@ -52,11 +52,7 @@ namespace Characters.Player
         private void Awake()
         {
             playerMove = GetComponent<characterMovement>();
-            // Grab the SpriteRenderer if not assigned
-            //if (!bodyRenderer)
-              //  bodyRenderer = bodyVisual.GetComponent<SpriteRenderer>();
-            
-            //rendereSkeletonAnimation = GetComponent<SkeletonAnimation>();
+ 
             meshRenderer = GetComponent<MeshRenderer>();
             //originalColor   = bodyRenderer.color;
             originalOrder   = meshRenderer.sortingOrder;
@@ -105,12 +101,17 @@ namespace Characters.Player
             
             isHiding = true;
             UpdateHeldObjectSorting();
+            
+            // HIDE ALL ENEMIES BEHIND EVERYTHING
+            foreach (var enemy in EnemyAIController.AllEnemies)
+                enemy.SetSortingOrder(HiddenEnemyOrder);
+
         }
 
         private void ExitHide()
         {
-            // Restore visuals
-            //bodyRenderer.color        = originalColor;
+            foreach (var enemy in EnemyAIController.AllEnemies)
+                enemy.RestoreSortingOrder();
             meshRenderer.sortingOrder = originalOrder;
 
             // Snap back to original Y
@@ -152,13 +153,20 @@ namespace Characters.Player
 
         private void PeekWhileHiding()
         {
-            if (playerMove != null)
+            if (playerMove == null) return;
+
+            var peek = playerMove.MoveInput.y > PeekThreshold;
+            playerMove.SetCanMove(!peek);
+            if (blurTf != null)
+                blurTf.gameObject.SetActive(!peek);
+
+            // if peeking: pull enemies forward and if not peeking push them back
+            foreach (var enemy in EnemyAIController.AllEnemies)
             {
-                var move = playerMove.MoveInput;
-                var peek   = move.y > PeekThreshold;
-                if (peek) playerMove.SetCanMove(false); else playerMove.SetCanMove(true);
-                if (blurTf != null)
-                     blurTf.gameObject.SetActive(!peek);
+                if (peek)
+                    enemy.RestoreSortingOrder();
+                else
+                    enemy.SetSortingOrder(HiddenEnemyOrder);
             }
         }
 

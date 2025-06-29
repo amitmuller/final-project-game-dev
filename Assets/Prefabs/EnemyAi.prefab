@@ -226,6 +226,7 @@ MonoBehaviour:
   chaseDashSpeed: 6
   searchMoveSpeed: 1.7
   searchDuration: 7
+  alertDuration: 30
   isConversing: 0
   conversationCompleted: 0
   conversationTimer: 0

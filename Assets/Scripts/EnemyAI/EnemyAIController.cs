@@ -103,6 +103,7 @@ public class EnemyAIController : MonoBehaviour
     private bool walkingRight = false;
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
+    private int _originalSpriteOrder;
     [SerializeField] SpriteRenderer _spriteRenderer;
     
     [Header("Searching state")]
@@ -110,6 +111,7 @@ public class EnemyAIController : MonoBehaviour
 
     void Awake()
     {
+        _originalSpriteOrder = _spriteRenderer.sortingOrder;
         _rigidbody2D    = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         patrolY         = transform.position.y;
@@ -240,17 +242,6 @@ public class EnemyAIController : MonoBehaviour
             GameManager.Instance.checkpoint(collision.transform);
         }
     }
-    // private void LateUpdate()
-    // {
-    //     if (ExclamationIcon != null)
-    //         ExclamationIcon.transform.localScale = _exclamationOriginalScale;
-    //
-    //     if (QuestionIcon != null)
-    //         QuestionIcon.transform.localScale = _questionOriginalScale;
-    //
-    //     if (filledQuestionIcon != null)
-    //         filledQuestionIcon.transform.localScale = _filledQuestionOriginalScale;
-    // }
 
 
     private void initIcons()
@@ -276,27 +267,7 @@ public class EnemyAIController : MonoBehaviour
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
     
-    // public bool IsInChasingDistanceFromPlayer()
-    // {
-    //     Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
-    //     Vector2 toPlayer = new Vector2(playerTransform.position.x, playerTransform.position.y) - origin;
-    //     Vector2 direction = GetFacingDirection(); // or any direction you want
-    //     float length = detectionRange;
-    //
-    //     Debug.DrawLine(origin, origin + direction * length, Color.red);
-    //     if (toPlayer.magnitude > detectionRange)
-    //         return false;
-    //
-    //     Vector2 facing = GetFacingDirection();
-    //     float angle = Vector2.Angle(facing, toPlayer.normalized);
-    //
-    //     if (angle <= fieldOfViewAngle / 2f && !IsPlayerHiding())
-    //     {
-    //         return true;
-    //     }
-    //
-    //     return false;
-    // }
+  
     public bool IsInChasingDistanceFromPlayer()
     {
         if (IsPlayerHiding()) return false;
@@ -453,4 +424,23 @@ public class EnemyAIController : MonoBehaviour
         polyCollider.SetPath(0, colliderPoints);
     }
 
+    /// <summary>
+    /// Override the sprite’s sorting order at runtime.
+    /// </summary>
+    public void SetSortingOrder(int order)
+    {
+        _spriteRenderer.sortingOrder = order;
+        _fovMeshObject.gameObject.SetActive(false);
+    }
+    
+    /// <summary>
+    /// Restore the original order from Awake().
+    /// </summary>
+    public void RestoreSortingOrder()
+    {
+        _spriteRenderer.sortingOrder = _originalSpriteOrder;
+        _fovMeshObject.gameObject.SetActive(true);
+    }
 }
+
+
