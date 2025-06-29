@@ -647,6 +647,17 @@
                     "action": "Peek",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73a7bd17-a8f2-4e80-b556-2cf3efafaefe",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Peek",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
