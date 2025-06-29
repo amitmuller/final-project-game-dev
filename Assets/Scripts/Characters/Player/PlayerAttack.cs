@@ -39,7 +39,7 @@ public class PlayerAttack : MonoBehaviour
         _move = GetComponent<PlayerMove>();
 
         if (hitboxCollider == null)
-            Debug.LogError("Hitbox Collider is not assigned on PlayerAttack", this);
+            Debug.Log("Hitbox Collider is not assigned on PlayerAttack", this);
         else
         {
             hitboxCollider.isTrigger = true;

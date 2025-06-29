@@ -37420,6 +37420,7 @@ MonoBehaviour:
   decayRate: 1
   noiseCooldown: 3
   player: {fileID: 1770811040}
+  noiseEffect: {fileID: 3811831385093488166, guid: 5c8d841eff2ae4aefa68d663fa4aa732, type: 3}
   waveformLine: {fileID: 1300906019}
   envelopeSpeed: 0.5
   envelopePower: 3

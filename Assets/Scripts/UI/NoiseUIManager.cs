@@ -16,6 +16,7 @@ public class NoiseUIManager : MonoBehaviour
     [SerializeField] private float decayRate = 0.5f;       // how fast it fades down
     [SerializeField] private float noiseCooldown = 1f;
     [SerializeField] private PlayerHide player;
+    [SerializeField] private ParticleSystem noiseEffect;
     
     [Header("Waveform Settings")]
     [SerializeField] private LineRenderer waveformLine;
@@ -36,6 +37,8 @@ public class NoiseUIManager : MonoBehaviour
     private float currentNoise = 0f;
     private float noiseTimer = 0f;
     private float waveOffset   = 0f;
+    
+    private ParticleSystem burst;
 
     private void Awake()
     {
@@ -50,6 +53,13 @@ public class NoiseUIManager : MonoBehaviour
             waveformLine.positionCount = waveformPoints;
             waveformLine.useWorldSpace = false;
         }
+        burst = Instantiate(
+            noiseEffect,
+            player.transform.position,
+            Quaternion.identity,
+            player.transform
+        );
+        burst.transform.localPosition = Vector3.zero;
         UpdateUI();
 
     }
@@ -74,6 +84,7 @@ public class NoiseUIManager : MonoBehaviour
         if (currentNoise >= noiseThreshold && noiseTimer <= 0f && !player.IsHiding())
         {
             NoiseManager.RaiseNoise(player.transform.position); 
+            burst.Play();
             noiseTimer = noiseCooldown;
         }
     }
@@ -89,7 +100,9 @@ public class NoiseUIManager : MonoBehaviour
         if (noiseBarFill != null)
         {
             noiseBarFill.fillAmount = currentNoise;
-            noiseBarFill.color = Color.Lerp(Color.white, Color.red, currentNoise);
+            noiseBarFill.color = currentNoise >= noiseThreshold
+                ? Color.red
+                : Color.Lerp(Color.green, Color.yellow, currentNoise);;
         }
         if (noiseBarFill   != null) noiseBarFill.enabled = false;
         if (waveformLine   != null) DrawWaveform(currentNoise);
@@ -101,40 +114,57 @@ public class NoiseUIManager : MonoBehaviour
         float halfW = r.width  * 0.5f;
         float halfH = r.height * 0.5f;
 
-        // color
-        Color c = level >= noiseThreshold 
-            ? Color.red 
+        // base amplitude is *only* driven by level
+        float baseAmp = halfH * level * amplitudeBoost;
+
+        // pick colour once
+        Color c = level >= noiseThreshold
+            ? Color.red
             : Color.Lerp(Color.green, Color.yellow, level);
         waveformLine.startColor = waveformLine.endColor = c;
 
+        // if no noise, draw a perfectly flat line
+        if (level <= Mathf.Epsilon)
+        {
+            for (int i = 0; i < waveformPoints; i++)
+            {
+                float t = i / (float)(waveformPoints - 1);
+                float x = Mathf.Lerp(-halfW, +halfW, t);
+                waveformLine.SetPosition(i, new Vector3(x, 0f, 0f));
+            }
+            return;
+        }
+
+        // otherwise draw the wiggly line
         for (int i = 0; i < waveformPoints; i++)
         {
             float t = i / (float)(waveformPoints - 1);
 
-            // 1) envelope for bursts
-            float env = Mathf.PerlinNoise(t * envelopeSpeed + waveOffset, waveOffset);
-            env = Mathf.Pow(env, envelopePower);
+            // use Perlin only to modulate frequency (you can still Pow() it)
+            float envRaw = Mathf.PerlinNoise(t * envelopeSpeed + waveOffset,
+                waveOffset);
+            float env    = Mathf.Pow(envRaw, envelopePower);
 
-            // 2) dynamic frequency & amplitude
             float freq = burstFrequency + env * burstVariation;
-            float amp  = halfH * level * env * amplitudeBoost;
-
-            // 3) core wave + scrolling
             float phase = t * freq * Mathf.PI * 2f + waveOffset;
-            float y1    = Mathf.Sin(phase);
+            float y1    = Mathf.Sin(phase) * baseAmp;
 
-            // 4) micro-ripples on top
-            float microPhase = t * microCycles * Mathf.PI * 2f + waveOffset * microSpeed;
-            float y2         = Mathf.Sin(microPhase) * microAmp;
+            // micro‐ripples still scale with baseAmp so they vanish at zero
+            float microPhase = t * microCycles * Mathf.PI * 2f
+                               + waveOffset * microSpeed;
+            float y2         = Mathf.Sin(microPhase) * microAmp * baseAmp;
 
-            // 5) jitter for organic feel
-            float j = (Mathf.PerlinNoise(t * 10f, waveOffset * 2f) * 2f - 1f) * jitterAmount;
+            // a little jitter, also scaled by level
+            float j = (Mathf.PerlinNoise(t * 10f, waveOffset * 2f) * 2f - 1f)
+                      * jitterAmount * level;
 
             float x = Mathf.Lerp(-halfW, +halfW, t);
-            float y = (y1 + y2 + j) * amp;
+            float y = y1 + y2 + j;
 
             waveformLine.SetPosition(i, new Vector3(x, y, 0f));
         }
+
+        waveOffset += Time.deltaTime * envelopeSpeed;
     }
     
 
