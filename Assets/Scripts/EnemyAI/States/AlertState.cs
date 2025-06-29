@@ -19,6 +19,7 @@ namespace EnemyAI
             enemy.isGoingToStarAlertPatrolling = true;
             enemy.isAlertPatrolling = false;
             enemy.QuesitonIconSwitch(true);
+            enemy.alertTimer = enemy.alertDuration;
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -26,11 +27,19 @@ namespace EnemyAI
             // 1) If player visible and not hiding → switch to Chase and start alert routine
             
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
+            // 2) enemy alert timer will count time for the state
+            enemy.alertTimer -= Time.deltaTime;
+            Debug.Log("enemy time patrol left: "+ enemy.alertTimer);
+            if (enemy.alertTimer <= 0f)
+            {
+                enemy.ChangeState(enemy.calmState);
+            }
+                
             
-            // 2) if enemy is alert he will alert his friend in proximity
+            // 3) if enemy is alert he will alert his friend in proximity
             alertUtils.AlertNearbyEnemies(enemy, enemy.spreadRadius);
             
-            // 3) if is needed go into search state
+            // 4) if is needed go into search state
             const float noiseStaleDuration = 2f;
             if (Time.time - LastNoiseTime <= noiseStaleDuration
                 && Vector2.Distance(enemy.transform.position, LastNoisePosition) <= noiseDetectionRange)
@@ -42,7 +51,7 @@ namespace EnemyAI
             }
             if (enemy.CurrentStateType == EnemyStateType.Chase) return;
             
-            // 4) Otherwise patrol across alert patrol radius
+            // 5) Otherwise patrol across alert patrol radius
             Debug.Log($"enemy patrolling = " + enemy.isAlertPatrolling);
             alertUtils.HandleAlertPatrol(enemy, enemy.alertPatrolRadius, enemy.alertSpeed);
         }

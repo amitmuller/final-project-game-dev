@@ -40,11 +40,7 @@ namespace EnemyAI
         {
             // log every frame so you can watch this flood the console
             var deltaX = Mathf.Abs(enemy.transform.position.x - _targetX);
-            Debug.Log(
-                $"[Searching] Δx={deltaX:F2}, movedFor={enemy.moveToNoiseTimer:F2}s, " +
-                $"searchLeft={enemy.searchTimer:F2}s"
-            );
-
+            
             // First: if the player suddenly becomes visible → bail into Chase
             // (but only after we’ve had our turn moving/timed out)
             var stillMoving = deltaX > ArrivalThreshold && enemy.moveToNoiseTimer < MaxMoveTime;
