@@ -226,6 +226,7 @@ MonoBehaviour:
   chaseDashSpeed: 6
   searchMoveSpeed: 1.7
   searchDuration: 7
+  alertDuration: 30
   isConversing: 0
   conversationCompleted: 0
   conversationTimer: 0
@@ -515,7 +516,8 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7965255896678894294, guid: 68befa6e46d864a13bb7dfe8454e3f05, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8751229518688753735, guid: 68befa6e46d864a13bb7dfe8454e3f05, type: 3}

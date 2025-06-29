@@ -103,13 +103,18 @@ public class EnemyAIController : MonoBehaviour
     private bool walkingRight = false;
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
+    private int _originalSpriteOrder;
     [SerializeField] SpriteRenderer _spriteRenderer;
+    
+    private Canvas _uiCanvas;
+    private int    _uiOriginalOrder;
     
     [Header("Searching state")]
     public float moveToNoiseTimer;
 
     void Awake()
     {
+        _originalSpriteOrder = _spriteRenderer.sortingOrder;
         _rigidbody2D    = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         patrolY         = transform.position.y;
@@ -126,6 +131,16 @@ public class EnemyAIController : MonoBehaviour
         _initialPosition = transform.position;
         _initialState = calmState;
         initIcons();
+        
+        var uiGO = transform.Find("EnemyUI");
+        if (uiGO != null)
+        {
+            _uiCanvas = uiGO.GetComponent<Canvas>();
+            // just in case someone forgot to override…
+            _uiCanvas.overrideSorting = true;
+            // record its starting “Order in Layer”
+            _uiOriginalOrder = _uiCanvas.sortingOrder;
+        }
     }
     
 
@@ -240,17 +255,6 @@ public class EnemyAIController : MonoBehaviour
             GameManager.Instance.checkpoint(collision.transform);
         }
     }
-    // private void LateUpdate()
-    // {
-    //     if (ExclamationIcon != null)
-    //         ExclamationIcon.transform.localScale = _exclamationOriginalScale;
-    //
-    //     if (QuestionIcon != null)
-    //         QuestionIcon.transform.localScale = _questionOriginalScale;
-    //
-    //     if (filledQuestionIcon != null)
-    //         filledQuestionIcon.transform.localScale = _filledQuestionOriginalScale;
-    // }
 
 
     private void initIcons()
@@ -276,27 +280,7 @@ public class EnemyAIController : MonoBehaviour
 
     public Vector2 GetLastKnownPlayerPosition() => _lastKnownPlayerPosition;
     
-    // public bool IsInChasingDistanceFromPlayer()
-    // {
-    //     Vector2 origin = (Vector2)transform.position + new Vector2(0, 1.5f);
-    //     Vector2 toPlayer = new Vector2(playerTransform.position.x, playerTransform.position.y) - origin;
-    //     Vector2 direction = GetFacingDirection(); // or any direction you want
-    //     float length = detectionRange;
-    //
-    //     Debug.DrawLine(origin, origin + direction * length, Color.red);
-    //     if (toPlayer.magnitude > detectionRange)
-    //         return false;
-    //
-    //     Vector2 facing = GetFacingDirection();
-    //     float angle = Vector2.Angle(facing, toPlayer.normalized);
-    //
-    //     if (angle <= fieldOfViewAngle / 2f && !IsPlayerHiding())
-    //     {
-    //         return true;
-    //     }
-    //
-    //     return false;
-    // }
+  
     public bool IsInChasingDistanceFromPlayer()
     {
         if (IsPlayerHiding()) return false;
@@ -452,5 +436,45 @@ public class EnemyAIController : MonoBehaviour
         }
         polyCollider.SetPath(0, colliderPoints);
     }
+    
+    /// <summary>
+    /// Ensures the icon GameObject has a World-space Canvas,
+    /// and records its initial sortingOrder.
+    /// </summary>
+    private void SetupIconCanvas(GameObject go, out Canvas cv, out int origOrder)
+    {
+        cv = go.GetComponent<Canvas>();
+        if (cv == null)    cv = go.AddComponent<Canvas>();
+        cv.renderMode      = RenderMode.WorldSpace;
+        cv.worldCamera     = _camera;       // your serialized Camera reference
+        cv.overrideSorting = true;
+        cv.sortingLayerName = _spriteRenderer.sortingLayerName;
 
+        // record whatever its “Order in Layer” currently is
+        origOrder = cv.sortingOrder;
+    }
+    
+    /// <summary>
+    /// Override the sprite’s sorting order at runtime.
+    /// </summary>
+    public void SetSortingOrder(int order)
+    {
+        _spriteRenderer.sortingOrder = order;
+        _fovMeshObject.gameObject.SetActive(false);
+        if (_uiCanvas != null)
+            _uiCanvas.sortingOrder = order;
+    }
+    
+    /// <summary>
+    /// Restore the original order from Awake().
+    /// </summary>
+    public void RestoreSortingOrder()
+    {
+        _spriteRenderer.sortingOrder = _originalSpriteOrder;
+        _fovMeshObject.gameObject.SetActive(true);
+        if (_uiCanvas != null)
+            _uiCanvas.sortingOrder = _uiOriginalOrder;
+    }
 }
+
+
