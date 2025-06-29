@@ -12,7 +12,7 @@ public class NoiseUIManager : MonoBehaviour
     [FormerlySerializedAs("speedBarRect")] [SerializeField] private RectTransform noiseBarRect;
 
     [Header("Noise Settings")]
-    [SerializeField] private float noiseThreshold = 0.8f; // normalized 0–1
+    [SerializeField] private float noiseThreshold = 0.9f; // normalized 0–1
     [SerializeField] private float decayRate = 0.5f;       // how fast it fades down
     [SerializeField] private float noiseCooldown = 1f;
     [SerializeField] private PlayerHide player;
