@@ -54,7 +54,8 @@ public class EnemyAIController : MonoBehaviour
     public float searchMoveSpeed     = 2.5f;
 
     [Header("State Durations")]
-    public float searchDuration = 10f;
+    public float searchDuration = 7f;
+    public float alertDuration = 30f;
 
     // ── Group Conversation Fields 
     [HideInInspector] public bool isConversing  = false;

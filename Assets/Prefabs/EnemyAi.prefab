@@ -214,10 +214,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   isAlertPatrolling: 0
   isGoingToStarAlertPatrolling: 0
-  patrolPointsX:
-  - 0
-  - 50
-  - 25
+  patrolPoints: []
   currentPatrolIndex: 0
   patrolY: 0
   alertPatrolRadius: 8
@@ -226,8 +223,9 @@ MonoBehaviour:
   detectionRange: 9
   calmMoveSpeed: 1.5
   chaseMoveSpeed: 2.5
+  chaseDashSpeed: 6
   searchMoveSpeed: 1.7
-  searchDuration: 5
+  searchDuration: 7
   isConversing: 0
   conversationCompleted: 0
   conversationTimer: 0
@@ -243,6 +241,7 @@ MonoBehaviour:
   filledQuestionIcon: {fileID: 6835028534080668006}
   fieldOfViewAngle: 120
   _spriteRenderer: {fileID: 8589876648168497750}
+  moveToNoiseTimer: 0
 --- !u!61 &1658927907042441943
 BoxCollider2D:
   m_ObjectHideFlags: 0
