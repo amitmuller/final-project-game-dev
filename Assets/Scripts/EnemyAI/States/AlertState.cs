@@ -29,7 +29,6 @@ namespace EnemyAI
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
             // 2) enemy alert timer will count time for the state
             enemy.alertTimer -= Time.deltaTime;
-            Debug.Log("enemy time patrol left: "+ enemy.alertTimer);
             if (enemy.alertTimer <= 0f)
             {
                 enemy.ChangeState(enemy.calmState);

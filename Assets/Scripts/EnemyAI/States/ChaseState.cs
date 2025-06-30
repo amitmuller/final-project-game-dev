@@ -70,11 +70,6 @@ namespace EnemyAI
                         .SetEase(Ease.OutQuint)
                         .OnComplete(() => { _dashTween = null; });
                 }
-                //else
-                //{
-                    // if player moved, update the tween end‐value on the fly
-                    //_dashTween.ChangeEndValue(playerX, true);
-                //}
             }
             // 4) Otherwise keep walking normally
             else
