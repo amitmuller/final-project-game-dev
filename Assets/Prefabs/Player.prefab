@@ -663,7 +663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c760a706a3654af4a4749265b88673a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.8
   maxSpeed: 3.5
   maxAcceleration: 17
   maxDecceleration: 34.1
@@ -691,8 +690,9 @@ MonoBehaviour:
   idle: {fileID: 11400000, guid: 926a6793932aa4fecac4bb0b4589ee3d, type: 2}
   walking: {fileID: 11400000, guid: 931cbc4361b7e498ab1eb87517c36f4f, type: 2}
   walkingHiding: {fileID: 11400000, guid: ed55fa31620e446f883265b11cafebe0, type: 2}
-  intoHidingDown: {fileID: 11400000, guid: 5eb4e07b6f4ba48f8bc0b9fbd8a95ad5, type: 2}
+  IntoHidingDown: {fileID: 11400000, guid: 5eb4e07b6f4ba48f8bc0b9fbd8a95ad5, type: 2}
   intoHiding: {fileID: 11400000, guid: d15223fffa2e142ffb493f0c0e3512c0, type: 2}
+  PeekingHeadUp: {fileID: 11400000, guid: 2cf7803af9084450e9233c3160390720, type: 2}
   currentAnimationName: 
 --- !u!114 &1965623225461360176
 MonoBehaviour:
@@ -709,11 +709,12 @@ MonoBehaviour:
   attackPower: 0
   superAttackPower: 0
   timeOfAttack: 0.3
-  superAttackRadius: 4
-  attackRadiusFactor: 0.3
+  hitboxSize: {x: 2, y: 2}
+  explosionForce: 50
+  upliftModifier: 0
   attackBacklashForce: 5
   attackFeedback: {fileID: 1339770100807432576, guid: c06ae3110694f498e9f1fe15294972e3, type: 3}
-  onGround: 1
+  hitboxCollider: {fileID: 0}
 --- !u!114 &1951231475404353444
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -78,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1320046217
-  m_SortingLayer: 5
-  m_SortingOrder: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: -3854582187768792538, guid: b5cc24044a1a04310a664f53090709b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -206,7 +206,6 @@ MonoBehaviour:
   allowRuntimeFragmentation: 0
   extraPoints: 0
   subshatterSteps: 0
-  dontDestroyOnBreak: 0
   fragmentLayer: Default
   sortingLayerName: Default
   orderInLayer: 0

@@ -72,7 +72,7 @@ public class characterMovement : MonoBehaviour
     
     [Header("Animation Settings")]
     public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, walking, walkingHiding, intoHidingDown, intoHiding;
+    public AnimationReferenceAsset idle, walking, walkingHiding, IntoHidingDown, intoHiding, PeekingHeadUp;
     public string currentAnimationName;
     
     private float size;
@@ -283,24 +283,27 @@ public class characterMovement : MonoBehaviour
     // ------------------------ Animations -------------------------- //
     private void AnimationHandler()
     {
-        // use real-world horizontal speed instead of desiredVelocity
-        float currentSpeed = Mathf.Abs(body.linearVelocity.x);
+        Debug.Log($"AnimHandler ▶ currAnim={currentAnimationName}, hiding={hide.IsHiding()}, speed={Mathf.Abs(body.linearVelocity.x)}");
+        if (currentAnimationName == IntoHidingDown.name ||
+            currentAnimationName == intoHiding.name)
+            return;
+        var currentSpeed = Mathf.Abs(body.linearVelocity.x);
+        if (hide.IsHiding())
+        {
+            if (currentSpeed < 0.01f) SetCharacterState("idle");
+            
+            if (currentAnimationName != walkingHiding.name) SetCharacterState("walkingHiding");
+            
+            return;
+        }
 
         if (currentSpeed < 0.01f)
-        {
             SetCharacterState("idle");
-        }
-        else if (!hide.IsHiding())
-        {
-            SetCharacterState("walking");
-        }
         else
-        {
-            SetCharacterState("walkingHiding");
-        }
-
+            SetCharacterState("walking");
+    
         // then adjust playback speed as before
-        float t = currentSpeed / maxSpeed;  
+        var t = currentSpeed / maxSpeed;  
         skeletonAnimation.timeScale = Mathf.Lerp(1f, 1.5f, t);
     }
 
@@ -319,6 +322,7 @@ public class characterMovement : MonoBehaviour
 
     public void SetCharacterState(string state)
     {
+        Debug.Log(("player animation state is: " + state));
         if (state.Equals("idle"))
         {
             SetAnimation(idle, true);
@@ -329,15 +333,21 @@ public class characterMovement : MonoBehaviour
         }
         else if (state.Equals("intoHidingDown"))
         {
-            SetAnimation(intoHidingDown, true);
+            Debug.Log("into hiding down");
+            SetAnimation(IntoHidingDown, false);
         }
         else if (state.Equals("intoHiding"))
         {
+            Debug.Log("into hiding");
             SetAnimation(intoHiding, false);
         }
         else if (state.Equals("walkingHiding"))
         {
             SetAnimation(walkingHiding, true);
+        }
+        else if(state.Equals("PeekingHeadUp"))
+        {
+            SetAnimation(PeekingHeadUp, true);
         }
         
     }

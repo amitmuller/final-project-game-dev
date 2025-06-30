@@ -217,14 +217,14 @@ MonoBehaviour:
   patrolPoints: []
   currentPatrolIndex: 0
   patrolY: 0
-  alertPatrolRadius: 8
+  alertPatrolRadius: 10
   spreadRadius: 10
-  alertSpeed: 2.25
+  alertSpeed: 2.75
   detectionRange: 9
   calmMoveSpeed: 1.5
-  chaseMoveSpeed: 2.5
+  chaseMoveSpeed: 3
   chaseDashSpeed: 6
-  searchMoveSpeed: 1.7
+  searchMoveSpeed: 2.5
   searchDuration: 7
   alertDuration: 30
   isConversing: 0
