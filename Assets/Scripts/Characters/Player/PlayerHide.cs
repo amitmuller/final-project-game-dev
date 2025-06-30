@@ -1,9 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Interactable_objects;
 using Interactable_objects.object_utills.enums;
 using Spine.Unity;
+using Spine;
+
 
 namespace Characters.Player
 {
@@ -80,33 +81,38 @@ namespace Characters.Player
 
         private void EnterHide()
         {
-            // Darken sprite
-            bodyRenderer.color = new Color(0.36f, 0.4f, 0.43f, 1f);
+            isHiding = true;
 
-            // Behind or in front?
+            // 1) Darken & sorting/Y
+            bodyRenderer.color = new Color(0.36f, 0.4f, 0.43f, 1f);
             if (currentHidable.Layer == HideLayer.Back)
             {
-                playerMove.SetCharacterState("intoHiding");
                 meshRenderer.sortingOrder = hiddenBackOrder;
                 targetHideY               = hideYBack;
+                // Use your helper so currentAnimationName is correct:
+                playerMove.SetCharacterState("intoHiding");
             }
             else
             {
-                playerMove.SetCharacterState("intoHidingDown");
                 meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
+                playerMove.SetCharacterState("intoHidingDown");
             }
-            if(blurTf != null)
-                 blurTf.gameObject.SetActive(true);
-            
-            isHiding = true;
+
+            blurTf?.gameObject.SetActive(true);
             UpdateHeldObjectSorting();
-            
-            // HIDE ALL ENEMIES BEHIND EVERYTHING
+
+            // 2) Now grab that entry and hook its completion
+            var spineState = playerMove.skeletonAnimation.state;
+            var entry      = spineState.GetCurrent(0);            // the one we just set
+            entry.Complete -= OnHideTransitionComplete;           // clean up any old hooks
+            entry.Complete += OnHideTransitionComplete;           // fire when it ends
+
+            // 3) Push all enemies behind you
             foreach (var enemy in EnemyAIController.AllEnemies)
                 enemy.SetSortingOrder(HiddenEnemyOrder);
-
         }
+
 
         private void ExitHide()
         {
@@ -159,6 +165,10 @@ namespace Characters.Player
             playerMove.SetCanMove(!peek);
             if (blurTf != null)
                 blurTf.gameObject.SetActive(!peek);
+            if (peek)
+            {
+                playerMove.SetCharacterState("PeekingHeadUp");
+            }
 
             // if peeking: pull enemies forward and if not peeking push them back
             foreach (var enemy in EnemyAIController.AllEnemies)
@@ -234,6 +244,20 @@ namespace Characters.Player
                     Debug.Log(isHiding ? meshRenderer.sortingOrder + 1 : normalOrder + 1);
                     objRenderer.sortingOrder = isHiding ? meshRenderer.sortingOrder + 1 : normalOrder + 1;
                 }
+            }
+        }
+        
+        // This gets called by Spine when any TrackEntry completes.
+        private void OnHideTransitionComplete(TrackEntry entry)
+        {
+            // safety: only respond to those two
+            var n = entry.Animation.Name;
+            if (n == "intoHiding" || n == "IntoHidingDown")
+            {
+                // now queue the loop
+                playerMove.SetCharacterState("walkingHiding");
+                // unhook
+                entry.Complete -= OnHideTransitionComplete;
             }
         }
     }
