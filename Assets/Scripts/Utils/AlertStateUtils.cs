@@ -20,15 +20,6 @@ public class AlertStateUtils
     }
     
     /// <summary>
-    /// After alert timer expires, transition to Chase if the player is visible;
-    /// otherwise set lastKnownNoisePosition and switch to Searching.
-    /// </summary>
-    public void HandleAlertGoingToLastKnownPlayerPosition(EnemyAIController enemy)
-    {
-        enemy.StartCoroutine(GoToLastKnownPlayerPositionToStartAlertPatrol(enemy, 1.5f));
-    }
-    
-    /// <summary>
     /// Patrol around last known noise position within a given proximity for a duration,
     /// enabling the flashlight during the patrol.
     /// </summary>
@@ -45,35 +36,6 @@ public class AlertStateUtils
     // ------------------------------- Coroutines ------------------------------- //
     
     
-    private static IEnumerator GoToLastKnownPlayerPositionToStartAlertPatrol(EnemyAIController enemy, float speed)
-    {
-        const float range = 1f;
-        const float maxDuration = 5f;   // bail-out time
-        
-        // Cache only the X component of the target
-        var targetX = enemy.GetLastKnownPlayerPosition().x;
-        var timer = 0f;
-
-        // Loop until we’re within `range` on the X axis
-        while (Mathf.Abs(enemy.transform.position.x - targetX) > range)
-        {
-            // Move only along x
-            var pos = enemy.transform.position;
-            var newX = Mathf.MoveTowards(pos.x, targetX, speed * Time.deltaTime);
-            enemy.transform.position = new Vector3(newX, pos.y, pos.z);
-
-            yield return null;
-            timer += Time.deltaTime;
-
-            if (timer > maxDuration)
-            {
-                Debug.LogWarning("GoToLastKnownPlayerPositionToStartAlertPatrol: timed out before reaching target");
-                break;
-            }
-        }
-        enemy.isGoingToStarAlertPatrolling = false;
-    }
-
     
     private static IEnumerator AlertPatrolCoroutine(EnemyAIController enemy, float range, float speed)
     {

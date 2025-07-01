@@ -283,10 +283,8 @@ public class characterMovement : MonoBehaviour
     // ------------------------ Animations -------------------------- //
     private void AnimationHandler()
     {
-        Debug.Log($"AnimHandler ▶ currAnim={currentAnimationName}, hiding={hide.IsHiding()}, speed={Mathf.Abs(body.linearVelocity.x)}");
-        if (currentAnimationName == IntoHidingDown.name ||
-            currentAnimationName == intoHiding.name)
-            return;
+        if (currentAnimationName == IntoHidingDown.name || currentAnimationName == intoHiding.name) return;
+        
         var currentSpeed = Mathf.Abs(body.linearVelocity.x);
         if (hide.IsHiding())
         {
@@ -333,12 +331,10 @@ public class characterMovement : MonoBehaviour
         }
         else if (state.Equals("intoHidingDown"))
         {
-            Debug.Log("into hiding down");
             SetAnimation(IntoHidingDown, false);
         }
         else if (state.Equals("intoHiding"))
         {
-            Debug.Log("into hiding");
             SetAnimation(intoHiding, false);
         }
         else if (state.Equals("walkingHiding"))

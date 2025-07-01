@@ -24,7 +24,7 @@ namespace EnemyAI
 
         public void UpdateState(EnemyAIController enemy)
         {
-            // 1) If player visible and not hiding → switch to Chase and start alert routine
+            // 1) If player visible and not hiding -> switch to Chase and start alert routine
             
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
             // 2) enemy alert timer will count time for the state

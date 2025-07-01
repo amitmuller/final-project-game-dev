@@ -169,9 +169,6 @@ public class EnemyAIController : MonoBehaviour
 
     private void Update()
     {
-        // walkingRight = IsWalkingRight();
-        // Debug.Log("walking right+"+ _rigidbody2D.linearVelocity.x );
-        // transform.localScale = new Vector3(!walkingRight ? size : -size, size, size);
         _spriteRenderer.flipX = walkingRight;
         if (_fovMeshObject != null)
         {
