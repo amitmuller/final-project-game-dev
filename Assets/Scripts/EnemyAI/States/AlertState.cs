@@ -3,13 +3,13 @@ using UnityEngine.Rendering.Universal;
 using static EnemyUtils.EnemyUtils;
 using static NoiseManager;
 using DG.Tweening;
+using static AlertStateUtils;
 
 namespace EnemyAI
 {
     [CreateAssetMenu(menuName = "AI States/AlertState")]
     public class AlertState : ScriptableObject, IEnemyState
     {
-        private AlertStateUtils alertUtils = new AlertStateUtils();
         public float noiseDetectionRange = 5f;
         public EnemyStateType StateType => EnemyStateType.Alert;
         public void EnterState(EnemyAIController enemy)
@@ -36,7 +36,7 @@ namespace EnemyAI
                 
             
             // 3) if enemy is alert he will alert his friend in proximity
-            alertUtils.AlertNearbyEnemies(enemy, enemy.spreadRadius);
+            AlertNearbyEnemies(enemy, enemy.spreadRadius);
             
             // 4) if is needed go into search state
             const float noiseStaleDuration = 2f;
@@ -52,7 +52,7 @@ namespace EnemyAI
             
             // 5) Otherwise patrol across alert patrol radius
             Debug.Log($"enemy patrolling = " + enemy.isAlertPatrolling);
-            alertUtils.HandleAlertPatrol(enemy, enemy.alertPatrolRadius, enemy.alertSpeed);
+            HandleAlertPatrol(enemy, enemy.alertPatrolRadius, enemy.alertSpeed);
         }
 
         public void ExitState(EnemyAIController enemy)
