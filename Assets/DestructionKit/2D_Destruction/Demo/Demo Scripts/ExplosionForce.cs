@@ -13,7 +13,7 @@ public class ExplosionForce : MonoBehaviour {
     /// </summary>
     /// <param name="position">location of the explosion</param>
 	public void doExplosion(Vector3 position){
-		// Debug.Log($"Explosion triggered at position: {position}");
+		Debug.Log($"Explosion triggered at position: {position}");
 		transform.localPosition = position;
 		StartCoroutine(waitAndExplode());
 	}
