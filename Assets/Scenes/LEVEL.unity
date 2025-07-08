@@ -138601,6 +138601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117799134}
   - component: {fileID: 1117799133}
+  - component: {fileID: 1117799135}
   m_Layer: 0
   m_Name: ROMAN ARTIFACT
   m_TagString: Untagged
@@ -138678,6 +138679,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1992534119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1117799135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117799132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa654fdd2b1f04eb595707ec30e2a994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: {x: 0.1, y: 0.1}
+  speed: {x: 2, y: 1.2}
+  seed: {x: 0, y: 100}
 --- !u!1001 &1121623293
 PrefabInstance:
   m_ObjectHideFlags: 0
