@@ -28,6 +28,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5665994334471902652, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9074855
+      objectReference: {fileID: 0}
+    - target: {fileID: 5665994334471902652, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8980235
+      objectReference: {fileID: 0}
+    - target: {fileID: 5665994334471902652, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.15095234
+      objectReference: {fileID: 0}
+    - target: {fileID: 5665994334471902652, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.78873295
+      objectReference: {fileID: 0}
     - target: {fileID: 8497295401641567422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
