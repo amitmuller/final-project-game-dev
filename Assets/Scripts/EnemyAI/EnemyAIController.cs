@@ -105,7 +105,7 @@ public class EnemyAIController : MonoBehaviour
     private IEnemyState _currentState;
     private int _originalSpriteOrder;
     [SerializeField] SpriteRenderer _spriteRenderer;
-    
+    private ParticleSystem sortingEffect;
     private Canvas _uiCanvas;
     private int    _uiOriginalOrder;
     
@@ -114,6 +114,7 @@ public class EnemyAIController : MonoBehaviour
 
     void Awake()
     {
+        sortingEffect = GetComponentInChildren<ParticleSystem>(true);
         _originalSpriteOrder = _spriteRenderer.sortingOrder;
         _rigidbody2D    = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -461,6 +462,11 @@ public class EnemyAIController : MonoBehaviour
         _fovMeshObject.gameObject.SetActive(false);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = order;
+        if (sortingEffect != null)
+        {
+            Debug.Log("Walk enemy sound");
+            sortingEffect.gameObject.SetActive(true);
+        }
     }
     
     /// <summary>
@@ -472,6 +478,10 @@ public class EnemyAIController : MonoBehaviour
         _fovMeshObject.gameObject.SetActive(true);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = _uiOriginalOrder;
+        if (sortingEffect != null)
+        {
+            sortingEffect.gameObject.SetActive(false);
+        }
     }
 }
 
