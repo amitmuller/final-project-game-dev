@@ -320,7 +320,7 @@ public class characterMovement : MonoBehaviour
 
     public void SetCharacterState(string state)
     {
-        Debug.Log(("player animation state is: " + state));
+        // Debug.Log(("player animation state is: " + state));
         if (state.Equals("idle"))
         {
             SetAnimation(idle, true);

@@ -13,7 +13,6 @@ public class TailConnector : MonoBehaviour
         heldRigidbody.isKinematic = true;
         heldObjectTransform.SetParent(transform);
         // heldObjectTransform.localPosition = new Vector3(0,0,0); // Snap to tail
-        
         heldObjectTransform.localPosition = new Vector3(-0.5f,2f,0); // Snap to tail
     }
 
@@ -21,9 +20,6 @@ public class TailConnector : MonoBehaviour
     {
         if (heldObjectTransform != null)
         {
-            Debug.Log("Detach");
-
-            // Detach from tail
             heldObjectTransform.SetParent(null);
             heldRigidbody.isKinematic = false;
 
