@@ -1,0 +1,74 @@
+Dino_boy.png
+size:1447,188
+filter:Linear,Linear
+pma:true
+arm fluff
+bounds:295,6,27,28
+back arm
+bounds:417,2,43,26
+rotate:90
+back arm 2
+bounds:509,9,36,60
+rotate:90
+back hand
+bounds:1209,125,61,51
+rotate:90
+back leg
+bounds:518,58,99,128
+back leg 1
+bounds:1262,127,59,52
+rotate:90
+back leg 2
+bounds:650,3,102,63
+back leg foot
+bounds:324,8,91,26
+body belly
+bounds:2,5,181,179
+rotate:90
+bottom head
+bounds:754,4,217,78
+botton hair
+bounds:1104,12,70,102
+rotate:90
+eye
+bounds:1049,11,71,53
+rotate:90
+eye iris
+bounds:1260,106,17,35
+rotate:90
+eye spark
+bounds:710,71,19,11
+fromt arm top
+bounds:445,7,38,62
+rotate:90
+front arm middle
+bounds:1209,97,49,26
+front foot
+bounds:183,3,110,31
+front hand
+bounds:1316,128,45,58
+front leg middle bottom
+bounds:1363,129,52,57
+front leg middle top
+bounds:571,3,77,53
+front leg top
+bounds:973,5,74,77
+middle hair
+bounds:1124,93,83,93
+neck middle
+bounds:619,68,118,89
+rotate:90
+neck middle top
+bounds:183,36,125,150
+neck top
+bounds:416,47,100,139
+tail
+bounds:710,84,412,102
+tongue
+bounds:310,36,150,36
+rotate:90
+top hair
+bounds:348,46,140,66
+rotate:90
+top head
+bounds:1208,3,237,88

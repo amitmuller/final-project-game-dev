@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: Dino_boy_SkeletonData
+  m_Name: goons_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: d6ed1c23a0759411983b93f67ba3d730, type: 2}
+  - {fileID: 11400000, guid: 10f5df3ebef8949668db25ed3a4f45f2, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: d19d69f55392f4cb98572b905a5aaa49, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 73a5b3f59e8df46ccb531333c0125489, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
   fromAnimation: []
   toAnimation: []
   duration: []
-  defaultMix: 0
-  controller: {fileID: 9100000, guid: c209f464e1b614be88dd0c8fa090f925, type: 2}
+  defaultMix: 0.2
+  controller: {fileID: 9100000, guid: d9c6435c8f20844a08bdcc2ac221d00e, type: 2}
