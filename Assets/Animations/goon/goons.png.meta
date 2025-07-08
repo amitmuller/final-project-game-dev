@@ -1,0 +1,1313 @@
+fileFormatVersion: 2
+guid: d3f1a7141ecf947b998d7c687bd464f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7575144183893363585
+    second: goons_0
+  - first:
+      213: -8117673525887672210
+    second: goons_1
+  - first:
+      213: -53139614931454383
+    second: goons_2
+  - first:
+      213: -1629856303030866153
+    second: goons_3
+  - first:
+      213: 257810644384697725
+    second: goons_4
+  - first:
+      213: 7436761057522619334
+    second: goons_5
+  - first:
+      213: -78801692357684509
+    second: goons_6
+  - first:
+      213: -7790843333615946379
+    second: goons_7
+  - first:
+      213: -4399443544765316855
+    second: goons_8
+  - first:
+      213: -314495949711267196
+    second: goons_9
+  - first:
+      213: 8709590382124257499
+    second: goons_10
+  - first:
+      213: 5092662957203658076
+    second: goons_11
+  - first:
+      213: -1731651918914738992
+    second: goons_12
+  - first:
+      213: -1900562747059841420
+    second: goons_13
+  - first:
+      213: 7353830627791733836
+    second: goons_14
+  - first:
+      213: -2612244325365719529
+    second: goons_15
+  - first:
+      213: 1431404653911703266
+    second: goons_16
+  - first:
+      213: 2153432340846179684
+    second: goons_17
+  - first:
+      213: -1804984895268833664
+    second: goons_18
+  - first:
+      213: 6785501833975827270
+    second: goons_19
+  - first:
+      213: 3063721156835235121
+    second: goons_20
+  - first:
+      213: -5338995053603744700
+    second: goons_21
+  - first:
+      213: 5331774536566048569
+    second: goons_22
+  - first:
+      213: 7550456667367421023
+    second: goons_23
+  - first:
+      213: 7842956727315571465
+    second: goons_24
+  - first:
+      213: -2248912216523018434
+    second: goons_25
+  - first:
+      213: -1486875193899526995
+    second: goons_26
+  - first:
+      213: 2339151027830021737
+    second: goons_27
+  - first:
+      213: 2145753053596148453
+    second: goons_28
+  - first:
+      213: -8105313835333420008
+    second: goons_29
+  - first:
+      213: 6958392089923527066
+    second: goons_30
+  - first:
+      213: 2457903015965516271
+    second: goons_31
+  - first:
+      213: 8132734944044804813
+    second: goons_32
+  - first:
+      213: -2363463195102939494
+    second: goons_33
+  - first:
+      213: 8622017305856550818
+    second: goons_34
+  - first:
+      213: 7472754929672806459
+    second: goons_35
+  - first:
+      213: -5579807064980879043
+    second: goons_36
+  - first:
+      213: -4696435850409908729
+    second: goons_37
+  - first:
+      213: -1177146177825034219
+    second: goons_38
+  - first:
+      213: -9041465804760130562
+    second: goons_39
+  - first:
+      213: 9171258898259389290
+    second: goons_40
+  - first:
+      213: -4426374504323153082
+    second: goons_41
+  - first:
+      213: 1263469200398814979
+    second: goons_42
+  - first:
+      213: -1640107337007963754
+    second: goons_43
+  - first:
+      213: 5054051081475795090
+    second: goons_44
+  - first:
+      213: 9128627935623909777
+    second: goons_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: goons_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 415
+        width: 251
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f747ba4ef7eafd690800000000000000
+      internalID: -7575144183893363585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_1
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 396
+        width: 83
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e606fdeffea385f80800000000000000
+      internalID: -8117673525887672210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_2
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 396
+        width: 241
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15672804dc5334ff0800000000000000
+      internalID: -53139614931454383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_3
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 396
+        width: 110
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71fe9e6e3569169e0800000000000000
+      internalID: -1629856303030866153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_4
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 396
+        width: 102
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7d4dd54a6de39300800000000000000
+      internalID: 257810644384697725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_5
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 396
+        width: 339
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c31819b7cea43760800000000000000
+      internalID: 7436761057522619334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_6
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 389
+        width: 180
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2125f374a08eef0800000000000000
+      internalID: -78801692357684509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_7
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 490
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575f917044d51e390800000000000000
+      internalID: -7790843333615946379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_8
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 463
+        width: 49
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901c0e0c76902f2c0800000000000000
+      internalID: -4399443544765316855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_9
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 490
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a292a999fa2abf0800000000000000
+      internalID: -314495949711267196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_10
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 271
+        width: 104
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0dca1ae4eaed870800000000000000
+      internalID: 8709590382124257499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_11
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 271
+        width: 94
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c551aec3af5cca640800000000000000
+      internalID: 5092662957203658076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_12
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 453
+        width: 182
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4a67221cfe7f7e0800000000000000
+      internalID: -1731651918914738992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_13
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 410
+        width: 151
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476582c4048df95e0800000000000000
+      internalID: -1900562747059841420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_14
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 368
+        width: 131
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c440ae36efd0e0660800000000000000
+      internalID: 7353830627791733836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 119
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71edb0850a17fbbd0800000000000000
+      internalID: -2612244325365719529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_16
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 2
+        width: 263
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee7f36e2fe5dd310800000000000000
+      internalID: 1431404653911703266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_17
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 2
+        width: 263
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46579fbfd4782ed10800000000000000
+      internalID: 2153432340846179684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_18
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 2
+        width: 262
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0863e8c0dc763f6e0800000000000000
+      internalID: -1804984895268833664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_19
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 352
+        width: 51
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b04e487f1fa2e50800000000000000
+      internalID: 6785501833975827270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_20
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 352
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135530ce826848a20800000000000000
+      internalID: 3063721156835235121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_21
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 352
+        width: 46
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4449164394418e5b0800000000000000
+      internalID: -5338995053603744700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_22
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 388
+        width: 47
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9370e7a21b44ef940800000000000000
+      internalID: 5331774536566048569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_23
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 265
+        width: 117
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f543a6eb55c98c860800000000000000
+      internalID: 7550456667367421023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_24
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 260
+        width: 90
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 903a768f697c7dc60800000000000000
+      internalID: 7842956727315571465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_25
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 260
+        width: 92
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3feb1b11424ac0e0800000000000000
+      internalID: -2248912216523018434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_26
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 255
+        width: 134
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4574293ee8d5be0800000000000000
+      internalID: -1486875193899526995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_27
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 2
+        width: 117
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e5cc96775567020800000000000000
+      internalID: 2339151027830021737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_28
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 2
+        width: 112
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e2ee47980f37cd10800000000000000
+      internalID: 2145753053596148453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_29
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1
+        width: 175
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c74e3b204248f80800000000000000
+      internalID: -8105313835333420008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_30
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 270
+        width: 209
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91a7c71dbc219060800000000000000
+      internalID: 6958392089923527066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_31
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 1
+        width: 175
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe16cfe35c93c1220800000000000000
+      internalID: 2457903015965516271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_32
+      rect:
+        serializedVersion: 2
+        x: 2001
+        y: 213
+        width: 131
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca6230b7574dd070800000000000000
+      internalID: 8132734944044804813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_33
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 213
+        width: 85
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96fd280fba433fd0800000000000000
+      internalID: -2363463195102939494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_34
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 219
+        width: 75
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7a9daee0f87a770800000000000000
+      internalID: 8622017305856550818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_35
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 231
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3062b4240f84b760800000000000000
+      internalID: 7472754929672806459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_36
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 199
+        width: 77
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d398998990b8092b0800000000000000
+      internalID: -5579807064980879043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_37
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 199
+        width: 158
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70668e11a78e2deb0800000000000000
+      internalID: -4696435850409908729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_38
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 194
+        width: 95
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 510b70eb9cfe9afe0800000000000000
+      internalID: -1177146177825034219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_39
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 3
+        width: 96
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb5e6a11c2468280800000000000000
+      internalID: -9041465804760130562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_40
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1
+        width: 197
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b24e5606bd64f70800000000000000
+      internalID: 9171258898259389290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_41
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 1
+        width: 90
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64309fa17db5292c0800000000000000
+      internalID: -4426374504323153082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_42
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 1
+        width: 92
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f0b6a2b8eb88110800000000000000
+      internalID: 1263469200398814979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_43
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 73
+        width: 179
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 691e020111b2d39e0800000000000000
+      internalID: -1640107337007963754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_44
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 1
+        width: 182
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2982b0c5ea8932640800000000000000
+      internalID: 5054051081475795090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goons_45
+      rect:
+        serializedVersion: 2
+        x: 2157
+        y: 1
+        width: 72
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191129dedb66fae70800000000000000
+      internalID: 9128627935623909777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      goons_0: -7575144183893363585
+      goons_1: -8117673525887672210
+      goons_10: 8709590382124257499
+      goons_11: 5092662957203658076
+      goons_12: -1731651918914738992
+      goons_13: -1900562747059841420
+      goons_14: 7353830627791733836
+      goons_15: -2612244325365719529
+      goons_16: 1431404653911703266
+      goons_17: 2153432340846179684
+      goons_18: -1804984895268833664
+      goons_19: 6785501833975827270
+      goons_2: -53139614931454383
+      goons_20: 3063721156835235121
+      goons_21: -5338995053603744700
+      goons_22: 5331774536566048569
+      goons_23: 7550456667367421023
+      goons_24: 7842956727315571465
+      goons_25: -2248912216523018434
+      goons_26: -1486875193899526995
+      goons_27: 2339151027830021737
+      goons_28: 2145753053596148453
+      goons_29: -8105313835333420008
+      goons_3: -1629856303030866153
+      goons_30: 6958392089923527066
+      goons_31: 2457903015965516271
+      goons_32: 8132734944044804813
+      goons_33: -2363463195102939494
+      goons_34: 8622017305856550818
+      goons_35: 7472754929672806459
+      goons_36: -5579807064980879043
+      goons_37: -4696435850409908729
+      goons_38: -1177146177825034219
+      goons_39: -9041465804760130562
+      goons_4: 257810644384697725
+      goons_40: 9171258898259389290
+      goons_41: -4426374504323153082
+      goons_42: 1263469200398814979
+      goons_43: -1640107337007963754
+      goons_44: 5054051081475795090
+      goons_45: 9128627935623909777
+      goons_5: 7436761057522619334
+      goons_6: -78801692357684509
+      goons_7: -7790843333615946379
+      goons_8: -4399443544765316855
+      goons_9: -314495949711267196
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
