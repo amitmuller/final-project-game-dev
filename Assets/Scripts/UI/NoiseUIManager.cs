@@ -1,5 +1,6 @@
 using System;
 using Characters.Player;
+using Radishmouse;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class NoiseUIManager : MonoBehaviour
     [SerializeField] private ParticleSystem noiseEffect;
     
     [Header("Waveform Settings")]
-    [SerializeField] private LineRenderer waveformLine;
+    [SerializeField] private UILineRenderer waveformLine;
     [SerializeField] NoiseSO noiseSO;
 
     private float currentNoise = 0f;
@@ -60,10 +61,6 @@ public class NoiseUIManager : MonoBehaviour
             return;
         }
         Instance = this;
-        if (waveformLine != null)
-        {
-            waveformLine.useWorldSpace = false;
-        }
         burst = Instantiate(
             noiseEffect,
             player.transform.position,
@@ -121,10 +118,10 @@ public class NoiseUIManager : MonoBehaviour
     
     private void DrawWaveform(float level)
     {
-        Color c = level >= noiseThreshold
-            ? Color.red
-            : Color.Lerp(Color.green, Color.yellow, level);
-        waveformLine.startColor = waveformLine.endColor = c;
+        Color c = currentNoise >= noiseThreshold 
+            ? Color.red 
+            : Color.Lerp(Color.green, Color.yellow, currentNoise);
+        waveformLine.color = c;
         noiseSO.amplitude   = Mathf.Lerp(initialAmplitude,  maxAmplitude,  level);
         noiseSO.amplitude2  = Mathf.Lerp(initialAmplitude2, maxAmplitude2, level);
         noiseSO.frequency2  = Mathf.Lerp(initialFrequency2, maxFrequency2, level);
