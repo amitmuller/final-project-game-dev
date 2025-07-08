@@ -306,18 +306,15 @@ public class characterMovement : MonoBehaviour
     }
 
 
-    private void SetAnimation(AnimationReferenceAsset animation, bool loop)
+    private void SetAnimation(AnimationReferenceAsset animation, bool loop, float timeScale = 1f)
     {
-        if (skeletonAnimation == null || animation == null)
-            return;
+        if (skeletonAnimation == null || animation == null) return;
+        if (currentAnimationName == animation.name) return;
 
-        if (currentAnimationName == animation.name)
-            return; // Avoid restarting same animation
-
-        skeletonAnimation.state.SetAnimation(0, animation, loop);
+        var entry = skeletonAnimation.state.SetAnimation(0, animation, loop);
+        entry.TimeScale = timeScale;              
         currentAnimationName = animation.name;
     }
-
     public void SetCharacterState(string state)
     {
         // Debug.Log(("player animation state is: " + state));
@@ -331,11 +328,11 @@ public class characterMovement : MonoBehaviour
         }
         else if (state.Equals("intoHidingDown"))
         {
-            SetAnimation(IntoHidingDown, false);
+            SetAnimation(IntoHidingDown, false, 3f);
         }
         else if (state.Equals("intoHiding"))
         {
-            SetAnimation(intoHiding, false);
+            SetAnimation(intoHiding, false, 3f);
         }
         else if (state.Equals("walkingHiding"))
         {
