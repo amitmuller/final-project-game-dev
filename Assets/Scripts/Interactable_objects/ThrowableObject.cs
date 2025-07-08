@@ -75,6 +75,9 @@ public class ThrowableObject : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
+
+            print("collided with"+ collision.gameObject.name);
+        
         if (collision.gameObject.CompareTag("lightBolb"))
         {
             var lamp = collision.gameObject.GetComponent<LighBulb>();
@@ -102,6 +105,7 @@ public class ThrowableObject : MonoBehaviour
 
         if (_explodable != null)
         {
+            print("collided with"+ gameObject.name);
             BreakObject();
             _explodable.explode();
         }
