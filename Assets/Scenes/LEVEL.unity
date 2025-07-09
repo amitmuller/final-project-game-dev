@@ -552,6 +552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &4243320
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26252,6 +26254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &240143486
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -53530,7 +53534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497295401641567422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.9
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 8497295401641567422, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -59755,7 +59759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 734817641753348531, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100738301347825968, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_BodyType
@@ -59765,13 +59769,29 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4851557419270082673, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851557419270082673, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851557419270082673, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030361468061023342, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.506977
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3100004
+      value: -3.18
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.z
@@ -59837,13 +59857,33 @@ PrefabInstance:
       propertyPath: 'patrolPointsX.Array.data[2]'
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7588297272017079966, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: hatSkin
+      value: hat/hatBlack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588297272017079966, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: shirtSkin
+      value: shirt/shirtBrown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588297272017079966, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: shoesSkin
+      value: shoes/shoesBlack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588297272017079966, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: facialHairSkin
+      value: facialHair/facialHairMoustache1
+      objectReference: {fileID: 0}
     - target: {fileID: 7934118251004724778, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_Name
       value: EnemyAi
       objectReference: {fileID: 0}
     - target: {fileID: 7934118251004724778, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403526201572289868, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: initialSkinName
+      value: shirt/shirtBlue
       objectReference: {fileID: 0}
     - target: {fileID: 8589876648168497750, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_SortingLayer
@@ -59856,6 +59896,10 @@ PrefabInstance:
     - target: {fileID: 8589876648168497750, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731121667298725504, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -71048,7 +71092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.17
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.z
@@ -71141,6 +71185,10 @@ PrefabInstance:
     - target: {fileID: 8589876648168497750, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731121667298725504, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -106429,6 +106477,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &858610133
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -126197,6 +126247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &1013322606
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -138856,7 +138908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.17
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.z
@@ -138949,6 +139001,10 @@ PrefabInstance:
     - target: {fileID: 8589876648168497750, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731121667298725504, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -139902,6 +139958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &1127355717
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -156946,6 +157004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &1251738664
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -162447,6 +162507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &1302346730
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -166337,7 +166399,7 @@ Transform:
   m_GameObject: {fileID: 1331610500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.9, y: -0.06999993, z: -10.8}
+  m_LocalPosition: {x: -1.7, y: -0.06999993, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -180001,6 +180063,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &1474424497
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -190345,8 +190409,8 @@ Transform:
   m_GameObject: {fileID: 1550515347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.2443, y: -0.072600365, z: 0.3482371}
-  m_LocalScale: {x: -0.8918133, y: 10.371918, z: 1}
+  m_LocalPosition: {x: -15.5294, y: -0.072600365, z: 0.3482371}
+  m_LocalScale: {x: -9.46205, y: 10.371918, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 376583987}
@@ -190440,7 +190504,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.09242825, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -190450,7 +190514,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.81524336, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1550859628
 GameObject:
@@ -195120,7 +195184,7 @@ Transform:
   m_GameObject: {fileID: 1572677265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.9, y: -0.06999993, z: -10.8}
+  m_LocalPosition: {x: -1.7, y: -0.06999993, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -209359,7 +209423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.56
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.z
@@ -209460,6 +209524,10 @@ PrefabInstance:
     - target: {fileID: 8589876648168497750, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731121667298725504, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -210720,6 +210788,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakObjects: {fileID: 6477219529027941285, guid: 02fefaf2db16b4341a0ac0957f54c801, type: 3}
+  pieces: {fileID: 0}
+  usePieces: 0
 --- !u!60 &1680235335
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -222621,7 +222691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6499996
+      value: -3.1299996
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.z
@@ -222746,6 +222816,10 @@ PrefabInstance:
     - target: {fileID: 8589876648168497750, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731121667298725504, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -260372,7 +260446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.17
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 5119550457620580084, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_LocalPosition.z
@@ -260465,6 +260539,10 @@ PrefabInstance:
     - target: {fileID: 8589876648168497750, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731121667298725504, guid: 92c93ac14a82c45dbb947fe367b20211, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
