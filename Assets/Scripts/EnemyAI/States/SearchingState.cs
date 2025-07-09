@@ -13,11 +13,12 @@ namespace EnemyAI
 
         // snapshot of where the noise was when we entered
         private float _targetX;
-
+        private bool firstTime;
         public EnemyStateType StateType => EnemyStateType.Searching;
 
         public void EnterState(EnemyAIController enemy)
         {
+            firstTime = true;
             // 1) Record the exact spot where the noise happened
             _targetX = enemy.lastKnownNoisePosition.x;
 
@@ -57,18 +58,14 @@ namespace EnemyAI
                 return;
             }
 
+            enemy.isStop = true;
+            if (firstTime) enemy.UpdateAnimation();
+            firstTime = false;
             // Otherwise: either we’ve arrived or we ran out of move-time.
             // Stop, and start our “look around” countdown
-            enemy.StopMovement();
             enemy.searchTimer -= Time.deltaTime;
-
-            // update the question icon
-            if (enemy.filledQuestionIcon != null)
-            {
-                enemy.filledQuestionIcon.fillAmount =
-                    Mathf.Clamp01(enemy.searchTimer / enemy.searchDuration);
-            }
-
+            enemy.StopMovement();
+            
             // when time’s up, go back to Calm or Alert
             if (enemy.searchTimer <= 0f)
             {
@@ -77,10 +74,22 @@ namespace EnemyAI
                 else
                     enemy.ChangeState(enemy.alertState);
             }
+            
+            
+            
+
+            // update the question icon
+            if (enemy.filledQuestionIcon != null)
+            {
+                enemy.filledQuestionIcon.fillAmount =
+                    Mathf.Clamp01(enemy.searchTimer / enemy.searchDuration);
+            }
+           
         }
 
         public void ExitState(EnemyAIController enemy)
         {
+            enemy.isStop = false;
             enemy.prevState = EnemyStateType.Searching;
             enemy.filledQuestionIcon?.gameObject.SetActive(false);
         }
