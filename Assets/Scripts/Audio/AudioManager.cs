@@ -19,12 +19,22 @@ public class AudioManager : MonoBehaviour
     
     [Header("Player Sounds")]
     [SerializeField] private Sound playerWalk;
+    [SerializeField] private Sound playerHide;
+    
+    [Header("Enemy Sounds")]
+    [SerializeField] private Sound enemyWalk;
+    [SerializeField] private Sound enemySeePLayer;
+    [SerializeField] private Sound enemyCatchPlayer;
     
     [Header("General Sounds")]
     [SerializeField] private Sound backgroundMusicGame;
     [SerializeField] private Sound backgroundMusicTutorial;
     [SerializeField] private Sound backgroundMusicOpenScene;
-
+    [SerializeField] private Sound trainSound;
+    [SerializeField] private Sound breakSound1;
+    [SerializeField] private Sound breakSound2;
+    [SerializeField] private Sound breakSound3;
+    
 
     private Dictionary<string, Sound> sounds;
     private List<AudioSource> effectSources; // Pool of AudioSources for effects
@@ -43,7 +53,10 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        
+        
+        
+        musicSource.PlayOneShot(trainSound.clip);
         // Initialize the sound dictionary
         sounds = new Dictionary<string, Sound>
         {
