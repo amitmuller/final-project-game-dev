@@ -6,6 +6,7 @@ using UnityEngine;
 using EnemyAI;
 using Characters.Player;
 using CodeMonkey;
+using Spine.Unity;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -61,7 +62,9 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public bool isConversing  = false;
     [HideInInspector] public bool conversationCompleted = false;
     [HideInInspector] public float conversationTimer = 0f;
-
+    
+    [Header("Animation Manager")]
+    [SerializeField] private EnemyAnimationManager animationManager;
     // ── State Colors 
     [Header("State Colors (Sprite)")]
     [Tooltip("Color when in Calm state")]
@@ -95,6 +98,8 @@ public class EnemyAIController : MonoBehaviour
     private GameObject _fovMeshObject;
     private Vector3 _fovOriginalLocalScale;
     [SerializeField] private float fieldOfViewAngle = 120f;
+    
+    public string currentAnimationName;
 
     public static readonly List<EnemyAIController> AllEnemies = new List<EnemyAIController>();
     private float size;
@@ -104,20 +109,27 @@ public class EnemyAIController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private IEnemyState _currentState;
     private int _originalSpriteOrder;
-    [SerializeField] SpriteRenderer _spriteRenderer;
+    // [SerializeField] SpriteRenderer _spriteRenderer;
     private ParticleSystem sortingEffect;
     private Canvas _uiCanvas;
     private int    _uiOriginalOrder;
     
     [Header("Searching state")]
     public float moveToNoiseTimer;
+    private Renderer _skeletonRenderer;
 
     void Awake()
     {
         sortingEffect = GetComponentInChildren<ParticleSystem>(true);
-        _originalSpriteOrder = _spriteRenderer.sortingOrder;
+        if (animationManager == null) animationManager = GetComponent<EnemyAnimationManager>();
+        _skeletonRenderer = GetComponent<Renderer>();
+            if (_skeletonRenderer == null)
+                Debug.LogError("EnemyAIController: No Renderer found on skeleton!");
+       
+        _originalSpriteOrder = _skeletonRenderer.sortingOrder;
+
         _rigidbody2D    = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        // _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         patrolY         = transform.position.y;
         AllEnemies.Add(this); 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -151,7 +163,8 @@ public class EnemyAIController : MonoBehaviour
         _currentState    = calmState;
         CurrentStateType = EnemyStateType.Calm;
         _currentState.EnterState(this);
-        UpdateSpriteColor();
+        // UpdateSpriteColor();
+        UpdateAnimation();
         NoiseManager.OnNoiseRaised += HandleNoise;
     }
     
@@ -170,7 +183,7 @@ public class EnemyAIController : MonoBehaviour
 
     private void Update()
     {
-        _spriteRenderer.flipX = walkingRight;
+        // _spriteRenderer.flipX = walkingRight;
         if (_fovMeshObject != null)
         {
             _fovMeshObject.transform.localScale = new Vector3(
@@ -195,30 +208,37 @@ public class EnemyAIController : MonoBehaviour
         CurrentStateType = newState.StateType;
         Debug.Log($"[Enemy] {name} -> {CurrentStateType}");
         _currentState.EnterState(this);
-        UpdateSpriteColor();
+        UpdateAnimation();
+        // UpdateSpriteColor();
     }
 
     /// <summary>
     /// Set the sprite’s color based on CurrentStateType.
     /// </summary>
-    private void UpdateSpriteColor()
+    // private void UpdateSpriteColor()
+    // {
+    //     if (_spriteRenderer == null) return;
+    //     switch (CurrentStateType)
+    //     {
+    //         case EnemyStateType.Calm:
+    //             _spriteRenderer.color = calmStateColor;
+    //             break;
+    //         case EnemyStateType.Alert:
+    //             _spriteRenderer.color = alertStateColor;
+    //             break;
+    //         case EnemyStateType.Searching:
+    //             _spriteRenderer.color = searchingStateColor;
+    //             break;
+    //         case EnemyStateType.Chase:
+    //             _spriteRenderer.color = chaseStateColor;
+    //             break;
+    //     }
+    // }
+    //
+    private void UpdateAnimation()
     {
-        if (_spriteRenderer == null) return;
-        switch (CurrentStateType)
-        {
-            case EnemyStateType.Calm:
-                _spriteRenderer.color = calmStateColor;
-                break;
-            case EnemyStateType.Alert:
-                _spriteRenderer.color = alertStateColor;
-                break;
-            case EnemyStateType.Searching:
-                _spriteRenderer.color = searchingStateColor;
-                break;
-            case EnemyStateType.Chase:
-                _spriteRenderer.color = chaseStateColor;
-                break;
-        }
+        if (animationManager != null)
+            animationManager.SetCharacterState(CurrentStateType);
     }
 
     public void MoveTowards(Vector2 targetPosition, float speed)
@@ -269,7 +289,6 @@ public class EnemyAIController : MonoBehaviour
     
     public void StopMovement()
     {
-        Debug.Log("Stop Movement");
         if (_rigidbody2D != null) _rigidbody2D.linearVelocity = Vector2.zero;
     }
 
@@ -447,7 +466,7 @@ public class EnemyAIController : MonoBehaviour
         cv.renderMode      = RenderMode.WorldSpace;
         cv.worldCamera     = _camera;       // your serialized Camera reference
         cv.overrideSorting = true;
-        cv.sortingLayerName = _spriteRenderer.sortingLayerName;
+        cv.sortingLayerName = _skeletonRenderer.sortingLayerName;
 
         // record whatever its “Order in Layer” currently is
         origOrder = cv.sortingOrder;
@@ -458,7 +477,7 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void SetSortingOrder(int order)
     {
-        _spriteRenderer.sortingOrder = order;
+        _skeletonRenderer.sortingOrder = order;
         _fovMeshObject.gameObject.SetActive(false);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = order;
@@ -474,7 +493,7 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void RestoreSortingOrder()
     {
-        _spriteRenderer.sortingOrder = _originalSpriteOrder;
+        _skeletonRenderer.sortingOrder = _originalSpriteOrder;
         _fovMeshObject.gameObject.SetActive(true);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = _uiOriginalOrder;
@@ -483,6 +502,8 @@ public class EnemyAIController : MonoBehaviour
             sortingEffect.gameObject.SetActive(false);
         }
     }
+    
+
 }
 
 
