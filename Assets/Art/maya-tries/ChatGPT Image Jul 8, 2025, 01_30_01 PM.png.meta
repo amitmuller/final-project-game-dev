@@ -154,6 +154,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -522,7 +535,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_0: -3441228442456417164
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_1: -3416036102994914006
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_10: 3229222786803588475
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_11: 8747478228765855740
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_12: -6005193533534498134
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_13: -1142112368530708337
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_14: -2824220911116061791
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_15: -6383395798638226770
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_2: -7319424421156029566
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_3: 5531400935430248302
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_4: -8090602523764380910
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_5: -8269695082703929395
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_6: -6191738540346975329
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_7: -8948928910046105200
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_8: -7226845626423267209
+      ChatGPT Image Jul 8, 2025, 01_30_01 PM_9: -1007744864421965248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
