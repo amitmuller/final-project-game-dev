@@ -75,8 +75,7 @@ public class ThrowableObject : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-
-            print("collided with"+ collision.gameObject.name);
+        print("collided with"+ collision.gameObject.name);
         
         if (collision.gameObject.CompareTag("lightBolb"))
         {
