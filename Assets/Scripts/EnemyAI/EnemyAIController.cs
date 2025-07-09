@@ -13,6 +13,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
 {
+    
     // ── State Assets 
     [Header("State Assets")]
     public CalmState      calmState;
@@ -64,7 +65,7 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public float conversationTimer = 0f;
     
     [Header("Animation Manager")]
-    [SerializeField] private EnemyAnimationManager animationManager;
+    public EnemyAnimationManager animationManager;
     // ── State Colors 
     [Header("State Colors (Sprite)")]
     [Tooltip("Color when in Calm state")]
@@ -113,7 +114,7 @@ public class EnemyAIController : MonoBehaviour
     private ParticleSystem sortingEffect;
     private Canvas _uiCanvas;
     private int    _uiOriginalOrder;
-    
+    public bool isStop;
     [Header("Searching state")]
     public float moveToNoiseTimer;
     private Renderer _skeletonRenderer;
@@ -122,6 +123,7 @@ public class EnemyAIController : MonoBehaviour
 
     void Awake()
     {
+        isStop = false;
         _spine = GetComponent<SkeletonAnimation>();
         sortingEffect = GetComponentInChildren<ParticleSystem>(true);
         if (animationManager == null) animationManager = GetComponent<EnemyAnimationManager>();
@@ -187,7 +189,6 @@ public class EnemyAIController : MonoBehaviour
 
     void Update() {
         _currentState.UpdateState(this);
-
         // flip the skeleton only:
         _spine.Skeleton.FlipX = walkingRight;
 
@@ -239,10 +240,10 @@ public class EnemyAIController : MonoBehaviour
     //     }
     // }
     //
-    private void UpdateAnimation()
+    public void UpdateAnimation()
     {
         if (animationManager != null)
-            animationManager.SetCharacterState(CurrentStateType);
+            animationManager.SetCharacterState(CurrentStateType, isStop);
     }
 
     public void MoveTowards(Vector2 targetPosition, float speed)
