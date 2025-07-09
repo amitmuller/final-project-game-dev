@@ -70,7 +70,8 @@ namespace EnemyAI {
                     break;
                 case EnemyStateType.Chase:    
                     spineState.SetAnimation(0, alertSearchAnimName, false);
-                    spineState.AddAnimation(0, run2AnimName, true, 0);        
+                    var catchEntry = spineState.AddAnimation(0, run2AnimName, true, 0);
+                    catchEntry.TimeScale = 0.95f;
                     break;
                 // add more cases or mapping as needed
                 default:
@@ -86,6 +87,7 @@ namespace EnemyAI {
                     var catchEntry = spineState.SetAnimation(0, catchAnimName, false);
                     catchEntry.TimeScale = 1.2f;
                     spineState.AddAnimation(0,alertSearchAnimName, false, 0);
+                    spineState.AddAnimation(0,idleHandoutAnimName, false, 0);
                     spineState.AddAnimation(0, run2AnimName, true, 0);
             }
     }

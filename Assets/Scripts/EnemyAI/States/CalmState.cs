@@ -13,7 +13,7 @@ namespace EnemyAI
     {
         public EnemyStateType StateType => EnemyStateType.Calm;
         [Header("Ranges & Speeds")]
-        public float noiseDetectionRange = 7f;
+        public float noiseDetectionRange = 15f;
         [Header("Group Conversation")]
         [Tooltip("If >0, two Calm enemies within this X-distance and on-screen will stop.")]
         [SerializeField] private float conversationProximityRange = 2f;

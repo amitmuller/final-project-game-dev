@@ -16,6 +16,7 @@ TagManager:
   - Throwable
   - sticky
   - EnemyFOV
+  - Hide
   layers:
   - Default
   - TransparentFX
