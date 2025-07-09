@@ -16,6 +16,7 @@ public class EnemyAIController : MonoBehaviour
     
     // ── State Assets 
     [Header("State Assets")]
+    bool _detachedTrail;
     public CalmState      calmState;
     public AlertState     alertState;
     public SearchingState searchingState;
@@ -78,7 +79,7 @@ public class EnemyAIController : MonoBehaviour
     public Color chaseStateColor = Color.red;
 
     // ── Runtime State Tracking 
-    [HideInInspector] public float alertTimer;
+    public float alertTimer;
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
     
@@ -482,13 +483,12 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void SetSortingOrder(int order)
     {
-        _skeletonRenderer.sortingOrder = order;
+        _skeletonRenderer.sortingLayerName= "UI";
         _fovMeshObject.gameObject.SetActive(false);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = order;
         if (sortingEffect != null)
         {
-            Debug.Log("Walk enemy sound");
             sortingEffect.gameObject.SetActive(true);
         }
     }
@@ -498,7 +498,7 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void RestoreSortingOrder()
     {
-        _skeletonRenderer.sortingOrder = _originalSpriteOrder;
+        _skeletonRenderer.sortingLayerName= "Default";
         _fovMeshObject.gameObject.SetActive(true);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = _uiOriginalOrder;
@@ -506,6 +506,7 @@ public class EnemyAIController : MonoBehaviour
         {
             sortingEffect.gameObject.SetActive(false);
         }
+
     }
     
 

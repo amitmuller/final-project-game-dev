@@ -34,7 +34,6 @@ namespace EnemyAI
             // 1) If player hides, switch immediately
             if (enemy.IsPlayerHiding())
             {
-                Debug.Log("got here");
                 // kill only this transform’s tweens
                 DOTween.Kill(enemy.transform);
                 _dashTween.Kill();
@@ -76,6 +75,8 @@ namespace EnemyAI
                         .DOMoveX(playerX, duration)
                         .SetEase(Ease.OutQuint)
                         .OnComplete(() => { _dashTween = null; });
+                    enemy.StopMovement();
+                    enemy.StartCoroutine(waitForChase());
                 }
             }
             // 4) Otherwise keep walking normally
