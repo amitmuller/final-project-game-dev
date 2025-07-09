@@ -1,0 +1,1308 @@
+fileFormatVersion: 2
+guid: d6dd941ea1ac04bd28ef3b3b608ba593
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1580415670396618665
+    second: pots_0
+  - first:
+      213: 3519418954499688323
+    second: pots_1
+  - first:
+      213: 7032293847001776009
+    second: pots_2
+  - first:
+      213: 6743737671413692505
+    second: pots_3
+  - first:
+      213: 3457903060590150279
+    second: pots_4
+  - first:
+      213: 7185774345876287662
+    second: pots_5
+  - first:
+      213: -2827923558276870315
+    second: pots_6
+  - first:
+      213: 4527851331911250544
+    second: pots_7
+  - first:
+      213: -5420133209187119330
+    second: pots_8
+  - first:
+      213: 7224075602841335169
+    second: pots_9
+  - first:
+      213: -8000014543261653138
+    second: pots_10
+  - first:
+      213: -6940237548967047698
+    second: pots_11
+  - first:
+      213: -3661073466569504806
+    second: pots_12
+  - first:
+      213: 3856272228599913239
+    second: pots_13
+  - first:
+      213: 7274698624503304749
+    second: pots_14
+  - first:
+      213: 7062969406884015098
+    second: pots_15
+  - first:
+      213: 7150631445204826683
+    second: pots_16
+  - first:
+      213: 2916084331588455347
+    second: pots_17
+  - first:
+      213: 1847349665639836802
+    second: pots_18
+  - first:
+      213: -2921443329308564268
+    second: pots_19
+  - first:
+      213: -6146025828877258024
+    second: pots_20
+  - first:
+      213: -84496489177432302
+    second: pots_21
+  - first:
+      213: -4073272670280558300
+    second: pots_22
+  - first:
+      213: 3595748232922554187
+    second: pots_23
+  - first:
+      213: -3616768155034930414
+    second: pots_24
+  - first:
+      213: 5990113240938546100
+    second: pots_25
+  - first:
+      213: -2136081713502042335
+    second: pots_26
+  - first:
+      213: -2761232720217913779
+    second: pots_27
+  - first:
+      213: -6738191120084009986
+    second: pots_28
+  - first:
+      213: -273650998939573887
+    second: pots_29
+  - first:
+      213: 5606634360397661486
+    second: pots_30
+  - first:
+      213: -574627204929306850
+    second: pots_31
+  - first:
+      213: -3008968019164551788
+    second: pots_32
+  - first:
+      213: 7425414863357049300
+    second: pots_33
+  - first:
+      213: -3382449784008711533
+    second: pots_34
+  - first:
+      213: 8285025788635085394
+    second: pots_35
+  - first:
+      213: -3945420199000245970
+    second: pots_36
+  - first:
+      213: -5661111525855468409
+    second: pots_37
+  - first:
+      213: -2443280959689693126
+    second: pots_38
+  - first:
+      213: 6570080786388644079
+    second: pots_39
+  - first:
+      213: 5928130309247765067
+    second: pots_40
+  - first:
+      213: 3963741938733461375
+    second: pots_41
+  - first:
+      213: -1217533346576250902
+    second: pots_42
+  - first:
+      213: -6388949155642494812
+    second: pots_43
+  - first:
+      213: 8269271952563609739
+    second: pots_44
+  - first:
+      213: -2655241988065757571
+    second: pots_45
+  - first:
+      213: -5659799551723549592
+    second: pots_46
+  - first:
+      213: -2273053709569056084
+    second: pots_47
+  - first:
+      213: -3863249661706636783
+    second: pots_48
+  - first:
+      213: -9028437887964419257
+    second: pots_49
+  - first:
+      213: -6437373463083450184
+    second: pots_50
+  - first:
+      213: 4485929439189120966
+    second: pots_51
+  - first:
+      213: -8384447536922801173
+    second: pots_52
+  - first:
+      213: 8282750767477535883
+    second: pots_53
+  - first:
+      213: 3978206903962793648
+    second: pots_54
+  - first:
+      213: -229694315018438128
+    second: pots_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bottle5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1960
+        width: 138
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a78377cda3cee510800000000000000
+      internalID: 1580415670396618665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottle4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1963
+        width: 131
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3870bb674ec77d030800000000000000
+      internalID: 3519418954499688323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottle3
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 1929
+        width: 140
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fb4b2cef9b79160800000000000000
+      internalID: 7032293847001776009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottle2
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1968
+        width: 117
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958780baea1969d50800000000000000
+      internalID: 6743737671413692505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottle1
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 1921
+        width: 177
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55fc2f8b18231c8d0800000000000000
+      internalID: -2827923558276870315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_7
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 1925
+        width: 195
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072795afbc826de30800000000000000
+      internalID: 4527851331911250544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_8
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 1829
+        width: 387
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f8a173091d7c4b0800000000000000
+      internalID: -5420133209187119330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog-statue1
+      rect:
+        serializedVersion: 2
+        x: 2937
+        y: 1767
+        width: 397
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eedcdfc58b25faf90800000000000000
+      internalID: -6940237548967047698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall-plate3
+      rect:
+        serializedVersion: 2
+        x: 3467
+        y: 1844
+        width: 419
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad744805411413dc0800000000000000
+      internalID: -3661073466569504806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_14
+      rect:
+        serializedVersion: 2
+        x: 4472
+        y: 1893
+        width: 267
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d22da812bdbe4f460800000000000000
+      internalID: 7274698624503304749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_15
+      rect:
+        serializedVersion: 2
+        x: 4889
+        y: 1908
+        width: 307
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afbe5cc1145b40260800000000000000
+      internalID: 7062969406884015098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_16
+      rect:
+        serializedVersion: 2
+        x: 5319
+        y: 1907
+        width: 295
+        height: 434
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3afb2be9652c3360800000000000000
+      internalID: 7150631445204826683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_17
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1046
+        width: 445
+        height: 571
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb896fdf33087820800000000000000
+      internalID: 2916084331588455347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_18
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1556
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c2664bbba13a910800000000000000
+      internalID: 1847349665639836802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_19
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 1272
+        width: 300
+        height: 538
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4e02d35c2f477d0800000000000000
+      internalID: -2921443329308564268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_20
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 1121
+        width: 366
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d23569521ee4baa0800000000000000
+      internalID: -6146025828877258024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_23
+      rect:
+        serializedVersion: 2
+        x: 2470
+        y: 1314
+        width: 262
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f561d77f9a6e130800000000000000
+      internalID: 3595748232922554187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_24
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 1279
+        width: 219
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 213b2348688aecdc0800000000000000
+      internalID: -3616768155034930414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_25
+      rect:
+        serializedVersion: 2
+        x: 3469
+        y: 1367
+        width: 404
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b381827148212350800000000000000
+      internalID: 5990113240938546100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall-plate2
+      rect:
+        serializedVersion: 2
+        x: 3962
+        y: 1376
+        width: 393
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127c08fbffc1b52e0800000000000000
+      internalID: -2136081713502042335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_27
+      rect:
+        serializedVersion: 2
+        x: 4485
+        y: 1313
+        width: 322
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46c93978712ea9d0800000000000000
+      internalID: -2761232720217913779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_28
+      rect:
+        serializedVersion: 2
+        x: 4896
+        y: 1483
+        width: 337
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb73b270e22d72a0800000000000000
+      internalID: -6738191120084009986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_29
+      rect:
+        serializedVersion: 2
+        x: 5317
+        y: 1338
+        width: 302
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181a6c7cddbc33cf0800000000000000
+      internalID: -273650998939573887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_30
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 537
+        width: 219
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25800dde34cecd40800000000000000
+      internalID: 5606634360397661486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_32
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1003
+        width: 236
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495af2d578ffd36d0800000000000000
+      internalID: -3008968019164551788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_33
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 519
+        width: 446
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d97d480a7f5c0760800000000000000
+      internalID: 7425414863357049300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_34
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1089
+        width: 207
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3926099a7df1f01d0800000000000000
+      internalID: -3382449784008711533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_35
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 579
+        width: 290
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a7b8e0f035af270800000000000000
+      internalID: 8285025788635085394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_36
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 587
+        width: 363
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2970f49b3d0f39c0800000000000000
+      internalID: -3945420199000245970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_37
+      rect:
+        serializedVersion: 2
+        x: 2774
+        y: 1087
+        width: 344
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784e383af01bf61b0800000000000000
+      internalID: -5661111525855468409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_39
+      rect:
+        serializedVersion: 2
+        x: 3573
+        y: 77
+        width: 454
+        height: 863
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0705a5aad9d2b50800000000000000
+      internalID: 6570080786388644079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_40
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 995
+        width: 315
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a80f09b13f44250800000000000000
+      internalID: 5928130309247765067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_41
+      rect:
+        serializedVersion: 2
+        x: 4041
+        y: 974
+        width: 301
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7fa68fda4a020730800000000000000
+      internalID: 3963741938733461375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_42
+      rect:
+        serializedVersion: 2
+        x: 4163
+        y: 629
+        width: 250
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7412f3fd37a1fe0800000000000000
+      internalID: -1217533346576250902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_43
+      rect:
+        serializedVersion: 2
+        x: 4486
+        y: 482
+        width: 262
+        height: 498
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0b5e1d794e557a0800000000000000
+      internalID: -6388949155642494812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_44
+      rect:
+        serializedVersion: 2
+        x: 4791
+        y: 484
+        width: 328
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80a7a3470b52c270800000000000000
+      internalID: 8269271952563609739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_45
+      rect:
+        serializedVersion: 2
+        x: 4907
+        y: 1016
+        width: 278
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7673acda7fa62bd0800000000000000
+      internalID: -2655241988065757571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_46
+      rect:
+        serializedVersion: 2
+        x: 5194
+        y: 496
+        width: 317
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86c4a9b6b4a5471b0800000000000000
+      internalID: -5659799551723549592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_47
+      rect:
+        serializedVersion: 2
+        x: 5407
+        y: 1025
+        width: 196
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2a0cdb1bd7470e0800000000000000
+      internalID: -2273053709569056084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dog-statue2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 51
+        width: 398
+        height: 459
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112f35ba6eaf26ac0800000000000000
+      internalID: -3863249661706636783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_50
+      rect:
+        serializedVersion: 2
+        x: 1993
+        y: 453
+        width: 10
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0826621fad9a6a0800000000000000
+      internalID: -6437373463083450184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_51
+      rect:
+        serializedVersion: 2
+        x: 4141
+        y: 77
+        width: 275
+        height: 461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7b556be09314e30800000000000000
+      internalID: 4485929439189120966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_53
+      rect:
+        serializedVersion: 2
+        x: 4505
+        y: 75
+        width: 235
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84b79a60fd32f270800000000000000
+      internalID: 8282750767477535883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_55
+      rect:
+        serializedVersion: 2
+        x: 5442
+        y: 13
+        width: 267
+        height: 411
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a366acc36ffccf0800000000000000
+      internalID: -229694315018438128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_31
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 571
+        width: 428
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8248c8a0b73424fd59c823676bb39775
+      internalID: 1126287468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pots_38
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 560
+        width: 312
+        height: 403
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9114e2eca1dc24ba88c70bb1934ceedf
+      internalID: 1339355174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8baded3be43cb445d9582a5c0c413827
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bottle1: -2827923558276870315
+      bottle2: 6743737671413692505
+      bottle3: 7032293847001776009
+      bottle4: 3519418954499688323
+      bottle5: 1580415670396618665
+      dog-statue1: -6940237548967047698
+      dog-statue2: -3863249661706636783
+      pots_31: 1126287468
+      pots_38: 1339355174
+      wall-plate2: -2136081713502042335
+      wall-plate3: -3661073466569504806
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

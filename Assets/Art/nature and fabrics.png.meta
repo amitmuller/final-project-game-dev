@@ -1,0 +1,1615 @@
+fileFormatVersion: 2
+guid: 91348e001b35a4a65b1c4b3db26f1bbb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2388891219604384998
+    second: nature and fabrics_0
+  - first:
+      213: -6124713823510432656
+    second: nature and fabrics_1
+  - first:
+      213: 5659801083833753757
+    second: nature and fabrics_2
+  - first:
+      213: -4516507318588585656
+    second: nature and fabrics_3
+  - first:
+      213: 3871669787546151125
+    second: nature and fabrics_4
+  - first:
+      213: -1008788473950282761
+    second: nature and fabrics_5
+  - first:
+      213: -8921547144695533458
+    second: nature and fabrics_6
+  - first:
+      213: 4946418670642601713
+    second: nature and fabrics_7
+  - first:
+      213: 122319534909248159
+    second: nature and fabrics_8
+  - first:
+      213: -5683220446343958253
+    second: nature and fabrics_9
+  - first:
+      213: -6524988741045227473
+    second: nature and fabrics_10
+  - first:
+      213: -7085478483310432556
+    second: nature and fabrics_11
+  - first:
+      213: 1597995116629570608
+    second: nature and fabrics_12
+  - first:
+      213: -8474397333055179104
+    second: nature and fabrics_13
+  - first:
+      213: 3670837627288605574
+    second: nature and fabrics_14
+  - first:
+      213: -1201124339708111352
+    second: nature and fabrics_15
+  - first:
+      213: -7877681419664496987
+    second: nature and fabrics_16
+  - first:
+      213: -1923604252594590227
+    second: nature and fabrics_17
+  - first:
+      213: 4186234083966946946
+    second: nature and fabrics_18
+  - first:
+      213: 7502106757583912961
+    second: nature and fabrics_19
+  - first:
+      213: 4356247145096818281
+    second: nature and fabrics_20
+  - first:
+      213: -5378405927271155993
+    second: nature and fabrics_21
+  - first:
+      213: 3751985817681768830
+    second: nature and fabrics_22
+  - first:
+      213: 9136078205389613043
+    second: nature and fabrics_23
+  - first:
+      213: -386258987855716939
+    second: nature and fabrics_24
+  - first:
+      213: 2287251616070827935
+    second: nature and fabrics_25
+  - first:
+      213: 1328614488053413567
+    second: nature and fabrics_26
+  - first:
+      213: 7858816062542282170
+    second: nature and fabrics_27
+  - first:
+      213: 964451191404874993
+    second: nature and fabrics_28
+  - first:
+      213: 4666582720262412151
+    second: nature and fabrics_29
+  - first:
+      213: 2641762134722662905
+    second: nature and fabrics_30
+  - first:
+      213: 7654950915950824943
+    second: nature and fabrics_31
+  - first:
+      213: 981326496958058767
+    second: nature and fabrics_32
+  - first:
+      213: -3088197698060468484
+    second: nature and fabrics_33
+  - first:
+      213: 6507259628366441896
+    second: nature and fabrics_34
+  - first:
+      213: -8989194172581847497
+    second: nature and fabrics_35
+  - first:
+      213: -2618346934800931347
+    second: nature and fabrics_36
+  - first:
+      213: -949043975882394447
+    second: nature and fabrics_37
+  - first:
+      213: 2869557220605414998
+    second: nature and fabrics_38
+  - first:
+      213: 6832128985721893110
+    second: nature and fabrics_39
+  - first:
+      213: -4486446984894840964
+    second: nature and fabrics_40
+  - first:
+      213: -4828898041076440767
+    second: nature and fabrics_41
+  - first:
+      213: 6645587568460754614
+    second: nature and fabrics_42
+  - first:
+      213: -3648898022346538223
+    second: nature and fabrics_43
+  - first:
+      213: 2359330982740427101
+    second: nature and fabrics_44
+  - first:
+      213: 4230105635004456101
+    second: nature and fabrics_45
+  - first:
+      213: 7394784608550794146
+    second: nature and fabrics_46
+  - first:
+      213: -5249509069621616553
+    second: nature and fabrics_47
+  - first:
+      213: -6667281559200246923
+    second: nature and fabrics_48
+  - first:
+      213: 3467786798900284899
+    second: nature and fabrics_49
+  - first:
+      213: 3303152422696554681
+    second: nature and fabrics_50
+  - first:
+      213: 1134637926891708193
+    second: nature and fabrics_51
+  - first:
+      213: -4230090570142143743
+    second: nature and fabrics_52
+  - first:
+      213: 1241283428279430266
+    second: nature and fabrics_53
+  - first:
+      213: -3664569074066793779
+    second: nature and fabrics_54
+  - first:
+      213: -3739366379624130363
+    second: nature and fabrics_55
+  - first:
+      213: -8800335279116445708
+    second: nature and fabrics_56
+  - first:
+      213: 4184008286385081235
+    second: nature and fabrics_57
+  - first:
+      213: 156246628092450384
+    second: nature and fabrics_58
+  - first:
+      213: -3853164280443651352
+    second: nature and fabrics_59
+  - first:
+      213: 6859329454164831445
+    second: nature and fabrics_60
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 108
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hanging leafs 1
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 3440
+        width: 937
+        height: 1230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a135e68b714f8ded0800000000000000
+      internalID: -2388891219604384998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hanging leafs2
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 3188
+        width: 1066
+        height: 1482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0747cb64a35a00ba0800000000000000
+      internalID: -6124713823510432656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hanging leafs3
+      rect:
+        serializedVersion: 2
+        x: 3063
+        y: 3400
+        width: 1168
+        height: 1274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d90284d4917ab8e40800000000000000
+      internalID: 5659801083833753757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek finish pattern
+      rect:
+        serializedVersion: 2
+        x: 4273
+        y: 4482
+        width: 1088
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8494312f5842251c0800000000000000
+      internalID: -4516507318588585656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek wall
+      rect:
+        serializedVersion: 2
+        x: 5464
+        y: 2973
+        width: 2684
+        height: 1685
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d8ec46a82feab530800000000000000
+      internalID: 3871669787546151125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek finish
+      rect:
+        serializedVersion: 2
+        x: 4687
+        y: 4275
+        width: 261
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb5fac4a301002f0800000000000000
+      internalID: -1008788473950282761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue-fabric
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3134
+        width: 874
+        height: 591
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60b589e32c403480800000000000000
+      internalID: -8921547144695533458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hanging leafs 5
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 1866
+        width: 1230
+        height: 1512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe130ed29535a440800000000000000
+      internalID: 4946418670642601713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big ass flower
+      rect:
+        serializedVersion: 2
+        x: 4316
+        y: 2715
+        width: 1046
+        height: 1387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f925b5b08f092b100800000000000000
+      internalID: 122319534909248159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple-fabric
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 2520
+        width: 874
+        height: 591
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3117e637d152121b0800000000000000
+      internalID: -5683220446343958253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-fabric
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 2520
+        width: 874
+        height: 591
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2073969f459275a0800000000000000
+      internalID: -6524988741045227473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hanging leafs4
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 2075
+        width: 840
+        height: 888
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4deab922cd25bad90800000000000000
+      internalID: -7085478483310432556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big ass flower 2
+      rect:
+        serializedVersion: 2
+        x: 4268
+        y: 1090
+        width: 1056
+        height: 1508
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034b38f87183d2610800000000000000
+      internalID: 1597995116629570608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3part flower 1
+      rect:
+        serializedVersion: 2
+        x: 5608
+        y: 2186
+        width: 280
+        height: 589
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a67abd5684e46a80800000000000000
+      internalID: -8474397333055179104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big ass flower3
+      rect:
+        serializedVersion: 2
+        x: 6449
+        y: 1144
+        width: 706
+        height: 1722
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683dca28f5f61f230800000000000000
+      internalID: 3670837627288605574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mediume flower orange
+      rect:
+        serializedVersion: 2
+        x: 7369
+        y: 1941
+        width: 584
+        height: 994
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8065f90e6cfb45fe0800000000000000
+      internalID: -1201124339708111352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mediume flower pink
+      rect:
+        serializedVersion: 2
+        x: 8064
+        y: 1935
+        width: 584
+        height: 992
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6e33f8c7adca290800000000000000
+      internalID: -7877681419664496987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-fabric
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1921
+        width: 874
+        height: 591
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded2babbf1cfd45e0800000000000000
+      internalID: -1923604252594590227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink-fabric
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 1922
+        width: 874
+        height: 591
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e8b7148bd781a30800000000000000
+      internalID: 4186234083966946946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3part flower 3
+      rect:
+        serializedVersion: 2
+        x: 5454
+        y: 1327
+        width: 346
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100c8d02956dc1860800000000000000
+      internalID: 7502106757583912961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3part flower 2
+      rect:
+        serializedVersion: 2
+        x: 5914
+        y: 1314
+        width: 515
+        height: 983
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e2e45b2bf747c30800000000000000
+      internalID: 4356247145096818281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtin-pink
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 61
+        width: 683
+        height: 1819
+      alignment: 9
+      pivot: {x: 0.63497883, y: 0.9624729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e6b52f1e401c55b0800000000000000
+      internalID: -5378405927271155993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtin-hanger
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 410
+        width: 241
+        height: 1470
+      alignment: 9
+      pivot: {x: 0.16528371, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71b939e83bb11430800000000000000
+      internalID: 3751985817681768830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtin-light-blue
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 60
+        width: 645
+        height: 1820
+      alignment: 9
+      pivot: {x: 0.61613125, y: 0.96221876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7af6809bed9ce70800000000000000
+      internalID: 9136078205389613043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtin-orange
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 34
+        width: 788
+        height: 1846
+      alignment: 9
+      pivot: {x: 0.5146243, y: 0.9665891}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdde8d3f7bb3aaf0800000000000000
+      internalID: -386258987855716939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtin-blue-gold
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 33
+        width: 788
+        height: 1848
+      alignment: 9
+      pivot: {x: 0.5073118, y: 0.97285205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ff6d7f933fdbf10800000000000000
+      internalID: 2287251616070827935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 20
+      rect:
+        serializedVersion: 2
+        x: 7530
+        y: 1282
+        width: 270
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb67cdb66df207210800000000000000
+      internalID: 1328614488053413567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 25
+      rect:
+        serializedVersion: 2
+        x: 7857
+        y: 1280
+        width: 316
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd77f2329f101d60800000000000000
+      internalID: 7858816062542282170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 26
+      rect:
+        serializedVersion: 2
+        x: 8214
+        y: 955
+        width: 434
+        height: 591
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fcc3eaaf3b626d00800000000000000
+      internalID: 964451191404874993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small flower pink
+      rect:
+        serializedVersion: 2
+        x: 3638
+        y: 604
+        width: 312
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777973c624803c040800000000000000
+      internalID: 4666582720262412151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ark of the Covenant
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 41
+        width: 991
+        height: 1035
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1d8353aac69a420800000000000000
+      internalID: 2641762134722662905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 5
+      rect:
+        serializedVersion: 2
+        x: 5661
+        y: 920
+        width: 273
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fedcc46ec49db3a60800000000000000
+      internalID: 7654950915950824943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 10
+      rect:
+        serializedVersion: 2
+        x: 5987
+        y: 908
+        width: 202
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f011ddbef3f5e9d00800000000000000
+      internalID: 981326496958058767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 11
+      rect:
+        serializedVersion: 2
+        x: 6321
+        y: 912
+        width: 106
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe3dea3e848425d0800000000000000
+      internalID: -3088197698060468484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 29
+      rect:
+        serializedVersion: 2
+        x: 6506
+        y: 684
+        width: 262
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ada502b72e6e4a50800000000000000
+      internalID: 6507259628366441896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 16
+      rect:
+        serializedVersion: 2
+        x: 6847
+        y: 532
+        width: 328
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e5f3ed687ff3380800000000000000
+      internalID: -8989194172581847497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 19
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 934
+        width: 273
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5257cd553c9abd0800000000000000
+      internalID: -2618346934800931347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 21
+      rect:
+        serializedVersion: 2
+        x: 7696
+        y: 912
+        width: 171
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b43e4d388154d2f0800000000000000
+      internalID: -949043975882394447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 23
+      rect:
+        serializedVersion: 2
+        x: 7954
+        y: 898
+        width: 247
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ec7dca617b2d720800000000000000
+      internalID: 2869557220605414998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 1
+      rect:
+        serializedVersion: 2
+        x: 5101
+        y: 424
+        width: 286
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f07a954d1990de50800000000000000
+      internalID: 6832128985721893110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 4
+      rect:
+        serializedVersion: 2
+        x: 5467
+        y: 523
+        width: 125
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7f78b9cc30fcb1c0800000000000000
+      internalID: -4486446984894840964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 6
+      rect:
+        serializedVersion: 2
+        x: 5665
+        y: 490
+        width: 169
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1412f05f0de4cfcb0800000000000000
+      internalID: -4828898041076440767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 9
+      rect:
+        serializedVersion: 2
+        x: 5938
+        y: 464
+        width: 275
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6beead50faed93c50800000000000000
+      internalID: 6645587568460754614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 12
+      rect:
+        serializedVersion: 2
+        x: 6286
+        y: 682
+        width: 147
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113c864d4928c5dc0800000000000000
+      internalID: -3648898022346538223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 18
+      rect:
+        serializedVersion: 2
+        x: 7306
+        y: 547
+        width: 324
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5101dd47070eb020800000000000000
+      internalID: 2359330982740427101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 22
+      rect:
+        serializedVersion: 2
+        x: 7699
+        y: 102
+        width: 592
+        height: 704
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac91d8b9aa54ba30800000000000000
+      internalID: 4230105635004456101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 27
+      rect:
+        serializedVersion: 2
+        x: 8324
+        y: 507
+        width: 312
+        height: 397
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a332371c6d8f9660800000000000000
+      internalID: 7394784608550794146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small flower yellow
+      rect:
+        serializedVersion: 2
+        x: 3615
+        y: 12
+        width: 312
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7502304705ff527b0800000000000000
+      internalID: -5249509069621616553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 14
+      rect:
+        serializedVersion: 2
+        x: 6288
+        y: 68
+        width: 446
+        height: 524
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5735b562fbe0973a0800000000000000
+      internalID: -6667281559200246923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature and fabrics_49
+      rect:
+        serializedVersion: 2
+        x: 7122
+        y: 522
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed8d3178bd002030800000000000000
+      internalID: 3467786798900284899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame
+      rect:
+        serializedVersion: 2
+        x: 5133
+        y: 85
+        width: 221
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b09cc9a0a727dd20800000000000000
+      internalID: 3303152422696554681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 3
+      rect:
+        serializedVersion: 2
+        x: 5408
+        y: 77
+        width: 148
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12fd015de2b0fbf00800000000000000
+      internalID: 1134637926891708193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 7
+      rect:
+        serializedVersion: 2
+        x: 5630
+        y: 72
+        width: 230
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ba2f6d903bb45c0800000000000000
+      internalID: -4230090570142143743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 8
+      rect:
+        serializedVersion: 2
+        x: 5953
+        y: 48
+        width: 232
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7cac2093bce93110800000000000000
+      internalID: 1241283428279430266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 15
+      rect:
+        serializedVersion: 2
+        x: 6790
+        y: 41
+        width: 351
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcadd55c7d5d42dc0800000000000000
+      internalID: -3664569074066793779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 17
+      rect:
+        serializedVersion: 2
+        x: 7213
+        y: 148
+        width: 426
+        height: 354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c81779f61a1b1cc0800000000000000
+      internalID: -3739366379624130363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frame 28
+      rect:
+        serializedVersion: 2
+        x: 8388
+        y: 171
+        width: 197
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f71de790bdeed580800000000000000
+      internalID: -8800335279116445708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3fc009d5282864f9a8036f146555035d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      3part flower 1: -8474397333055179104
+      3part flower 2: 4356247145096818281
+      3part flower 3: 7502106757583912961
+      Ark of the Covenant: 2641762134722662905
+      big ass flower: 122319534909248159
+      big ass flower 2: 1597995116629570608
+      big ass flower3: 3670837627288605574
+      blue-fabric: -8921547144695533458
+      curtin-blue-gold: 2287251616070827935
+      curtin-hanger: 3751985817681768830
+      curtin-light-blue: 9136078205389613043
+      curtin-orange: -386258987855716939
+      curtin-pink: -5378405927271155993
+      frame: 3303152422696554681
+      frame 1: 6832128985721893110
+      frame 10: 981326496958058767
+      frame 11: -3088197698060468484
+      frame 12: -3648898022346538223
+      frame 14: -6667281559200246923
+      frame 15: -3664569074066793779
+      frame 16: -8989194172581847497
+      frame 17: -3739366379624130363
+      frame 18: 2359330982740427101
+      frame 19: -2618346934800931347
+      frame 20: 1328614488053413567
+      frame 21: -949043975882394447
+      frame 22: 4230105635004456101
+      frame 23: 2869557220605414998
+      frame 25: 7858816062542282170
+      frame 26: 964451191404874993
+      frame 27: 7394784608550794146
+      frame 28: -8800335279116445708
+      frame 29: 6507259628366441896
+      frame 3: 1134637926891708193
+      frame 4: -4486446984894840964
+      frame 5: 7654950915950824943
+      frame 6: -4828898041076440767
+      frame 7: -4230090570142143743
+      frame 8: 1241283428279430266
+      frame 9: 6645587568460754614
+      greek finish: -1008788473950282761
+      greek finish pattern: -4516507318588585656
+      greek wall: 3871669787546151125
+      green-fabric: -1923604252594590227
+      hanging leafs 1: -2388891219604384998
+      hanging leafs 5: 4946418670642601713
+      hanging leafs2: -6124713823510432656
+      hanging leafs3: 5659801083833753757
+      hanging leafs4: -7085478483310432556
+      mediume flower orange: -1201124339708111352
+      mediume flower pink: -7877681419664496987
+      nature and fabrics_49: 3467786798900284899
+      nature and fabrics_57: 4184008286385081235
+      nature and fabrics_58: 156246628092450384
+      nature and fabrics_59: -3853164280443651352
+      nature and fabrics_60: 6859329454164831445
+      pink-fabric: 4186234083966946946
+      purple-fabric: -5683220446343958253
+      red-fabric: -6524988741045227473
+      small flower pink: 4666582720262412151
+      small flower yellow: -5249509069621616553
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,651 @@
+fileFormatVersion: 2
+guid: eab9e9065f9c24d1881d233952346edd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5879572348191718141
+    second: greekneygpt_0
+  - first:
+      213: -4298080256765974539
+    second: greekneygpt_1
+  - first:
+      213: 6709222376453004063
+    second: greekneygpt_2
+  - first:
+      213: 5534991182611903671
+    second: greekneygpt_3
+  - first:
+      213: -8063241917904431598
+    second: greekneygpt_4
+  - first:
+      213: -7623522544489422514
+    second: greekneygpt_5
+  - first:
+      213: -546696830258717765
+    second: greekneygpt_6
+  - first:
+      213: -5710513352914774634
+    second: greekneygpt_7
+  - first:
+      213: -8818636340460560920
+    second: greekneygpt_8
+  - first:
+      213: 3225996620215044260
+    second: greekneygpt_9
+  - first:
+      213: -2775586200992523430
+    second: greekneygpt_10
+  - first:
+      213: -5031210126995109455
+    second: greekneygpt_11
+  - first:
+      213: -8233170969422464218
+    second: greekneygpt_12
+  - first:
+      213: 7025945034037806421
+    second: greekneygpt_13
+  - first:
+      213: 1725329609530934530
+    second: greekneygpt_14
+  - first:
+      213: 3640235867791796296
+    second: greekneygpt_15
+  - first:
+      213: -513445156125315980
+    second: greekneygpt_16
+  - first:
+      213: -1423895682717195323
+    second: greekneygpt_17
+  - first:
+      213: -2099368239385017014
+    second: greekneygpt_18
+  - first:
+      213: -8372112931056297939
+    second: greekneygpt_19
+  - first:
+      213: -9136345441030983459
+    second: greekneygpt_20
+  - first:
+      213: -5500895258163521215
+    second: greekneygpt_21
+  - first:
+      213: 8269111587469039340
+    second: greekneygpt_22
+  - first:
+      213: -8638416151130526096
+    second: greekneygpt_23
+  - first:
+      213: 8553094564925189966
+    second: greekneygpt_24
+  - first:
+      213: 5599061620022688065
+    second: greekneygpt_25
+  - first:
+      213: 7767309341730860856
+    second: greekneygpt_26
+  - first:
+      213: 8795339843622456244
+    second: greekneygpt_27
+  - first:
+      213: 3708411299735556603
+    second: greekneygpt_28
+  - first:
+      213: 4253231510727276738
+    second: greekneygpt_29
+  - first:
+      213: 2117379100264800730
+    second: greekneygpt_30
+  - first:
+      213: -198859152368410639
+    second: greekneygpt_31
+  - first:
+      213: -1946801131121824907
+    second: greekneygpt_32
+  - first:
+      213: -1182565208968061066
+    second: greekneygpt_33
+  - first:
+      213: -7334700742991083714
+    second: greekneygpt_34
+  - first:
+      213: 5157395889203676326
+    second: greekneygpt_35
+  - first:
+      213: 8071910129915225040
+    second: greekneygpt_36
+  - first:
+      213: -4506913847310300454
+    second: greekneygpt_37
+  - first:
+      213: 4476674050667661585
+    second: greekneygpt_38
+  - first:
+      213: 2581963565884804738
+    second: greekneygpt_39
+  - first:
+      213: -7994814766185357453
+    second: greekneygpt_40
+  - first:
+      213: 6087158276084560667
+    second: greekneygpt_41
+  - first:
+      213: 3856558503779811120
+    second: greekneygpt_42
+  - first:
+      213: -7008858888596821267
+    second: greekneygpt_43
+  - first:
+      213: 5592491892921577085
+    second: greekneygpt_44
+  - first:
+      213: 1301922079725849491
+    second: greekneygpt_45
+  - first:
+      213: 6259444629189549074
+    second: greekneygpt_46
+  - first:
+      213: 1770083621251520398
+    second: greekneygpt_47
+  - first:
+      213: 3927615156284689083
+    second: greekneygpt_48
+  - first:
+      213: 2709193193760794544
+    second: greekneygpt_49
+  - first:
+      213: -5201610864802868207
+    second: greekneygpt_50
+  - first:
+      213: -7591633209457558853
+    second: greekneygpt_51
+  - first:
+      213: 595304583288092252
+    second: greekneygpt_52
+  - first:
+      213: -6601591906831374669
+    second: greekneygpt_53
+  - first:
+      213: -2032588771160730725
+    second: greekneygpt_54
+  - first:
+      213: 1447723932635219040
+    second: greekneygpt_55
+  - first:
+      213: -5797702708517625541
+    second: greekneygpt_56
+  - first:
+      213: -2462441726146592749
+    second: greekneygpt_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: greek-totem-horizontal
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1919
+        width: 449
+        height: 1941
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305c2d2c910976ea0800000000000000
+      internalID: -5879572348191718141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek-rock-top
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 2215
+        width: 748
+        height: 1601
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f7285757c62a54c0800000000000000
+      internalID: -4298080256765974539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek-totem-standing2
+      rect:
+        serializedVersion: 2
+        x: 4794
+        y: 2139
+        width: 443
+        height: 1692
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4708aa72d30dc40800000000000000
+      internalID: 5534991182611903671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek-statue
+      rect:
+        serializedVersion: 2
+        x: 5349
+        y: 2375
+        width: 740
+        height: 1420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2165441523c991090800000000000000
+      internalID: -8063241917904431598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eygpt-statue-1
+      rect:
+        serializedVersion: 2
+        x: 7175
+        y: 2034
+        width: 539
+        height: 1759
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbd890212eb968f0800000000000000
+      internalID: -546696830258717765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eygpt-statue-2
+      rect:
+        serializedVersion: 2
+        x: 7956
+        y: 2130
+        width: 572
+        height: 1704
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a8478285da05cc20800000000000000
+      internalID: 3225996620215044260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek-totem-standing1
+      rect:
+        serializedVersion: 2
+        x: 4202
+        y: 2131
+        width: 467
+        height: 1382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2050e80832a91f710800000000000000
+      internalID: 1725329609530934530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greekneygpt_22
+      rect:
+        serializedVersion: 2
+        x: 4962
+        y: 2136
+        width: 93
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce6982b5d29c1c270800000000000000
+      internalID: 8269111587469039340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greek-leaning-statue
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 368
+        width: 954
+        height: 1452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e2ed1674e2e1880800000000000000
+      internalID: -8638416151130526096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtins1
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 71
+        width: 1863
+        height: 1960
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4fa0b8c032b2b670800000000000000
+      internalID: 8553094564925189966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtins2
+      rect:
+        serializedVersion: 2
+        x: 3126
+        y: 71
+        width: 1920
+        height: 1984
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149b9f8d0ecd3bd40800000000000000
+      internalID: 5599061620022688065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small red curtin
+      rect:
+        serializedVersion: 2
+        x: 6200
+        y: 1222
+        width: 1153
+        height: 728
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83fe07e71b60bcb60800000000000000
+      internalID: 7767309341730860856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greekneygpt_32
+      rect:
+        serializedVersion: 2
+        x: 6179
+        y: 1116
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ba7239fa29bf4e0800000000000000
+      internalID: -1946801131121824907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold-frame-11
+      rect:
+        serializedVersion: 2
+        x: 6326
+        y: 915
+        width: 96
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d369701f7f250070800000000000000
+      internalID: 8071910129915225040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greekneygpt_39
+      rect:
+        serializedVersion: 2
+        x: 7464
+        y: 935
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e809fee2af4d320800000000000000
+      internalID: 2581963565884804738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bc061ed5a3f8d41a9ba6b3595ca1006e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      1: 1725329609530934530
+      curtins1: 8553094564925189966
+      curtins2: 5599061620022688065
+      eygpt-statue-1: -546696830258717765
+      eygpt-statue-2: 3225996620215044260
+      gold-frame-1: -780231813
+      gold-frame-10: -861493334
+      gold-frame-11: 8071910129915225040
+      gold-frame-12: 5592491892921577085
+      gold-frame-13: -1837040231
+      gold-frame-14: -4506913847310300454
+      gold-frame-15: 806237524
+      gold-frame-16: 4476674050667661585
+      gold-frame-17: 55104943
+      gold-frame-18: -1665797588
+      gold-frame-2: 1754339531
+      gold-frame-3: -1199610036
+      gold-frame-4: 470462947
+      gold-frame-5: -122518400
+      gold-frame-6: 1583150310
+      gold-frame-7: 112174399
+      gold-frame-8: -1255604002
+      gold-frame-9: -93660816
+      greek-leaning-statue: -8638416151130526096
+      greek-rock-top: -4298080256765974539
+      greek-statue: -8063241917904431598
+      greek-totem-horizontal: -5879572348191718141
+      greek-totem-standing1: 1725329609530934530
+      greek-totem-standing2: 5534991182611903671
+      small red curtin: 7767309341730860856
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
