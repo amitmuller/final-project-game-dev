@@ -33,7 +33,6 @@ namespace EnemyAI {
             if (skeletonAnimation == null)
                 skeletonAnimation = GetComponent<SkeletonAnimation>();
             spineState = skeletonAnimation.AnimationState;
-            Debug.Log($"[AnimMgr] Subscribing to Spine Start event on {name}", this);
             spineState.Start += HandleAnimStart;
         }
         
@@ -44,11 +43,9 @@ namespace EnemyAI {
         
         private void HandleAnimStart(TrackEntry entry) {
             var animName = entry.Animation.Name;
-            Debug.Log($"[AnimMgr] HandleAnimStart fired: {animName}", this);
             var isAttack = animName == catchAnimName;
             bodyCollider.enabled   = !isAttack;
             attackCollider.enabled = isAttack;
-            Debug.Log($"[AnimMgr] body={bodyCollider.enabled}, attack={attackCollider.enabled}", this);
         }
 
         /// <summary>Convenience for choosing animation by state name.</summary>
@@ -58,12 +55,11 @@ namespace EnemyAI {
                     spineState.SetAnimation(0, walkAnimName, true);
                     break;
                 case EnemyStateType.Alert:    
-                    spineState.SetAnimation(0,runAnimName, true);     
+                    spineState.SetAnimation(0,walkSearchAnimName, true);     
                     break;
                 case EnemyStateType.Searching:
                     if (isStop)
                     {
-                        Debug.Log("animation of stop and search fired?");
                         spineState.SetAnimation(0, stopInPlaceSearchAnimName, true);
                         
                     }
@@ -89,6 +85,7 @@ namespace EnemyAI {
             public void PlayDash() {
                     var catchEntry = spineState.SetAnimation(0, catchAnimName, false);
                     catchEntry.TimeScale = 1.2f;
+                    spineState.AddAnimation(0,alertSearchAnimName, false, 0);
                     spineState.AddAnimation(0, run2AnimName, true, 0);
             }
     }
