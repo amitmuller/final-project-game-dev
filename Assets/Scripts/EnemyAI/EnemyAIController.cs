@@ -94,7 +94,7 @@ public class EnemyAIController : MonoBehaviour
 
     
     [Header("FOV Settings")]
-    private float fovYOffset = 6.5f;
+    [SerializeField] private float fovYOffset = 6.5f;
     private GameObject _fovMeshObject;
     private Vector3 _fovOriginalLocalScale;
     [SerializeField] private float fieldOfViewAngle = 120f;
@@ -117,9 +117,12 @@ public class EnemyAIController : MonoBehaviour
     [Header("Searching state")]
     public float moveToNoiseTimer;
     private Renderer _skeletonRenderer;
+    SkeletonAnimation _spine;
+    
 
     void Awake()
     {
+        _spine = GetComponent<SkeletonAnimation>();
         sortingEffect = GetComponentInChildren<ParticleSystem>(true);
         if (animationManager == null) animationManager = GetComponent<EnemyAnimationManager>();
         _skeletonRenderer = GetComponent<Renderer>();
@@ -154,6 +157,7 @@ public class EnemyAIController : MonoBehaviour
             // record its starting “Order in Layer”
             _uiOriginalOrder = _uiCanvas.sortingOrder;
         }
+        
     }
     
 
@@ -181,18 +185,18 @@ public class EnemyAIController : MonoBehaviour
     }
     private bool IsWalkingRight() => _rigidbody2D.linearVelocity.x > 0.01f;
 
-    private void Update()
-    {
-        // _spriteRenderer.flipX = walkingRight;
-        if (_fovMeshObject != null)
-        {
-            _fovMeshObject.transform.localScale = new Vector3(
-                _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
-                _fovOriginalLocalScale.y,
-                _fovOriginalLocalScale.z
-            );
-        }
+    void Update() {
         _currentState.UpdateState(this);
+
+        // flip the skeleton only:
+        _spine.Skeleton.FlipX = walkingRight;
+
+        // manually flip *just* the FOV child:
+        _fovMeshObject.transform.localScale = new Vector3(
+            _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
+            _fovOriginalLocalScale.y,
+            _fovOriginalLocalScale.z
+        );
     }
     
 

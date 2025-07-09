@@ -178,6 +178,7 @@ MonoBehaviour:
   isConversing: 0
   conversationCompleted: 0
   conversationTimer: 0
+  animationManager: {fileID: 0}
   calmStateColor: {r: 1, g: 1, b: 1, a: 1}
   alertStateColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   searchingStateColor: {r: 0, g: 1, b: 1, a: 1}
@@ -188,7 +189,9 @@ MonoBehaviour:
   ExclamationIcon: {fileID: 5040745081074570052}
   QuestionIcon: {fileID: 8237637187768591071}
   filledQuestionIcon: {fileID: 6835028534080668006}
+  fovYOffset: 8
   fieldOfViewAngle: 120
+  currentAnimationName: 
   moveToNoiseTimer: 0
 --- !u!61 &1658927907042441943
 BoxCollider2D:
@@ -347,6 +350,7 @@ MonoBehaviour:
   hatSkin: 
   shirtSkin: 
   shoesSkin: 
+  facialHairSkin: 
 --- !u!1 &8237637187768591071
 GameObject:
   m_ObjectHideFlags: 0

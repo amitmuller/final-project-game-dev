@@ -33,7 +33,7 @@ namespace EnemyAI {
         public void SetCharacterState(EnemyStateType state) {
             switch (state) {
                 case EnemyStateType.Calm:     spineState.SetAnimation(0, walkAnimName, true);       break;
-                case EnemyStateType.Alert:    spineState.SetAnimation(0,runAnimName, false);     break;
+                case EnemyStateType.Alert:    spineState.SetAnimation(0,runAnimName, true);     break;
                 case EnemyStateType.Searching: spineState.SetAnimation(0,alertSearchAnimName, true);     break;
                 case EnemyStateType.Chase:    spineState.SetAnimation(0,runAnimName, true);        break;
                 // add more cases or mapping as needed
