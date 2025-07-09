@@ -9,6 +9,7 @@ using CodeMonkey;
 using Spine.Unity;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering; 
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
@@ -120,7 +121,6 @@ public class EnemyAIController : MonoBehaviour
     public float moveToNoiseTimer;
     private Renderer _skeletonRenderer;
     SkeletonAnimation _spine;
-    
 
     void Awake()
     {
@@ -128,7 +128,7 @@ public class EnemyAIController : MonoBehaviour
         _spine = GetComponent<SkeletonAnimation>();
         sortingEffect = GetComponentInChildren<ParticleSystem>(true);
         if (animationManager == null) animationManager = GetComponent<EnemyAnimationManager>();
-        _skeletonRenderer = GetComponent<Renderer>();
+        _skeletonRenderer = GetComponent<MeshRenderer>();
             if (_skeletonRenderer == null)
                 Debug.LogError("EnemyAIController: No Renderer found on skeleton!");
        
@@ -483,7 +483,9 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void SetSortingOrder(int order)
     {
-        _skeletonRenderer.sortingLayerName= "UI";
+        Debug.Log("SetSortingOrder: " + order);
+        _skeletonRenderer.sortingOrder= order;
+
         _fovMeshObject.gameObject.SetActive(false);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = order;
@@ -498,7 +500,9 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void RestoreSortingOrder()
     {
-        _skeletonRenderer.sortingLayerName= "Default";
+        Debug.Log("Restoring sorting order");
+        _skeletonRenderer.sortingOrder= _originalSpriteOrder;
+
         _fovMeshObject.gameObject.SetActive(true);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = _uiOriginalOrder;

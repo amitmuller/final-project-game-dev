@@ -175,8 +175,6 @@ namespace Characters.Player
             {
                 if (peek)
                     enemy.RestoreSortingOrder();
-                else
-                    enemy.SetSortingOrder(HiddenEnemyOrder);
             }
         }
 

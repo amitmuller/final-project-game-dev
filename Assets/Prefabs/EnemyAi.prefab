@@ -167,12 +167,12 @@ MonoBehaviour:
   patrolPoints: []
   currentPatrolIndex: 0
   patrolY: 0
-  alertPatrolRadius: 10
+  alertPatrolRadius: 15
   spreadRadius: 10
   alertSpeed: 2.75
   detectionRange: 9
   calmMoveSpeed: 1.5
-  chaseMoveSpeed: 4.5
+  chaseMoveSpeed: 4
   chaseDashSpeed: 6
   searchMoveSpeed: 2.5
   searchDuration: 7
