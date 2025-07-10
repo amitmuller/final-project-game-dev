@@ -158,6 +158,7 @@ public class TailGrabber : MonoBehaviour
         Vector2 gravity = Physics2D.gravity;
 
         Vector3[] points = new Vector3[trajectoryPoints];
+        Debug.Log(heldObject+ "heldObject");
         Vector3 startPos = heldObject.transform.position;
 
         points[0] = startPos;
