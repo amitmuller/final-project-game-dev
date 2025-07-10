@@ -128,6 +128,8 @@ namespace Characters.Player
                 blurTf.gameObject.SetActive(false);
             isHiding = false;
             UpdateHeldObjectSorting();
+            foreach (var enemy in EnemyAIController.AllEnemies)
+                enemy.RestoreSortingOrder();
         }
 
         private void Update()

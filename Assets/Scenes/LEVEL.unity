@@ -4489,10 +4489,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f516855bc3f34a518f96090949d272b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScreechInterval: 15
+  maxScreechInterval: 45
+  minAmbianceInterval: 10
+  maxAmbianceInterval: 30
   musicSource: {fileID: 0}
   ambianceSource: {fileID: 0}
   ambiance2Source: {fileID: 0}
   playerWalk:
+    clip: {fileID: 0}
+    volume: 1
+  playerScreech:
+    clip: {fileID: 0}
+    volume: 1
+  playerInHide:
+    clip: {fileID: 0}
+    volume: 1
+  enemyWalk:
+    clip: {fileID: 0}
+    volume: 1
+  enemyGasp:
+    clip: {fileID: 0}
+    volume: 1
+  enemyConfused:
+    clip: {fileID: 0}
+    volume: 1
+  enemyWhistle:
     clip: {fileID: 0}
     volume: 1
   backgroundMusicGame:
@@ -4502,6 +4524,33 @@ MonoBehaviour:
     clip: {fileID: 0}
     volume: 1
   backgroundMusicOpenScene:
+    clip: {fileID: 0}
+    volume: 1
+  trainSound:
+    clip: {fileID: 0}
+    volume: 1
+  chochoTrian:
+    clip: {fileID: 0}
+    volume: 1
+  lightsMove:
+    clip: {fileID: 0}
+    volume: 1
+  glassBreakSound1:
+    clip: {fileID: 0}
+    volume: 1
+  glassBreakSound2:
+    clip: {fileID: 0}
+    volume: 1
+  woodBreakSound1:
+    clip: {fileID: 0}
+    volume: 1
+  woodBreakSound2:
+    clip: {fileID: 0}
+    volume: 1
+  stoneBreakSound1:
+    clip: {fileID: 0}
+    volume: 1
+  stoneBreakSound2:
     clip: {fileID: 0}
     volume: 1
 --- !u!4 &36415179
@@ -18553,7 +18602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &156408819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29324,7 +29373,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1651377629020046728, guid: be080d15719deef43882c419130d880a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.31
+      value: 33.23
       objectReference: {fileID: 0}
     - target: {fileID: 1651377629020046728, guid: be080d15719deef43882c419130d880a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -131399,6 +131448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  materialType: 0
 --- !u!60 &1131167993
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -152055,6 +152105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  materialType: 0
 --- !u!212 &1314400654
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -199417,6 +199468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  materialType: 0
 --- !u!60 &1747134481
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -230527,6 +230579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  materialType: 0
 --- !u!212 &1986530455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -242174,6 +242227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  materialType: 0
 --- !u!1 &2087056131
 GameObject:
   m_ObjectHideFlags: 0
