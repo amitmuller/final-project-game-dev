@@ -14,6 +14,7 @@ public class BreakObjects : MonoBehaviour
 
     private Explodable   explodable;
     private Rigidbody2D  rb;
+    //private bool isBroken = false;
 
     private void OnValidate()
     {
@@ -61,9 +62,10 @@ public class BreakObjects : MonoBehaviour
 
     public void BreakObject()
     {
-        // explosion-force helper (optional)
-        var ef = GameObject.FindObjectOfType<ExplosionForce>();
-        Debug.DrawLine(transform.position, transform.position + Vector3.up * 2, Color.red, 1f);
+        //if (isBroken)
+        //{
+        //    return;
+        //}
 
         if (usePieces && pieces != null)
         {
@@ -73,6 +75,13 @@ public class BreakObjects : MonoBehaviour
                 childRb.bodyType     = RigidbodyType2D.Dynamic;
                 childRb.simulated    = true;
                 childRb.gravityScale = 1f;
+
+                // Generating a random unit vector
+                Vector2 randomDirection = Random.insideUnitCircle.normalized;
+                randomDirection.y = Mathf.Abs(randomDirection.y); // Ensure upward force
+
+                float force = Random.Range(5, 10);
+                childRb.AddForce(randomDirection * force, ForceMode2D.Impulse);
             }
         }
 
@@ -81,10 +90,11 @@ public class BreakObjects : MonoBehaviour
             Instantiate(breakObjects, transform.position, Quaternion.identity);
 
         // trigger Explodable + explosion force
-        if (explodable != null) explodable.explode();
-        if (ef != null)         ef.doExplosion(transform.position);
+        //if (explodable != null) explodable.explode();
 
         // optionally hide/destroy the original
-        // gameObject.SetActive(false);
+        gameObject.SetActive(false);
+
+        //isBroken = true;
     }
 }
