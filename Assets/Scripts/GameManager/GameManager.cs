@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private List<List<GameObject>> _spareThrowableRoots = new List<List<GameObject>>();
     
     [SerializeField] private NoiseUIManager _noiseUIManager;
+    [SerializeField] private CameraFade _cameraFade;
     private int currentCart = 0;
 
     private void Awake()
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
             }
             _spareThrowableRoots.Add(spareList);
         }
+
+        _cameraFade.FadeOutAndIn();
     }
 
     public void PlayerEnteredCart(int cartIndex)
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour
     public void checkpoint(Transform player)
     {
         if (player == null) return;
+        _cameraFade.FadeOutOverTime(true);
         NoiseUIManager.Instance?.reset();
         ResetEnemiesInCart();
         ResetThrowables();
