@@ -1,6 +1,12 @@
 using Light;
 using UnityEngine;
 
+public enum MaterialType
+{
+    Glass,
+    Wood,
+    Stone
+}
 public class ThrowableObject : MonoBehaviour
 {
     private SpriteRenderer sr;
@@ -13,6 +19,8 @@ public class ThrowableObject : MonoBehaviour
     private LayerMask originalLayer;
     private Transform initialParent;
     private Explodable _explodable;
+    [Header("What is this made of?")]
+    public MaterialType materialType = MaterialType.Glass;
 
     void Awake()
     {
@@ -75,8 +83,7 @@ public class ThrowableObject : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-
-            print("collided with"+ collision.gameObject.name);
+        print("collided with1"+ collision.gameObject.name);
         
         if (collision.gameObject.CompareTag("lightBolb"))
         {
@@ -87,10 +94,12 @@ public class ThrowableObject : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("ground"))
         {
+            print("collided with floor");
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
         NoiseManager.RaiseNoise(transform.position);
+        AudioManager.Instance.PlayRandomBreak(materialType);
 
         // Play preloaded noise particles without delay
         if (noiseParticles != null)
@@ -105,7 +114,6 @@ public class ThrowableObject : MonoBehaviour
 
         if (_explodable != null)
         {
-            print("collided with"+ gameObject.name);
             BreakObject();
             _explodable.explode();
         }

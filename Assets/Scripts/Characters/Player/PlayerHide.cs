@@ -84,6 +84,7 @@ namespace Characters.Player
             isHiding = true;
 
             // 1) Darken & sorting/Y
+            AudioManager.Instance.PlayEffect("playerInHide");
             bodyRenderer.color = new Color(0.36f, 0.4f, 0.43f, 1f);
             if (currentHidable.Layer == HideLayer.Back)
             {
@@ -127,6 +128,8 @@ namespace Characters.Player
                 blurTf.gameObject.SetActive(false);
             isHiding = false;
             UpdateHeldObjectSorting();
+            foreach (var enemy in EnemyAIController.AllEnemies)
+                enemy.RestoreSortingOrder();
         }
 
         private void Update()
@@ -175,8 +178,6 @@ namespace Characters.Player
             {
                 if (peek)
                     enemy.RestoreSortingOrder();
-                else
-                    enemy.SetSortingOrder(HiddenEnemyOrder);
             }
         }
 

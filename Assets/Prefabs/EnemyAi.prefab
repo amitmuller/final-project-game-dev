@@ -167,12 +167,12 @@ MonoBehaviour:
   patrolPoints: []
   currentPatrolIndex: 0
   patrolY: 0
-  alertPatrolRadius: 10
+  alertPatrolRadius: 15
   spreadRadius: 10
   alertSpeed: 2.75
   detectionRange: 9
   calmMoveSpeed: 1.5
-  chaseMoveSpeed: 3
+  chaseMoveSpeed: 4
   chaseDashSpeed: 6
   searchMoveSpeed: 2.5
   searchDuration: 7
@@ -194,6 +194,7 @@ MonoBehaviour:
   fovYOffset: 9
   fieldOfViewAngle: 120
   currentAnimationName: 
+  isStop: 0
   moveToNoiseTimer: 0
 --- !u!61 &1658927907042441943
 BoxCollider2D:
@@ -205,7 +206,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: eb164ba78d3c54c31bd7798333f84c32, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -282,9 +283,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1238589135
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8403526201572289868
 MonoBehaviour:
@@ -353,6 +354,7 @@ MonoBehaviour:
   shirtSkin: 
   shoesSkin: 
   facialHairSkin: 
+  furSkin: 
 --- !u!114 &3413217384856017557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4866992068895542765, guid: e0a82a7d4de9c49808cbbc609acae97b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 4866992068895542765, guid: e0a82a7d4de9c49808cbbc609acae97b, type: 3}
       propertyPath: m_LocalPosition.z

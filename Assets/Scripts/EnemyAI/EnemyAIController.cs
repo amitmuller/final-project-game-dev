@@ -9,6 +9,7 @@ using CodeMonkey;
 using Spine.Unity;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering; 
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyAIController : MonoBehaviour
@@ -16,6 +17,7 @@ public class EnemyAIController : MonoBehaviour
     
     // ── State Assets 
     [Header("State Assets")]
+    bool _detachedTrail;
     public CalmState      calmState;
     public AlertState     alertState;
     public SearchingState searchingState;
@@ -78,7 +80,7 @@ public class EnemyAIController : MonoBehaviour
     public Color chaseStateColor = Color.red;
 
     // ── Runtime State Tracking 
-    [HideInInspector] public float alertTimer;
+    public float alertTimer;
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
     
@@ -92,6 +94,7 @@ public class EnemyAIController : MonoBehaviour
     
     private Vector2 _initialPosition;
     private IEnemyState _initialState;
+    private bool _returningToStart = false;
 
     
     [Header("FOV Settings")]
@@ -99,6 +102,10 @@ public class EnemyAIController : MonoBehaviour
     private GameObject _fovMeshObject;
     private Vector3 _fovOriginalLocalScale;
     [SerializeField] private float fieldOfViewAngle = 120f;
+    
+    
+    [Header("Cart Settings")]
+    [SerializeField]private Collider2D cartCollider;
     
     public string currentAnimationName;
 
@@ -119,7 +126,6 @@ public class EnemyAIController : MonoBehaviour
     public float moveToNoiseTimer;
     private Renderer _skeletonRenderer;
     SkeletonAnimation _spine;
-    
 
     void Awake()
     {
@@ -127,7 +133,7 @@ public class EnemyAIController : MonoBehaviour
         _spine = GetComponent<SkeletonAnimation>();
         sortingEffect = GetComponentInChildren<ParticleSystem>(true);
         if (animationManager == null) animationManager = GetComponent<EnemyAnimationManager>();
-        _skeletonRenderer = GetComponent<Renderer>();
+        _skeletonRenderer = GetComponent<MeshRenderer>();
             if (_skeletonRenderer == null)
                 Debug.LogError("EnemyAIController: No Renderer found on skeleton!");
        
@@ -188,6 +194,16 @@ public class EnemyAIController : MonoBehaviour
     private bool IsWalkingRight() => _rigidbody2D.linearVelocity.x > 0.01f;
 
     void Update() {
+        if (Input.GetKeyDown(KeyCode.C))
+            ChangeState(calmState);
+        if (Input.GetKeyDown(KeyCode.S))
+            ChangeState(searchingState);
+        if (Input.GetKeyDown(KeyCode.A))
+            ChangeState(alertState);
+        if (Input.GetKeyDown(KeyCode.H))
+            ChangeState(chaseState);
+        if (Input.GetKeyDown(KeyCode.R))
+            gameObject.SetActive(false);
         _currentState.UpdateState(this);
         // flip the skeleton only:
         _spine.Skeleton.FlipX = walkingRight;
@@ -248,18 +264,36 @@ public class EnemyAIController : MonoBehaviour
 
     public void MoveTowards(Vector2 targetPosition, float speed)
     {
-        Vector2 dir = (targetPosition - (Vector2)transform.position).normalized;
+        bool outside = false;
+        if (cartCollider != null)
+        {
+            var b = cartCollider.bounds;
+            if (targetPosition.x < b.min.x || targetPosition.x > b.max.x ||
+                targetPosition.y < b.min.y || targetPosition.y > b.max.y)
+            {
+                // outside cart
+                outside = true;
+                // clamp inside
+                targetPosition.x = Mathf.Clamp(targetPosition.x, b.min.x, b.max.x);
+                targetPosition.y = Mathf.Clamp(targetPosition.y, b.min.y, b.max.y);
+            }
+        }
+
+        if (outside)
+        {
+            // revert to Calm state if chasing outside cart
+            ChangeState(calmState);
+            return;
+        }
+
+        Vector2 dir = (targetPosition - (Vector2)transform.position);
+        if (dir.sqrMagnitude > 0.0001f) dir.Normalize();
         walkingRight = dir.x > 0;
+
         if (_rigidbody2D != null)
-        {
-           
             _rigidbody2D.linearVelocity = dir * speed;
-        }
         else
-        {
-            transform.position = Vector2.MoveTowards
-                (transform.position, targetPosition, speed * Time.deltaTime);
-        }
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
     
     
@@ -352,9 +386,7 @@ public class EnemyAIController : MonoBehaviour
     }
     public void PatrolEnemy()
     {
-        transform.position = _initialPosition;
         ChangeState(_initialState);
-        // StopMovement();
     }
     private void OnDrawGizmosSelected()
     {
@@ -482,13 +514,14 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void SetSortingOrder(int order)
     {
-        _skeletonRenderer.sortingOrder = order;
+        Debug.Log("SetSortingOrder: " + order);
+        _skeletonRenderer.sortingOrder= order;
+
         _fovMeshObject.gameObject.SetActive(false);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = order;
         if (sortingEffect != null)
         {
-            Debug.Log("Walk enemy sound");
             sortingEffect.gameObject.SetActive(true);
         }
     }
@@ -498,7 +531,9 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void RestoreSortingOrder()
     {
-        _skeletonRenderer.sortingOrder = _originalSpriteOrder;
+        Debug.Log("Restoring sorting order");
+        _skeletonRenderer.sortingOrder= _originalSpriteOrder;
+
         _fovMeshObject.gameObject.SetActive(true);
         if (_uiCanvas != null)
             _uiCanvas.sortingOrder = _uiOriginalOrder;
@@ -506,6 +541,7 @@ public class EnemyAIController : MonoBehaviour
         {
             sortingEffect.gameObject.SetActive(false);
         }
+
     }
     
 

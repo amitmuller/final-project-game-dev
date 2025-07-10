@@ -13,7 +13,7 @@ namespace EnemyAI
     {
         public EnemyStateType StateType => EnemyStateType.Calm;
         [Header("Ranges & Speeds")]
-        public float noiseDetectionRange = 7f;
+        public float noiseDetectionRange = 15f;
         [Header("Group Conversation")]
         [Tooltip("If >0, two Calm enemies within this X-distance and on-screen will stop.")]
         [SerializeField] private float conversationProximityRange = 2f;
@@ -51,9 +51,9 @@ namespace EnemyAI
         public void OnNoiseRaised(Vector2 noisePosition, EnemyAIController enemy)
         {
             if (enemy.CurrentStateType != EnemyStateType.Calm) return;
-            Debug.Log("noise raised on calm state distance from noise: " + 
-                      Vector2.Distance(enemy.transform.position, noisePosition) + 
-                      "noise detection range is: " +noiseDetectionRange);
+            // Debug.Log("noise raised on calm state distance from noise: " + 
+            //           Vector2.Distance(enemy.transform.position, noisePosition) + 
+            //           "noise detection range is: " +noiseDetectionRange);
             if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange)
             {
                 Debug.Log("inside noise range");
