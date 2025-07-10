@@ -514,6 +514,7 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void SetSortingOrder(int order)
     {
+        /*
         Debug.Log("SetSortingOrder: " + order);
         _skeletonRenderer.sortingOrder= order;
 
@@ -524,6 +525,7 @@ public class EnemyAIController : MonoBehaviour
         {
             sortingEffect.gameObject.SetActive(true);
         }
+        */
     }
     
     /// <summary>

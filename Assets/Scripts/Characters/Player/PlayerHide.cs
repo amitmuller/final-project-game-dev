@@ -59,7 +59,7 @@ namespace Characters.Player
             originalOrder   = meshRenderer.sortingOrder;
             originalY       = transform.position.y;
             playerCollider  = GetComponent<Collider2D>();
-            blurTf = transform.Find("BlurScreen");
+            //blurTf = transform.Find("BlurScreen");
             // Ensure we start at our normal order
             meshRenderer.sortingOrder = normalOrder;
         }
@@ -100,7 +100,7 @@ namespace Characters.Player
                 playerMove.SetCharacterState("intoHidingDown");
             }
 
-            blurTf?.gameObject.SetActive(true);
+            //blurTf?.gameObject.SetActive(true);
             UpdateHeldObjectSorting();
 
             // 2) Now grab that entry and hook its completion
@@ -124,8 +124,11 @@ namespace Characters.Player
             // Snap back to original Y
             var pos = transform.position;
             transform.position = new Vector3(pos.x, originalY, pos.z);
-            if(blurTf != null)
-                blurTf.gameObject.SetActive(false);
+            if (blurTf != null)
+            {
+                //blurTf.gameObject.SetActive(false);
+            }
+
             isHiding = false;
             UpdateHeldObjectSorting();
             foreach (var enemy in EnemyAIController.AllEnemies)
