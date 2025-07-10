@@ -75,7 +75,7 @@ public class ThrowableObject : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        print("collided with"+ collision.gameObject.name);
+        print("collided with1"+ collision.gameObject.name);
         
         if (collision.gameObject.CompareTag("lightBolb"))
         {
@@ -86,6 +86,7 @@ public class ThrowableObject : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("ground"))
         {
+            print("collided with floor");
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
@@ -104,7 +105,6 @@ public class ThrowableObject : MonoBehaviour
 
         if (_explodable != null)
         {
-            print("collided with"+ gameObject.name);
             BreakObject();
             _explodable.explode();
         }
