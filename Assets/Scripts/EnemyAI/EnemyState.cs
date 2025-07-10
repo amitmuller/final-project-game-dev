@@ -5,6 +5,7 @@ namespace EnemyAI
 {
     public enum EnemyStateType
     {
+        Idle,
         Calm,
         Alert,
         Searching,

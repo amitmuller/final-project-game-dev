@@ -81,6 +81,28 @@ public class EnemyAIController : MonoBehaviour
 
     // ── Runtime State Tracking 
     public float alertTimer;
+    public float IdleTimer { get; set; } = 0f;
+    private bool _isIdle = false;
+    public bool IsIdle
+    {
+        set
+        {
+            _isIdle = value;
+            if (value)
+            {
+                animationManager.SetCharacterState(EnemyStateType.Idle);
+            }
+            else
+            {
+                animationManager.SetCharacterState(CurrentStateType);
+            }
+        }
+        get
+        {
+            return _isIdle;
+        }
+    }
+
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
     

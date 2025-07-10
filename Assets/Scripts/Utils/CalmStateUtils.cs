@@ -22,33 +22,19 @@ namespace CalmStateUtils
         /// <summary>
         /// Handles X-axis patrol and index advancement.
         /// </summary>
-        public static void HandlePatrol(EnemyAIController self, float[] patrolPointsX, float patrolY, float speed, float threshold)
+        public static bool HandlePatrol(EnemyAIController self, float patrolPointX, float patrolY, float speed, float threshold, float idleTime)
         {
-            if (patrolPointsX == null) return;
+            var target = patrolPointX;
+            var moveTo = new Vector2(target, patrolY);
+            self.MoveTowards(moveTo, speed);
 
-            if (patrolPointsX.Length == 1)
-            {
-                // very large number outside of screen -> moving one point
-                var target = patrolPointsX[0];
-                var moveTo = new Vector2(target,patrolY);
-                self.MoveTowards(moveTo, speed);
-            }
-                
-            else if (patrolPointsX.Length > 1)
-            {
-               var target = patrolPointsX[self.currentPatrolIndex];
-               var moveTo = new Vector2(target, patrolY);
-               self.MoveTowards(moveTo, speed);
-               
-               if (Mathf.Abs(self.transform.position.x - moveTo.x) < threshold)
-               {
-                    self.currentPatrolIndex = (self.currentPatrolIndex + 1) % patrolPointsX.Length;
-               }
-            }
-            else
+            if (Mathf.Abs(self.transform.position.x - moveTo.x) < threshold)
             {
                 self.StopMovement();
+                return true;
             }
+
+            return false;
         }
     }
 }

@@ -1,7 +1,7 @@
-// EnemyAnimationManager.cs
 using UnityEngine;
 using Spine;
 using Spine.Unity;
+using System.Collections.Generic;
 
 namespace EnemyAI {
     [RequireComponent(typeof(SkeletonAnimation))]
@@ -11,10 +11,9 @@ namespace EnemyAI {
         public SkeletonAnimation skeletonAnimation;
 
         [Header("Animation Names")]
-        [SerializeField] private string idleAnimName;
+        [SerializeField] private List<string> idleAnimations = new List<string>();
         [SerializeField] private string alertSearchAnimName;
         [SerializeField] private string catchAnimName;
-        [SerializeField] private string idleHandoutAnimName;
         [SerializeField] private string runAnimName;
         [SerializeField] private string run2AnimName;
         [SerializeField] private string walkAnimName;
@@ -48,9 +47,17 @@ namespace EnemyAI {
             attackCollider.enabled = isAttack;
         }
 
+        private string GetRandomIdleAnimation()
+        {
+            return idleAnimations[Random.Range(0, idleAnimations.Count)];
+        }
+
         /// <summary>Convenience for choosing animation by state name.</summary>
         public void SetCharacterState(EnemyStateType state, bool isStop= false) {
             switch (state) {
+                case EnemyStateType.Idle:
+                    spineState.SetAnimation(0, GetRandomIdleAnimation(), true);
+                    break;
                 case EnemyStateType.Calm:
                     spineState.SetAnimation(0, walkAnimName, true);
                     break;
@@ -87,7 +94,7 @@ namespace EnemyAI {
                     var catchEntry = spineState.SetAnimation(0, catchAnimName, false);
                     catchEntry.TimeScale = 1.2f;
                     spineState.AddAnimation(0,alertSearchAnimName, false, 0);
-                    spineState.AddAnimation(0,idleHandoutAnimName, false, 0);
+                    spineState.AddAnimation(0, GetRandomIdleAnimation(), false, 0);
                     spineState.AddAnimation(0, run2AnimName, true, 0);
             }
     }
