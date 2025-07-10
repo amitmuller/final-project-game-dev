@@ -1,6 +1,12 @@
 using Light;
 using UnityEngine;
 
+public enum MaterialType
+{
+    Glass,
+    Wood,
+    Stone
+}
 public class ThrowableObject : MonoBehaviour
 {
     private SpriteRenderer sr;
@@ -13,6 +19,8 @@ public class ThrowableObject : MonoBehaviour
     private LayerMask originalLayer;
     private Transform initialParent;
     private Explodable _explodable;
+    [Header("What is this made of?")]
+    public MaterialType materialType = MaterialType.Glass;
 
     void Awake()
     {
@@ -91,6 +99,7 @@ public class ThrowableObject : MonoBehaviour
         }
 
         NoiseManager.RaiseNoise(transform.position);
+        AudioManager.Instance.PlayRandomBreak(materialType);
 
         // Play preloaded noise particles without delay
         if (noiseParticles != null)

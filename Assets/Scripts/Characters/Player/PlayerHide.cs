@@ -84,6 +84,7 @@ namespace Characters.Player
             isHiding = true;
 
             // 1) Darken & sorting/Y
+            AudioManager.Instance.PlayEffect("playerInHide");
             bodyRenderer.color = new Color(0.36f, 0.4f, 0.43f, 1f);
             if (currentHidable.Layer == HideLayer.Back)
             {

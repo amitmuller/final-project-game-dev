@@ -18,6 +18,7 @@ namespace EnemyAI
 
         public void EnterState(EnemyAIController enemy)
         {
+            AudioManager.Instance.PlayEffect("enemyConfused");
             firstTime = true;
             // 1) Record the exact spot where the noise happened
             _targetX = enemy.lastKnownNoisePosition.x;

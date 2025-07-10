@@ -22,6 +22,7 @@ namespace EnemyAI
         public void EnterState(EnemyAIController enemy)
         {
             // reset any previous tween
+            AudioManager.Instance.PlayEffect("enemyGasp");
             _dashTween?.Kill();
             _dashTween = null;
             enemy.StopMovement();

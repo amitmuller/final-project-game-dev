@@ -14,6 +14,7 @@ namespace EnemyAI
         public EnemyStateType StateType => EnemyStateType.Alert;
         public void EnterState(EnemyAIController enemy)
         {
+            AudioManager.Instance.PlayEffect("enemyGasp");
             DOTween.Kill(enemy.transform);
             enemy.StopMovement();
             enemy.isGoingToStarAlertPatrolling = true;
