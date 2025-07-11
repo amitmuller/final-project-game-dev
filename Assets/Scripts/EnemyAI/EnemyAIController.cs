@@ -436,8 +436,8 @@ public class EnemyAIController : MonoBehaviour
         Color newColor = meshRenderer.material.color;
         newColor.a = 0.3f; // for example, 30% visible
         meshRenderer.material.color = newColor;
-        _fovMeshObject.GetComponent<Renderer>().sortingLayerName = "Player";
-        _fovMeshObject.GetComponent<Renderer>().sortingOrder =10;
+        _fovMeshObject.GetComponent<Renderer>().sortingLayerName = GetComponent<Renderer>().sortingLayerName;
+        _fovMeshObject.GetComponent<Renderer>().sortingOrder = GetComponent<Renderer>().sortingOrder-1;
         _fovOriginalLocalScale = _fovMeshObject.transform.localScale;
         PolygonCollider2D polyCollider = _fovMeshObject.AddComponent<PolygonCollider2D>();
         _fovMeshObject.AddComponent<EnemyFOVTrigger>();
@@ -514,6 +514,7 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void SetSortingOrder(int order)
     {
+        /*
         Debug.Log("SetSortingOrder: " + order);
         _skeletonRenderer.sortingOrder= order;
 
@@ -524,6 +525,7 @@ public class EnemyAIController : MonoBehaviour
         {
             sortingEffect.gameObject.SetActive(true);
         }
+        */
     }
     
     /// <summary>

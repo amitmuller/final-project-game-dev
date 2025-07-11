@@ -72,7 +72,7 @@ TagManager:
   - name: HiddenFrontPlayer
     uniqueID: 3584274227
     locked: 0
-  - name: UI
+  - name: UI- old
     uniqueID: 986347413
     locked: 0
   - name: break
@@ -80,6 +80,9 @@ TagManager:
     locked: 0
   - name: CameraSortingLayer
     uniqueID: 1913044041
+    locked: 0
+  - name: UI
+    uniqueID: 286040619
     locked: 0
   m_RenderingLayers:
   - Default
