@@ -20,9 +20,6 @@ public class CartData
     
     public Vector2 checkpointPosition;
     
-    [Header("Which Virtual Camera to use for this cart?")]
-    public CinemachineVirtualCamera vCam;
-
     [HideInInspector]
     public bool hasActivated = false;
 }

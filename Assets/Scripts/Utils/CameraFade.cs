@@ -14,6 +14,11 @@ public class CameraFade : MonoBehaviour
 
     public float Duration => duration;
 
+    private void Awake()
+    {
+        fade.gameObject.SetActive(true);
+    }
+
     public void FadeOutOverTime(bool reverse = false)
     {
         if (!fade) return;
