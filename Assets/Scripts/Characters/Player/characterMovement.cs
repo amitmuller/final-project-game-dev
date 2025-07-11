@@ -160,7 +160,7 @@ public class characterMovement : MonoBehaviour
         float horizontalSpeed = Mathf.Abs(body.linearVelocity.x);
         if (horizontalSpeed >= noiseTriggerSpeed && Time.time - lastNoiseTime >= noiseCooldown)
         {
-            NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
+            // NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
             lastNoiseTime = Time.time;
         }
 

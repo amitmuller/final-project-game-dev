@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     // Spare templates (_Spare) per cart
     private List<List<GameObject>> _spareThrowableRoots = new List<List<GameObject>>();
     
-    [SerializeField] private NoiseUIManager _noiseUIManager;
     [SerializeField] private CameraFade _cameraFade;
     private int currentCart = 0;
 
@@ -81,10 +80,10 @@ public class GameManager : MonoBehaviour
     {
         if (player == null) return;
         _cameraFade.FadeOutOverTime(true);
-        NoiseUIManager.Instance?.reset();
+        // NoiseUIManager.Instance?.reset();
         ResetEnemiesInCart();
         ResetThrowables();
-        _noiseUIManager.reset();
+        // _noiseUIManager.reset();
         player.position = carts[currentCart].checkpointPosition;
     }
 

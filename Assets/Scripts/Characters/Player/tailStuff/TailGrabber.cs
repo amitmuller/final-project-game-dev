@@ -107,7 +107,7 @@ public class TailGrabber : MonoBehaviour
             var playerRenderer = GetComponentInParent<Renderer>();
             
             var objRenderer = heldObject.GetComponent<Renderer>();
-            if (playerRenderer != null && objRenderer != null && playerHide.IsHiding())
+            if (playerRenderer != null && objRenderer != null)
             {
 
                 playerHide.UpdateHeldObjectSorting();
@@ -158,8 +158,9 @@ public class TailGrabber : MonoBehaviour
         Vector2 gravity = Physics2D.gravity;
 
         Vector3[] points = new Vector3[trajectoryPoints];
-        Debug.Log(heldObject+ "heldObject");
+
         Vector3 startPos = heldObject.transform.position;
+        aimLine.sortingOrder     =   GetHeldObjectRenderer().sortingOrder;
 
         points[0] = startPos;
 

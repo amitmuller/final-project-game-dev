@@ -1,5 +1,6 @@
 using Light;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public enum MaterialType
 {
@@ -12,22 +13,32 @@ public class ThrowableObject : MonoBehaviour
     private SpriteRenderer sr;
     private Color originalColor;
     public Color highlightColor = Color.yellow;
-    private GameObject indicatorInstance;
     public bool IsHeld { get; set; } = false;
     private ParticleSystem noiseParticles;
     private Vector3 initialPosition;
     private LayerMask originalLayer;
     private Transform initialParent;
     private Explodable _explodable;
+    [SerializeField] private GameObject grabUI;
     [Header("What is this made of?")]
     public MaterialType materialType = MaterialType.Glass;
+    private Light2D _light;
 
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         _explodable = GetComponent<Explodable>();
         originalColor = sr.color;
-
+        
+        Transform oldParent = transform;
+        grabUI.transform.parent = null;
+        grabUI.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        grabUI.transform.parent = oldParent;
+        
+        grabUI.SetActive(false);
+        _light = GetComponent<Light2D>();
+        _light.enabled = false;
+        
         // Preload noisePS prefab and instantiate a single ParticleSystem instance to avoid runtime instantiation delay
         var noisePrefab = Resources.Load<ParticleSystem>("Sound ripple");
         if (noisePrefab != null)
@@ -49,19 +60,6 @@ public class ThrowableObject : MonoBehaviour
             Debug.LogError("[ThrowableObject] Couldn’t load 'noisePS' prefab from Resources", this);
         }
 
-        // Load indicator prefab once
-        var prefab = Resources.Load<GameObject>("takeThrowIcon");
-        if (prefab)
-        {
-            indicatorInstance = Instantiate(prefab, transform);
-            indicatorInstance.transform.localPosition = new Vector3(0, 1f, 0);
-            indicatorInstance.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("[ThrowableObject] Couldn't load 'takeThrowIcon' prefab from Resources", this);
-        }
-
         // Store initial state
         initialPosition = transform.position;
         originalLayer = gameObject.layer;
@@ -70,15 +68,17 @@ public class ThrowableObject : MonoBehaviour
 
     public void Highlight(bool enable)
     {
-        sr.color = enable ? highlightColor : originalColor;
-        if (indicatorInstance != null)
-            indicatorInstance.SetActive(enable);
+        // sr.color = enable ? highlightColor : originalColor;
+        _light.enabled = enable;
+        if (grabUI != null)
+            grabUI.SetActive(enable);
     }
     
     public void GrabObject()
     {
-        if (indicatorInstance != null)
-            indicatorInstance.SetActive(false);
+        if (grabUI != null)
+            grabUI.SetActive(false);
+        _light.enabled = false;
     }
     
     void OnCollisionEnter2D(Collision2D collision)
