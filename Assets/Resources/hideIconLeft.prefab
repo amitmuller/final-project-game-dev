@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8446999650021780351}
   - component: {fileID: 7756285790902898781}
   m_Layer: 0
-  m_Name: icons8-xbox-a-96_0
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5786814154899481625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: -7437336785066304212, guid: a5b6ade5f95864a888a737341acdd2c2, type: 3}
+  m_Sprite: {fileID: -2120076250942501716, guid: 09a56434283fa4a12ab43cec53c29128, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5786814154899481625}
   m_Layer: 0
-  m_Name: hideIcon
+  m_Name: hideIconLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
