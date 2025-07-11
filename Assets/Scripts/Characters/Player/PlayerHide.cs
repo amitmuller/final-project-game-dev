@@ -55,10 +55,13 @@ namespace Characters.Player
         private float         originalY;
         private Collider2D    playerCollider;
         private Transform blurTf;
+        
+        private characterAnimation animation;
 
         private void Awake()
         {
-            playerMove = GetComponent<characterMovement>();
+            // playerMove = GetComponent<characterMovement>();
+            animation = GetComponent<characterAnimation>();
  
             meshRenderer = GetComponent<MeshRenderer>();
             //originalColor   = bodyRenderer.color;
@@ -97,23 +100,23 @@ namespace Characters.Player
                 meshRenderer.sortingOrder = hiddenBackOrder;
                 targetHideY               = hideYBack;
                 // Use your helper so currentAnimationName is correct:
-                playerMove.SetCharacterState("intoHiding");
+                animation.TransitionTo(PlayerAnimState.HideEnterUp);
             }
             else
             {
                 meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
-                playerMove.SetCharacterState("intoHidingDown");
+                animation.TransitionTo(PlayerAnimState.HideEnterDown);
             }
 
             //blurTf?.gameObject.SetActive(true);
             UpdateHeldObjectSorting();
 
             // 2) Now grab that entry and hook its completion
-            var spineState = playerMove.skeletonAnimation.state;
-            var entry      = spineState.GetCurrent(0);            // the one we just set
-            entry.Complete -= OnHideTransitionComplete;           // clean up any old hooks
-            entry.Complete += OnHideTransitionComplete;           // fire when it ends
+            // var spineState = animation.skeletonAnimation.state;
+            // var entry      = spineState.GetCurrent(0);            // the one we just set
+            // entry.Complete -= OnHideTransitionComplete;           // clean up any old hooks
+            // entry.Complete += OnHideTransitionComplete;           // fire when it ends
 
             // 3) Push all enemies behind you
             foreach (var enemy in EnemyAIController.AllEnemies)
@@ -148,8 +151,8 @@ namespace Characters.Player
             if (!isHiding && currentHidable != null)
             {
                 currentHidable.setIndicator(AtEdge(),GetHideEdge());
-                Debug.Log(AtEdge());
-                Debug.Log(GetHideEdge().ToString());
+                // Debug.Log(AtEdge());
+                // Debug.Log(GetHideEdge().ToString());
                 return;
             }
 
@@ -182,7 +185,7 @@ namespace Characters.Player
                 blurTf.gameObject.SetActive(!peek);
             if (peek)
             {
-                playerMove.SetCharacterState("PeekingHeadUp");
+                animation.TransitionTo(PlayerAnimState.Peek);
             }
 
             // if peeking: pull enemies forward and if not peeking push them back
@@ -292,19 +295,19 @@ namespace Characters.Player
             return isHiding ? meshRenderer.sortingOrder : normalOrder;
         }
         
-        
-        // This gets called by Spine when any TrackEntry completes.
-        private void OnHideTransitionComplete(TrackEntry entry)
-        {
-            // safety: only respond to those two
-            var n = entry.Animation.Name;
-            if (n == "intoHiding" || n == "IntoHidingDown")
-            {
-                // now queue the loop
-                playerMove.SetCharacterState("walkingHiding");
-                // unhook
-                entry.Complete -= OnHideTransitionComplete;
-            }
-        }
+        //
+        // // This gets called by Spine when any TrackEntry completes.
+        // private void OnHideTransitionComplete(TrackEntry entry)
+        // {
+        //     // safety: only respond to those two
+        //     var n = entry.Animation.Name;
+        //     if (n == "intoHiding" || n == "IntoHidingDown")
+        //     {
+        //         // now queue the loop
+        //         animation.SetCharacterState("walkingHiding");
+        //         // unhook
+        //         entry.Complete -= OnHideTransitionComplete;
+        //     }
+        // }
     }
 }
