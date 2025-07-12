@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PickingHeadUp
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 8f671b1897c754b068c9f359afd3956d, type: 2}
-  animationName: PickingHeadUp
+  animationName: TailAim

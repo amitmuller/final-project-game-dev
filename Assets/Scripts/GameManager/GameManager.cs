@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Interactable_objects;   // for ThrowableObject
+using Interactable_objects;
+using MoreMountains.Feedbacks; // for ThrowableObject
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +14,9 @@ public class GameManager : MonoBehaviour
     // Spare templates (_Spare) per cart
     private List<List<GameObject>> _spareThrowableRoots = new List<List<GameObject>>();
     
-    [SerializeField] private NoiseUIManager _noiseUIManager;
+    [SerializeField] private CameraFade _cameraFade;
+    [SerializeField] private float checkpointDelay = 1f;
+    [SerializeField] private MMF_Player feedbackCheckpoint;
     private int currentCart = 0;
 
     private void Awake()
@@ -42,6 +46,8 @@ public class GameManager : MonoBehaviour
             }
             _spareThrowableRoots.Add(spareList);
         }
+
+        _cameraFade.FadeOutAndIn();
     }
 
     public void PlayerEnteredCart(int cartIndex)
@@ -77,12 +83,19 @@ public class GameManager : MonoBehaviour
     public void checkpoint(Transform player)
     {
         if (player == null) return;
-        NoiseUIManager.Instance?.reset();
+        // feedbackCheckpoint.PlayFeedbacks();
+        StartCoroutine(CheckpointRoutine(player));
+    }
+
+    private IEnumerator CheckpointRoutine(Transform player)
+    {
+        yield return new WaitForSeconds(checkpointDelay);
+        _cameraFade.FadeOutOverTime(true);
         ResetEnemiesInCart();
         ResetThrowables();
-        _noiseUIManager.reset();
         player.position = carts[currentCart].checkpointPosition;
     }
+    
 
     private void ActivateEnemiesInCart(CartData cart)
     {

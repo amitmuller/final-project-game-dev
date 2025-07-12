@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(LineRenderer))]
+[RequireComponent(typeof(TailConnector))]
 public class TailGrabber : MonoBehaviour
 {
     private Rigidbody2D heldObject = null;
@@ -31,18 +32,23 @@ public class TailGrabber : MonoBehaviour
     [Header("Impact Marker")]
     [SerializeField] private GameObject impactMarkerPrefab;
     private GameObject impactMarkerInstance;
+    
 
     private LineRenderer aimLine;
+    private characterAnimation  anim;
+    private Transform initialParent;
 
     void Awake()
     {
         connector = GetComponent<TailConnector>();
+        anim      = GetComponentInParent<characterAnimation>();
+        initialParent = transform.parent;
         if (impactMarkerPrefab != null)
         {
             impactMarkerInstance = Instantiate(impactMarkerPrefab);
             impactMarkerInstance.SetActive(false);
         }
-
+        
         aimLine = GetComponent<LineRenderer>();
         aimLine.positionCount = 2;
         aimLine.enabled = false;
@@ -81,10 +87,14 @@ public class TailGrabber : MonoBehaviour
                 holdStartTime = Time.time;
                 isHolding = true;
                 aimLine.enabled = true;
+                // transform.parent = 
+                anim.TransitionTo(PlayerAnimState.TailAim);
             }
             else if (heldObject != null)
             {
+                anim.TransitionTo(PlayerAnimState.TailPick);
                 Grab();
+                
             }
         }
         else if (context.canceled && isHolding)
@@ -92,6 +102,7 @@ public class TailGrabber : MonoBehaviour
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));
             StartCoroutine(DelayedThrow(force));
+            anim.TransitionTo(PlayerAnimState.TailThrow);
             heldObject.GetComponent<Collider2D>().isTrigger = false;
             isHolding = false;
             aimLine.enabled = false;
@@ -102,12 +113,13 @@ public class TailGrabber : MonoBehaviour
     {
         if (heldObject != null && !connector.IsConnected)
         {
+            
             connector.Attach(heldObject);
             heldObject.GetComponent<ThrowableObject>()?.GrabObject();
             var playerRenderer = GetComponentInParent<Renderer>();
             
             var objRenderer = heldObject.GetComponent<Renderer>();
-            if (playerRenderer != null && objRenderer != null && playerHide.IsHiding())
+            if (playerRenderer != null && objRenderer != null)
             {
 
                 playerHide.UpdateHeldObjectSorting();
@@ -158,7 +170,9 @@ public class TailGrabber : MonoBehaviour
         Vector2 gravity = Physics2D.gravity;
 
         Vector3[] points = new Vector3[trajectoryPoints];
+
         Vector3 startPos = heldObject.transform.position;
+        aimLine.sortingOrder     =   GetHeldObjectRenderer().sortingOrder;
 
         points[0] = startPos;
 

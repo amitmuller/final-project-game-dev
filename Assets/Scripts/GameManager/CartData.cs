@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 /// <summary>
@@ -18,7 +19,7 @@ public class CartData
     public List<ThrowableObject> throwables = new List<ThrowableObject>();
     
     public Vector2 checkpointPosition;
-
+    
     [HideInInspector]
     public bool hasActivated = false;
 }

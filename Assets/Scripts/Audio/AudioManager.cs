@@ -11,6 +11,14 @@ public class Sound
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    [Header("Timing for Player Screech")]
+    [SerializeField] private float minScreechInterval = 15f;
+    [SerializeField] private float maxScreechInterval = 45f;
+
+    
+    [Header("Timing for Occasional Ambiance")]
+    [SerializeField] private float minAmbianceInterval = 10f;
+    [SerializeField] private float maxAmbianceInterval = 30f;
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource musicSource;
@@ -19,22 +27,32 @@ public class AudioManager : MonoBehaviour
     
     [Header("Player Sounds")]
     [SerializeField] private Sound playerWalk;
-    [SerializeField] private Sound playerHide;
+    [SerializeField] private Sound playerScreech;
+    [SerializeField] private Sound playerInHide;
     
     [Header("Enemy Sounds")]
     [SerializeField] private Sound enemyWalk;
-    [SerializeField] private Sound enemySeePLayer;
-    [SerializeField] private Sound enemyCatchPlayer;
+    [SerializeField] private Sound enemyGasp;
+    [SerializeField] private Sound enemyConfused;
+    [SerializeField] private Sound enemyWhistle;
     
     [Header("General Sounds")]
     [SerializeField] private Sound backgroundMusicGame;
     [SerializeField] private Sound backgroundMusicTutorial;
     [SerializeField] private Sound backgroundMusicOpenScene;
-    [SerializeField] private Sound trainSound;
-    [SerializeField] private Sound breakSound1;
-    [SerializeField] private Sound breakSound2;
-    [SerializeField] private Sound breakSound3;
     
+    [Header("backgrounds Sounds")]
+    [SerializeField] private Sound trainSound;
+    [SerializeField] private Sound chochoTrian;
+    [SerializeField] private Sound lightsMove;
+    
+    [Header("break Sounds")]
+    [SerializeField] private Sound glassBreakSound1;
+    [SerializeField] private Sound glassBreakSound2;
+    [SerializeField] private Sound woodBreakSound1;
+    [SerializeField] private Sound woodBreakSound2;
+    [SerializeField] private Sound stoneBreakSound1;
+    [SerializeField] private Sound stoneBreakSound2;
 
     private Dictionary<string, Sound> sounds;
     private List<AudioSource> effectSources; // Pool of AudioSources for effects
@@ -53,31 +71,94 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
-        
-        
-        musicSource.PlayOneShot(trainSound.clip);
-        // Initialize the sound dictionary
+
+        // Initialize the sound dictionary with all your Sound fields
         sounds = new Dictionary<string, Sound>
         {
             // Player
-            { "playerWalk", playerWalk },
-            
-            // General
-            { "backgroundMusicGame", backgroundMusicGame },
+            { "playerWalk",        playerWalk },
+            { "playerScreech",     playerScreech },
+            { "playerInHide",      playerInHide },
+
+            // Enemy
+            { "enemyWalk",         enemyWalk },
+            { "enemyGasp",         enemyGasp },
+            { "enemyConfused",     enemyConfused },
+            { "enemyWhistle",      enemyWhistle },
+
+            // Music
+            { "backgroundMusicGame",      backgroundMusicGame },
+            { "backgroundMusicTutorial",  backgroundMusicTutorial },
             { "backgroundMusicOpenScene", backgroundMusicOpenScene },
-            { "backgroundMusicTutorial", backgroundMusicTutorial },
+
+            // Ambiance / Backgrounds
+            { "trainSound",  trainSound },
+            { "chochoTrian", chochoTrian },
+            { "lightsMove",  lightsMove },
+
+            // Break effects
+            { "glassBreak1", glassBreakSound1 },
+            { "glassBreak2", glassBreakSound2 },
+            { "woodBreak1",  woodBreakSound1 },
+            { "woodBreak2",  woodBreakSound2 },
+            { "stoneBreak1", stoneBreakSound1 },
+            { "stoneBreak2", stoneBreakSound2 },
         };
 
-        // Initialize the effect source pool
+        // (Re)build your AudioSource pool for one-shot effects
         effectSources = new List<AudioSource>();
         for (int i = 0; i < effectPoolSize; i++)
         {
-            var source = gameObject.AddComponent<AudioSource>();
-            source.playOnAwake = false;
-            effectSources.Add(source);
+            var src = gameObject.AddComponent<AudioSource>();
+            src.playOnAwake = false;
+            effectSources.Add(src);
+        }
+        
+        if (sounds.TryGetValue("trainSound", out Sound train) && train.clip != null)
+        {
+            ambianceSource.clip  = train.clip;
+            ambianceSource.volume = train.volume;
+            ambianceSource.loop   = true;
+            ambianceSource.Play();
+        }
+
+        // 2) Begin randomly playing chochoTrian or lightsMove
+        StartCoroutine(PlayOccasionalAmbiance());
+        StartCoroutine(PlayOccasionalPlayerScreech());
+    }
+    
+    private IEnumerator PlayOccasionalPlayerScreech()
+    {
+        while (true)
+        {
+            float wait = Random.Range(minScreechInterval, maxScreechInterval);
+            yield return new WaitForSeconds(wait);
+            // safe-play the screech effect
+            PlayEffect("playerScreech");
         }
     }
+
+    private IEnumerator PlayOccasionalAmbiance()
+    {
+        // Make sure we have both sounds
+        Sound chocho = sounds.ContainsKey("chochoTrian") ? sounds["chochoTrian"] : null;
+        Sound lights = sounds.ContainsKey("lightsMove") ? sounds["lightsMove"] : null;
+
+        while (true)
+        {
+            // wait a random time before the next “pop”
+            float wait = Random.Range(minAmbianceInterval, maxAmbianceInterval);
+            yield return new WaitForSeconds(wait);
+
+            // pick one of the two (skip if it’s missing)
+            Sound toPlay = (Random.value < 0.5f) ? chocho : lights;
+            if (toPlay?.clip != null)
+            {
+                ambiance2Source.PlayOneShot(toPlay.clip, toPlay.volume);
+            }
+        }
+    }
+
 
     public Sound GetSound(string soundName)
     {
@@ -160,6 +241,31 @@ public class AudioManager : MonoBehaviour
             ambiance2Source.loop = true;
             ambiance2Source.Play();
         }
+    }
+    
+    public void PlayRandomBreak(MaterialType material)
+    {
+        string key1 = "", key2 = "";
+
+        switch (material)
+        {
+            case MaterialType.Glass:
+                key1 = "glassBreak1";
+                key2 = "glassBreak2";
+                break;
+            case MaterialType.Wood:
+                key1 = "woodBreak1";
+                key2 = "woodBreak2";
+                break;
+            case MaterialType.Stone:
+                key1 = "stoneBreak1";
+                key2 = "stoneBreak2";
+                break;
+        }
+
+        // flip a coin
+        string chosenKey = (Random.value < 0.5f) ? key1 : key2;
+        PlayEffect(chosenKey);
     }
 
     /// <summary>

@@ -14,6 +14,7 @@ namespace EnemyAI
         public EnemyStateType StateType => EnemyStateType.Alert;
         public void EnterState(EnemyAIController enemy)
         {
+            AudioManager.Instance.PlayEffect("enemyGasp");
             DOTween.Kill(enemy.transform);
             enemy.StopMovement();
             enemy.isGoingToStarAlertPatrolling = true;
@@ -29,6 +30,7 @@ namespace EnemyAI
             if (EnemyEnterChaseModeIfNeeded(enemy)) return;
             // 2) enemy alert timer will count time for the state
             enemy.alertTimer -= Time.deltaTime;
+            Debug.Log("alert time: " + enemy.alertTimer);
             if (enemy.alertTimer <= 0f)
             {
                 enemy.ChangeState(enemy.calmState);
