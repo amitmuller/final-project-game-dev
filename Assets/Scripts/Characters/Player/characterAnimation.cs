@@ -96,11 +96,11 @@ namespace Characters.Player
                     break;
                 case PlayerAnimState.HideEnterUp:
                     entry = state.SetAnimation(0, hideUpName, false);
-                    entry.Complete += e => TransitionTo(PlayerAnimState.HideIdle);
+                    entry.Complete += e => TransitionTo(PlayerAnimState.Idle);
                     break;
                 case PlayerAnimState.HideEnterDown:
                     entry = state.SetAnimation(0, hideDownName, false);
-                    entry.Complete += e => TransitionTo(PlayerAnimState.HideIdle);
+                    entry.Complete += e => TransitionTo(PlayerAnimState.Idle);
                     break;
                 case PlayerAnimState.HideIdle:
                 case PlayerAnimState.HideWalk:
