@@ -9,7 +9,7 @@ namespace EnemyAI
     public class SearchingState : ScriptableObject, IEnemyState
     {
         private const float MaxMoveTime = 3f;   // how long we try to move on X
-        private const float ArrivalThreshold = 0.5f;
+        private const float ArrivalThreshold = 1f;
         
         public EnemyStateType StateType => EnemyStateType.Searching;
 
