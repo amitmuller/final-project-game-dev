@@ -160,7 +160,8 @@ namespace Characters.Player
             if (isHiding && currentHidable != null)
             {
                 currentHidable.setOffAllIndicator();
-
+                currentHidable.setPartialIndicator(AtEdge(),GetHideEdge());
+                
                 float clampedX = Mathf.Clamp(transform.position.x,
                                              currentHidable.LeftX,
                                              currentHidable.RightX);

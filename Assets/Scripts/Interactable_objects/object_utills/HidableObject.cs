@@ -110,16 +110,45 @@ namespace Interactable_objects
             indicatorLeft.gameObject.SetActive(false);
             indicatorRight.gameObject.SetActive(false);
         }
+        
+        
 
         public void setIndicator(bool turnOn, HideEdge edge)
         {
             switch (edge)
             {
                 case HideEdge.Left:
+                    iconLeft.gameObject.SetActive(turnOn);
                     indicatorLeft.gameObject.SetActive(turnOn);
                     break;
                 case HideEdge.Right:
+                    iconRight.gameObject.SetActive(turnOn);
                     indicatorRight.gameObject.SetActive(turnOn);
+                    break;
+                case HideEdge.None:
+                    if (indicatorLeft.gameObject.activeSelf)
+                    {
+                        indicatorLeft.gameObject.SetActive(turnOn);
+                    }
+                    if (indicatorRight.gameObject.activeSelf)
+                    {
+                        indicatorRight.gameObject.SetActive(turnOn);
+                    }
+                    break;
+            }
+        }
+        
+        public void setPartialIndicator(bool turnOn, HideEdge edge)
+        {
+            switch (edge)
+            {
+                case HideEdge.Left:
+                    indicatorLeft.gameObject.SetActive(turnOn);
+                    iconLeft.gameObject.SetActive(false);
+                    break;
+                case HideEdge.Right:
+                    indicatorRight.gameObject.SetActive(turnOn);
+                    iconRight.gameObject.SetActive(false);
                     break;
                 case HideEdge.None:
                     if (indicatorLeft.gameObject.activeSelf)
