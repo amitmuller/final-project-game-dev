@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Interactable_objects;
-using MoreMountains.Feedbacks; // for ThrowableObject
+using MoreMountains.Feedbacks;
+using Unity.VisualScripting;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; // for ThrowableObject
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +21,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float checkpointDelay = 1f;
     [SerializeField] private MMF_Player feedbackCheckpoint;
     private int currentCart = 0;
+    
+    [Header("Each Cart’s data")]
+    [SerializeField] public GameObject PauseMenu;
+    [SerializeField] public float timeToOpenScene;
+    private bool inPause = false;
+    private Coroutine openSceneCoroutine;
 
     private void Awake()
     {
@@ -169,4 +178,56 @@ public class GameManager : MonoBehaviour
         }
         _spareThrowableRoots[currentCart] = newSpareList;
     }
+
+    public void onPause(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        if (!inPause)
+        {
+            enterPause();
+        }
+        else
+        {
+            exitPause();
+        }
+    }
+
+    public void enterPause()
+    {
+        inPause = true;
+        PauseMenu.SetActive(true);
+        MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 0f, 0f, true, 50f, true);
+        openSceneCoroutine = StartCoroutine(goToOpenScene());
+    }
+    public void exitPause()
+    {
+        PauseMenu.SetActive(false);
+        inPause = false;
+        if (openSceneCoroutine != null)
+        {
+            StopCoroutine(openSceneCoroutine);
+        }
+        MMTimeScaleEvent.Unfreeze();
+    }
+
+    private IEnumerator goToOpenScene()
+    {
+
+        yield return new WaitForSecondsRealtime(timeToOpenScene);
+        openSceneCoroutine = null;
+        onOpenScene();
+    }
+
+    public void onOpenScene()
+    {
+        exitPause();
+        SceneManager.LoadScene(0);
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public bool getInPause => inPause;
 }

@@ -147,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2006312537281385049, guid: 4cd703194f5384d4399a9e9c96ba9e48, type: 3}
+  m_Sprite: {fileID: 4572944597242155013, guid: 09a56434283fa4a12ab43cec53c29128, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -181,7 +181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5119550457620580084
 Transform:
   m_ObjectHideFlags: 0
@@ -276,6 +276,8 @@ MonoBehaviour:
   ExclamationIcon: {fileID: 5040745081074570052}
   QuestionIcon: {fileID: 8237637187768591071}
   filledQuestionIcon: {fileID: 6835028534080668006}
+  searchFirstTime: 0
+  searchTargetX: 0
   fovYOffset: 9
   fieldOfViewAngle: 120
   cartCollider: {fileID: 0}
@@ -584,7 +586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7589357084998914611, guid: db9712e4f60714e439518e41ebf9b876, type: 3}
+  m_Sprite: {fileID: -2076176380405285805, guid: 09a56434283fa4a12ab43cec53c29128, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -680,6 +682,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5119550457620580084}
     m_Modifications:
+    - target: {fileID: 2852070139477990244, guid: 68befa6e46d864a13bb7dfe8454e3f05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2076176380405285805, guid: 09a56434283fa4a12ab43cec53c29128, type: 3}
     - target: {fileID: 3042489707130809609, guid: 68befa6e46d864a13bb7dfe8454e3f05, type: 3}
       propertyPath: m_Name
       value: EnemyUI
@@ -810,7 +816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8751229518688753735, guid: 68befa6e46d864a13bb7dfe8454e3f05, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.8
+      value: 2.26
       objectReference: {fileID: 0}
     - target: {fileID: 8751229518688753735, guid: 68befa6e46d864a13bb7dfe8454e3f05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

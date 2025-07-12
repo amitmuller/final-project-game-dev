@@ -108,7 +108,7 @@ public class characterMovement : MonoBehaviour
         {
             aimDirection = _input;
         }
-        else if (canMove)
+        else if (canMove && !GameManager.Instance.getInPause)
         { 
             directionX = _input.x;
             rawMoveInput = _input;
