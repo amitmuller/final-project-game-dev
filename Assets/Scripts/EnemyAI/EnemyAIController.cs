@@ -95,7 +95,9 @@ public class EnemyAIController : MonoBehaviour
     private Vector2 _initialPosition;
     private IEnemyState _initialState;
     private bool _returningToStart = false;
-
+    
+    [HideInInspector] public bool searchFirstTime;
+    [HideInInspector] public float searchTargetX;
     
     [Header("FOV Settings")]
     [SerializeField] private float fovYOffset = 6.5f;
