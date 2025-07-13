@@ -334,7 +334,7 @@ TextureImporter:
         x: 0
         y: 52
         width: 555
-        height: 2593
+        height: 3034
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -613,6 +613,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: train parts__0
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 711
+        width: 266
+        height: 2375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed9bf90f9dc24973b22dc6af2f36118
+      internalID: -1322707293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -634,6 +656,7 @@ TextureImporter:
       bridge rope: -8497120748834463189
       bridge silver: -755588260680412360
       inside train ending cart: 4717427995363237879
+      train parts__0: -1322707293
       train parts__11: -4788762693440904979
       train parts__12: -1600641345155204010
       train parts__13: -213123456712370713

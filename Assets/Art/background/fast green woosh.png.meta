@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: db315cceae7f844b2aa4e8c9c2747d0d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6696568557826237000
+    second: fast green woosh_0
+  - first:
+      213: 2643421062562032134
+    second: fast green woosh_1
+  - first:
+      213: -1397435504184093034
+    second: fast green woosh_2
+  - first:
+      213: 4696830878422409214
+    second: fast green woosh_3
+  - first:
+      213: 3280496794658771200
+    second: fast green woosh_4
+  - first:
+      213: -468854936383920414
+    second: fast green woosh_5
+  - first:
+      213: -6647435481283467225
+    second: fast green woosh_6
+  - first:
+      213: -3097132660966439680
+    second: fast green woosh_7
+  - first:
+      213: 2889581839554234546
+    second: fast green woosh_8
+  - first:
+      213: -6716484159505230778
+    second: fast green woosh_9
+  - first:
+      213: -6531741827215138857
+    second: fast green woosh_10
+  - first:
+      213: -1018176489619827724
+    second: fast green woosh_11
+  - first:
+      213: -3197376538955908904
+    second: fast green woosh_12
+  - first:
+      213: -2724915671645248385
+    second: fast green woosh_13
+  - first:
+      213: -1240619494538319503
+    second: fast green woosh_14
+  - first:
+      213: 7086327944135179
+    second: fast green woosh_15
+  - first:
+      213: 831734180006527218
+    second: fast green woosh_16
+  - first:
+      213: 5732579298332970441
+    second: fast green woosh_17
+  - first:
+      213: 7539422083002086054
+    second: fast green woosh_18
+  - first:
+      213: 8831114261469705822
+    second: fast green woosh_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fast green woosh_0
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2204
+        width: 2561
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84268479f9dfeec50800000000000000
+      internalID: 6696568557826237000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_1
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 2247
+        width: 2901
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60aabc173715fa420800000000000000
+      internalID: 2643421062562032134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_2
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 2152
+        width: 415
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 696969810df4b9ce0800000000000000
+      internalID: -1397435504184093034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_3
+      rect:
+        serializedVersion: 2
+        x: 2034
+        y: 1942
+        width: 3058
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff147e8cce7e2140800000000000000
+      internalID: 4696830878422409214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_4
+      rect:
+        serializedVersion: 2
+        x: 5151
+        y: 2030
+        width: 1422
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0019174347aa68d20800000000000000
+      internalID: 3280496794658771200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_5
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1933
+        width: 1264
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6e5a16bea4e79f0800000000000000
+      internalID: -468854936383920414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_6
+      rect:
+        serializedVersion: 2
+        x: 3615
+        y: 1739
+        width: 2507
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72865ce36a09fb3a0800000000000000
+      internalID: -6647435481283467225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_7
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 1449
+        width: 2133
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005c5d01146c405d0800000000000000
+      internalID: -3097132660966439680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_8
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 1264
+        width: 2834
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b8cc089f5bd91820800000000000000
+      internalID: 2889581839554234546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_9
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 876
+        width: 5233
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644172d0e314ac2a0800000000000000
+      internalID: -6716484159505230778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_10
+      rect:
+        serializedVersion: 2
+        x: 5244
+        y: 949
+        width: 1192
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dfd7403a679a55a0800000000000000
+      internalID: -6531741827215138857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_11
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 421
+        width: 2109
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f35e8190e5bed1f0800000000000000
+      internalID: -1018176489619827724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_12
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 656
+        width: 1571
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d87d5e6af2a0a3d0800000000000000
+      internalID: -3197376538955908904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_13
+      rect:
+        serializedVersion: 2
+        x: 4166
+        y: 563
+        width: 1824
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74a0b442a72f2ad0800000000000000
+      internalID: -2724915671645248385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_14
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 308
+        width: 2068
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1796e9e842f68cee0800000000000000
+      internalID: -1240619494538319503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_15
+      rect:
+        serializedVersion: 2
+        x: 2997
+        y: 188
+        width: 1683
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b024fdb4afc291000800000000000000
+      internalID: 7086327944135179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_16
+      rect:
+        serializedVersion: 2
+        x: 5553
+        y: 242
+        width: 957
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f007da74d9ea8b00800000000000000
+      internalID: 831734180006527218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_17
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 184
+        width: 1321
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd05e3df763e8f40800000000000000
+      internalID: 5732579298332970441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_18
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 85
+        width: 1557
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2331d507861a860800000000000000
+      internalID: 7539422083002086054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast green woosh_19
+      rect:
+        serializedVersion: 2
+        x: 4579
+        y: 68
+        width: 1441
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56b9cda1ab6e8a70800000000000000
+      internalID: 8831114261469705822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
