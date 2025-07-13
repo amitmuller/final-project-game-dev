@@ -68,7 +68,7 @@ namespace EnemyAI
             enemy.searchFirstTime = false;
             enemy.searchTimer -= Time.deltaTime;
             enemy.StopMovement();
-            Debug.Log("enemy is searching in place: " + enemy.searchTimer);
+
             // when time’s up, go back to Calm or Alert
             if (enemy.searchTimer <= 0f)
             {

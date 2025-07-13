@@ -37,6 +37,7 @@ public class TailGrabber : MonoBehaviour
     private LineRenderer aimLine;
     private characterAnimation  anim;
     private Transform initialParent;
+    private Coroutine delayedThrowCoroutine;
 
     void Awake()
     {
@@ -57,6 +58,20 @@ public class TailGrabber : MonoBehaviour
 
         if (aimGradient != null)
             aimLine.colorGradient = aimGradient;
+    }
+    private void OnEnable()
+    {
+        GameManager.OnPlayerDead += HandlePlayerDead;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnPlayerDead -= HandlePlayerDead;
+    }
+
+    private void HandlePlayerDead()
+    {
+        ResetGrabber();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -101,7 +116,7 @@ public class TailGrabber : MonoBehaviour
         {
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));
-            StartCoroutine(DelayedThrow(force));
+            delayedThrowCoroutine = StartCoroutine(DelayedThrow(force));
             anim.TransitionTo(PlayerAnimState.TailThrow);
             heldObject.GetComponent<Collider2D>().isTrigger = false;
             isHolding = false;
@@ -142,6 +157,7 @@ public class TailGrabber : MonoBehaviour
             heldObject.isKinematic = false;
             heldObject.AddForce(throwDir * force, ForceMode2D.Impulse);
             heldObject = null;
+            delayedThrowCoroutine = null;
         }
     }
 
@@ -221,6 +237,38 @@ public class TailGrabber : MonoBehaviour
 
         aimLine.positionCount = trajectoryPoints;
         aimLine.SetPositions(points);
+    }
+    
+    /// <summary>
+    /// Immediately cancel any grab or throw in progress
+    /// and reset the grabber to its initial state.
+    /// </summary>
+    public void ResetGrabber()
+    {
+        // 1) stop any pending throw coroutine
+        if (delayedThrowCoroutine != null)
+        {
+            StopCoroutine(delayedThrowCoroutine);
+            delayedThrowCoroutine = null;
+        }
+
+        // 2) stop aiming preview
+        isHolding = false;
+        aimLine.enabled = false;
+
+        // 3) call connector.reset() to destroy the held object safely
+        if (connector.IsConnected)
+        {
+            connector.reset();
+        }
+
+        // 4) clear our local references
+        heldObject = null;
+
+        // 5) hide impact marker
+        if (impactMarkerInstance != null)
+            impactMarkerInstance.SetActive(false);
+        
     }
 
 }

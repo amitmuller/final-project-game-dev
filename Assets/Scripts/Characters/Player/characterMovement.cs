@@ -29,6 +29,7 @@ public class characterMovement : MonoBehaviour
     [SerializeField] private float friction;
 
     private bool canMove;
+    private bool caught = false;
 
     [Header("Calculations")]
     public float directionX;
@@ -92,13 +93,20 @@ public class characterMovement : MonoBehaviour
         }
     }
 
-    private void OnEnable() => canMove = true;
+    private void OnEnable(){
+        
+        canMove = true;
+        GameManager.OnPlayerDead += HandlePlayerDead;
+        GameManager.OnPlayerRevived += HandlePlayerRevived;
+        
+    }
 
     private void OnDisable()
     {
         directionX = 0;
         body.linearVelocity = Vector2.zero;
         canMove = false;
+        GameManager.OnPlayerDead -= HandlePlayerDead;
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -278,28 +286,54 @@ public class characterMovement : MonoBehaviour
             body.linearVelocity = Vector2.zero;
         }
     }
+    
+    private void HandlePlayerDead()
+    {
+        caughtPlayerAnimation();
+    }
+    private void HandlePlayerRevived()
+    {
+        resetPlayerAnimation();
+    }
+
+    private void caughtPlayerAnimation()
+    {
+        caught = true;
+        _animation.TransitionTo(PlayerAnimState.Caught);
+        
+    }
+    private void resetPlayerAnimation()
+    {
+        caught = false;
+        _animation.TransitionTo(PlayerAnimState.Idle);
+        
+    }
+
     // ------------------------ Animations -------------------------- //
     private void AnimationHandler()
     {
-        if (hide.IsHiding())
+        if(!caught)
         {
-            if (Mathf.Abs(body.linearVelocity.x) < 0.01f)
-                _animation.TransitionTo(PlayerAnimState.HideIdle);
+            if (hide.IsHiding())
+            {
+                if (Mathf.Abs(body.linearVelocity.x) < 0.01f)
+                    _animation.TransitionTo(PlayerAnimState.HideIdle);
+                else
+                    _animation.TransitionTo(PlayerAnimState.HideWalk);
+            }
             else
-                _animation.TransitionTo(PlayerAnimState.HideWalk);
+            {
+                if (Mathf.Abs(body.linearVelocity.x) < 0.01f)
+                    _animation.TransitionTo(PlayerAnimState.Idle);
+                else
+                    _animation.TransitionTo(PlayerAnimState.Walk);
+            }
+
+            // then adjust playback speed as before
+            var currentSpeed = Mathf.Abs(body.linearVelocity.x);
+            var t = currentSpeed / maxSpeed;
+            _animation.skeletonAnimation.timeScale = Mathf.Lerp(1f, 1.5f, t);
         }
-        else
-        {
-            if (Mathf.Abs(body.linearVelocity.x) < 0.01f)
-                _animation.TransitionTo(PlayerAnimState.Idle);
-            else
-                _animation.TransitionTo(PlayerAnimState.Walk);
-        }
-    
-        // then adjust playback speed as before
-        var currentSpeed = Mathf.Abs(body.linearVelocity.x);
-        var t = currentSpeed / maxSpeed;  
-        _animation.skeletonAnimation.timeScale = Mathf.Lerp(1f, 1.5f, t);
     }
 
 

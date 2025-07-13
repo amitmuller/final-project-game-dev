@@ -289,6 +289,37 @@ public class AudioManager : MonoBehaviour
 
         return null;
     }
+    
+    private void OnEnable()
+    {
+        GameManager.OnPlayerDead += HandlePlayerDead;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnPlayerDead -= HandlePlayerDead;
+    }
+
+    private void HandlePlayerDead()
+    {
+        StopAllEffects();
+    }
+    
+    
+    /// <summary>
+    /// Immediately stops *all* currently playing one-shot effects.
+    /// </summary>
+    public void StopAllEffects()
+    {
+        for (int i = 0; i < effectSources.Count; i++)
+        {
+            var src = effectSources[i];
+            if (src.isPlaying)
+                src.Stop();
+        }
+        // Optional: reset round-robin index so next PlayEffect starts at the first source again
+        currentEffectIndex = 0;
+    }
 
     public void StopAmbiance()
     {
