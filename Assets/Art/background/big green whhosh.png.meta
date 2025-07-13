@@ -76,9 +76,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -375,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -384,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      big green whhosh_0: 5354444366660502174
+      big green whhosh_1: 9094748552581227107
+      big green whhosh_10: -4475425234708136723
+      big green whhosh_2: -776695787330123065
+      big green whhosh_3: 2778745296539454087
+      big green whhosh_4: 4947810302866518939
+      big green whhosh_5: -3257709355861455600
+      big green whhosh_6: -8428981966934726434
+      big green whhosh_7: 1595889630775715362
+      big green whhosh_8: -4292682679571152129
+      big green whhosh_9: -3371882731498140383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

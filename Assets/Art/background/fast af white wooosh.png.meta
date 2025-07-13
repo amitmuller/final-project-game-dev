@@ -175,9 +175,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -1200,7 +1200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -1209,7 +1209,51 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fast af white wooosh_0: 5006362933829491078
+      fast af white wooosh_1: 5561806202176064573
+      fast af white wooosh_10: 590521051401209650
+      fast af white wooosh_11: 1628351521251000854
+      fast af white wooosh_12: -3857244744068719865
+      fast af white wooosh_13: 1851978357210117308
+      fast af white wooosh_14: 8423966569281293414
+      fast af white wooosh_15: -8352058008983180834
+      fast af white wooosh_16: -5603753109080545035
+      fast af white wooosh_17: 2814525599812712271
+      fast af white wooosh_18: 1839334084020915415
+      fast af white wooosh_19: 7653250126503399545
+      fast af white wooosh_2: -5470677746776806889
+      fast af white wooosh_20: -1166364042347044546
+      fast af white wooosh_21: 8107259153489463115
+      fast af white wooosh_22: 4769077243333561379
+      fast af white wooosh_23: 6221476957080524041
+      fast af white wooosh_24: 8274216210157435948
+      fast af white wooosh_25: -4470074767911904797
+      fast af white wooosh_26: -5188134378538737804
+      fast af white wooosh_27: 4076707644250695559
+      fast af white wooosh_28: -3837244953964002106
+      fast af white wooosh_29: -8971574885375306587
+      fast af white wooosh_3: -5504455130825423748
+      fast af white wooosh_30: 3788995371904996991
+      fast af white wooosh_31: 7017722780792841578
+      fast af white wooosh_32: -1917204211764880195
+      fast af white wooosh_33: -2181282579574853279
+      fast af white wooosh_34: -2463337968173681126
+      fast af white wooosh_35: -6299359576535463545
+      fast af white wooosh_36: 5078494904209667035
+      fast af white wooosh_37: 746474841367834770
+      fast af white wooosh_38: 5629575109191619545
+      fast af white wooosh_39: -6700333859982084358
+      fast af white wooosh_4: 6736436922862216546
+      fast af white wooosh_40: 3141622806007019622
+      fast af white wooosh_41: -3815255022780225451
+      fast af white wooosh_42: -2962770977064635794
+      fast af white wooosh_43: -2116977849664561525
+      fast af white wooosh_5: -3728160749706678786
+      fast af white wooosh_6: 3626383625452560738
+      fast af white wooosh_7: 4848997030664035780
+      fast af white wooosh_8: 8544797379003204233
+      fast af white wooosh_9: -4096118843194504659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -103,9 +103,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -600,7 +600,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -609,7 +609,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fast green woosh_0: 6696568557826237000
+      fast green woosh_1: 2643421062562032134
+      fast green woosh_10: -6531741827215138857
+      fast green woosh_11: -1018176489619827724
+      fast green woosh_12: -3197376538955908904
+      fast green woosh_13: -2724915671645248385
+      fast green woosh_14: -1240619494538319503
+      fast green woosh_15: 7086327944135179
+      fast green woosh_16: 831734180006527218
+      fast green woosh_17: 5732579298332970441
+      fast green woosh_18: 7539422083002086054
+      fast green woosh_19: 8831114261469705822
+      fast green woosh_2: -1397435504184093034
+      fast green woosh_3: 4696830878422409214
+      fast green woosh_4: 3280496794658771200
+      fast green woosh_5: -468854936383920414
+      fast green woosh_6: -6647435481283467225
+      fast green woosh_7: -3097132660966439680
+      fast green woosh_8: 2889581839554234546
+      fast green woosh_9: -6716484159505230778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
