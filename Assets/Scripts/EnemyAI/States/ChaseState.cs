@@ -40,7 +40,6 @@ namespace EnemyAI
             // 1) If player hides, switch immediately
             if (enemy.IsPlayerHiding())
             {
-                Debug.Log("[ChaseState] Player hiding, switching to alert state.");
                 // kill only this transform’s tweens
                 DOTween.Kill(enemy.transform);
                 _dashTween.Kill();
