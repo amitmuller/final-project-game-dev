@@ -3,11 +3,18 @@ using UnityEngine;
 using Spine;
 using Spine.Unity;
 using DG.Tweening;
+using System;
+using System.Collections;
+using static UnityEngine.EventSystems.EventTrigger;
 
 
 namespace EnemyAI {
     [RequireComponent(typeof(SkeletonAnimation))]
     public class EnemyAnimationManager : MonoBehaviour {
+
+        public bool IsDashing = false;
+        private Coroutine _waitForAnimationCoroutine;
+
         [Header("Spine Animation")]
         [Tooltip("Reference to the SkeletonAnimation component")]
         public SkeletonAnimation skeletonAnimation;
@@ -22,6 +29,10 @@ namespace EnemyAI {
         [SerializeField] private string walkAnimName;
         [SerializeField] private string walkSearchAnimName;
         [SerializeField] private string stopInPlaceSearchAnimName;
+
+        [Header("Animation Settings")]
+        [Tooltip("Time in seconds the enemy will stay on the ground after dashing towards the player")]
+        [SerializeField] private float onGroundDuration = 2.0f;
 
         [Header("Collider")]
         [Tooltip("Body collider for all animations")]
@@ -42,6 +53,13 @@ namespace EnemyAI {
         /// Convenience for choosing animation by state name.
         /// </summary>
         public void SetCharacterState(EnemyStateType state, bool isStop = false) {
+            // Reset dashing state, since if the character state changes forcibly, we assume the dash is done.
+            IsDashing = false;
+            if (null != _waitForAnimationCoroutine)
+            {
+                StopCoroutine(_waitForAnimationCoroutine);
+            }
+
             switch (state) {
                 case EnemyStateType.Calm:
                     spineState.SetAnimation(0, walkAnimName, true);
@@ -71,6 +89,9 @@ namespace EnemyAI {
         /// </summary>
         /// <param name="dashDuration">How long the dash lasts (seconds)</param>
         public void PlayDash(float dashDuration = 0.5f) {
+
+            IsDashing = true;
+
             // Play the dash (catch) animation
             var dashEntry = spineState.SetAnimation(0, catchAnimName, false);
             dashEntry.TimeScale = 1.2f;
@@ -91,9 +112,16 @@ namespace EnemyAI {
             seq.Append(bodyCollider.transform.DOLocalRotate(originalColliderEuler, 0.1f));
 
             // Queue follow-up animations
-            spineState.AddAnimation(0, alertSearchAnimName, false, 0);
-            spineState.AddAnimation(0, idleHandoutAnimName,  false, 0);
-            spineState.AddAnimation(0, run2AnimName,          true, 0);
+            spineState.AddAnimation(0, alertSearchAnimName, false, onGroundDuration);
+            TrackEntry track = spineState.AddAnimation(0, idleHandoutAnimName,  false, 0);
+            track.TimeScale = 3.0f; // Speeding up the idle animation as its main purpose is to get the enemy back on its feet
+            _waitForAnimationCoroutine = StartCoroutine(WaitForAnimation(track));
+        }
+
+        private IEnumerator WaitForAnimation(TrackEntry track)
+        {
+            yield return new WaitForSpineAnimationComplete(track);
+            IsDashing = false;
         }
     }
 }
