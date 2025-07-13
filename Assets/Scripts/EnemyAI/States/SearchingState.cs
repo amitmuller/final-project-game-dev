@@ -10,6 +10,7 @@ namespace EnemyAI
     {
         private const float MaxMoveTime = 3f;   // how long we try to move on X
         private const float ArrivalThreshold = 1f;
+        private const float MaxTimeForState = 8f;
         
         public EnemyStateType StateType => EnemyStateType.Searching;
 
@@ -37,7 +38,15 @@ namespace EnemyAI
 
         public void UpdateState(EnemyAIController enemy)
         {
-
+            if (enemy.moveToNoiseTimer > MaxTimeForState)
+            {
+                enemy.isStop = false;
+                if (enemy.prevState == EnemyStateType.Calm)
+                    enemy.ChangeState(enemy.calmState);
+                else
+                    enemy.ChangeState(enemy.alertState);
+            }
+            enemy.moveToNoiseTimer += Time.deltaTime;
             // log every frame so you can watch this flood the console
             var deltaX = Mathf.Abs(enemy.transform.position.x - enemy.searchTargetX);
             
@@ -52,8 +61,6 @@ namespace EnemyAI
             {
                 // move only in X
                 enemy.MoveTowards(new Vector2(enemy.searchTargetX, enemy.patrolY), enemy.searchMoveSpeed);
-
-                enemy.moveToNoiseTimer += Time.deltaTime;
                 Debug.Log("MOVE TO SEARCHING" + enemy.moveToNoiseTimer);
                 return;
             }
