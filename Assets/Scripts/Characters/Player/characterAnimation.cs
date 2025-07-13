@@ -18,7 +18,8 @@ namespace Characters.Player
         Peek,
         TailAim,
         TailPick,
-        TailThrow
+        TailThrow, 
+        Caught, 
     }
 
     [RequireComponent(typeof(SkeletonAnimation))]
@@ -34,12 +35,14 @@ namespace Characters.Player
         public string walkName          = "walking";
         public string hideUpName        = "intoHiding";
         public string hideDownName      = "intoHidingDown";
-        public string hideIdleName      = "walkingHiding";
+        public string hideIdleName      = "idleHiding";
+        public string hidewalkName      = "walkingHiding";
         public string peekName          = "PeekingHeadUp";
         public string tailAimName       = "TailAim";
         public string tailPickName      = "tailPick";
         public string tailThrowName     = "tailThrow";
         public string blinkName         = "blink";
+        public string caughtName     = "caught";
 
         PlayerAnimState _state = PlayerAnimState.Idle;
         [Tooltip("Min/max seconds between blinks")]
@@ -85,6 +88,11 @@ namespace Characters.Player
             var state = skeletonAnimation.state;
             TrackEntry entry = null;
             print(newState);
+            if (newState == PlayerAnimState.Caught)
+            {
+                state.ClearTrack(1);
+                state.ClearTrack(2);
+            }
             switch (newState)
             {
                 // ─── Track 0 (base) ────────────────────────────────────────
@@ -96,18 +104,23 @@ namespace Characters.Player
                     break;
                 case PlayerAnimState.HideEnterUp:
                     entry = state.SetAnimation(0, hideUpName, false);
-                    entry.Complete += e => TransitionTo(PlayerAnimState.Idle);
+                    entry.Complete += e => TransitionTo(PlayerAnimState.HideIdle);
                     break;
                 case PlayerAnimState.HideEnterDown:
                     entry = state.SetAnimation(0, hideDownName, false);
-                    entry.Complete += e => TransitionTo(PlayerAnimState.Idle);
+                    entry.Complete += e => TransitionTo(PlayerAnimState.HideIdle);
                     break;
                 case PlayerAnimState.HideIdle:
-                case PlayerAnimState.HideWalk:
                     entry = state.SetAnimation(0, hideIdleName, true);
+                    break;
+                case PlayerAnimState.HideWalk:
+                    entry = state.SetAnimation(0, hidewalkName, true);
                     break;
                 case PlayerAnimState.Peek:
                     entry = state.SetAnimation(0, peekName, true);
+                    break;
+                case PlayerAnimState.Caught:
+                    entry = state.SetAnimation(0, caughtName, false);
                     break;
 
                 // ─── Track 1 (tail overlay) ─────────────────────────────────
