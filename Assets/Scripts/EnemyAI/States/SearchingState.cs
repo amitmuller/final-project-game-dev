@@ -18,48 +18,45 @@ namespace EnemyAI
         {
             AudioManager.Instance.PlayEffect("enemyConfused");
             
-            // 1) Record the exact spot where the noise happened
+
             enemy.searchTargetX = enemy.lastKnownNoisePosition.x;
             enemy.searchFirstTime = true;
-            // 2) Reset both timers
+
             enemy.moveToNoiseTimer = 0f;
             enemy.searchTimer      = enemy.searchDuration;
+            enemy.isStop = false;
 
-            // 3) Reset UI
             if (enemy.filledQuestionIcon != null)
             {
                 enemy.filledQuestionIcon.fillAmount = 1f;
                 enemy.filledQuestionIcon.gameObject.SetActive(true);
             }
-
-            // 4) Stop any residual motion
+            
             enemy.StopMovement();
         }
 
         public void UpdateState(EnemyAIController enemy)
         {
+            
+            EnemyEnterChaseModeIfNeeded(enemy);
+
             if (enemy.moveToNoiseTimer > MaxTimeForState)
             {
-                enemy.isStop = false;
                 if (enemy.prevState == EnemyStateType.Calm)
                     enemy.ChangeState(enemy.calmState);
                 else
                     enemy.ChangeState(enemy.alertState);
             }
             enemy.moveToNoiseTimer += Time.deltaTime;
-            // log every frame so you can watch this flood the console
             var deltaX = Mathf.Abs(enemy.transform.position.x - enemy.searchTargetX);
             
-            // First: if the player suddenly becomes visible → bail into Chase
-            // (but only after we’ve had our turn moving/timed out)
             var stillMoving = deltaX > ArrivalThreshold && enemy.moveToNoiseTimer < MaxMoveTime;
             
-            if (!stillMoving && EnemyEnterChaseModeIfNeeded(enemy)) return;
-
-            // If we haven’t yet closed to within 0.5 on X and haven’t timed out
             if (stillMoving)
             {
                 // move only in X
+                enemy.isStop = false;
+                enemy.searchFirstTime = true;
                 enemy.MoveTowards(new Vector2(enemy.searchTargetX, enemy.patrolY), enemy.searchMoveSpeed);
                 Debug.Log("MOVE TO SEARCHING" + enemy.moveToNoiseTimer);
                 return;
@@ -67,9 +64,8 @@ namespace EnemyAI
             Debug.Log("enemy sotp: "+ enemy.isStop);
             enemy.isStop = true;
             if (enemy.searchFirstTime) enemy.UpdateAnimation();
+            
             enemy.searchFirstTime = false;
-            // Otherwise: either we’ve arrived or we ran out of move-time.
-            // Stop, and start our “look around” countdown
             enemy.searchTimer -= Time.deltaTime;
             enemy.StopMovement();
             Debug.Log("enemy is searching in place: " + enemy.searchTimer);
