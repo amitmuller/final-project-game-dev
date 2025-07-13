@@ -1,0 +1,24 @@
+mama dino.png
+size:2399,816
+filter:Linear,Linear
+pma:true
+Back Leg
+bounds:1763,409,405,368
+rotate:90
+Body
+bounds:2,157,1303,657
+Bottom Arm
+bounds:1139,28,127,115
+offsets:1,1,129,117
+rotate:90
+Head
+bounds:1307,235,579,454
+offsets:1,1,581,456
+rotate:90
+Tail
+bounds:1307,2,1073,231
+Tail Shadow
+bounds:2,5,1135,150
+Top Arm
+bounds:2133,482,264,332
+offsets:1,29,266,362

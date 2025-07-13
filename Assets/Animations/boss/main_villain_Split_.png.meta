@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 1cf954f2432bd4faaa8a4d2a0ce22521
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7910620931935320254
+    second: main_villain_Split__0
+  - first:
+      213: -6741494573801999979
+    second: main_villain_Split__1
+  - first:
+      213: -7566385437409169021
+    second: main_villain_Split__2
+  - first:
+      213: 886581429406266146
+    second: main_villain_Split__3
+  - first:
+      213: 3115285894794316280
+    second: main_villain_Split__4
+  - first:
+      213: -9048055342362207589
+    second: main_villain_Split__5
+  - first:
+      213: -8038110321201795998
+    second: main_villain_Split__6
+  - first:
+      213: 2357376664993555539
+    second: main_villain_Split__7
+  - first:
+      213: -5409734535677666366
+    second: main_villain_Split__8
+  - first:
+      213: 7338769425224338436
+    second: main_villain_Split__9
+  - first:
+      213: 3826081038316403490
+    second: main_villain_Split__10
+  - first:
+      213: -534120480502844304
+    second: main_villain_Split__11
+  - first:
+      213: 7329082115118311303
+    second: main_villain_Split__12
+  - first:
+      213: -2030513046652859201
+    second: main_villain_Split__13
+  - first:
+      213: 4047585803673313249
+    second: main_villain_Split__14
+  - first:
+      213: 1891157102136606489
+    second: main_villain_Split__15
+  - first:
+      213: 5977412157486321511
+    second: main_villain_Split__16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: main_villain_Split__0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1063
+        width: 1401
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb836c843db28cd60800000000000000
+      internalID: 7910620931935320254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__1
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1060
+        width: 67
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591fe4137666172a0800000000000000
+      internalID: -6741494573801999979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__2
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 903
+        width: 523
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381b989788ccef690800000000000000
+      internalID: -7566385437409169021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__3
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 885
+        width: 176
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223f73cdc15cd4c00800000000000000
+      internalID: 886581429406266146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 1438
+        height: 1057
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9000d0408bb3b20800000000000000
+      internalID: 3115285894794316280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__5
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 2
+        width: 457
+        height: 899
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9adc62da99de6280800000000000000
+      internalID: -9048055342362207589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__6
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 772
+        width: 168
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cad572045e27090800000000000000
+      internalID: -8038110321201795998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__7
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 546
+        width: 191
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3546cbe369517b020800000000000000
+      internalID: 2357376664993555539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__8
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 772
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb15cf0a13cce4b0800000000000000
+      internalID: -5409734535677666366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__9
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 2
+        width: 174
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c8ef6e8eb88d560800000000000000
+      internalID: 7338769425224338436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__10
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 401
+        width: 58
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bf4b2de68f81530800000000000000
+      internalID: 3826081038316403490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__11
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 462
+        width: 91
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074fd5cb04c6698f0800000000000000
+      internalID: -534120480502844304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__12
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 400
+        width: 94
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787ab414a5126b560800000000000000
+      internalID: 7329082115118311303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__13
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 293
+        width: 95
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbcc576642b22d3e0800000000000000
+      internalID: -2030513046652859201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__14
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 293
+        width: 49
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef9cd9e7d9eb2830800000000000000
+      internalID: 4047585803673313249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__15
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 141
+        width: 122
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f3f475d5dbe3a10800000000000000
+      internalID: 1891157102136606489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_villain_Split__16
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 2
+        width: 142
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fc21300b804f250800000000000000
+      internalID: 5977412157486321511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      main_villain_Split__0: 7910620931935320254
+      main_villain_Split__1: -6741494573801999979
+      main_villain_Split__10: 3826081038316403490
+      main_villain_Split__11: -534120480502844304
+      main_villain_Split__12: 7329082115118311303
+      main_villain_Split__13: -2030513046652859201
+      main_villain_Split__14: 4047585803673313249
+      main_villain_Split__15: 1891157102136606489
+      main_villain_Split__16: 5977412157486321511
+      main_villain_Split__2: -7566385437409169021
+      main_villain_Split__3: 886581429406266146
+      main_villain_Split__4: 3115285894794316280
+      main_villain_Split__5: -9048055342362207589
+      main_villain_Split__6: -8038110321201795998
+      main_villain_Split__7: 2357376664993555539
+      main_villain_Split__8: -5409734535677666366
+      main_villain_Split__9: 7338769425224338436
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
