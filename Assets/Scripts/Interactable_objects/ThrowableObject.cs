@@ -14,7 +14,7 @@ public class ThrowableObject : MonoBehaviour
     private Color originalColor;
     public Color highlightColor = Color.yellow;
     public bool IsHeld { get; set; } = false;
-    private ParticleSystem noiseParticles;
+    // private ParticleSystem noiseParticles;
     private Vector3 initialPosition;
     private LayerMask originalLayer;
     private Transform initialParent;
@@ -41,30 +41,31 @@ public class ThrowableObject : MonoBehaviour
         
         // Preload noisePS prefab and instantiate a single ParticleSystem instance to avoid runtime instantiation delay
         var noisePrefab = Resources.Load<ParticleSystem>("Sound ripple");
-        if (noisePrefab != null)
-        {
-            noiseParticles = Instantiate(noisePrefab, transform.position, Quaternion.identity);
-            noiseParticles.gameObject.name = "noisePS_Instance";
-
-            // IMMEDIATELY OVERRIDE ANY PREFAB DELAY:
-            var main = noiseParticles.main;
-            main.startDelay = 0f;
-
-            noiseParticles.Stop();
-            noiseParticles.gameObject.SetActive(false);
-            noiseParticles.Simulate(0.001f, withChildren: true, restart: true);
-            noiseParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-        }
-        else
-        {
-            Debug.LogError("[ThrowableObject] Couldn’t load 'noisePS' prefab from Resources", this);
-        }
+        // if (noisePrefab != null)
+        // {
+        //     noiseParticles = Instantiate(noisePrefab, transform.position, Quaternion.identity);
+        //     noiseParticles.gameObject.name = "noisePS_Instance";
+        //
+        //     // IMMEDIATELY OVERRIDE ANY PREFAB DELAY:
+        //     var main = noiseParticles.main;
+        //     main.startDelay = 0f;
+        //
+        //     noiseParticles.Stop();
+        //     noiseParticles.gameObject.SetActive(false);
+        //     noiseParticles.Simulate(0.001f, withChildren: true, restart: true);
+        //     noiseParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        // }
+        // else
+        // {
+        //     Debug.LogError("[ThrowableObject] Couldn’t load 'noisePS' prefab from Resources", this);
+        // }
 
         // Store initial state
         initialPosition = transform.position;
         originalLayer = gameObject.layer;
         initialParent = transform.parent;
     }
+    
 
     public void Highlight(bool enable)
     {
@@ -83,7 +84,6 @@ public class ThrowableObject : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        print("collided with1"+ collision.gameObject.name);
         
         if (collision.gameObject.CompareTag("lightBolb"))
         {
@@ -98,19 +98,19 @@ public class ThrowableObject : MonoBehaviour
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
-        NoiseManager.RaiseNoise(transform.position);
+        NoiseManager.Instance.RaiseNoise(transform.position);
         AudioManager.Instance.PlayRandomBreak(materialType);
 
         // Play preloaded noise particles without delay
-        if (noiseParticles != null)
-        {
-            noiseParticles.transform.position = transform.position;
-            noiseParticles.gameObject.SetActive(true);
-
-            // ensure no old delay or particles remain
-            noiseParticles.Clear(true);
-            noiseParticles.Play();
-        }
+        // if (noiseParticles != null)
+        // {
+        //     noiseParticles.transform.position = transform.position;
+        //     noiseParticles.gameObject.SetActive(true);
+        //
+        //     // ensure no old delay or particles remain
+        //     noiseParticles.Clear(true);
+        //     noiseParticles.Play();
+        // }
 
         if (_explodable != null)
         {
@@ -130,7 +130,7 @@ public class ThrowableObject : MonoBehaviour
             if (lamp != null)
                 lamp.AlertNearbyEnemies();
 
-            NoiseManager.RaiseNoise(other.transform.position);
+            NoiseManager.Instance.RaiseNoise(other.transform.position);
             Destroy(other.gameObject);
         }
     }
@@ -150,13 +150,27 @@ public class ThrowableObject : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.None;
         rb.isKinematic = true;
 
-        // Reset noise particle state
-        if (noiseParticles != null)
-        {
-            noiseParticles.Stop();
-            noiseParticles.gameObject.SetActive(false);
-        }
+        // // Reset noise particle state
+        // if (noiseParticles != null)
+        // {
+        //     noiseParticles.Stop();
+        //     noiseParticles.gameObject.SetActive(false);
+        // }
     }
+
+    public void turnOfParticles()
+    {
+        print(" particles turned off");
+        // if (noiseParticles != null)
+        // {
+        //     noiseParticles.Clear(true);
+        //     noiseParticles.gameObject.SetActive(false);
+        //     noiseParticles.Stop();
+        //     
+        // }
+    }
+    
+    
     
     public void BreakObject()
     {

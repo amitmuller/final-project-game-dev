@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float timeToOpenScene;
     private bool inPause = false;
     private Coroutine openSceneCoroutine;
+    public static event Action OnPlayerDead;
+    public static event Action OnPlayerRevived;
 
     private void Awake()
     {
@@ -93,12 +96,14 @@ public class GameManager : MonoBehaviour
     {
         if (player == null) return;
         // feedbackCheckpoint.PlayFeedbacks();
+        OnPlayerDead?.Invoke();
         StartCoroutine(CheckpointRoutine(player));
     }
 
     private IEnumerator CheckpointRoutine(Transform player)
     {
         yield return new WaitForSeconds(checkpointDelay);
+        OnPlayerRevived?.Invoke();
         _cameraFade.FadeOutOverTime(true);
         ResetEnemiesInCart();
         ResetThrowables();

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TailConnector : MonoBehaviour
@@ -26,6 +27,13 @@ public class TailConnector : MonoBehaviour
             heldObjectTransform = null;
             heldRigidbody = null;
         }
+    }
+
+    public void reset()
+    {
+        heldObjectTransform.GetComponent<ThrowableObject>().turnOfParticles();
+        Destroy(heldObjectTransform.gameObject);
+        heldObjectTransform = null;
     }
 
     public bool IsConnected => heldObjectTransform != null;
