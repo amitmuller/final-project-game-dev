@@ -6,9 +6,6 @@ public class CameraCheckpoint : MonoBehaviour
     [SerializeField] private CinemachineCamera outgoingCamera;
     [SerializeField] private CinemachineCamera incomingCamera;
 
-    private CinemachineCamera activeCamera;
-    private CinemachineCamera inactiveCamera;
-
     private void Awake()
     {
         if ((null == outgoingCamera) || (null == incomingCamera))
@@ -16,12 +13,9 @@ public class CameraCheckpoint : MonoBehaviour
             Debug.LogError($"Cinemachine cameras are not assigned in the CameraCheckpoint {gameObject.name}");
             return;
         }
-
-        activeCamera = outgoingCamera;
-        inactiveCamera = incomingCamera;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         // Only the player is allowed to trigger the checkpoint
         if (!collision.CompareTag("Player"))
@@ -29,15 +23,19 @@ public class CameraCheckpoint : MonoBehaviour
             return;
         }
 
-        activeCamera.gameObject.SetActive(false);
-        inactiveCamera.gameObject.SetActive(true);
+        if (collision.attachedRigidbody.linearVelocityX > 0)
+        {
+            incomingCamera.gameObject.SetActive(true);
+            outgoingCamera.gameObject.SetActive(false);
 
-        // Set the follow of the new active camera to the player
-        inactiveCamera.Follow = collision.transform;
+            incomingCamera.Follow = collision.transform;
+        }
+        else if (collision.attachedRigidbody.linearVelocityX < 0)
+        {
+            incomingCamera.gameObject.SetActive(false);
+            outgoingCamera.gameObject.SetActive(true);
 
-        // Swap the active and inactive cameras
-        CinemachineCamera temp = activeCamera;
-        activeCamera = inactiveCamera;
-        inactiveCamera = temp;
+            outgoingCamera.Follow = collision.transform;
+        }
     }
 }
