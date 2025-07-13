@@ -1174,6 +1174,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "startScene",
+            "id": "da84a89c-877e-4d09-afe3-74ab09d4116e",
+            "actions": [
+                {
+                    "name": "start",
+                    "type": "Button",
+                    "id": "6cb343f5-d6d8-44b0-a322-2ebbe6df4b92",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "595a667b-cea9-4b5a-a3cc-6e31fdf0403c",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ced7315-33d7-4e09-a01c-6f02428f6efc",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
