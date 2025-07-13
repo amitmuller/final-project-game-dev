@@ -35,9 +35,6 @@ using UnityEngine.SceneManagement;
         /// </summary>
         public void OnPressPlay(InputAction.CallbackContext context)
         {
-            print("OnPressPlay");
-            print(!context.performed);
-            print(sequenceStarted);
             
             if (!context.performed || sequenceStarted)
                 return;
@@ -52,7 +49,7 @@ using UnityEngine.SceneManagement;
         private IEnumerator PlaySequence()
         {
             int totalFrames = frames.Count;
-            for (int i = 1; i < totalFrames; i++)
+            for (int i = 0; i < totalFrames; i++)
             {
                 frames[i].frameObject.SetActive(true);
                 yield return new WaitForSecondsRealtime(frames[i].displayTime);

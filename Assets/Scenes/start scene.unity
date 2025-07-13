@@ -2651,13 +2651,13 @@ MonoBehaviour:
     displayTime: 0
   frames:
   - frameObject: {fileID: 1104111925}
-    displayTime: 3
+    displayTime: 5
   - frameObject: {fileID: 1311503688}
-    displayTime: 5
+    displayTime: 7
   - frameObject: {fileID: 1962671908}
-    displayTime: 2
-  - frameObject: {fileID: 9307588}
     displayTime: 5
+  - frameObject: {fileID: 9307588}
+    displayTime: 7
   - frameObject: {fileID: 1339620372}
     displayTime: 5
 --- !u!114 &1443356968
