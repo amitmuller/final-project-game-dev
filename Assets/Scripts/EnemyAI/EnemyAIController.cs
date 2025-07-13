@@ -281,12 +281,18 @@ public class EnemyAIController : MonoBehaviour
             }
         }
 
-        if (outside)
-        {
-            // revert to Calm state if chasing outside cart
-            ChangeState(calmState);
-            return;
-        }
+        // NOTE: During alert state, the presence of this code caused the enemy to
+        //       go back to calm state instantly regardless of being on alert,
+        //       only because the calculated alert patrol route was out of bounds,
+        //       the clamping you did above somewhat solves this issue, and the presence
+        //       of this code caused these clamps to be completely ignored, since if the clamp
+        //       is activated, then outside=true, and if outside=true, then this code below is engaged
+        //if (outside)
+        //{
+        //    // revert to Calm state if chasing outside cart
+        //    ChangeState(calmState);
+        //    return;
+        //}
 
         Vector2 dir = (targetPosition - (Vector2)transform.position);
         if (dir.sqrMagnitude > 0.0001f) dir.Normalize();
