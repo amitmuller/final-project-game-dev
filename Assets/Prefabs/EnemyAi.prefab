@@ -2043,6 +2043,8 @@ MonoBehaviour:
   currentAnimationName: 
   isStop: 0
   moveToNoiseTimer: 0
+  timerForTurnAround: 0
+  turnInCalm: 0
 --- !u!61 &1658927907042441943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2215,10 +2217,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonAnimation: {fileID: 8403526201572289868}
-  idleAnimName: idle
+  idleAnimations:
+  - idle
+  - idleHandOut
+  - idleSmoking
   alertSearchAnimName: alert
   catchAnimName: catch
-  idleHandoutAnimName: idleHandOut
   runAnimName: run
   run2AnimName: run2
   walkAnimName: walk
