@@ -24,7 +24,7 @@ namespace CalmStateUtils
         /// <summary>
         /// Handles X-axis patrol and index advancement.
         /// </summary>
-        public static bool HandlePatrol(EnemyAIController self, float patrolPointX, float patrolY, float speed, float threshold, float idleTime)
+        public static bool HandlePatrol(EnemyAIController self, float patrolPointX, float patrolY, float speed, float threshold)
         {
             var target = patrolPointX;
             var moveTo = new Vector2(target, patrolY);
@@ -32,8 +32,6 @@ namespace CalmStateUtils
 
             if (Mathf.Abs(self.transform.position.x - moveTo.x) < threshold)
             {
-                self.turnInCalm = true;
-                self.UpdateAnimation();
                 self.StopMovement();
                 return true;
             }

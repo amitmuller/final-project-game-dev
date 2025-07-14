@@ -6,6 +6,7 @@ using static EnemyUtils.EnemyUtils;
 using UnityEngine.Rendering.Universal;
 using static NoiseManager;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 
 namespace EnemyAI
 {
@@ -33,7 +34,24 @@ namespace EnemyAI
             enemy.isConversing          = false;
             enemy.conversationCompleted = false;
             enemy.conversationTimer     = conversationDuration;
-            enemy.turnInCalm         = false;
+
+            if (enemy.patrolPoints == null)
+            {
+                Debug.LogError("Patrol points are not set for enemy: " + enemy.name);
+            }
+
+            // If there are no patrol points, enemy will remain in idle state
+            if (enemy.patrolPoints.Length == 0)
+            {
+                Debug.Log($"Enemy {enemy.name} entering permanent idle");
+                enemy.IsPermanentIdle = true;
+                if (Mathf.Abs(enemy.transform.position.x - enemy.InitialPosition.x) > PatrolThreshold)
+                {
+                    Debug.Log($"Enemy {enemy.name} - Returning to initial position");
+                    enemy.IsReturningToInitial = true;
+                    enemy.IsPermanentIdle = false;
+                }
+            }
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -42,38 +60,42 @@ namespace EnemyAI
             // 1) check first if player in range and not hiding to move into chase mode
             EnemyEnterChaseModeIfNeeded(enemy);
 
-            // 2) Handle idle between patrol waypoints
-            if (enemy.IsIdle)
+            // If the enemy is in permanent idle state and is far from
+            // its initial position, then move the enemy back to its original position
+            //if (enemy.IsPermanentIdle && enemy.IsReturningToInitial)
+            if (enemy.IsReturningToInitial)
             {
-                enemy.IdleTimer += Time.deltaTime;
+                if (HandlePatrol(enemy, enemy.InitialPosition.x, enemy.patrolY, enemy.calmMoveSpeed, PatrolThreshold))
+                {
+                    enemy.IsReturningToInitial = false;
+                    enemy.IsPermanentIdle = true;
+                }
+                return;
+            }
+
+            // 2) Handle idle between patrol waypoints
+            if (enemy.IsPatrolIdle)
+            {
+                enemy.PatrolIdleTimer += Time.deltaTime;
                 // Switching idle off if the timer is up, and there are patrol points set (it means the enemy is not infinitely idling)
-                if ((idleTime < enemy.IdleTimer) && 
+                if ((idleTime < enemy.PatrolIdleTimer) && 
                     (enemy.patrolPoints.Length > 0))
                 {
-                    enemy.IdleTimer = 0f;
-                    enemy.IsIdle = false;
+                    enemy.PatrolIdleTimer = 0f;
+                    enemy.IsPatrolIdle = false;
                 }
                 return;
             }
 
             // 3) Patrol on X-axis, only if there are patrol points set
-            if (enemy.patrolPoints == null)
-            {
-                Debug.LogError("Patrol points are not set for enemy: " + enemy.name);
-            }
 
             // Moving to the next waypoint, if there are any waypoints
             if (enemy.patrolPoints.Length >= 1 && 
                 HandlePatrol(
-                    enemy, enemy.patrolPoints[enemy.currentPatrolIndex], enemy.patrolY, enemy.calmMoveSpeed, PatrolThreshold, idleTime))
+                    enemy, enemy.patrolPoints[enemy.currentPatrolIndex], enemy.patrolY, enemy.calmMoveSpeed, PatrolThreshold))
             {
-                enemy.IsIdle = true;
+                enemy.IsPatrolIdle = true;
                 enemy.currentPatrolIndex = (enemy.currentPatrolIndex + 1) % enemy.patrolPoints.Length;
-            }
-            // If there are no patrol points, enemy will remain in idle state
-            else if (enemy.patrolPoints.Length == 0) 
-            {
-                enemy.IsIdle = true;
             }
         }
 

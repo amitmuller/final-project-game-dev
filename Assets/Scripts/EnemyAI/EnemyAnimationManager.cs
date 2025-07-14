@@ -13,7 +13,8 @@ namespace EnemyAI {
         public SkeletonAnimation skeletonAnimation;
 
         [Header("Animation Names")]
-        [SerializeField] private List<string> idleAnimations = new List<string>();
+        [SerializeField] private List<string> patrolIdleAnimations = new List<string>();
+        [SerializeField] private List<string> permanentIdleAnimations = new List<string>();
         [SerializeField] private string alertSearchAnimName;
         [SerializeField] private string catchAnimName;
         [SerializeField] private string runAnimName;
@@ -37,28 +38,24 @@ namespace EnemyAI {
             originalColliderEuler = bodyCollider.transform.localEulerAngles;
         }
 
-        private string GetRandomIdleAnimation()
+        private string GetRandomAnimation(List<string> animList)
         {
-            return idleAnimations[Random.Range(0, idleAnimations.Count)];
+            return animList[Random.Range(0, animList.Count)];
         }
 
         /// <summary>
         /// Convenience for choosing animation by state name.
         /// </summary>
-        public void SetCharacterState(EnemyStateType state, bool isStop = false, bool turn=false) {
+        public void SetCharacterState(EnemyStateType state, bool isStop = false) {
             switch (state) {
-                case EnemyStateType.Idle:
-                    spineState.SetAnimation(0, GetRandomIdleAnimation(), true);
+                case EnemyStateType.PatrolIdle:
+                    spineState.SetAnimation(0, GetRandomAnimation(patrolIdleAnimations), true);
+                    break;
+                case EnemyStateType.PermanentIdle:
+                    spineState.SetAnimation(0, GetRandomAnimation(permanentIdleAnimations), true);
                     break;
                 case EnemyStateType.Calm:
-                    if (turn)
-                    {
-                        spineState.SetAnimation(0, GetRandomIdleAnimation(), true);
-                    }
-                    else
-                    {
-                        spineState.SetAnimation(0, walkAnimName, true);
-                    }
+                    spineState.SetAnimation(0, walkAnimName, true);                    
                     break;
                 case EnemyStateType.Alert:
                     spineState.SetAnimation(0, walkSearchAnimName, true);
@@ -106,7 +103,7 @@ namespace EnemyAI {
 
             // Queue follow-up animations
             spineState.AddAnimation(0, alertSearchAnimName, false, 0);
-            spineState.AddAnimation(0, GetRandomIdleAnimation(),  false, 0);
+            spineState.AddAnimation(0, GetRandomAnimation(permanentIdleAnimations),  false, 0);
             spineState.AddAnimation(0, run2AnimName,          true, 0);
         }
     }

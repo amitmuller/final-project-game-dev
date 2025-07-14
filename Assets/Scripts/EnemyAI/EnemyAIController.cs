@@ -81,16 +81,16 @@ public class EnemyAIController : MonoBehaviour
 
     // ── Runtime State Tracking 
     public float alertTimer;
-    public float IdleTimer { get; set; } = 0f;
-    private bool _isIdle = false;
-    public bool IsIdle
+    public float PatrolIdleTimer { get; set; } = 0f;
+    private bool _isPatrolIdle = false;
+    public bool IsPatrolIdle
     {
         set
         {
-            _isIdle = value;
+            _isPatrolIdle = value;
             if (value)
             {
-                animationManager.SetCharacterState(EnemyStateType.Idle);
+                animationManager.SetCharacterState(EnemyStateType.PatrolIdle);
             }
             else
             {
@@ -99,9 +99,33 @@ public class EnemyAIController : MonoBehaviour
         }
         get
         {
-            return _isIdle;
+            return _isPatrolIdle;
         }
     }
+
+    private bool _isPermanentIdle = false;
+    public bool IsPermanentIdle
+    {
+        set
+        {
+            _isPermanentIdle = value;
+            if (value)
+            {
+                animationManager.SetCharacterState(EnemyStateType.PermanentIdle);
+            }
+            else
+            {
+                animationManager.SetCharacterState(CurrentStateType);
+            }
+        }
+        get
+        {
+            return _isPermanentIdle;
+        }
+    }
+    public bool IsReturningToInitial { get; set; } = false;
+
+    [SerializeField] private bool isInitialFacingRight = false;
 
     [HideInInspector] public float searchTimer;
     [HideInInspector] public Vector2 lastKnownNoisePosition;
@@ -115,6 +139,13 @@ public class EnemyAIController : MonoBehaviour
     private Vector3 _filledQuestionOriginalScale;
     
     private Vector2 _initialPosition;
+    public Vector2 InitialPosition
+    {
+        get
+        {
+            return _initialPosition;
+        }
+    }
     private IEnemyState _initialState;
     private bool _returningToStart = false;
     
@@ -151,8 +182,6 @@ public class EnemyAIController : MonoBehaviour
     public float moveToNoiseTimer;
     private Renderer _skeletonRenderer;
     SkeletonAnimation _spine;
-    public float timerForTurnAround ;
-    public bool turnInCalm;
 
     void Awake()
     {
@@ -203,7 +232,10 @@ public class EnemyAIController : MonoBehaviour
         CurrentStateType = EnemyStateType.Calm;
         _currentState.EnterState(this);
         // UpdateSpriteColor();
-        UpdateAnimation();
+        if (!IsPermanentIdle || CurrentStateType != EnemyStateType.Calm)
+        { 
+            UpdateAnimation();
+        }
         NoiseManager.OnNoiseRaised += HandleNoise;
     }
     
@@ -233,7 +265,17 @@ public class EnemyAIController : MonoBehaviour
             gameObject.SetActive(false);
         _currentState.UpdateState(this);
         // flip the skeleton only:
-        _spine.Skeleton.FlipX = walkingRight;
+        // If the enemy is in permanent idle and is calm, then
+        // make sure it's oriented towards the initial facing direction
+        // (in case the enemy went to alert mode, and then back to calm)
+        if (IsPermanentIdle && CurrentStateType == EnemyStateType.Calm)
+        {
+            _spine.Skeleton.FlipX = isInitialFacingRight;
+        }
+        else
+        {
+            _spine.Skeleton.FlipX = walkingRight;
+        }
 
         // manually flip *just* the FOV child:
         // _fovMeshObject.transform.localScale = new Vector3(
@@ -256,7 +298,10 @@ public class EnemyAIController : MonoBehaviour
         CurrentStateType = newState.StateType;
         Debug.Log($"[Enemy] {name} -> {CurrentStateType}");
         _currentState.EnterState(this);
-        UpdateAnimation();
+        if (!IsPermanentIdle || CurrentStateType != EnemyStateType.Calm || IsReturningToInitial)
+        {
+            UpdateAnimation();
+        }
         // UpdateSpriteColor();
     }
 
@@ -286,11 +331,22 @@ public class EnemyAIController : MonoBehaviour
     public void UpdateAnimation()
     {
         if (animationManager != null)
-            animationManager.SetCharacterState(CurrentStateType, isStop, turnInCalm);
+            animationManager.SetCharacterState(CurrentStateType, isStop);
     }
 
     public void MoveTowards(Vector2 targetPosition, float speed)
     {
+        if (cartCollider != null)
+        {
+            var b = cartCollider.bounds;
+            if (targetPosition.x < b.min.x || targetPosition.x > b.max.x ||
+                targetPosition.y < b.min.y || targetPosition.y > b.max.y)
+            {
+                // clamp inside
+                targetPosition.x = Mathf.Clamp(targetPosition.x, b.min.x, b.max.x);
+                targetPosition.y = Mathf.Clamp(targetPosition.y, b.min.y, b.max.y);
+            }
+        }
 
         Vector2 dir = (targetPosition - (Vector2)transform.position);
         if (dir.sqrMagnitude > 0.0001f) dir.Normalize();

@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424f075950852453f8e2cacb3181fa6e, type: 3}
   m_Name: CalmStateAsset
   m_EditorClassIdentifier: 
+  noiseDetectionRange: 15
+  conversationProximityRange: 2
+  conversationDuration: 10
+  idleTime: 4
