@@ -107,8 +107,12 @@ public class TailGrabber : MonoBehaviour
             }
             else if (heldObject != null)
             {
-                anim.TransitionTo(PlayerAnimState.TailPick);
-                Grab();
+                var objectToGrab = heldObject;
+                anim.TransitionTo(PlayerAnimState.TailPick, entry =>
+                {
+                    heldObject = objectToGrab;
+                    Grab();
+                });
                 
             }
         }
@@ -126,6 +130,7 @@ public class TailGrabber : MonoBehaviour
 
     public void Grab()
     {
+        print("grab");
         if (heldObject != null && !connector.IsConnected)
         {
             

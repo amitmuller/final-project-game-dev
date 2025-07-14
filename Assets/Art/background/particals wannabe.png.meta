@@ -195,6 +195,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -959,7 +972,41 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      particals wannabe_0: 8929548032062255836
+      particals wannabe_1: -3025022639137910224
+      particals wannabe_10: 8931229291940363783
+      particals wannabe_11: -8923926481393403688
+      particals wannabe_12: -3643508417031874552
+      particals wannabe_13: -2572751846918059024
+      particals wannabe_14: 4423707628636830749
+      particals wannabe_15: 125266339991612942
+      particals wannabe_16: -4696142568284041377
+      particals wannabe_17: -6280300172526207647
+      particals wannabe_18: -2791758679949797089
+      particals wannabe_19: 5106761985129498707
+      particals wannabe_2: -8922676121017267987
+      particals wannabe_20: -3166979931126454519
+      particals wannabe_21: 4603056053218255747
+      particals wannabe_22: 2768804976524882200
+      particals wannabe_23: 9130913878527008711
+      particals wannabe_24: -4124657804698664192
+      particals wannabe_25: 873972609811161946
+      particals wannabe_26: -6660480074280200548
+      particals wannabe_27: 6666044264642710904
+      particals wannabe_28: -4429317202906227486
+      particals wannabe_29: 1847373409186205056
+      particals wannabe_3: 6601609569254986787
+      particals wannabe_30: 5132431593839181459
+      particals wannabe_31: 7970799473766349836
+      particals wannabe_32: 5429878354423048902
+      particals wannabe_33: -8424830434039943259
+      particals wannabe_4: 1087348877729857117
+      particals wannabe_5: -1447662561403320032
+      particals wannabe_6: -7488755282656906038
+      particals wannabe_7: -6343026495744048275
+      particals wannabe_8: -5289267293480909961
+      particals wannabe_9: -1962867516859208636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

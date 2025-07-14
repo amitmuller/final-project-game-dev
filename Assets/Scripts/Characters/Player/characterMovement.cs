@@ -283,7 +283,7 @@ public class characterMovement : MonoBehaviour
             rawMoveInput = Vector2.zero;
             desiredVelocity = Vector2.zero;
             velocity = Vector2.zero;
-            body.linearVelocity = Vector2.zero;
+            // body.linearVelocity = Vector2.zero;
         }
     }
     
@@ -312,7 +312,8 @@ public class characterMovement : MonoBehaviour
     // ------------------------ Animations -------------------------- //
     private void AnimationHandler()
     {
-        if(!caught)
+        print(canMove);
+        if(!caught && canMove)
         {
             if (hide.IsHiding())
             {

@@ -1,9 +1,11 @@
 // Characters/Player/characterAnimation.cs
 
+using System;
 using System.Collections;
 using UnityEngine;
-using Spine.Unity;
 using Spine;
+using Spine.Unity;
+using System.Collections;
 
 namespace Characters.Player
 {
@@ -11,50 +13,59 @@ namespace Characters.Player
     {
         Idle,
         Walk,
-        HideEnterUp,     // back-furniture hide
-        HideEnterDown,   // front-furniture hide
-        HideIdle,        // waiting in hide
-        HideWalk,        // (if you ever allow walking while hidden)
+        HideEnterUp,
+        HideEnterDown,
+        HideIdle,
+        HideWalk,
         Peek,
         TailAim,
         TailPick,
-        TailThrow, 
-        Caught, 
+        TailThrow,
+        Caught,
+        Sleep,
+        SleepyEyes,
+        Awake,
     }
 
     [RequireComponent(typeof(SkeletonAnimation))]
     public class characterAnimation : MonoBehaviour
     {
-        [Header("Spine Clips")]
-        public SkeletonAnimation skeletonAnimation;
-        
-        
-        
-        [Header("Animation Names")]
-        public string idleName          = "idle";
-        public string walkName          = "walking";
-        public string hideUpName        = "intoHiding";
-        public string hideDownName      = "intoHidingDown";
-        public string hideIdleName      = "idleHiding";
-        public string hidewalkName      = "walkingHiding";
-        public string peekName          = "PeekingHeadUp";
-        public string tailAimName       = "TailAim";
-        public string tailPickName      = "tailPick";
-        public string tailThrowName     = "tailThrow";
-        public string blinkName         = "blink";
-        public string caughtName     = "caught";
+        [Header("Spine Clips")] public SkeletonAnimation skeletonAnimation;
 
-        PlayerAnimState _state = PlayerAnimState.Idle;
-        [Tooltip("Min/max seconds between blinks")]
-        public Vector2 blinkInterval = new Vector2(3f, 8f);
+        [Header("Animation Names")] 
+        public string idleName = "idle";
+        public string walkName = "walking";
+        public string hideUpName = "intoHiding";
+        public string hideDownName = "intoHidingDown";
+        public string hideIdleName = "idleHiding";
+        public string hideWalkName = "walkingHiding";
+        public string peekName = "PeekingHeadUp";
+        public string tailAimName = "TailAim";
+        public string tailPickName = "tailPick";
+        public string tailThrowName = "tailThrow";
+        public string blinkName = "blink";
+        public string caughtName = "caught";
+        public string sleepName = "sleeping";
+        public string awakeName = "awake";
+        public string SleepyEyesName = "SleepyEyes";
+        
+
+        private PlayerAnimState _state = PlayerAnimState.Idle;
+        [Tooltip("Min/max seconds between blinks")] public Vector2 blinkInterval = new Vector2(3f, 8f);
 
         void Awake()
         {
             if (skeletonAnimation == null)
                 skeletonAnimation = GetComponent<SkeletonAnimation>();
-            TransitionTo(PlayerAnimState.Idle);
+            // start idle and blinking
+            // TransitionTo(PlayerAnimState.Idle);
+        }
+
+        public void startBlink()
+        {
             StartCoroutine(BlinkLoop());
         }
+
         IEnumerator BlinkLoop()
         {
             if (skeletonAnimation == null)
@@ -66,7 +77,7 @@ namespace Characters.Player
             while (true)
             {
                 // wait a random time
-                float wait = Random.Range(blinkInterval.x, blinkInterval.y);
+                float wait = UnityEngine. Random.Range(blinkInterval.x, blinkInterval.y);
                 yield return new WaitForSeconds(wait);
 
                 // play the blink on track 2 (higher than your other tracks)
@@ -80,22 +91,38 @@ namespace Characters.Player
             }
         }
 
+        /// <summary>
+        /// Simple transition without callback.
+        /// </summary>
         public void TransitionTo(PlayerAnimState newState)
         {
-            if (_state == newState) return;
+            TransitionTo(newState, null);
+        }
+
+        /// <summary>
+        /// Transition to a new state and optionally run a callback when the clip completes.
+        /// </summary>
+        public TrackEntry TransitionTo(PlayerAnimState newState, Spine.AnimationState.TrackEntryDelegate onComplete)
+        {
+            // avoid re-transition
+            if (_state == newState) return null;
             _state = newState;
 
             var state = skeletonAnimation.state;
             TrackEntry entry = null;
-            print(newState);
-            if (newState == PlayerAnimState.Caught)
+            
+            print(newState.ToString());
+
+            // clear overlays if caught
+            if (newState == PlayerAnimState.Caught || newState == PlayerAnimState.Sleep || 
+                newState == PlayerAnimState.SleepyEyes)
             {
                 state.ClearTrack(1);
                 state.ClearTrack(2);
             }
+
             switch (newState)
             {
-                // ─── Track 0 (base) ────────────────────────────────────────
                 case PlayerAnimState.Idle:
                     entry = state.SetAnimation(0, idleName, true);
                     break;
@@ -114,7 +141,7 @@ namespace Characters.Player
                     entry = state.SetAnimation(0, hideIdleName, true);
                     break;
                 case PlayerAnimState.HideWalk:
-                    entry = state.SetAnimation(0, hidewalkName, true);
+                    entry = state.SetAnimation(0, hideWalkName, true);
                     break;
                 case PlayerAnimState.Peek:
                     entry = state.SetAnimation(0, peekName, true);
@@ -122,10 +149,20 @@ namespace Characters.Player
                 case PlayerAnimState.Caught:
                     entry = state.SetAnimation(0, caughtName, false);
                     break;
-
-                // ─── Track 1 (tail overlay) ─────────────────────────────────
+                case PlayerAnimState.Sleep:
+                    entry = state.SetAnimation(0, sleepName, true);
+                    break;
+                case PlayerAnimState.Awake:
+                    entry = state.SetAnimation(0, awakeName, false);
+                    entry.Complete += e => TransitionTo(PlayerAnimState.Idle);
+                    break;
+                case PlayerAnimState.SleepyEyes:
+                    entry = state.SetAnimation(0, SleepyEyesName, false);
+                    entry.Complete += e => TransitionTo(PlayerAnimState.Sleep);
+                    break;
                 case PlayerAnimState.TailAim:
                     entry = state.SetAnimation(1, tailAimName, true);
+                    entry.Complete += e => state.SetEmptyAnimation(1, 0.1f);
                     break;
                 case PlayerAnimState.TailPick:
                     entry = state.SetAnimation(1, tailPickName, false);
@@ -133,18 +170,21 @@ namespace Characters.Player
                     break;
                 case PlayerAnimState.TailThrow:
                     entry = state.SetAnimation(1, tailThrowName, false);
-                    entry.Complete += e =>
-                    {
-                        state.SetEmptyAnimation(1, 0.1f);
-                        TransitionTo(PlayerAnimState.Idle);
-                    };
+                    entry.Complete += e => state.SetEmptyAnimation(1, 0.1f);
                     break;
-                
             }
 
-            // ensure a non-zero time scale
-            if (entry != null && entry.TimeScale == 0f)
-                entry.TimeScale = 1f;
+            if (entry != null)
+            {
+                if (entry.TimeScale == 0f)
+                    entry.TimeScale = 1f;
+
+                // external callback
+                if (onComplete != null)
+                    entry.Complete += onComplete;
+            }
+
+            return entry;
         }
     }
 }
