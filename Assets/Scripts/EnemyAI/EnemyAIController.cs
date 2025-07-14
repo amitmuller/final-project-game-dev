@@ -104,6 +104,7 @@ public class EnemyAIController : MonoBehaviour
     private GameObject _fovMeshObject;
     private Vector3 _fovOriginalLocalScale;
     [SerializeField] private float fieldOfViewAngle = 120f;
+    [SerializeField] private Transform FovParent;
     
     
     [Header("Cart Settings")]
@@ -211,11 +212,11 @@ public class EnemyAIController : MonoBehaviour
         _spine.Skeleton.FlipX = walkingRight;
 
         // manually flip *just* the FOV child:
-        _fovMeshObject.transform.localScale = new Vector3(
-            _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
-            _fovOriginalLocalScale.y,
-            _fovOriginalLocalScale.z
-        );
+        // _fovMeshObject.transform.localScale = new Vector3(
+        //     _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
+        //     _fovOriginalLocalScale.y,
+        //     _fovOriginalLocalScale.z
+        // );
     }
     
 
@@ -428,8 +429,8 @@ public class EnemyAIController : MonoBehaviour
     private void CreateFOVMesh()
     {
         _fovMeshObject = new GameObject("FOVMesh");
-        _fovMeshObject.transform.SetParent(transform);
-        _fovMeshObject.transform.localPosition = new Vector3(0f, fovYOffset, 0f);
+        _fovMeshObject.transform.SetParent(FovParent);
+        _fovMeshObject.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         MeshFilter meshFilter = _fovMeshObject.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = _fovMeshObject.AddComponent<MeshRenderer>();
@@ -492,6 +493,11 @@ public class EnemyAIController : MonoBehaviour
             colliderPoints[i] = vertices[i];
         }
         polyCollider.SetPath(0, colliderPoints);
+        _fovMeshObject.transform.localScale = new Vector3(
+            _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
+            _fovOriginalLocalScale.y,
+            _fovOriginalLocalScale.z
+        );
     }
     
     /// <summary>
