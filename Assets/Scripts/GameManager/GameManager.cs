@@ -1,6 +1,12 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Interactable_objects;   // for ThrowableObject
+using Interactable_objects;
+using MoreMountains.Feedbacks;
+using Unity.VisualScripting;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; // for ThrowableObject
 
 public class GameManager : MonoBehaviour
 {
@@ -12,9 +18,18 @@ public class GameManager : MonoBehaviour
     // Spare templates (_Spare) per cart
     private List<List<GameObject>> _spareThrowableRoots = new List<List<GameObject>>();
     
-    [SerializeField] private NoiseUIManager _noiseUIManager;
     [SerializeField] private CameraFade _cameraFade;
+    [SerializeField] private float checkpointDelay = 1f;
+    [SerializeField] private MMF_Player feedbackCheckpoint;
     private int currentCart = 0;
+    
+    [Header("Each Cart’s data")]
+    [SerializeField] public GameObject PauseMenu;
+    [SerializeField] public float timeToOpenScene;
+    private bool inPause = false;
+    private Coroutine openSceneCoroutine;
+    public static event Action OnPlayerDead;
+    public static event Action OnPlayerRevived;
 
     private void Awake()
     {
@@ -80,13 +95,21 @@ public class GameManager : MonoBehaviour
     public void checkpoint(Transform player)
     {
         if (player == null) return;
+        // feedbackCheckpoint.PlayFeedbacks();
+        OnPlayerDead?.Invoke();
+        StartCoroutine(CheckpointRoutine(player));
+    }
+
+    private IEnumerator CheckpointRoutine(Transform player)
+    {
+        yield return new WaitForSeconds(checkpointDelay);
+        OnPlayerRevived?.Invoke();
         _cameraFade.FadeOutOverTime(true);
-        NoiseUIManager.Instance?.reset();
         ResetEnemiesInCart();
         ResetThrowables();
-        _noiseUIManager.reset();
         player.position = carts[currentCart].checkpointPosition;
     }
+    
 
     private void ActivateEnemiesInCart(CartData cart)
     {
@@ -160,4 +183,56 @@ public class GameManager : MonoBehaviour
         }
         _spareThrowableRoots[currentCart] = newSpareList;
     }
+
+    public void onPause(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        if (!inPause)
+        {
+            enterPause();
+        }
+        else
+        {
+            exitPause();
+        }
+    }
+
+    public void enterPause()
+    {
+        inPause = true;
+        PauseMenu.SetActive(true);
+        MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 0f, 0f, true, 50f, true);
+        openSceneCoroutine = StartCoroutine(goToOpenScene());
+    }
+    public void exitPause()
+    {
+        PauseMenu.SetActive(false);
+        inPause = false;
+        if (openSceneCoroutine != null)
+        {
+            StopCoroutine(openSceneCoroutine);
+        }
+        MMTimeScaleEvent.Unfreeze();
+    }
+
+    private IEnumerator goToOpenScene()
+    {
+
+        yield return new WaitForSecondsRealtime(timeToOpenScene);
+        openSceneCoroutine = null;
+        onOpenScene();
+    }
+
+    public void onOpenScene()
+    {
+        exitPause();
+        SceneManager.LoadScene(0);
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public bool getInPause => inPause;
 }

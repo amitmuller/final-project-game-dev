@@ -91,7 +91,7 @@ public class NoiseUIManager : MonoBehaviour
         // Trigger noise event if over threshold
         if (currentNoise >= noiseThreshold && noiseTimer <= 0f && !player.IsHiding())
         {
-            NoiseManager.RaiseNoise(player.transform.position); 
+            NoiseManager.Instance.RaiseNoise(player.transform.position); 
             burst.Play();
             noiseTimer = noiseCooldown;
         }

@@ -14,6 +14,11 @@ public class CameraFade : MonoBehaviour
 
     public float Duration => duration;
 
+    private void Awake()
+    {
+        fade.gameObject.SetActive(true);
+    }
+
     public void FadeOutOverTime(bool reverse = false)
     {
         if (!fade) return;
@@ -74,5 +79,29 @@ public class CameraFade : MonoBehaviour
 
         fade.color = toColor;
         _fadeOutCoroutine = null;
+    }
+    
+    void Update()
+    {
+        // F1: normal fade out
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            FadeOutOverTime();
+            Debug.Log("Cheat: FadeOutOverTime() triggered");
+        }
+
+        // F2: fade back in (reverse)
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            FadeOutOverTime(true);
+            Debug.Log("Cheat: FadeOutOverTime(reverse) triggered");
+        }
+
+        // F3: fade out then back in
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            FadeOutAndIn();
+            Debug.Log("Cheat: FadeOutAndIn() triggered");
+        }
     }
 }

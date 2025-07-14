@@ -66,7 +66,7 @@ namespace Interactable_objects
 
             if (stuck && other.CompareTag("Player"))
             {
-                NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
+                // NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
             }
             
         }
@@ -93,6 +93,15 @@ namespace Interactable_objects
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.bodyType = RigidbodyType2D.Static; // Freeze in place
+            var myRenderer = GetComponent<MeshRenderer>();
+            if (transform.position.y<-3)
+            {
+                myRenderer.sortingOrder= 12;
+            }
+            else 
+            {
+                myRenderer.sortingOrder = 10;
+            }
         }
     
 

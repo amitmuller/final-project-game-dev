@@ -11,7 +11,21 @@ namespace Interactable_objects
         [Header("Rendering")]
         [SerializeField] private HideLayer hideLayer = HideLayer.Back;
         public HideLayer Layer => hideLayer;
-        private GameObject indicatorInstance;
+        // private GameObject indicatorInstance;
+        [SerializeField] private Transform indicatorRight;
+        [SerializeField] private Transform indicatorLeft;
+        
+        [SerializeField] private Transform iconRight;
+        [SerializeField] private Transform iconLeft;
+        
+        [Header("Indicator Sorting (layer/order)")]
+        [Tooltip("Sorting Order when hiding behind (back) furniture")]
+        [SerializeField] private int indicatorBackOrder  = 6;
+        [Tooltip("Sorting Order when hiding in front of (front) furniture")]
+        [SerializeField] private int indicatorFrontOrder = 40;
+        
+        
+        
 
         [Header("Hide boundaries")]
         public float LeftX;
@@ -26,34 +40,31 @@ namespace Interactable_objects
             LeftX = bounds.min.x;
             RightX = bounds.max.x;
             TopY = bounds.max.y;
-            var prefab = Resources.Load<GameObject>("hideIcon");
-            if (prefab)
+            
+            Transform oldParent = iconRight.parent;
+            iconRight.transform.parent = null;
+            iconRight.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            iconRight.transform.parent = oldParent;
+            
+            Transform oldParent2 = iconLeft.parent;
+            iconLeft.transform.parent = null;
+            iconLeft.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            iconLeft.transform.parent = oldParent2;
+            
+            if (hideLayer == HideLayer.Front)
             {
-                indicatorInstance = Instantiate(prefab);
-                indicatorInstance.transform.localPosition = new Vector3((LeftX + RightX)/2,
-                    TopY +0.5f, 0f);
-
-// // Reset transform BEFORE parenting
-//                 indicatorInstance.transform.localScale = Vector3.one;
-//                 indicatorInstance.transform.rotation = Quaternion.identity;
-//
-// // Parent safely: this avoids inheriting world scale
-//                 indicatorInstance.transform.SetParent(transform, worldPositionStays: false);
-//
-// // Set final local position relative to parent
-//                 indicatorInstance.transform.localPosition = new Vector3(0f, 1f, 0f);
-//                 indicatorInstance.transform.localRotation = Quaternion.identity;
-//                 indicatorInstance.transform.localScale = Vector3.one; // defensive second call
-
-
+                iconRight.GetComponent<SpriteRenderer>().sortingOrder = indicatorFrontOrder;  
+                iconLeft.GetComponent<SpriteRenderer>().sortingOrder = indicatorFrontOrder;
             }
             else
             {
-                Debug.LogError("Couldn't load hideIcon prefab from Resources", this);
+                iconRight.GetComponent<SpriteRenderer>().sortingOrder = indicatorBackOrder; 
+                iconLeft.GetComponent<SpriteRenderer>().sortingOrder = indicatorBackOrder;
             }
-            indicatorInstance.SetActive(false);
-        }
 
+            setOffAllIndicator();
+
+        }
         
         
 
@@ -90,14 +101,66 @@ namespace Interactable_objects
             if (ph && !ph.IsHiding())
             {
                 ph.SetNearbyHidable(null);
-                indicatorInstance.SetActive(false);
+                setOffAllIndicator();
             }
         }
-
-        public void setIndicator(bool turnOn)
+        
+        public void setOffAllIndicator()
         {
-            
-            indicatorInstance.SetActive(turnOn);
+            indicatorLeft.gameObject.SetActive(false);
+            indicatorRight.gameObject.SetActive(false);
+        }
+        
+        
+
+        public void setIndicator(bool turnOn, HideEdge edge)
+        {
+            switch (edge)
+            {
+                case HideEdge.Left:
+                    iconLeft.gameObject.SetActive(turnOn);
+                    indicatorLeft.gameObject.SetActive(turnOn);
+                    break;
+                case HideEdge.Right:
+                    iconRight.gameObject.SetActive(turnOn);
+                    indicatorRight.gameObject.SetActive(turnOn);
+                    break;
+                case HideEdge.None:
+                    if (indicatorLeft.gameObject.activeSelf)
+                    {
+                        indicatorLeft.gameObject.SetActive(turnOn);
+                    }
+                    if (indicatorRight.gameObject.activeSelf)
+                    {
+                        indicatorRight.gameObject.SetActive(turnOn);
+                    }
+                    break;
+            }
+        }
+        
+        public void setPartialIndicator(bool turnOn, HideEdge edge)
+        {
+            switch (edge)
+            {
+                case HideEdge.Left:
+                    indicatorLeft.gameObject.SetActive(turnOn);
+                    iconLeft.gameObject.SetActive(false);
+                    break;
+                case HideEdge.Right:
+                    indicatorRight.gameObject.SetActive(turnOn);
+                    iconRight.gameObject.SetActive(false);
+                    break;
+                case HideEdge.None:
+                    if (indicatorLeft.gameObject.activeSelf)
+                    {
+                        indicatorLeft.gameObject.SetActive(turnOn);
+                    }
+                    if (indicatorRight.gameObject.activeSelf)
+                    {
+                        indicatorRight.gameObject.SetActive(turnOn);
+                    }
+                    break;
+            }
         }
     }
 }

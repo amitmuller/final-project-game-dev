@@ -31,7 +31,7 @@ namespace Interactable_objects
 
             if (stuck && other.CompareTag("Player"))
             {
-                NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
+                // NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
             }
             
         }

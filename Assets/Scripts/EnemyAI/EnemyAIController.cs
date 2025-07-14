@@ -117,13 +117,16 @@ public class EnemyAIController : MonoBehaviour
     private Vector2 _initialPosition;
     private IEnemyState _initialState;
     private bool _returningToStart = false;
-
+    
+    [HideInInspector] public bool searchFirstTime;
+    [HideInInspector] public float searchTargetX;
     
     [Header("FOV Settings")]
     [SerializeField] private float fovYOffset = 6.5f;
     private GameObject _fovMeshObject;
     private Vector3 _fovOriginalLocalScale;
     [SerializeField] private float fieldOfViewAngle = 120f;
+    [SerializeField] private Transform FovParent;
     
     
     [Header("Cart Settings")]
@@ -148,6 +151,8 @@ public class EnemyAIController : MonoBehaviour
     public float moveToNoiseTimer;
     private Renderer _skeletonRenderer;
     SkeletonAnimation _spine;
+    public float timerForTurnAround ;
+    public bool turnInCalm;
 
     void Awake()
     {
@@ -231,11 +236,11 @@ public class EnemyAIController : MonoBehaviour
         _spine.Skeleton.FlipX = walkingRight;
 
         // manually flip *just* the FOV child:
-        _fovMeshObject.transform.localScale = new Vector3(
-            _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
-            _fovOriginalLocalScale.y,
-            _fovOriginalLocalScale.z
-        );
+        // _fovMeshObject.transform.localScale = new Vector3(
+        //     _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
+        //     _fovOriginalLocalScale.y,
+        //     _fovOriginalLocalScale.z
+        // );
     }
     
 
@@ -281,32 +286,11 @@ public class EnemyAIController : MonoBehaviour
     public void UpdateAnimation()
     {
         if (animationManager != null)
-            animationManager.SetCharacterState(CurrentStateType, isStop);
+            animationManager.SetCharacterState(CurrentStateType, isStop, turnInCalm);
     }
 
     public void MoveTowards(Vector2 targetPosition, float speed)
     {
-        bool outside = false;
-        if (cartCollider != null)
-        {
-            var b = cartCollider.bounds;
-            if (targetPosition.x < b.min.x || targetPosition.x > b.max.x ||
-                targetPosition.y < b.min.y || targetPosition.y > b.max.y)
-            {
-                // outside cart
-                outside = true;
-                // clamp inside
-                targetPosition.x = Mathf.Clamp(targetPosition.x, b.min.x, b.max.x);
-                targetPosition.y = Mathf.Clamp(targetPosition.y, b.min.y, b.max.y);
-            }
-        }
-
-        if (outside)
-        {
-            // revert to Calm state if chasing outside cart
-            ChangeState(calmState);
-            return;
-        }
 
         Vector2 dir = (targetPosition - (Vector2)transform.position);
         if (dir.sqrMagnitude > 0.0001f) dir.Normalize();
@@ -448,8 +432,8 @@ public class EnemyAIController : MonoBehaviour
     private void CreateFOVMesh()
     {
         _fovMeshObject = new GameObject("FOVMesh");
-        _fovMeshObject.transform.SetParent(transform);
-        _fovMeshObject.transform.localPosition = new Vector3(0f, fovYOffset, 0f);
+        _fovMeshObject.transform.SetParent(FovParent);
+        _fovMeshObject.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         MeshFilter meshFilter = _fovMeshObject.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = _fovMeshObject.AddComponent<MeshRenderer>();
@@ -458,8 +442,8 @@ public class EnemyAIController : MonoBehaviour
         Color newColor = meshRenderer.material.color;
         newColor.a = 0.3f; // for example, 30% visible
         meshRenderer.material.color = newColor;
-        _fovMeshObject.GetComponent<Renderer>().sortingLayerName = "Player";
-        _fovMeshObject.GetComponent<Renderer>().sortingOrder =10;
+        _fovMeshObject.GetComponent<Renderer>().sortingLayerName = GetComponent<Renderer>().sortingLayerName;
+        _fovMeshObject.GetComponent<Renderer>().sortingOrder = GetComponent<Renderer>().sortingOrder-1;
         _fovOriginalLocalScale = _fovMeshObject.transform.localScale;
         PolygonCollider2D polyCollider = _fovMeshObject.AddComponent<PolygonCollider2D>();
         _fovMeshObject.AddComponent<EnemyFOVTrigger>();
@@ -512,6 +496,11 @@ public class EnemyAIController : MonoBehaviour
             colliderPoints[i] = vertices[i];
         }
         polyCollider.SetPath(0, colliderPoints);
+        _fovMeshObject.transform.localScale = new Vector3(
+            _fovOriginalLocalScale.x * (walkingRight ? 1f : -1f),
+            _fovOriginalLocalScale.y,
+            _fovOriginalLocalScale.z
+        );
     }
     
     /// <summary>
@@ -536,6 +525,7 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void SetSortingOrder(int order)
     {
+        /*
         Debug.Log("SetSortingOrder: " + order);
         _skeletonRenderer.sortingOrder= order;
 
@@ -546,6 +536,7 @@ public class EnemyAIController : MonoBehaviour
         {
             sortingEffect.gameObject.SetActive(true);
         }
+        */
     }
     
     /// <summary>

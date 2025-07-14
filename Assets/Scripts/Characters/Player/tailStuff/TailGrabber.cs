@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(LineRenderer))]
+[RequireComponent(typeof(TailConnector))]
 public class TailGrabber : MonoBehaviour
 {
     private Rigidbody2D heldObject = null;
@@ -31,18 +32,24 @@ public class TailGrabber : MonoBehaviour
     [Header("Impact Marker")]
     [SerializeField] private GameObject impactMarkerPrefab;
     private GameObject impactMarkerInstance;
+    
 
     private LineRenderer aimLine;
+    private characterAnimation  anim;
+    private Transform initialParent;
+    private Coroutine delayedThrowCoroutine;
 
     void Awake()
     {
         connector = GetComponent<TailConnector>();
+        anim      = GetComponentInParent<characterAnimation>();
+        initialParent = transform.parent;
         if (impactMarkerPrefab != null)
         {
             impactMarkerInstance = Instantiate(impactMarkerPrefab);
             impactMarkerInstance.SetActive(false);
         }
-
+        
         aimLine = GetComponent<LineRenderer>();
         aimLine.positionCount = 2;
         aimLine.enabled = false;
@@ -51,6 +58,20 @@ public class TailGrabber : MonoBehaviour
 
         if (aimGradient != null)
             aimLine.colorGradient = aimGradient;
+    }
+    private void OnEnable()
+    {
+        GameManager.OnPlayerDead += HandlePlayerDead;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnPlayerDead -= HandlePlayerDead;
+    }
+
+    private void HandlePlayerDead()
+    {
+        ResetGrabber();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -81,17 +102,26 @@ public class TailGrabber : MonoBehaviour
                 holdStartTime = Time.time;
                 isHolding = true;
                 aimLine.enabled = true;
+                // transform.parent = 
+                anim.TransitionTo(PlayerAnimState.TailAim);
             }
             else if (heldObject != null)
             {
-                Grab();
+                var objectToGrab = heldObject;
+                anim.TransitionTo(PlayerAnimState.TailPick, entry =>
+                {
+                    heldObject = objectToGrab;
+                    Grab();
+                });
+                
             }
         }
         else if (context.canceled && isHolding)
         {
             float chargeTime = Time.time - holdStartTime;
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, Mathf.Clamp01(chargeTime / maxChargeTime));
-            StartCoroutine(DelayedThrow(force));
+            delayedThrowCoroutine = StartCoroutine(DelayedThrow(force));
+            anim.TransitionTo(PlayerAnimState.TailThrow);
             heldObject.GetComponent<Collider2D>().isTrigger = false;
             isHolding = false;
             aimLine.enabled = false;
@@ -100,14 +130,16 @@ public class TailGrabber : MonoBehaviour
 
     public void Grab()
     {
+        print("grab");
         if (heldObject != null && !connector.IsConnected)
         {
+            
             connector.Attach(heldObject);
             heldObject.GetComponent<ThrowableObject>()?.GrabObject();
             var playerRenderer = GetComponentInParent<Renderer>();
             
             var objRenderer = heldObject.GetComponent<Renderer>();
-            if (playerRenderer != null && objRenderer != null && playerHide.IsHiding())
+            if (playerRenderer != null && objRenderer != null)
             {
 
                 playerHide.UpdateHeldObjectSorting();
@@ -130,6 +162,7 @@ public class TailGrabber : MonoBehaviour
             heldObject.isKinematic = false;
             heldObject.AddForce(throwDir * force, ForceMode2D.Impulse);
             heldObject = null;
+            delayedThrowCoroutine = null;
         }
     }
 
@@ -158,8 +191,9 @@ public class TailGrabber : MonoBehaviour
         Vector2 gravity = Physics2D.gravity;
 
         Vector3[] points = new Vector3[trajectoryPoints];
-        Debug.Log(heldObject+ "heldObject");
+
         Vector3 startPos = heldObject.transform.position;
+        aimLine.sortingOrder     =   GetHeldObjectRenderer().sortingOrder;
 
         points[0] = startPos;
 
@@ -208,6 +242,38 @@ public class TailGrabber : MonoBehaviour
 
         aimLine.positionCount = trajectoryPoints;
         aimLine.SetPositions(points);
+    }
+    
+    /// <summary>
+    /// Immediately cancel any grab or throw in progress
+    /// and reset the grabber to its initial state.
+    /// </summary>
+    public void ResetGrabber()
+    {
+        // 1) stop any pending throw coroutine
+        if (delayedThrowCoroutine != null)
+        {
+            StopCoroutine(delayedThrowCoroutine);
+            delayedThrowCoroutine = null;
+        }
+
+        // 2) stop aiming preview
+        isHolding = false;
+        aimLine.enabled = false;
+
+        // 3) call connector.reset() to destroy the held object safely
+        if (connector.IsConnected)
+        {
+            connector.reset();
+        }
+
+        // 4) clear our local references
+        heldObject = null;
+
+        // 5) hide impact marker
+        if (impactMarkerInstance != null)
+            impactMarkerInstance.SetActive(false);
+        
     }
 
 }

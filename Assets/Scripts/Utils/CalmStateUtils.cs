@@ -8,6 +8,8 @@ namespace CalmStateUtils
 {
     public static class CalmStateUtils
     {
+
+        private const float turnTimer = 2f;
         private static bool AllEnemiesNearby(EnemyAIController self, float range)
         {
             return EnemyAIController.AllEnemies
@@ -30,6 +32,8 @@ namespace CalmStateUtils
 
             if (Mathf.Abs(self.transform.position.x - moveTo.x) < threshold)
             {
+                self.turnInCalm = true;
+                self.UpdateAnimation();
                 self.StopMovement();
                 return true;
             }

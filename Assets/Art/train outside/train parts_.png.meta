@@ -1,0 +1,735 @@
+fileFormatVersion: 2
+guid: dc647af49f39f43bbacfdc190ee2f4d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4717427995363237879
+    second: train parts__0
+  - first:
+      213: 3540891152658330457
+    second: train parts__1
+  - first:
+      213: 2864932598221241214
+    second: train parts__2
+  - first:
+      213: 3840313290787963637
+    second: train parts__3
+  - first:
+      213: -755588260680412360
+    second: train parts__4
+  - first:
+      213: 2187294648611405634
+    second: train parts__5
+  - first:
+      213: -8497120748834463189
+    second: train parts__6
+  - first:
+      213: -2941021422753406902
+    second: train parts__7
+  - first:
+      213: -3179956182200352875
+    second: train parts__8
+  - first:
+      213: -3722410996984820000
+    second: train parts__9
+  - first:
+      213: 7091467078590063180
+    second: train parts__10
+  - first:
+      213: -4788762693440904979
+    second: train parts__11
+  - first:
+      213: -1600641345155204010
+    second: train parts__12
+  - first:
+      213: -213123456712370713
+    second: train parts__13
+  - first:
+      213: 2595045278909699258
+    second: train parts__14
+  - first:
+      213: -5235566334069177986
+    second: train parts__15
+  - first:
+      213: -1264480229577969286
+    second: train parts__16
+  - first:
+      213: 2548121363231005715
+    second: train parts__17
+  - first:
+      213: 3669684579174492079
+    second: train parts__18
+  - first:
+      213: 8201615630685757808
+    second: train parts__19
+  - first:
+      213: -3935295557104794441
+    second: train parts__20
+  - first:
+      213: -3205979134730798221
+    second: train parts__21
+  - first:
+      213: -3074886873980323751
+    second: train parts__22
+  - first:
+      213: -1932946034235657717
+    second: train parts__23
+  - first:
+      213: -5998588118521063151
+    second: train parts__24
+  - first:
+      213: -5337937273954177784
+    second: train parts__25
+  - first:
+      213: -7175133981160284250
+    second: train parts__26
+  - first:
+      213: 4053148617846054500
+    second: train parts__27
+  - first:
+      213: -3643964531881112941
+    second: train parts__28
+  - first:
+      213: -5056204525393451961
+    second: train parts__29
+  - first:
+      213: 5588756593790668595
+    second: train parts__30
+  - first:
+      213: 8671987012659597962
+    second: train parts__31
+  - first:
+      213: 7474227922239969026
+    second: train parts__32
+  - first:
+      213: 3513652971815536071
+    second: train parts__33
+  - first:
+      213: -8701733997242188407
+    second: train parts__34
+  - first:
+      213: -7000408630457414780
+    second: train parts__35
+  - first:
+      213: -6806327197670792732
+    second: train parts__36
+  - first:
+      213: -5402692688039534529
+    second: train parts__37
+  - first:
+      213: -2156864275250258135
+    second: train parts__38
+  - first:
+      213: -7213640270525926289
+    second: train parts__39
+  - first:
+      213: -6488498640864787906
+    second: train parts__40
+  - first:
+      213: 6666654634571565434
+    second: train parts__41
+  - first:
+      213: 4723621635467365188
+    second: train parts__42
+  - first:
+      213: 1572604735591713440
+    second: train parts__43
+  - first:
+      213: -5625289437523960535
+    second: train parts__44
+  - first:
+      213: 5916555425269379922
+    second: train parts__45
+  - first:
+      213: -7501522243946346051
+    second: train parts__46
+  - first:
+      213: 7628787273510412133
+    second: train parts__47
+  - first:
+      213: -8939278835449636090
+    second: train parts__48
+  - first:
+      213: -5836182304302449478
+    second: train parts__49
+  - first:
+      213: -1335738624565566989
+    second: train parts__50
+  - first:
+      213: -393068859003190491
+    second: train parts__51
+  - first:
+      213: 8527240646525562666
+    second: train parts__52
+  - first:
+      213: -4220802280224989786
+    second: train parts__53
+  - first:
+      213: -1733862501830483466
+    second: train parts__54
+  - first:
+      213: 3417256114471177312
+    second: train parts__55
+  - first:
+      213: -2434200586441533630
+    second: train parts__56
+  - first:
+      213: -321688784999135981
+    second: train parts__57
+  - first:
+      213: -5498979976344990359
+    second: train parts__58
+  - first:
+      213: -2222890378096379463
+    second: train parts__59
+  - first:
+      213: 2043948709010680479
+    second: train parts__60
+  - first:
+      213: -8876316030915403469
+    second: train parts__61
+  - first:
+      213: 4891160103652057579
+    second: train parts__62
+  - first:
+      213: -6680636733555837122
+    second: train parts__63
+  - first:
+      213: 920370231354672093
+    second: train parts__64
+  - first:
+      213: 3476720309350085442
+    second: train parts__65
+  - first:
+      213: 1077218056128378895
+    second: train parts__66
+  - first:
+      213: -7491699587975400953
+    second: train parts__67
+  - first:
+      213: -7733253235110410008
+    second: train parts__68
+  - first:
+      213: 9172732700382759265
+    second: train parts__69
+  - first:
+      213: -6632867021653959783
+    second: train parts__70
+  - first:
+      213: 7960617043831047549
+    second: train parts__71
+  - first:
+      213: -1911528717918878188
+    second: train parts__72
+  - first:
+      213: 8170914120036381969
+    second: train parts__73
+  - first:
+      213: 9040034531495925694
+    second: train parts__74
+  - first:
+      213: -2595817022958240030
+    second: train parts__75
+  - first:
+      213: -6241610771161725723
+    second: train parts__76
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: inside train ending cart
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 555
+        height: 3034
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ffdb1d84cba77140800000000000000
+      internalID: 4717427995363237879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottom wheels metal 1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 3082
+        width: 3266
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953f58e2eb5c32130800000000000000
+      internalID: 3540891152658330457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottom wheels metal2
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 3081
+        width: 2859
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7bf96ed40942c720800000000000000
+      internalID: 2864932598221241214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridge gold
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 2481
+        width: 1685
+        height: 498
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2c0a357988b4530800000000000000
+      internalID: 3840313290787963637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridge silver
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 2084
+        width: 1676
+        height: 397
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83350bdea7c9385f0800000000000000
+      internalID: -755588260680412360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roof 1
+      rect:
+        serializedVersion: 2
+        x: 2626
+        y: 2241
+        width: 3710
+        height: 714
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f7895e4e4da5e10800000000000000
+      internalID: 2187294648611405634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridge rope
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 1509
+        width: 1164
+        height: 473
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22ee18d2b9241a80800000000000000
+      internalID: -8497120748834463189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roof2
+      rect:
+        serializedVersion: 2
+        x: 2517
+        y: 1418
+        width: 2830
+        height: 697
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4028f329946f27d0800000000000000
+      internalID: -2941021422753406902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheel
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 843
+        width: 456
+        height: 457
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ff3ae43b68ed3d0800000000000000
+      internalID: -3179956182200352875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall inside 1
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 0
+        width: 1288
+        height: 1313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee46b0abe6575cc0800000000000000
+      internalID: -3722410996984820000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall insinde 2
+      rect:
+        serializedVersion: 2
+        x: 3093
+        y: 0
+        width: 1215
+        height: 1226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c42ecbb5cb3f96260800000000000000
+      internalID: 7091467078590063180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train parts__11
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 1222
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0efc7c3b5ea8db0800000000000000
+      internalID: -4788762693440904979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottom floor
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 584
+        height: 690
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645cdcda349e347ef87b1438dde88561
+      internalID: -658234637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train parts__0
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 711
+        width: 266
+        height: 2375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed9bf90f9dc24973b22dc6af2f36118
+      internalID: -1322707293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3a5a750f70dd94988a4270938fc24718
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bottom floor: -658234637
+      bottom wheels metal 1: 3540891152658330457
+      bottom wheels metal2: 2864932598221241214
+      bridge gold: 3840313290787963637
+      bridge rope: -8497120748834463189
+      bridge silver: -755588260680412360
+      inside train ending cart: 4717427995363237879
+      train parts__0: -1322707293
+      train parts__11: -4788762693440904979
+      train parts__12: -1600641345155204010
+      train parts__13: -213123456712370713
+      train parts__14: 2595045278909699258
+      train parts__15: -5235566334069177986
+      train parts__16: -1264480229577969286
+      train parts__17: 2548121363231005715
+      train parts__18: 3669684579174492079
+      train parts__19: 8201615630685757808
+      train parts__20: -3935295557104794441
+      train parts__21: -3205979134730798221
+      train parts__22: -3074886873980323751
+      train parts__23: -1932946034235657717
+      train parts__24: -5998588118521063151
+      train parts__25: -5337937273954177784
+      train parts__26: -7175133981160284250
+      train parts__27: 4053148617846054500
+      train parts__28: -3643964531881112941
+      train parts__29: -5056204525393451961
+      train parts__30: 5588756593790668595
+      train parts__31: 8671987012659597962
+      train parts__32: 7474227922239969026
+      train parts__33: 3513652971815536071
+      train parts__34: -8701733997242188407
+      train parts__35: -7000408630457414780
+      train parts__36: -6806327197670792732
+      train parts__37: -5402692688039534529
+      train parts__38: -2156864275250258135
+      train parts__39: -7213640270525926289
+      train parts__40: -6488498640864787906
+      train parts__41: 6666654634571565434
+      train parts__42: 4723621635467365188
+      train parts__43: 1572604735591713440
+      train parts__44: -5625289437523960535
+      train parts__45: 5916555425269379922
+      train parts__46: -7501522243946346051
+      train parts__47: 7628787273510412133
+      train parts__48: -8939278835449636090
+      train parts__49: -5836182304302449478
+      train parts__50: -1335738624565566989
+      train parts__51: -393068859003190491
+      train parts__52: 8527240646525562666
+      train parts__53: -4220802280224989786
+      train parts__54: -1733862501830483466
+      train parts__55: 3417256114471177312
+      train parts__56: -2434200586441533630
+      train parts__57: -321688784999135981
+      train parts__58: -5498979976344990359
+      train parts__59: -2222890378096379463
+      train parts__60: 2043948709010680479
+      train parts__61: -8876316030915403469
+      train parts__62: 4891160103652057579
+      train parts__63: -6680636733555837122
+      train parts__64: 920370231354672093
+      train parts__65: 3476720309350085442
+      train parts__66: 1077218056128378895
+      train parts__67: -7491699587975400953
+      train parts__68: -7733253235110410008
+      train parts__69: 9172732700382759265
+      train parts__70: -6632867021653959783
+      train parts__71: 7960617043831047549
+      train parts__72: -1911528717918878188
+      train parts__73: 8170914120036381969
+      train parts__74: 9040034531495925694
+      train parts__75: -2595817022958240030
+      train parts__76: -6241610771161725723
+      train roof 1: 2187294648611405634
+      train roof2: -2941021422753406902
+      wall inside 1: -3722410996984820000
+      wall insinde 2: 7091467078590063180
+      wheel: -3179956182200352875
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

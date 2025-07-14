@@ -5,6 +5,12 @@ using Interactable_objects.object_utills.enums;
 using Spine.Unity;
 using Spine;
 
+public enum HideEdge
+{
+    None,
+    Left,
+    Right
+}
 
 namespace Characters.Player
 {
@@ -49,17 +55,20 @@ namespace Characters.Player
         private float         originalY;
         private Collider2D    playerCollider;
         private Transform blurTf;
+        
+        private characterAnimation animation;
 
         private void Awake()
         {
-            playerMove = GetComponent<characterMovement>();
+            // playerMove = GetComponent<characterMovement>();
+            animation = GetComponent<characterAnimation>();
  
             meshRenderer = GetComponent<MeshRenderer>();
             //originalColor   = bodyRenderer.color;
             originalOrder   = meshRenderer.sortingOrder;
             originalY       = transform.position.y;
             playerCollider  = GetComponent<Collider2D>();
-            blurTf = transform.Find("BlurScreen");
+            //blurTf = transform.Find("BlurScreen");
             // Ensure we start at our normal order
             meshRenderer.sortingOrder = normalOrder;
         }
@@ -91,23 +100,23 @@ namespace Characters.Player
                 meshRenderer.sortingOrder = hiddenBackOrder;
                 targetHideY               = hideYBack;
                 // Use your helper so currentAnimationName is correct:
-                playerMove.SetCharacterState("intoHiding");
+                animation.TransitionTo(PlayerAnimState.HideEnterUp);
             }
             else
             {
                 meshRenderer.sortingOrder = hiddenFrontOrder;
                 targetHideY               = hideYFront;
-                playerMove.SetCharacterState("intoHidingDown");
+                animation.TransitionTo(PlayerAnimState.HideEnterDown);
             }
 
-            blurTf?.gameObject.SetActive(true);
+            //blurTf?.gameObject.SetActive(true);
             UpdateHeldObjectSorting();
 
             // 2) Now grab that entry and hook its completion
-            var spineState = playerMove.skeletonAnimation.state;
-            var entry      = spineState.GetCurrent(0);            // the one we just set
-            entry.Complete -= OnHideTransitionComplete;           // clean up any old hooks
-            entry.Complete += OnHideTransitionComplete;           // fire when it ends
+            // var spineState = animation.skeletonAnimation.state;
+            // var entry      = spineState.GetCurrent(0);            // the one we just set
+            // entry.Complete -= OnHideTransitionComplete;           // clean up any old hooks
+            // entry.Complete += OnHideTransitionComplete;           // fire when it ends
 
             // 3) Push all enemies behind you
             foreach (var enemy in EnemyAIController.AllEnemies)
@@ -124,8 +133,11 @@ namespace Characters.Player
             // Snap back to original Y
             var pos = transform.position;
             transform.position = new Vector3(pos.x, originalY, pos.z);
-            if(blurTf != null)
-                blurTf.gameObject.SetActive(false);
+            if (blurTf != null)
+            {
+                //blurTf.gameObject.SetActive(false);
+            }
+
             isHiding = false;
             UpdateHeldObjectSorting();
             foreach (var enemy in EnemyAIController.AllEnemies)
@@ -135,17 +147,21 @@ namespace Characters.Player
         private void Update()
         {
             // Show/hide indicator when near edge
+
             if (!isHiding && currentHidable != null)
             {
-                currentHidable.setIndicator(AtEdge());
+                currentHidable.setIndicator(AtEdge(),GetHideEdge());
+                // Debug.Log(AtEdge());
+                // Debug.Log(GetHideEdge().ToString());
                 return;
             }
 
             // While hiding, lock to hide-lane and within bounds
             if (isHiding && currentHidable != null)
             {
-                currentHidable.setIndicator(false);
-
+                currentHidable.setOffAllIndicator();
+                currentHidable.setPartialIndicator(AtEdge(),GetHideEdge());
+                
                 float clampedX = Mathf.Clamp(transform.position.x,
                                              currentHidable.LeftX,
                                              currentHidable.RightX);
@@ -170,7 +186,7 @@ namespace Characters.Player
                 blurTf.gameObject.SetActive(!peek);
             if (peek)
             {
-                playerMove.SetCharacterState("PeekingHeadUp");
+                animation.TransitionTo(PlayerAnimState.Peek);
             }
 
             // if peeking: pull enemies forward and if not peeking push them back
@@ -182,19 +198,50 @@ namespace Characters.Player
         }
 
         // True if player collider is within edgeTolerance of hidable’s edges
-        private bool AtEdge()
+        
+        /// <summary>
+        /// Returns which edge you’re at (None/Left/Right).
+        /// </summary>
+        private HideEdge GetHideEdge()
         {
             var bounds    = playerCollider.bounds;
             var leftEdge  = bounds.min.x;
             var rightEdge = bounds.max.x;
             var px        = transform.position.x;
 
-            return
-                Mathf.Abs(rightEdge - currentHidable.LeftX)  <= edgeTolerance ||
-                Mathf.Abs(leftEdge  - currentHidable.RightX) <= edgeTolerance ||
-                Mathf.Abs(px        - currentHidable.LeftX)  <= edgeTolerance ||
-                Mathf.Abs(px        - currentHidable.RightX) <= edgeTolerance;
+            // Are we at the *left* boundary of the hidable?
+            bool atLeft  = Mathf.Abs(rightEdge - currentHidable.LeftX)  <= edgeTolerance
+                           || Mathf.Abs(px        - currentHidable.LeftX)  <= edgeTolerance;
+
+            // Are we at the *right* boundary of the hidable?
+            bool atRight = Mathf.Abs(leftEdge  - currentHidable.RightX) <= edgeTolerance
+                           || Mathf.Abs(px        - currentHidable.RightX) <= edgeTolerance;
+
+            if (atLeft  && !atRight) return HideEdge.Left;
+            if (atRight && !atLeft ) return HideEdge.Right;
+            return HideEdge.None;
         }
+
+        /// <summary>
+        /// Old style check—you can keep using this if you just need a bool.
+        /// </summary>
+        private bool AtEdge()
+        {
+            return GetHideEdge() != HideEdge.None;
+        }
+        // private bool AtEdge()
+        // {
+        //     var bounds    = playerCollider.bounds;
+        //     var leftEdge  = bounds.min.x;
+        //     var rightEdge = bounds.max.x;
+        //     var px        = transform.position.x;
+        //
+        //     return
+        //         Mathf.Abs(rightEdge - currentHidable.LeftX)  <= edgeTolerance ||
+        //         Mathf.Abs(leftEdge  - currentHidable.RightX) <= edgeTolerance ||
+        //         Mathf.Abs(px        - currentHidable.LeftX)  <= edgeTolerance ||
+        //         Mathf.Abs(px        - currentHidable.RightX) <= edgeTolerance;
+        // }
 
         private void OnDrawGizmos()
         {
@@ -234,32 +281,34 @@ namespace Characters.Player
         public void UpdateHeldObjectSorting()
         {
             var grabber = GetComponentInChildren<TailGrabber>();
-            Debug.Log(grabber != null);
-            Debug.Log(grabber.HasObject);
             if (grabber != null && grabber.HasObject)
             {
                 var objRenderer = grabber.GetHeldObjectRenderer();
                 if (objRenderer != null)
                 {
-                    Debug.Log(isHiding);
-                    Debug.Log(isHiding ? meshRenderer.sortingOrder + 1 : normalOrder + 1);
                     objRenderer.sortingOrder = isHiding ? meshRenderer.sortingOrder + 1 : normalOrder + 1;
                 }
             }
         }
-        
-        // This gets called by Spine when any TrackEntry completes.
-        private void OnHideTransitionComplete(TrackEntry entry)
+
+        public int getSortingOrder()
         {
-            // safety: only respond to those two
-            var n = entry.Animation.Name;
-            if (n == "intoHiding" || n == "IntoHidingDown")
-            {
-                // now queue the loop
-                playerMove.SetCharacterState("walkingHiding");
-                // unhook
-                entry.Complete -= OnHideTransitionComplete;
-            }
+            return isHiding ? meshRenderer.sortingOrder : normalOrder;
         }
+        
+        //
+        // // This gets called by Spine when any TrackEntry completes.
+        // private void OnHideTransitionComplete(TrackEntry entry)
+        // {
+        //     // safety: only respond to those two
+        //     var n = entry.Animation.Name;
+        //     if (n == "intoHiding" || n == "IntoHidingDown")
+        //     {
+        //         // now queue the loop
+        //         animation.SetCharacterState("walkingHiding");
+        //         // unhook
+        //         entry.Complete -= OnHideTransitionComplete;
+        //     }
+        // }
     }
 }
