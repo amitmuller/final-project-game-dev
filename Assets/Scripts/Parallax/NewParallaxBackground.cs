@@ -18,10 +18,10 @@ public class NewParallaxBackground : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += Vector3.left * speed * Time.fixedDeltaTime;
-        if (Mathf.Abs(transform.position.x) / 2 >= textureWidthSingle)
+        transform.localPosition += Vector3.left * speed * Time.fixedDeltaTime;
+        if (Mathf.Abs(transform.localPosition.x) / 2 >= textureWidthSingle)
         {
-            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+            transform.localPosition = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
         }
     }
 }
