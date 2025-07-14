@@ -2221,6 +2221,8 @@ MonoBehaviour:
   - idle
   - idleHandOut
   - idleSmoking
+  - idleLookingHandIn
+  - idleLookingHandOut
   alertSearchAnimName: alert
   catchAnimName: catch
   runAnimName: run
