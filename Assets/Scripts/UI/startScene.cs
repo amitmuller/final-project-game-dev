@@ -1,78 +1,69 @@
 using System.Collections;
-using System.Collections.Generic;
-using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UI;
 
+public class StartSceneController : MonoBehaviour
+{
+    [Header("Opening Screen (first frame)")]
+    [Tooltip("Shown until the player presses Play")]
+    public GameObject openingScreen;
 
+    [Header("Rest of the Sequence")]
+    [Tooltip("Drop in your SequenceFrame components here, in order")]
+    public SequenceFrame[] frames;
 
-    public class StartSceneController : MonoBehaviour
+    private bool _sequenceStarted = false;
+
+    void Awake()
     {
-        [Header("Frame Sequence")]
-        [Tooltip("List of frames to show sequentially with durations.")]
-        [SerializeField] private SequenceFrame openingFrame;
-        [SerializeField] private List<SequenceFrame> frames = new List<SequenceFrame>();
-        
-    
-        private bool afterAnimation = false;
-        private bool sequenceStarted = false;
-
-        private void Awake()
-        {
-            // Ensure all frames are hidden initially
-            foreach (var frame in frames)
-            {
-                if (frame.frameObject != null)
-                    frame.frameObject.SetActive(false);
-            }
-            openingFrame.frameObject.SetActive(true);
-        }
-        
-
-        /// <summary>
-        /// Bound to your "Play" input action in the Input System.
-        /// </summary>
-        public void OnPressPlay(InputAction.CallbackContext context)
-        {
-            
-            if (!context.performed || sequenceStarted)
-                return;
-            openingFrame.frameObject.SetActive(false);
-
-            StartCoroutine(PlaySequence());
-        }
-
-        /// <summary>
-        /// Plays frames one after another, each for its specified duration.
-        /// </summary>
-        private IEnumerator PlaySequence()
-        {
-            int totalFrames = frames.Count;
-            for (int i = 0; i < totalFrames; i++)
-            {
-                frames[i].frameObject.SetActive(true);
-                yield return new WaitForSecondsRealtime(frames[i].displayTime);
-                if (i == totalFrames-1)
-                {
-                    OnEndScene();
-                }
-                frames[i].frameObject.SetActive(false);
-                
-            }
-        }
-        
-        void Update() {
-            if (Input.GetKeyDown(KeyCode.S))
-                OnEndScene();
-        }
-
-        /// <summary>
-        /// Loads the game scene (index 1).
-        /// </summary>
-        public void OnEndScene()
-        {
-            SceneManager.LoadScene(1);
-        }
+        // show only opening screen
+        openingScreen.SetActive(true);
+        // hide all sequence frames
+        foreach (var f in frames)
+            f.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Bound to your “Play” action. First press hides the opening screen
+    /// and launches the rest of the frames.
+    /// </summary>
+    public void OnPressPlay(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.performed || _sequenceStarted) return;
+        _sequenceStarted = true;
+
+        openingScreen.SetActive(false);
+        StartCoroutine(PlaySequence());
+    }
+
+    private IEnumerator PlaySequence()
+    {
+        // loop through each frame
+        foreach (var frame in frames)
+        {
+            // show this frame’s GameObject
+            frame.gameObject.SetActive(true);
+            // invoke your custom logic
+            frame.PlayFrame();
+
+            // wait its duration
+            yield return new WaitForSecondsRealtime(frame.displayTime);
+
+            // hide it unless it’s the last one
+            if (frame != frames[frames.Length - 1])
+                frame.gameObject.SetActive(false);
+        }
+
+        // done → load next scene
+        SceneManager.LoadScene(1);
+    }
+
+    void Update()
+    {
+        // cheat: skip to end
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+            SceneManager.LoadScene(1);
+    }
+}
