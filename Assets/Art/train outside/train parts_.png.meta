@@ -353,9 +353,9 @@ TextureImporter:
       name: bottom wheels metal 1
       rect:
         serializedVersion: 2
-        x: 134
+        x: 136
         y: 3082
-        width: 3266
+        width: 3256
         height: 428
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -442,9 +442,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2626
-        y: 2241
+        y: 2666
         width: 3710
-        height: 714
+        height: 289
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,7 +622,7 @@ TextureImporter:
         width: 266
         height: 2375
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -631,6 +631,28 @@ TextureImporter:
       bones: []
       spriteID: 4ed9bf90f9dc24973b22dc6af2f36118
       internalID: -1322707293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train parts__1
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 2264
+        width: 3737
+        height: 687
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19c7bbfffb2d48ee826b074a2548dc5
+      internalID: 389200305
       vertices: []
       indices: 
       edges: []
@@ -657,6 +679,7 @@ TextureImporter:
       bridge silver: -755588260680412360
       inside train ending cart: 4717427995363237879
       train parts__0: -1322707293
+      train parts__1: 389200305
       train parts__11: -4788762693440904979
       train parts__12: -1600641345155204010
       train parts__13: -213123456712370713

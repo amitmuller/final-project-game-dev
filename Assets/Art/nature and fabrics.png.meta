@@ -1533,6 +1533,116 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: nature and fabrics_0
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 3193
+        width: 595
+        height: 1489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624d515238fb747fab363c9c1fa0bbb5
+      internalID: 1007856742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature and fabrics_1
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 3568
+        width: 225
+        height: 1120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360203c6d0abf45798344e200f50f67c
+      internalID: 343439487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature and fabrics_2
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 3546
+        width: 293
+        height: 1009
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a34b490955a40868cb808d46019ad1
+      internalID: -284777833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtins cut
+      rect:
+        serializedVersion: 2
+        x: 2218
+        y: 653
+        width: 348
+        height: 1256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f32ba1dcffd43c99f8c584b2550538
+      internalID: 659226276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curtins cut 2
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 925
+        width: 443
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49329ce3d92ee4928afe9fda01ad1762
+      internalID: 373479961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1560,6 +1670,8 @@ TextureImporter:
       curtin-light-blue: 9136078205389613043
       curtin-orange: -386258987855716939
       curtin-pink: -5378405927271155993
+      curtins cut: 659226276
+      curtins cut 2: 373479961
       frame: 3303152422696554681
       frame 1: 6832128985721893110
       frame 10: 981326496958058767
@@ -1598,6 +1710,9 @@ TextureImporter:
       hanging leafs4: -7085478483310432556
       mediume flower orange: -1201124339708111352
       mediume flower pink: -7877681419664496987
+      nature and fabrics_0: 1007856742
+      nature and fabrics_1: 343439487
+      nature and fabrics_2: -284777833
       nature and fabrics_49: 3467786798900284899
       nature and fabrics_57: 4184008286385081235
       nature and fabrics_58: 156246628092450384
