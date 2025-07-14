@@ -8,6 +8,8 @@ namespace CalmStateUtils
 {
     public static class CalmStateUtils
     {
+
+        private const float turnTimer = 2f;
         private static bool AllEnemiesNearby(EnemyAIController self, float range)
         {
             return EnemyAIController.AllEnemies
@@ -42,8 +44,24 @@ namespace CalmStateUtils
                
                if (Mathf.Abs(self.transform.position.x - moveTo.x) < threshold)
                {
-                    self.currentPatrolIndex = (self.currentPatrolIndex + 1) % patrolPointsX.Length;
+                    self.timerForTurnAround += Time.deltaTime;
+                    if (self.timerForTurnAround < turnTimer)
+                    {
+                        self.StopMovement();
+                        self.turnInCalm = true;
+                        self.UpdateAnimation();
+                    }
+                    else
+                    {
+                        self.turnInCalm = false;
+                        self.UpdateAnimation();
+                        self.currentPatrolIndex = (self.currentPatrolIndex + 1) % patrolPointsX.Length;
+                        self.timerForTurnAround = 0f;
+                    }
+                   
                }
+
+
             }
             else
             {

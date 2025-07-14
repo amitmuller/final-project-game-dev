@@ -29,6 +29,7 @@ namespace EnemyAI
             enemy.isConversing          = false;
             enemy.conversationCompleted = false;
             enemy.conversationTimer     = conversationDuration;
+            enemy.turnInCalm         = false;
         }
 
         public void UpdateState(EnemyAIController enemy)

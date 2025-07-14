@@ -41,10 +41,17 @@ namespace EnemyAI {
         /// <summary>
         /// Convenience for choosing animation by state name.
         /// </summary>
-        public void SetCharacterState(EnemyStateType state, bool isStop = false) {
+        public void SetCharacterState(EnemyStateType state, bool isStop = false, bool turn=false) {
             switch (state) {
                 case EnemyStateType.Calm:
-                    spineState.SetAnimation(0, walkAnimName, true);
+                    if (turn)
+                    {
+                        spineState.SetAnimation(0, idleHandoutAnimName, true);
+                    }
+                    else
+                    {
+                        spineState.SetAnimation(0, walkAnimName, true);
+                    }
                     break;
                 case EnemyStateType.Alert:
                     spineState.SetAnimation(0, walkSearchAnimName, true);
