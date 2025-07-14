@@ -129,6 +129,8 @@ public class EnemyAIController : MonoBehaviour
     public float moveToNoiseTimer;
     private Renderer _skeletonRenderer;
     SkeletonAnimation _spine;
+    public float timerForTurnAround ;
+    public bool turnInCalm;
 
     void Awake()
     {
@@ -262,32 +264,11 @@ public class EnemyAIController : MonoBehaviour
     public void UpdateAnimation()
     {
         if (animationManager != null)
-            animationManager.SetCharacterState(CurrentStateType, isStop);
+            animationManager.SetCharacterState(CurrentStateType, isStop, turnInCalm);
     }
 
     public void MoveTowards(Vector2 targetPosition, float speed)
     {
-        bool outside = false;
-        if (cartCollider != null)
-        {
-            var b = cartCollider.bounds;
-            if (targetPosition.x < b.min.x || targetPosition.x > b.max.x ||
-                targetPosition.y < b.min.y || targetPosition.y > b.max.y)
-            {
-                // outside cart
-                outside = true;
-                // clamp inside
-                targetPosition.x = Mathf.Clamp(targetPosition.x, b.min.x, b.max.x);
-                targetPosition.y = Mathf.Clamp(targetPosition.y, b.min.y, b.max.y);
-            }
-        }
-
-        if (outside)
-        {
-            // revert to Calm state if chasing outside cart
-            ChangeState(calmState);
-            return;
-        }
 
         Vector2 dir = (targetPosition - (Vector2)transform.position);
         if (dir.sqrMagnitude > 0.0001f) dir.Normalize();

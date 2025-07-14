@@ -39,7 +39,7 @@ namespace EnemyAI
         {
             
             EnemyEnterChaseModeIfNeeded(enemy);
-
+            
             if (enemy.moveToNoiseTimer > MaxTimeForState)
             {
                 if (enemy.prevState == EnemyStateType.Calm)
@@ -61,7 +61,7 @@ namespace EnemyAI
                 Debug.Log("MOVE TO SEARCHING" + enemy.moveToNoiseTimer);
                 return;
             }
-            Debug.Log("enemy sotp: "+ enemy.isStop);
+            Debug.Log("enemy stop: "+ enemy.isStop);
             enemy.isStop = true;
             if (enemy.searchFirstTime) enemy.UpdateAnimation();
             
