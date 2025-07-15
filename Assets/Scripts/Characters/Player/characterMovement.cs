@@ -312,7 +312,6 @@ public class characterMovement : MonoBehaviour
     // ------------------------ Animations -------------------------- //
     private void AnimationHandler()
     {
-        print(canMove);
         if(!caught && canMove)
         {
             if (hide.IsHiding())

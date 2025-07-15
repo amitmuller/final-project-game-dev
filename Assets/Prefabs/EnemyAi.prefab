@@ -2029,6 +2029,7 @@ MonoBehaviour:
   searchingStateColor: {r: 0, g: 1, b: 1, a: 1}
   chaseStateColor: {r: 1, g: 0, b: 0, a: 1}
   alertTimer: 0
+  isInitialFacingRight: 0
   searchTimer: 0
   lastKnownNoisePosition: {x: 0, y: 0}
   ExclamationIcon: {fileID: 5040745081074570052}
@@ -2215,10 +2216,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonAnimation: {fileID: 8403526201572289868}
-  idleAnimName: idle
+  patrolIdleAnimations:
+  - idleLookingHandIn
+  - idleLookingHandOut
+  permanentIdleAnimations:
+  - idleHandOut
+  - idle
+  - idleSmoking
   alertSearchAnimName: alert
   catchAnimName: catch
-  idleHandoutAnimName: idleHandOut
   runAnimName: run
   run2AnimName: run2
   walkAnimName: walk
