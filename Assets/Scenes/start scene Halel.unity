@@ -420,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 80569411}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1104038, y: 0.4772303, z: 0.097412825}
+  m_LocalPosition: {x: -0.21, y: 1.42, z: 0.097412825}
   m_LocalScale: {x: 1, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1134,7 +1134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &387804921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   physicsMovementRelativeTo: {fileID: 0}
   updateTiming: 1
   unscaledTime: 0
-  _animationName: run
+  _animationName: idleHandOut
   loop: 1
   timeScale: 1
 --- !u!23 &387804923
@@ -1259,7 +1259,7 @@ Transform:
   m_GameObject: {fileID: 387804920}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.36, y: -5.76, z: 0.09741282}
+  m_LocalPosition: {x: 8.26058, y: -5.02, z: 0.09741282}
   m_LocalScale: {x: 0.46, y: 0.46, z: 0.46}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2006,8 +2006,8 @@ Transform:
   m_GameObject: {fileID: 985971866}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3001, y: -3.3253, z: 0.097412825}
-  m_LocalScale: {x: 7.780883, y: 7.132042, z: 1}
+  m_LocalPosition: {x: 2.3001, y: -3.1495, z: 0.097412825}
+  m_LocalScale: {x: 7.780883, y: 7.483651, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1901993542}
@@ -3811,7 +3811,7 @@ Transform:
   m_GameObject: {fileID: 1725912121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.479596, y: 0.4772303, z: 0.097412825}
+  m_LocalPosition: {x: 7.37, y: 1.42, z: 0.097412825}
   m_LocalScale: {x: 1, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4200,7 +4200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &2138058207
 PlayableDirector:
   m_ObjectHideFlags: 0
