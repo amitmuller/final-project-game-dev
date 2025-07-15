@@ -92,7 +92,7 @@ namespace EnemyAI
             // Moving to the next waypoint, if there are any waypoints
             if (enemy.patrolPoints.Length >= 1 && 
                 HandlePatrol(
-                    enemy, enemy.patrolPoints[enemy.currentPatrolIndex], enemy.patrolY, enemy.calmMoveSpeed, PatrolThreshold))
+                    enemy, enemy.patrolPoints[enemy.currentPatrolIndex].position.x, enemy.patrolY, enemy.calmMoveSpeed, PatrolThreshold))
             {
                 enemy.IsPatrolIdle = true;
                 enemy.currentPatrolIndex = (enemy.currentPatrolIndex + 1) % enemy.patrolPoints.Length;
@@ -102,6 +102,7 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             enemy.prevState = EnemyStateType.Calm;
+            
             enemy.StopMovement();
         }
         
@@ -114,7 +115,6 @@ namespace EnemyAI
             //           "noise detection range is: " +noiseDetectionRange);
             if (Vector2.Distance(enemy.transform.position, noisePosition) <= noiseDetectionRange)
             {
-                Debug.Log("inside noise range");
                 enemy.lastKnownNoisePosition = noisePosition;
                 enemy.ChangeState(enemy.searchingState);
             }

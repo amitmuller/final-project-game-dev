@@ -75,6 +75,9 @@ namespace EnemyAI
 
                     // kill any stray tweens on this transform
                     DOTween.Kill(enemy.transform);
+                    float deltaX = enemy.playerTransform.position.x - enemy.transform.position.x;
+                    Vector2 dashDir = (deltaX >= 0f) ? Vector2.right : Vector2.left;
+
                     enemy.animationManager.PlayDash();
                     // start one‐shot dash reset _dashTween on complete
                     _dashTween = enemy.transform
