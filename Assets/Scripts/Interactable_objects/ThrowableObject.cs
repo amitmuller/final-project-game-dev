@@ -20,6 +20,7 @@ public class ThrowableObject : MonoBehaviour
     private Transform initialParent;
     private Explodable _explodable;
     [SerializeField] private GameObject grabUI;
+    [SerializeField] private GameObject grabUICircle;
     [Header("What is this made of?")]
     public MaterialType materialType = MaterialType.Glass;
     private Light2D _light;
@@ -35,7 +36,12 @@ public class ThrowableObject : MonoBehaviour
         grabUI.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         grabUI.transform.parent = oldParent;
         
+        
+        grabUICircle.transform.localPosition = Vector3.zero;
+        grabUICircle.transform.localScale = transform.localScale;
+        grabUICircle.GetComponent<SpriteRenderer>().sortingOrder = sr.sortingOrder-1;
         grabUI.SetActive(false);
+        grabUICircle.SetActive(false);
         _light = GetComponent<Light2D>();
         _light.enabled = false;
         
@@ -70,16 +76,20 @@ public class ThrowableObject : MonoBehaviour
     public void Highlight(bool enable)
     {
         // sr.color = enable ? highlightColor : originalColor;
-        _light.enabled = enable;
+        // _light.enabled = enable;
         if (grabUI != null)
             grabUI.SetActive(enable);
+        if (grabUICircle != null)
+            grabUICircle.SetActive(enable);
     }
     
     public void GrabObject()
     {
         if (grabUI != null)
             grabUI.SetActive(false);
-        _light.enabled = false;
+        if (grabUICircle != null)
+            grabUICircle.SetActive(false);
+        // _light.enabled = false;
     }
     
     void OnCollisionEnter2D(Collision2D collision)

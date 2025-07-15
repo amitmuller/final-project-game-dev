@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
     {
         if (player == null) return;
         // feedbackCheckpoint.PlayFeedbacks();
+        player.GetComponent<characterMovement>().SetCanMove(false);
         OnPlayerDead?.Invoke();
         StartCoroutine(CheckpointRoutine(player));
     }
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
         _cameraFade.FadeOutOverTime(true);
         ResetEnemiesInCart();
         ResetThrowables();
+        player.GetComponent<characterMovement>().SetCanMove(true);
         player.position = carts[currentCart].checkpointPosition;
     }
     
