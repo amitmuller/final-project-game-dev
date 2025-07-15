@@ -123,9 +123,9 @@ public class GameManager : MonoBehaviour
         foreach (var enemy in cart.enemies)
         {
             if (enemy == null) continue;
-            enemy.SetActive(false);
             var ctrl = enemy.GetComponent<EnemyAIController>();
             if (ctrl != null) ctrl.ResetEnemy();
+            enemy.SetActive(false);
         }
     }
 
