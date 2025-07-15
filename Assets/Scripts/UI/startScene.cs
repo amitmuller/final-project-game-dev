@@ -10,19 +10,27 @@ public class StartSceneController : MonoBehaviour
     [Tooltip("Shown until the player presses Play")]
     public GameObject openingScreen;
 
-    [Header("Rest of the Sequence")]
-    [Tooltip("Drop in your SequenceFrame components here, in order")]
-    public SequenceFrame[] frames;
-
-    private bool _sequenceStarted = false;
+    [SerializeField]
+    private GameObject animation;
+    
+    [SerializeField]
+    private CameraFade cameraFade;
+    
+    [Header("Audio Sources")]
+    [Tooltip("Looping nature ambience")]
+    [SerializeField] private AudioSource ambienceSource;
+    
 
     void Awake()
     {
         // show only opening screen
         openingScreen.SetActive(true);
-        // hide all sequence frames
-        foreach (var f in frames)
-            f.gameObject.SetActive(false);
+        if (ambienceSource != null)
+        {
+            ambienceSource.loop = true;
+            ambienceSource.Play();
+        }
+
     }
 
     /// <summary>
@@ -31,33 +39,15 @@ public class StartSceneController : MonoBehaviour
     /// </summary>
     public void OnPressPlay(InputAction.CallbackContext ctx)
     {
-        if (!ctx.performed || _sequenceStarted) return;
-        _sequenceStarted = true;
+        if (!ctx.performed) return;
 
         openingScreen.SetActive(false);
-        StartCoroutine(PlaySequence());
+        animation.SetActive(true);
     }
-
-    private IEnumerator PlaySequence()
+    
+    public void OnEndAnimation()
     {
-        // loop through each frame
-        foreach (var frame in frames)
-        {
-            // show this frame’s GameObject
-            frame.gameObject.SetActive(true);
-            // invoke your custom logic
-            frame.PlayFrame();
-
-            // wait its duration
-            yield return new WaitForSecondsRealtime(frame.displayTime);
-
-            // hide it unless it’s the last one
-            if (frame != frames[frames.Length - 1])
-                frame.gameObject.SetActive(false);
-        }
-
-        // done → load next scene
-        SceneManager.LoadScene(1);
+        cameraFade.FadeOutOverTime(false, ()=>SceneManager.LoadScene(1));
     }
 
     void Update()

@@ -294,6 +294,8 @@ public class characterMovement : MonoBehaviour
     private void HandlePlayerRevived()
     {
         resetPlayerAnimation();
+        SetCanMove(false);
+        
     }
 
     private void caughtPlayerAnimation()
@@ -305,6 +307,7 @@ public class characterMovement : MonoBehaviour
     private void resetPlayerAnimation()
     {
         caught = false;
+        SetCanMove(true);
         _animation.TransitionTo(PlayerAnimState.Idle);
         
     }
