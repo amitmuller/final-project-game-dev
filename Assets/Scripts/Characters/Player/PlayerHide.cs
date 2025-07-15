@@ -4,6 +4,9 @@ using Interactable_objects;
 using Interactable_objects.object_utills.enums;
 using Spine.Unity;
 using Spine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using System.Collections;
 
 public enum HideEdge
 {
@@ -22,6 +25,7 @@ namespace Characters.Player
         [SerializeField] private GameObject bodyVisual;
         [SerializeField] private MonoBehaviour movementScript;
         [SerializeField] private SpriteRenderer bodyRenderer;
+        [SerializeField] private Volume globalVolume;
 
         [Header("Hide Orders (within Default layer)")]
         [Tooltip("Player’s normal drawing order")]
@@ -45,6 +49,11 @@ namespace Characters.Player
         
         [SerializeField] private SkeletonAnimation rendereSkeletonAnimation;
         [SerializeField] private MeshRenderer meshRenderer;
+
+        [Header("Vignette Settings")]
+        [SerializeField] private float vignetteHideValue = 0.5f;
+        [SerializeField] private float setSpeed = 0.5f;
+
         private const float  PeekThreshold = 0.95f;
         private const int HiddenEnemyOrder = -100;
         private HidableObject currentHidable;
@@ -57,6 +66,8 @@ namespace Characters.Player
         private Transform blurTf;
         
         private characterAnimation animation;
+
+        private Coroutine vignetteSetter;
 
         private void Awake()
         {
@@ -92,6 +103,12 @@ namespace Characters.Player
         {
             isHiding = true;
 
+            if (vignetteSetter != null)
+            {
+                StopCoroutine(vignetteSetter);
+            }
+            vignetteSetter = StartCoroutine(VignetteSetter(vignetteHideValue));
+
             // 1) Darken & sorting/Y
             AudioManager.Instance.PlayEffect("playerInHide");
             bodyRenderer.color = new Color(0.36f, 0.4f, 0.43f, 1f);
@@ -126,6 +143,12 @@ namespace Characters.Player
 
         private void ExitHide()
         {
+            if (vignetteSetter != null)
+            {
+                StopCoroutine(vignetteSetter);
+            }
+            StartCoroutine(VignetteSetter(0));
+
             foreach (var enemy in EnemyAIController.AllEnemies)
                 enemy.RestoreSortingOrder();
             meshRenderer.sortingOrder = originalOrder;
@@ -142,6 +165,22 @@ namespace Characters.Player
             UpdateHeldObjectSorting();
             foreach (var enemy in EnemyAIController.AllEnemies)
                 enemy.RestoreSortingOrder();
+        }
+
+        private IEnumerator VignetteSetter(float targetValue)
+        {
+            globalVolume.profile.TryGet(out Vignette vignette);
+            float currentValue = vignette.intensity.value;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < setSpeed)
+            {
+                elapsedTime += Time.deltaTime;
+                float newValue = Mathf.Lerp(currentValue, targetValue, elapsedTime / setSpeed);
+                vignette.intensity.Override(newValue);
+                yield return null;
+            }
+
         }
 
         private void Update()
