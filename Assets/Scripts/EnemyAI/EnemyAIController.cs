@@ -272,7 +272,10 @@ public class EnemyAIController : MonoBehaviour
         {
             _spine.Skeleton.FlipX = isInitialFacingRight;
         }
-        
+        else if (animationManager.IsDashing && CurrentStateType == EnemyStateType.Chase)
+        {
+            _spine.Skeleton.FlipX = animationManager.IsRightDash;
+        }
         else
         {
             _spine.Skeleton.FlipX = walkingRight;

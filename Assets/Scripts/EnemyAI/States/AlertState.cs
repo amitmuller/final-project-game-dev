@@ -21,6 +21,11 @@ namespace EnemyAI
             enemy.isAlertPatrolling = false;
             enemy.QuesitonIconSwitch(true);
             enemy.alertTimer = enemy.alertDuration;
+
+            //if (enemy.prevState == EnemyStateType.Chase)
+            //{
+            //    enemy.animationManager.SetCharacterState()
+            //}
         }
 
         public void UpdateState(EnemyAIController enemy)
@@ -38,7 +43,7 @@ namespace EnemyAI
                 
             
             // 3) if enemy is alert he will alert his friend in proximity
-            AlertNearbyEnemies(enemy, enemy.spreadRadius);
+            //AlertNearbyEnemies(enemy, enemy.spreadRadius);
             
             // 4) if is needed go into search state
             const float noiseStaleDuration = 2f;
