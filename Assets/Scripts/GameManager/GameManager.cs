@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             _spareThrowableRoots.Add(spareList);
         }
 
-        _cameraFade.FadeOutAndIn();
+        _cameraFade.FadeOutOverTime(true);
     }
 
     public void PlayerEnteredCart(int cartIndex)
