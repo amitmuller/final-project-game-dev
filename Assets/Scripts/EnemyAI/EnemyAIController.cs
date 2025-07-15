@@ -377,6 +377,7 @@ public class EnemyAIController : MonoBehaviour
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
             Debug.Log("enemy got player reset checkpoint");
+            
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             GameManager.Instance.checkpoint(collision.transform);
         }
