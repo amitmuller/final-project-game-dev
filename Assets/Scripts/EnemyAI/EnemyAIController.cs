@@ -376,9 +376,13 @@ public class EnemyAIController : MonoBehaviour
         
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
-            Debug.Log("enemy got player reset checkpoint");
+            float deltaX = transform.position.x - transform.position.x;
+            bool isRightDash = deltaX >= 0f;
+
+            animationManager.PlayDash(isRightDash);
             
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
             GameManager.Instance.checkpoint(collision.transform);
         }
     }
@@ -608,16 +612,16 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void RestoreSortingOrder()
     {
-        Debug.Log("Restoring sorting order");
-        _skeletonRenderer.sortingOrder= _originalSpriteOrder;
-
-        _fovMeshObject.gameObject.SetActive(true);
-        if (_uiCanvas != null)
-            _uiCanvas.sortingOrder = _uiOriginalOrder;
-        if (sortingEffect != null)
-        {
-            sortingEffect.gameObject.SetActive(false);
-        }
+        // Debug.Log("Restoring sorting order");
+        // _skeletonRenderer.sortingOrder= _originalSpriteOrder;
+        //
+        // _fovMeshObject.gameObject.SetActive(true);
+        // if (_uiCanvas != null)
+        //     _uiCanvas.sortingOrder = _uiOriginalOrder;
+        // if (sortingEffect != null)
+        // {
+        //     sortingEffect.gameObject.SetActive(false);
+        // }
 
     }
     
