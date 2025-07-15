@@ -51,7 +51,7 @@ namespace EnemyAI {
 
         private string GetRandomAnimation(List<string> animList)
         {
-            return animList[Random.Range(0, animList.Count)];
+            return animList[UnityEngine.Random.Range(0, animList.Count)];
         }
 
         /// <summary>
