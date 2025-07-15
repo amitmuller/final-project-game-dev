@@ -124,7 +124,7 @@ namespace EnemyAI {
 
             // Queue follow-up animations
             spineState.AddAnimation(0, alertSearchAnimName, false, onGroundDuration);
-            TrackEntry track = spineState.AddAnimation(0, GetRandomAnimation(permanentIdleAnimations),  false, 0);
+            TrackEntry track = spineState.AddAnimation(0, permanentIdleAnimations[0],  false, 0);
             track.TimeScale = 3.0f; // Speeding up the idle animation as its main purpose is to get the enemy back on its feet
             _waitForAnimationCoroutine = StartCoroutine(WaitForAnimation(track));
         }
