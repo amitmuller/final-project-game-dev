@@ -4,15 +4,12 @@ using UnityEngine.Rendering.Universal;
 
 public class LightFlicker : MonoBehaviour
 {
-    [Tooltip("Time the light stays off during flicker, in seconds")]
-    [SerializeField] private float turnoffTime = 0.25f;
-
     [Tooltip("Time between flickers, in seconds")]
     [SerializeField] private float flickerInterval = 4f;
-
-    [Tooltip("Number of continuous flickers before the interval is engaged")]
-    [Min(1)]
-    [SerializeField] private int flickersCount = 2;
+    [SerializeField] private float minLightIntensity = 0f;
+    [SerializeField] private float maxLightIntensity = 1f;
+    [SerializeField] private float flickerSpeed = 0.1f;
+    [SerializeField] private float flickerDuration = 0.5f;
 
     private Light2D _light;
 
@@ -30,13 +27,20 @@ public class LightFlicker : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < flickersCount; i++)
+            float elapsedTime = 0f;
+
+            while (elapsedTime < flickerDuration)
             {
-                _light.enabled = false;
-                yield return new WaitForSeconds(turnoffTime);
-                _light.enabled = true;
-                yield return new WaitForSeconds(turnoffTime);
+                _light.intensity = Mathf.Lerp(
+                    minLightIntensity, 
+                    maxLightIntensity, 
+                    Mathf.PingPong(Time.time * flickerSpeed, 1));
+                elapsedTime += Time.deltaTime;
+                yield return null;
             }
+
+            _light.intensity = maxLightIntensity; // Ensure light is at max intensity before flickering off
+
             yield return new WaitForSeconds(flickerInterval);
         }
     }
