@@ -36,7 +36,7 @@ public class EnemyAIController : MonoBehaviour
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
     [Tooltip("X positions to patrol between")]
-    public float[] patrolPoints;
+    public Transform[] patrolPoints;
     [HideInInspector] public int currentPatrolIndex = 0;
     [HideInInspector] public float patrolY;  // captured at Awake
     public static int ConversationEncounterCount = 5;
@@ -271,6 +271,10 @@ public class EnemyAIController : MonoBehaviour
         if (IsPermanentIdle && CurrentStateType == EnemyStateType.Calm)
         {
             _spine.Skeleton.FlipX = isInitialFacingRight;
+        }
+        else if (animationManager.IsDashing && CurrentStateType == EnemyStateType.Chase)
+        {
+            _spine.Skeleton.FlipX = animationManager.IsRightDash;
         }
         else
         {

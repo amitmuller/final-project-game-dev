@@ -50,19 +50,30 @@ using UnityEngine.SceneManagement;
 
         void onCloseEyes()
         {
-            cameraFade.FadeOutOverTime();
-            Guard.SetActive(false);
-            motherDino.SetActive(false);
-            cameraFade.FadeOutOverTime(true);
-            StartCoroutine(startGame());
+            
+            cameraFade.FadeOutAndIn(
+                onBlack: () =>
+                {
+                    Guard.SetActive(false);
+                    motherDino.SetActive(false);
+                },
+                onComplete: () =>
+                {
+                    // After the fade‐in finishes, start the game
+                    StartCoroutine(startGame());
+                }
+            );
         }
 
         IEnumerator startGame()
         {
             yield return new WaitForSeconds(sleeptime2);
-            _animation.TransitionTo(PlayerAnimState.Awake);
-            _animation.startBlink();
-            _characterMovement.SetCanMove(true);
+            _animation.TransitionTo(PlayerAnimState.Awake, entry =>
+            {
+                _animation.startBlink();
+                _characterMovement.SetCanMove(true);
+            });
+            
         }
         
         void Update()

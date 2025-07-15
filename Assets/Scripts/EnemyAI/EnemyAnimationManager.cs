@@ -13,6 +13,7 @@ namespace EnemyAI {
     public class EnemyAnimationManager : MonoBehaviour {
 
         public bool IsDashing = false;
+        public bool IsRightDash = false;
         private Coroutine _waitForAnimationCoroutine;
 
         [Header("Spine Animation")]
@@ -57,7 +58,7 @@ namespace EnemyAI {
         /// <summary>
         /// Convenience for choosing animation by state name.
         /// </summary>
-        public void SetCharacterState(EnemyStateType state, bool isStop = false) {
+        public void SetCharacterState(EnemyStateType state, bool isStop = false, bool isAfterChase = false) {
             // Reset dashing state, since if the character state changes forcibly, we assume the dash is done.
             IsDashing = false;
             if (null != _waitForAnimationCoroutine)
@@ -76,7 +77,14 @@ namespace EnemyAI {
                     spineState.SetAnimation(0, walkAnimName, true);                    
                     break;
                 case EnemyStateType.Alert:
-                    spineState.SetAnimation(0, walkSearchAnimName, true);
+                    if (isAfterChase)
+                    {
+                        spineState.SetAnimation(0, GetRandomAnimation(patrolIdleAnimations), false);
+                    }
+                    else
+                    {
+                        spineState.SetAnimation(0, walkSearchAnimName, true);
+                    }
                     break;
                 case EnemyStateType.Searching:
                     if (isStop)
@@ -99,9 +107,10 @@ namespace EnemyAI {
         /// Play dash once, rotate collider during dash, then queue follow-up animations.
         /// </summary>
         /// <param name="dashDuration">How long the dash lasts (seconds)</param>
-        public void PlayDash(float dashDuration = 0.5f) {
+        public void PlayDash(bool isRightDash, float dashDuration = 0.5f) {
 
             IsDashing = true;
+            IsRightDash = isRightDash;
 
             // Play the dash (catch) animation
             var dashEntry = spineState.SetAnimation(0, catchAnimName, false);
