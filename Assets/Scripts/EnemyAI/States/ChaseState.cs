@@ -32,6 +32,11 @@ namespace EnemyAI
 
         public void UpdateState(EnemyAIController enemy)
         {
+            if (enemy.animationManager.IsDashing)
+            {
+                return;
+            }
+
             // 1) If player hides, switch immediately
             if (enemy.IsPlayerHiding())
             {
@@ -101,6 +106,7 @@ namespace EnemyAI
             _dashTween?.Kill();
             DOTween.Kill(enemy.transform);
             _dashTween = null;
+            enemy.animationManager.IsDashing = false;
             enemy.StopMovement();
             enemy.ExclamationIconSwitch(false);
         }

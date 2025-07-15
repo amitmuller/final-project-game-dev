@@ -5,6 +5,8 @@ namespace EnemyAI
 {
     public enum EnemyStateType
     {
+        PatrolIdle, // Patrol idle is when the enemy is idling between travelling patrol points
+        PermanentIdle, // Permanent idle is when the enemy is not moving at all
         Calm,
         Alert,
         Searching,
