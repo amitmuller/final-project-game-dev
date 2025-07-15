@@ -334,7 +334,7 @@ public class EnemyAIController : MonoBehaviour
             animationManager.SetCharacterState(CurrentStateType, isStop);
     }
 
-    public void MoveTowards(Vector2 targetPosition, float speed)
+    public Vector2 MoveTowards(Vector2 targetPosition, float speed)
     {
         if (cartCollider != null)
         {
@@ -356,6 +356,8 @@ public class EnemyAIController : MonoBehaviour
             _rigidbody2D.linearVelocity = dir * speed;
         else
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+        return targetPosition;
     }
     
     

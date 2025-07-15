@@ -53,10 +53,9 @@ public static class AlertStateUtils
         {
             var targetX = toRight ? rightX : leftX;
             var targetPos = new Vector2(targetX, enemy.patrolY);
-
-            if (Mathf.Abs(enemy.transform.position.x - targetX) > 0.1f)
-                enemy.MoveTowards(targetPos, speed);
-            else
+            
+            Vector2 targetVec = enemy.MoveTowards(targetPos, speed);
+            if (Mathf.Abs(enemy.transform.position.x - targetVec.x) < 0.1f)
                 toRight = !toRight;          // bounce at edge
 
             yield return null;
