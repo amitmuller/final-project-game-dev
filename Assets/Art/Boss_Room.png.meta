@@ -520,6 +520,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: top roof
+      rect:
+        serializedVersion: 2
+        x: 3518
+        y: 2533
+        width: 1788
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b6b82e9091544f58215917c3f6fef7
+      internalID: -650703273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -557,6 +579,7 @@ TextureImporter:
       pin 1: -8469924431883188044
       pin3: -7451294595553186941
       pn 2: -8594157953630336283
+      top roof: -650703273
       window whites: -7037067625476938236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

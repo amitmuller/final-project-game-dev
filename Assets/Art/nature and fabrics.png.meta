@@ -1630,7 +1630,7 @@ TextureImporter:
         width: 443
         height: 956
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1639,6 +1639,28 @@ TextureImporter:
       bones: []
       spriteID: 49329ce3d92ee4928afe9fda01ad1762
       internalID: 373479961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: katze givol
+      rect:
+        serializedVersion: 2
+        x: 7620
+        y: 1929
+        width: 68
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b58b11683c24a588881295ad300063
+      internalID: 610009117
       vertices: []
       indices: 
       edges: []
@@ -1708,6 +1730,7 @@ TextureImporter:
       hanging leafs2: -6124713823510432656
       hanging leafs3: 5659801083833753757
       hanging leafs4: -7085478483310432556
+      katze givol: 610009117
       mediume flower orange: -1201124339708111352
       mediume flower pink: -7877681419664496987
       nature and fabrics_0: 1007856742
