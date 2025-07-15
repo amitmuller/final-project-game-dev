@@ -771,6 +771,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: small bar
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 2235
+        width: 980
+        height: 1426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257c8df7f3ed34f639e90d13edc56b0d
+      internalID: -800958012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -804,6 +826,7 @@ TextureImporter:
       raindeer: 1609396521537937676
       raindeer2: -5121984683881860908
       red-cow: -310810031756549765
+      small bar: -800958012
       tiger: 1343299577250160765
       zebra: 8843763172109798887
       "\u05E4\u05D5\u05D7\u05DC\u05E6\u05D9\u05DD_16": -7320457018399478520
