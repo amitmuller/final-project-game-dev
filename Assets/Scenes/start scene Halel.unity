@@ -1324,7 +1324,7 @@ MonoBehaviour:
   physicsMovementRelativeTo: {fileID: 0}
   updateTiming: 1
   unscaledTime: 0
-  _animationName: 
+  _animationName: idleStartScene
   loop: 1
   timeScale: 1
 --- !u!23 &615031361
@@ -4200,7 +4200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &2138058207
 PlayableDirector:
   m_ObjectHideFlags: 0
