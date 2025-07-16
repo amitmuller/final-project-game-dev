@@ -438,6 +438,7 @@ public class EnemyAIController : MonoBehaviour
     public void ResetEnemy()
     {
         transform.position = _initialPosition;
+        initIcons();
         ChangeState(_initialState);
         StopMovement();
     }

@@ -233,7 +233,7 @@ public class TailGrabber : MonoBehaviour
 
         Vector3[] points = new Vector3[trajectoryPoints];
         points[0] = startPos;
-        aimLine.sortingOrder = GetHeldObjectRenderer().sortingOrder;
+        aimLine.sortingOrder = 11;
 
         for (int i = 1; i < trajectoryPoints; i++)
         {
