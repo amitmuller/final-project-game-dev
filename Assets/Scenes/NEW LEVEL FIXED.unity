@@ -4908,10 +4908,10 @@ MonoBehaviour:
     volume: 1
   trainSound:
     clip: {fileID: 8300000, guid: ac195324a28174c1aae0999ead6f5436, type: 3}
-    volume: 1
+    volume: 0.651
   chochoTrian:
     clip: {fileID: 8300000, guid: cc94b4a8acdaf419699d830364519665, type: 3}
-    volume: 1
+    volume: 0.688
   lightsMove:
     clip: {fileID: 0}
     volume: 1
