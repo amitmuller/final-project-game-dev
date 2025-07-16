@@ -30,6 +30,7 @@ public class TailGrabber : MonoBehaviour
     public float  verticalThrowAngle = 1.5f;
     public float  lineZOffset        = -1f;
     public float  maxLineLength      = 4f;
+    public float  floorY      = 2f;
     public Gradient aimGradient;
 
     [Header("References")]
@@ -158,6 +159,8 @@ public class TailGrabber : MonoBehaviour
         {
             connector.Attach(heldObject);
             heldObject.GetComponent<ThrowableObject>()?.GrabObject();
+            
+            
 
             var playerRenderer = GetComponentInParent<Renderer>();
             var objRenderer    = heldObject.GetComponent<Renderer>();
@@ -242,27 +245,30 @@ public class TailGrabber : MonoBehaviour
             Vector3 nextPos = startPos + (Vector3)disp2D;
 
             Vector3 prevPos = points[i - 1];
-            ContactFilter2D filter = new ContactFilter2D { useTriggers = false, useLayerMask = false };
-            RaycastHit2D[] hits = new RaycastHit2D[1];
-            int count = Physics2D.Linecast(prevPos, nextPos, filter, hits);
-
-            if (count > 0)
+            if (i > 10)
             {
-                var hit = hits[0];
-                if (hit.collider != null && hit.collider.attachedRigidbody != heldObject)
+                ContactFilter2D filter = new ContactFilter2D { useTriggers = false, useLayerMask = false };
+                RaycastHit2D[] hits = new RaycastHit2D[1];
+                int count = Physics2D.Linecast(prevPos, nextPos, filter, hits);
+
+                if (count > 0)
                 {
-                    Vector3 hitPoint3 = hit.point;
-                    points[i] = hitPoint3;
-                    if (impactMarkerInstance != null)
+                    var hit = hits[0];
+                    if (hit.collider != null && hit.collider.attachedRigidbody != heldObject)
                     {
-                        impactMarkerInstance.SetActive(true);
-                        impactMarkerInstance.transform.position = hitPoint3;
+                        Vector3 hitPoint3 = hit.point;
+                        points[i] = hitPoint3;
+                        if (impactMarkerInstance != null)
+                        {
+                            impactMarkerInstance.SetActive(true);
+                            impactMarkerInstance.transform.position = hitPoint3;
+                        }
+                        aimLine.positionCount = i + 1;
+                        aimLine.SetPositions(points);
+                        return;
                     }
-                    aimLine.positionCount = i + 1;
-                    aimLine.SetPositions(points);
-                    return;
-                }
-            }
+                }            }
+            
 
             points[i] = nextPos;
         }
