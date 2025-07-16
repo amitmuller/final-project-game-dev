@@ -257,8 +257,8 @@ MonoBehaviour:
   - {fileID: 6489606151987427064}
   - {fileID: 5658394292005587842}
   glowLayer: {fileID: 1439284232315824498}
-  maxIntensity: 3
-  minIntensity: 0.2
+  maxIntensity: 220
+  minIntensity: 40
 --- !u!1 &6058967415449987012
 GameObject:
   m_ObjectHideFlags: 0
