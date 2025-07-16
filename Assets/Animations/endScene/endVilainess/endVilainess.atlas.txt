@@ -1,0 +1,36 @@
+endVilainess.png
+size:1853,1630
+filter:Linear,Linear
+pma:true
+Arm Long
+bounds:1202,858,328,770
+offsets:0,8,328,778
+Arm Middle
+bounds:1532,1108,283,520
+Eye Left
+bounds:1827,129,19,24
+offsets:1,2,21,27
+rotate:90
+Eye Right
+bounds:1827,111,16,19
+offsets:1,2,19,22
+rotate:90
+Eyes Back
+bounds:1671,25,154,123
+offsets:1,1,156,125
+Feathers
+bounds:1676,763,114,103
+Final Pointing
+bounds:1202,2,467,385
+offsets:1,1,470,387
+Pointing
+bounds:1202,389,467,472
+rotate:90
+Untitled_Artwork 9
+bounds:2,10,1198,1618
+hand pointing
+bounds:1532,868,238,190
+offsets:1,2,240,193
+rotate:90
+handFirst
+bounds:1671,150,170,237

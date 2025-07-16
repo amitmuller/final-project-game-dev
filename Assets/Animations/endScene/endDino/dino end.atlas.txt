@@ -1,0 +1,22 @@
+dino end.png
+size:1795,1241
+filter:Linear,Linear
+pma:true
+Dino Base
+bounds:2,2,1353,1237
+Left Iris
+bounds:1357,397,59,128
+offsets:845,808,2177,1535
+Left Shine
+bounds:1357,360,51,35
+offsets:812,844,2177,1535
+Right Iris
+bounds:1418,416,71,109
+offsets:1345,966,2177,1535
+Right White Shine
+bounds:1491,496,50,29
+offsets:1341,970,2177,1535
+eyebrows
+bounds:1357,527,712,436
+offsets:728,776,2177,1535
+rotate:90
