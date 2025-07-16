@@ -124,7 +124,13 @@ public class GameManager : MonoBehaviour
         ResetThrowables();
         player.position = carts[currentCart].checkpointPosition;
     }
-    
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     private void ActivateEnemiesInCart(CartData cart)
     {

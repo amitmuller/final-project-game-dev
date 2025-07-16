@@ -253,16 +253,9 @@ public class EnemyAIController : MonoBehaviour
     private bool IsWalkingRight() => _rigidbody2D.linearVelocity.x > 0.01f;
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.C))
-            ChangeState(calmState);
-        if (Input.GetKeyDown(KeyCode.S))
-            ChangeState(searchingState);
-        if (Input.GetKeyDown(KeyCode.A))
-            ChangeState(alertState);
-        if (Input.GetKeyDown(KeyCode.H))
-            ChangeState(chaseState);
         if (Input.GetKeyDown(KeyCode.R))
             gameObject.SetActive(false);
+        
         _currentState.UpdateState(this);
         // flip the skeleton only:
         // If the enemy is in permanent idle and is calm, then
