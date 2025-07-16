@@ -212,7 +212,7 @@ public class GameManager : MonoBehaviour
     }
     public void exitPause()
     {
-        eventSystem.SetSelectedGameObject(submitButton);
+        eventSystem.SetSelectedGameObject(resumeButton);
         PauseMenu.SetActive(false);
         inPause = false;
         if (openSceneCoroutine != null)
