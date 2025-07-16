@@ -3260,12 +3260,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingScreen: {fileID: 148511612}
-  frames:
-  - {fileID: 1104111927}
-  - {fileID: 1311503691}
-  - {fileID: 1962671910}
-  - {fileID: 9307590}
-  - {fileID: 1339620374}
+  animation: {fileID: 0}
+  cameraFade: {fileID: 0}
+  ambienceSource: {fileID: 0}
 --- !u!114 &1443356968
 MonoBehaviour:
   m_ObjectHideFlags: 0
