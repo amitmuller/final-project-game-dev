@@ -1,0 +1,7 @@
+skeleton.png
+size:2048,2048
+format:Alpha
+filter:Linear,Linear
+pma:true
+RopeShelly
+bounds:2,694,1163,471
