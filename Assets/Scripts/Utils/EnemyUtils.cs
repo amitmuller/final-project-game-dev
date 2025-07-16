@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using EnemyAI;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine.Rendering.Universal;
 
 namespace EnemyUtils
@@ -30,11 +31,12 @@ namespace EnemyUtils
                 return true;
             }
             
-            if (!playerHidden && enemy.IsInChasingDistanceFromPlayer())
-            {
-                enemy.ChangeState(enemy.chaseState);
-                return true;
-            }
+            // if (!playerHidden && enemy.IsInChasingDistanceFromPlayer())
+            // {
+            //     Debug.Log("enemy.chaseState");
+            //     enemy.ChangeState(enemy.chaseState);
+            //     return true;
+            // }
             return false;
         }
         

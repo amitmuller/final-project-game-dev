@@ -69,6 +69,7 @@ namespace Characters.Player
         private float lightOriginalValue;
         
         private characterAnimation animation;
+        private characterMovement movement;
 
         private Coroutine vignetteSetter;
 
@@ -76,7 +77,7 @@ namespace Characters.Player
         {
             // playerMove = GetComponent<characterMovement>();
             animation = GetComponent<characterAnimation>();
- 
+            movement = GetComponent<characterMovement>();
             meshRenderer = GetComponent<MeshRenderer>();
             //originalColor   = bodyRenderer.color;
             originalOrder   = meshRenderer.sortingOrder;
@@ -101,9 +102,9 @@ namespace Characters.Player
         {
             if (!ctx.performed || currentHidable == null) return;
 
-            if (!isHiding && AtEdge())
+            if (!isHiding && AtEdge()&& movement.canMove)
                 EnterHide();
-            else if (isHiding && AtEdge())
+            else if (isHiding && AtEdge()&& movement.canMove)
                 ExitHide();
         }
 
@@ -168,6 +169,7 @@ namespace Characters.Player
             {
                 //blurTf.gameObject.SetActive(false);
             }
+            
 
             isHiding = false;
             UpdateHeldObjectSorting();
