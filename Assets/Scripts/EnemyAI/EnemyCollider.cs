@@ -25,8 +25,6 @@ namespace EnemyAI
 
             if (collision.CompareTag("Player") && !IsPlayerHiding())
             {
-                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
                 GameManager.Instance.checkpoint(collision.transform);
             }
         }

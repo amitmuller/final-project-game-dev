@@ -28,7 +28,7 @@ public class characterMovement : MonoBehaviour
     [SerializeField] private float maxAirTurnSpeed = 80f;
     [SerializeField] private float friction;
 
-    private bool canMove;
+    [HideInInspector] public bool canMove;
     private bool caught = false;
 
     [Header("Calculations")]
