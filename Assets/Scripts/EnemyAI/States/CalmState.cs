@@ -6,7 +6,6 @@ using static EnemyUtils.EnemyUtils;
 using UnityEngine.Rendering.Universal;
 using static NoiseManager;
 using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 
 namespace EnemyAI
 {

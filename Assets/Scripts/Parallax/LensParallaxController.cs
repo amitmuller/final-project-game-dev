@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class LensParallaxController : MonoBehaviour
@@ -9,20 +10,27 @@ public class LensParallaxController : MonoBehaviour
 
     [Header("Parallax Layer Settings")]
     [SerializeField] private Transform[] controlledLayers;
+    [SerializeField] private SpriteRenderer glowLayer;
+    [SerializeField] private float maxIntensity = 6.0f;
+    [SerializeField] private float minIntensity = 4.0f;
 
     private float initialCameraSize;
     private Vector3 initialLayerScale;
+    private Material glowMaterial;
+    private Color baseColor;
 
     private void Start()
     {
         initialCameraSize = primaryCamera.orthographicSize;
         initialLayerScale = controlledLayers[0].localScale;
+        glowMaterial = glowLayer.material;
+        baseColor = glowMaterial.GetColor("_GlowColor");
     }
 
     private void Update()
     {
         // Calculate the parallax effect based on camera size
-        float parallaxFactor = primaryCamera.orthographicSize / initialCameraSize;
+        float currentOffset = (primaryCamera.orthographicSize - initialCameraSize) / (maxCameraSize - initialCameraSize);
 
         // Apply the parallax effect to the controlled layers
         for (int i = 0; i < controlledLayers.Length; i++)
@@ -32,9 +40,12 @@ public class LensParallaxController : MonoBehaviour
                 Vector3 newScale = Vector3.Lerp(
                     initialLayerScale,
                     Vector3.one,
-                    (primaryCamera.orthographicSize - initialCameraSize) / (maxCameraSize - initialCameraSize));
+                    currentOffset);
                 controlledLayers[i].localScale = newScale;
             }
         }
+
+        float newIntensity = Mathf.Lerp(maxIntensity, minIntensity, currentOffset);
+        glowMaterial.SetColor("_GlowColor", baseColor * newIntensity);
     }
 }

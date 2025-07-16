@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(LineRenderer))]
-[RequireComponent(typeof(TailConnector))]
 public class TailGrabber : MonoBehaviour
 {
     private Rigidbody2D heldObject = null;
-    private TailConnector connector;
+    
     private float holdStartTime;
     private bool isHolding;
+    
+    [Header("Grabber")]
+    [SerializeField]private TailConnector connector;
 
     [Header("Throw Settings")]
     [Range(0.5f, 5f)] public float maxChargeTime = 2f;
@@ -44,7 +46,6 @@ public class TailGrabber : MonoBehaviour
 
     void Awake()
     {
-        connector     = GetComponent<TailConnector>();
         anim          = GetComponentInParent<characterAnimation>();
         initialParent = transform.parent;
 
@@ -153,7 +154,6 @@ public class TailGrabber : MonoBehaviour
 
     public void Grab()
     {
-        print("grab");
         if (heldObject != null && !connector.IsConnected)
         {
             connector.Attach(heldObject);

@@ -6,7 +6,8 @@ using Interactable_objects;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement; // for ThrowableObject
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems; // for ThrowableObject
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
     private Coroutine openSceneCoroutine;
     public static event Action OnPlayerDead;
     public static event Action OnPlayerRevived;
+
+    [Header("Pause Menu Settings")]
+    [SerializeField] private EventSystem eventSystem;
+    [SerializeField] private GameObject resumeButton;
 
     private void Awake()
     {
@@ -207,6 +212,7 @@ public class GameManager : MonoBehaviour
     }
     public void exitPause()
     {
+        eventSystem.SetSelectedGameObject(resumeButton);
         PauseMenu.SetActive(false);
         inPause = false;
         if (openSceneCoroutine != null)

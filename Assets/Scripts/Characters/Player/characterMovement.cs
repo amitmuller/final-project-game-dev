@@ -67,6 +67,7 @@ public class characterMovement : MonoBehaviour
     
     [Header("raise noise Settings")]
     [SerializeField] private float noiseLevelToAdd = 0.1f;
+    [SerializeField] private SpriteRenderer shadow ;
     [SerializeField] private float noiseTriggerSpeed = 4f;
     private float noiseCooldown = 0.01f; // Raise noise at most every 0.2 seconds
     private float lastNoiseTime = -Mathf.Infinity;
@@ -84,6 +85,7 @@ public class characterMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         hide = GetComponent<PlayerHide>();
         _animation = GetComponent<characterAnimation>();
+        
         size = transform.localScale.y;
 
         if (aimLine != null)
@@ -294,13 +296,14 @@ public class characterMovement : MonoBehaviour
     private void HandlePlayerRevived()
     {
         resetPlayerAnimation();
-        SetCanMove(false);
+        SetCanMove(true);
         
     }
 
     private void caughtPlayerAnimation()
     {
         caught = true;
+        SetCanMove(false);
         _animation.TransitionTo(PlayerAnimState.Caught);
         
     }
