@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class LensParallaxController : MonoBehaviour
 {
+    [Header("Camera Settings")]
     [SerializeField] private Camera primaryCamera;
-    [SerializeField] private Transform[] controlledLayers;
     [SerializeField] private float maxCameraSize = 7.5f;
+
+    [Header("Parallax Layer Settings")]
+    [SerializeField] private Transform[] controlledLayers;
 
     private float initialCameraSize;
     private Vector3 initialLayerScale;
@@ -31,7 +34,6 @@ public class LensParallaxController : MonoBehaviour
                     Vector3.one,
                     (primaryCamera.orthographicSize - initialCameraSize) / (maxCameraSize - initialCameraSize));
                 controlledLayers[i].localScale = newScale;
-                //controlledLayers[i].localScale = initialLayerScale * parallaxFactor;
             }
         }
     }
