@@ -370,17 +370,7 @@ public class EnemyAIController : MonoBehaviour
         // forward the event into whatever state we’re in
         _currentState.OnNoiseRaised(worldPos, this);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.CompareTag("Player") && !IsPlayerHiding())
-        {
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-            GameManager.Instance.checkpoint(collision.transform);
-        }
-    }
+    
 
     private void initIcons()
     {
