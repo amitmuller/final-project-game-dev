@@ -38,7 +38,7 @@ public class ThrowableObject : MonoBehaviour
         
         
         grabUICircle.transform.localPosition = Vector3.zero;
-        grabUICircle.transform.localScale = transform.localScale;
+        grabUICircle.transform.localScale = transform.localScale*2f;
         grabUICircle.GetComponent<SpriteRenderer>().sortingOrder = sr.sortingOrder-1;
         grabUI.SetActive(false);
         grabUICircle.SetActive(false);
