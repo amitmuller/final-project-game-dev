@@ -4,6 +4,8 @@ using UnityEngine.Rendering.Universal;
 
 public class LightFlicker : MonoBehaviour
 {
+    [Tooltip("Maximum delay before the flicker starts, in seconds")]
+    [SerializeField] private float maxStartDelay = 4.0f;
     [Tooltip("Time between flickers, in seconds")]
     [SerializeField] private float flickerInterval = 4f;
     [SerializeField] private float minLightIntensity = 0f;
@@ -25,6 +27,9 @@ public class LightFlicker : MonoBehaviour
 
     private IEnumerator Flicker()
     {
+        // Wait for a random time before starting the flicker
+        yield return new WaitForSeconds(Random.Range(0f, maxStartDelay));
+
         while (true)
         {
             float elapsedTime = 0f;
