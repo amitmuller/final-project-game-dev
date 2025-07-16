@@ -1,5 +1,6 @@
 using Characters.Player;
 using DG.Tweening;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class EndTrigger : MonoBehaviour
@@ -7,6 +8,9 @@ public class EndTrigger : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Transform autoMoveDestination;
     [SerializeField] private float autoMoveDuration = 2f;
+
+    [SerializeField] private CinemachineBrain mainCameraBrain;
+    [SerializeField] private GameObject endCamera;
 
     private characterAnimation charAnim;
 
@@ -27,5 +31,9 @@ public class EndTrigger : MonoBehaviour
     private void OnPlayerReachedDestination()
     {
         charAnim.TransitionTo(PlayerAnimState.Idle);
+
+        endCamera.SetActive(true);
+        var currentCamera = mainCameraBrain.ActiveVirtualCamera as CinemachineCamera;
+        currentCamera.gameObject.SetActive(false);
     }
 }
