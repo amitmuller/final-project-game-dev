@@ -11,6 +11,7 @@ public class StartSceneEvents : MonoBehaviour
 
     [Tooltip("One‐shot train sound effect")]
     [SerializeField] private AudioSource trainSource;
+    [SerializeField] private AudioSource DinoSource;
     
     
     public void OnTrain()
@@ -19,6 +20,15 @@ public class StartSceneEvents : MonoBehaviour
         {
             trainSource.loop = false;
             trainSource.Play();
+        }
+    }
+    
+    public void OnSound()
+    {
+        if (DinoSource != null)
+        {
+            DinoSource.loop = false;
+            DinoSource.Play();
         }
     }
 
