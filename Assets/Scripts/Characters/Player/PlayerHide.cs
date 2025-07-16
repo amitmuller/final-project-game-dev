@@ -26,6 +26,7 @@ namespace Characters.Player
         [SerializeField] private MonoBehaviour movementScript;
         [SerializeField] private SpriteRenderer bodyRenderer;
         [SerializeField] private Volume globalVolume;
+        [SerializeField] private Light2D globalLight;
 
         [Header("Hide Orders (within Default layer)")]
         [Tooltip("Player’s normal drawing order")]
@@ -53,6 +54,7 @@ namespace Characters.Player
         [Header("Vignette Settings")]
         [SerializeField] private float vignetteHideValue = 0.5f;
         [SerializeField] private float setSpeed = 0.5f;
+        [SerializeField] private float lightHideValue = 0.5f;
 
         private const float  PeekThreshold = 0.95f;
         private const int HiddenEnemyOrder = -100;
@@ -64,6 +66,7 @@ namespace Characters.Player
         private float         originalY;
         private Collider2D    playerCollider;
         private Transform blurTf;
+        private float lightOriginalValue;
         
         private characterAnimation animation;
 
@@ -82,6 +85,11 @@ namespace Characters.Player
             //blurTf = transform.Find("BlurScreen");
             // Ensure we start at our normal order
             meshRenderer.sortingOrder = normalOrder;
+        }
+
+        private void Start()
+        {
+            lightOriginalValue = globalLight.intensity;
         }
 
         // Called by HidableObject when player comes near
@@ -107,7 +115,7 @@ namespace Characters.Player
             {
                 StopCoroutine(vignetteSetter);
             }
-            vignetteSetter = StartCoroutine(VignetteSetter(vignetteHideValue));
+            vignetteSetter = StartCoroutine(VignetteSetter(vignetteHideValue, lightHideValue));
 
             // 1) Darken & sorting/Y
             AudioManager.Instance.PlayEffect("playerInHide");
@@ -147,7 +155,7 @@ namespace Characters.Player
             {
                 StopCoroutine(vignetteSetter);
             }
-            StartCoroutine(VignetteSetter(0));
+            StartCoroutine(VignetteSetter(0, lightOriginalValue));
 
             foreach (var enemy in EnemyAIController.AllEnemies)
                 enemy.RestoreSortingOrder();
@@ -167,10 +175,11 @@ namespace Characters.Player
                 enemy.RestoreSortingOrder();
         }
 
-        private IEnumerator VignetteSetter(float targetValue)
+        private IEnumerator VignetteSetter(float targetValue, float targetLightValue)
         {
             globalVolume.profile.TryGet(out Vignette vignette);
             float currentValue = vignette.intensity.value;
+            float currentLightValue = globalLight.intensity;
             float elapsedTime = 0f;
 
             while (elapsedTime < setSpeed)
@@ -178,6 +187,8 @@ namespace Characters.Player
                 elapsedTime += Time.deltaTime;
                 float newValue = Mathf.Lerp(currentValue, targetValue, elapsedTime / setSpeed);
                 vignette.intensity.Override(newValue);
+                float newLightValue = Mathf.Lerp(currentLightValue, targetLightValue, elapsedTime / setSpeed);
+                globalLight.intensity = newLightValue;
                 yield return null;
             }
 

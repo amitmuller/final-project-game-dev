@@ -63345,6 +63345,10 @@ PrefabInstance:
       value: 0.35102466
       objectReference: {fileID: 0}
     - target: {fileID: 1087059997028390949, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 1894409830}
+    - target: {fileID: 1087059997028390949, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: globalVolume
       value: 
       objectReference: {fileID: 83018498}
@@ -273324,7 +273328,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.75
+  m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000cffc7cba45dfbaef6186dc1631a12cb677b151b133afa3d52ba20c11f77e2256
