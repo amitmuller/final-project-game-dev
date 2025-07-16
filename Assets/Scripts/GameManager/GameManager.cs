@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             _spareThrowableRoots.Add(spareList);
         }
 
-        _cameraFade.FadeOutAndIn();
+        _cameraFade.FadeOutOverTime(true);
     }
 
     public void PlayerEnteredCart(int cartIndex)
@@ -124,7 +124,8 @@ public class GameManager : MonoBehaviour
         {
             if (enemy == null) continue;
             var ctrl = enemy.GetComponent<EnemyAIController>();
-            if (ctrl != null) ctrl.PatrolEnemy();
+            if (ctrl != null) ctrl.ResetEnemy();
+            enemy.SetActive(false);
         }
     }
 

@@ -11,6 +11,7 @@ public class EnemyFOVTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.CompareTag("Player") && !enemy.IsPlayerHiding())
         {
             enemy.ChangeState(enemy.chaseState);

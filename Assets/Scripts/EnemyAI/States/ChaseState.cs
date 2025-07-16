@@ -71,11 +71,14 @@ namespace EnemyAI
 
                     // compute duration so that duration = distance / speed
                     var duration = dx / dashSpeed;
-                    duration = Mathf.Max(duration, animLength+1f);
+                    duration = Mathf.Max(duration, animLength);
 
                     // kill any stray tweens on this transform
                     DOTween.Kill(enemy.transform);
-                    enemy.animationManager.PlayDash();
+                    float deltaX = playerX - enemy.transform.position.x;
+                    bool isRightDash = deltaX >= 0f;
+
+                    enemy.animationManager.PlayDash(isRightDash);
                     // start one‐shot dash reset _dashTween on complete
                     _dashTween = enemy.transform
                         .DOMoveX(playerX, duration)

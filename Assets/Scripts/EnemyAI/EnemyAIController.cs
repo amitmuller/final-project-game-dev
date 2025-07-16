@@ -36,7 +36,7 @@ public class EnemyAIController : MonoBehaviour
     // ── Patrol Settings (Calm)
     [Header("Patrol Settings (Calm)")]
     [Tooltip("X positions to patrol between")]
-    public float[] patrolPoints;
+    public Transform[] patrolPoints;
     [HideInInspector] public int currentPatrolIndex = 0;
     [HideInInspector] public float patrolY;  // captured at Awake
     public static int ConversationEncounterCount = 5;
@@ -207,7 +207,7 @@ public class EnemyAIController : MonoBehaviour
             _playerStartPosition = playerTransform.position;
         }
         size = transform.localScale.x;
-        CreateFOVMesh();
+        // CreateFOVMesh();
         _initialPosition = transform.position;
         _initialState = calmState;
         initIcons();
@@ -271,6 +271,10 @@ public class EnemyAIController : MonoBehaviour
         if (IsPermanentIdle && CurrentStateType == EnemyStateType.Calm)
         {
             _spine.Skeleton.FlipX = isInitialFacingRight;
+        }
+        else if (animationManager.IsDashing && CurrentStateType == EnemyStateType.Chase)
+        {
+            _spine.Skeleton.FlipX = animationManager.IsRightDash;
         }
         else
         {
@@ -372,8 +376,13 @@ public class EnemyAIController : MonoBehaviour
         
         if (collision.CompareTag("Player") && !IsPlayerHiding())
         {
-            Debug.Log("enemy got player reset checkpoint");
+            float deltaX = transform.position.x - transform.position.x;
+            bool isRightDash = deltaX >= 0f;
+
+            animationManager.PlayDash(isRightDash);
+            
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
             GameManager.Instance.checkpoint(collision.transform);
         }
     }
@@ -500,6 +509,7 @@ public class EnemyAIController : MonoBehaviour
         Color newColor = meshRenderer.material.color;
         newColor.a = 0.3f; // for example, 30% visible
         meshRenderer.material.color = newColor;
+        
         _fovMeshObject.GetComponent<Renderer>().sortingLayerName = GetComponent<Renderer>().sortingLayerName;
         _fovMeshObject.GetComponent<Renderer>().sortingOrder = GetComponent<Renderer>().sortingOrder-1;
         _fovOriginalLocalScale = _fovMeshObject.transform.localScale;
@@ -602,16 +612,16 @@ public class EnemyAIController : MonoBehaviour
     /// </summary>
     public void RestoreSortingOrder()
     {
-        Debug.Log("Restoring sorting order");
-        _skeletonRenderer.sortingOrder= _originalSpriteOrder;
-
-        _fovMeshObject.gameObject.SetActive(true);
-        if (_uiCanvas != null)
-            _uiCanvas.sortingOrder = _uiOriginalOrder;
-        if (sortingEffect != null)
-        {
-            sortingEffect.gameObject.SetActive(false);
-        }
+        // Debug.Log("Restoring sorting order");
+        // _skeletonRenderer.sortingOrder= _originalSpriteOrder;
+        //
+        // _fovMeshObject.gameObject.SetActive(true);
+        // if (_uiCanvas != null)
+        //     _uiCanvas.sortingOrder = _uiOriginalOrder;
+        // if (sortingEffect != null)
+        // {
+        //     sortingEffect.gameObject.SetActive(false);
+        // }
 
     }
     
