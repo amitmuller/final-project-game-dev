@@ -71,7 +71,7 @@ namespace EnemyAI
 
                     // compute duration so that duration = distance / speed
                     var duration = dx / dashSpeed;
-                    duration = Mathf.Max(duration, animLength+1f);
+                    duration = Mathf.Max(duration, animLength);
 
                     // kill any stray tweens on this transform
                     DOTween.Kill(enemy.transform);
