@@ -156,7 +156,7 @@
                     "id": "978bfe49-cc26-4a3d-ab7b-7d7a29327403",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": ";Gamepad",
                     "action": "Move",
                     "isComposite": false,
@@ -689,6 +689,28 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f691afe-2457-49ee-ad61-fff3c29f4809",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ece215ca-8fbd-40d2-8bca-fd3eb48c3d3e",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1193,7 +1215,7 @@
                 {
                     "name": "",
                     "id": "595a667b-cea9-4b5a-a3cc-6e31fdf0403c",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<XInputController>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1205,6 +1227,28 @@
                     "name": "",
                     "id": "3ced7315-33d7-4e09-a01c-6f02428f6efc",
                     "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e0b0632-0e7b-4d8c-888c-e2349ac34ba8",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95e6eaa1-1cc2-4ffd-82f4-3a1fc862130d",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

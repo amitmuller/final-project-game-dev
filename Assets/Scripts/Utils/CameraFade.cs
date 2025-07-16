@@ -8,76 +8,104 @@ public class CameraFade : MonoBehaviour
     [SerializeField] private Image fade;
     [SerializeField] private float duration = 3f;
     private readonly Color _startColor = new Color(0, 0, 0, 0);
-    private readonly Color _endColor = new Color(0, 0, 0, 1);
+    private readonly Color _endColor   = new Color(0, 0, 0, 1);
 
-    private Coroutine _fadeOutCoroutine;
+    private Coroutine _fadeCoroutine;
 
+    /// <summary>
+    /// Fade duration.
+    /// </summary>
     public float Duration => duration;
 
     private void Awake()
     {
-        fade.gameObject.SetActive(true);
+        if (fade != null)
+        {
+            fade.gameObject.SetActive(true);
+            fade.color = _startColor;
+        }
     }
 
-    public void FadeOutOverTime(bool reverse = false)
-    {
-        if (!fade) return;
-        if (_fadeOutCoroutine != null)
-            StopCoroutine(_fadeOutCoroutine);
-
-        _fadeOutCoroutine = StartCoroutine(LerpColor(reverse));
-    }
-    
     /// <summary>
-    /// New: fade transparent → black → transparent in one call
+    /// Fades out (transparent→black) then in (black→transparent),
+    /// invoking onBlack when fully black, and onComplete when the full cycle finishes.
     /// </summary>
-    public void FadeOutAndIn()
+    /// <param name="onBlack">Called once the fade reaches full black.</param>
+    /// <param name="onComplete">Called after fading back to transparent.</param>
+    public void FadeOutAndIn(Action onBlack = null, Action onComplete = null)
     {
-        if (!fade) return;
-        if (_fadeOutCoroutine != null)
-            StopCoroutine(_fadeOutCoroutine);
-
-        _fadeOutCoroutine = StartCoroutine(FadeSequence());
+        if (fade == null) return;
+        if (_fadeCoroutine != null)
+            StopCoroutine(_fadeCoroutine);
+        _fadeCoroutine = StartCoroutine(FadeSequence(onBlack, onComplete));
     }
 
-    private IEnumerator FadeSequence()
+    private IEnumerator FadeSequence(Action onBlack, Action onComplete)
     {
-        // 1) transparent → black
-        yield return StartCoroutine(LerpColor(false));
+        // 1) transparent → black, then trigger onBlack
+        yield return StartCoroutine(LerpColor(_startColor, _endColor, onBlack));
+        // 2) black → transparent
+        yield return StartCoroutine(LerpColor(_endColor, _startColor, null));
 
-        // 2) black → transparent (immediate, no extra delay)
-        float tTime = 0f;
-        while (tTime < duration)
+        // full cycle complete
+        onComplete?.Invoke();
+        _fadeCoroutine = null;
+    }
+
+    /// <summary>
+    /// Fades between start and end over duration, invoking onReach once at the end.
+    /// </summary>
+    /// <param name="from">Starting color.</param>
+    /// <param name="to">Target color.</param>
+    /// <param name="onReach">Called once fade completes to 'to'.</param>
+    private IEnumerator LerpColor(Color from, Color to, Action onReach)
+    {
+        float elapsed = 0f;
+        fade.color = from;
+        while (elapsed < duration)
         {
-            tTime += Time.unscaledDeltaTime;
-            float t = Mathf.Clamp01(tTime / duration);
+            elapsed += Time.unscaledDeltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
             float eased = Mathf.SmoothStep(0f, 1f, t);
-            fade.color = Color.Lerp(_endColor, _startColor, eased);
+            fade.color = Color.Lerp(from, to, eased);
             yield return null;
         }
-        fade.color = _startColor;
-
-        _fadeOutCoroutine = null;
+        fade.color = to;
+        onReach?.Invoke();
     }
 
-    private IEnumerator LerpColor(bool reverse)
+    /// <summary>
+    /// Fades to (reverse==false) or from (reverse==true) black over duration.
+    /// </summary>
+    /// <param name="reverse">If true, fade black→transparent; otherwise transparent→black.</param>
+    /// <param name="onReach">Called once fade completes.</param>
+    public void FadeOutOverTime(bool reverse = false, Action onReach = null)
     {
-        // if (reverse) yield return new WaitForSecondsRealtime(2f);
-        float time = 0f;
+        if (fade == null) return;
+        if (_fadeCoroutine != null)
+            StopCoroutine(_fadeCoroutine);
 
-        Color fromColor = reverse ? _endColor : _startColor;
-        Color toColor   = reverse ? _startColor : _endColor;
+        Color from = reverse ? _endColor : _startColor;
+        Color to   = reverse ? _startColor : _endColor;
+        _fadeCoroutine = StartCoroutine(LerpColor(from, to, onReach));
+    }
 
-        while (time < duration)
+    private void Update()
+    {
+        // testing shortcuts
+        if (Input.GetKeyDown(KeyCode.F1))
         {
-            time += Time.unscaledDeltaTime;
-            float t = Mathf.Clamp01(time / duration);
-            float easedT = Mathf.SmoothStep(0f, 1f, t); // Smooth easing
-            fade.color = Color.Lerp(fromColor, toColor, easedT);
-            yield return null;
+            FadeOutOverTime(false, () => Debug.Log("Reached black via F1"));
         }
-
-        fade.color = toColor;
-        _fadeOutCoroutine = null;
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            FadeOutOverTime(true, () => Debug.Log("Faded back via F2"));
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            FadeOutAndIn(
+                onBlack: () => Debug.Log("Screen is fully black now!"),
+                onComplete: () => Debug.Log("Fade out and in complete."));
+        }
     }
 }

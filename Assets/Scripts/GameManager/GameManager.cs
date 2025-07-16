@@ -6,7 +6,8 @@ using Interactable_objects;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement; // for ThrowableObject
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems; // for ThrowableObject
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
     private Coroutine openSceneCoroutine;
     public static event Action OnPlayerDead;
     public static event Action OnPlayerRevived;
+
+    [Header("Pause Menu Settings")]
+    [SerializeField] private EventSystem eventSystem;
+    [SerializeField] private GameObject resumeButton;
 
     private void Awake()
     {
@@ -59,7 +64,7 @@ public class GameManager : MonoBehaviour
             _spareThrowableRoots.Add(spareList);
         }
 
-        _cameraFade.FadeOutAndIn();
+        _cameraFade.FadeOutOverTime(true);
     }
 
     public void PlayerEnteredCart(int cartIndex)
@@ -124,7 +129,8 @@ public class GameManager : MonoBehaviour
         {
             if (enemy == null) continue;
             var ctrl = enemy.GetComponent<EnemyAIController>();
-            if (ctrl != null) ctrl.PatrolEnemy();
+            if (ctrl != null) ctrl.ResetEnemy();
+            enemy.SetActive(false);
         }
     }
 
@@ -206,6 +212,7 @@ public class GameManager : MonoBehaviour
     }
     public void exitPause()
     {
+        eventSystem.SetSelectedGameObject(resumeButton);
         PauseMenu.SetActive(false);
         inPause = false;
         if (openSceneCoroutine != null)
