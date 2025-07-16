@@ -104,7 +104,7 @@ namespace Characters.Player
 
             if (!isHiding && AtEdge()&& movement.canMove)
                 EnterHide();
-            else if (isHiding && AtEdge()&& movement.canMove)
+            else if (isHiding && AtEdge() && movement.canMove)
                 ExitHide();
         }
 
@@ -156,6 +156,7 @@ namespace Characters.Player
             {
                 StopCoroutine(vignetteSetter);
             }
+            AudioManager.Instance.PlayEffect("playerInHide");
             StartCoroutine(VignetteSetter(0, lightOriginalValue));
 
             foreach (var enemy in EnemyAIController.AllEnemies)
