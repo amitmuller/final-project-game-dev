@@ -56,6 +56,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Sound stoneBreakSound2;
 
     private Dictionary<string, Sound> sounds;
+    private Coroutine chochoCoroutine;
     private List<AudioSource> effectSources; // Pool of AudioSources for effects
     private int currentEffectIndex = 0;
     private int effectPoolSize = 10;
@@ -124,8 +125,13 @@ public class AudioManager : MonoBehaviour
         }
 
         // 2) Begin randomly playing chochoTrian or lightsMove
-        StartCoroutine(PlayOccasionalAmbiance());
+        chochoCoroutine = StartCoroutine(PlayOccasionalAmbiance());
         StartCoroutine(PlayOccasionalPlayerScreech());
+    }
+
+    public void stopCochoCoroutine()
+    {
+        StopCoroutine(chochoCoroutine);
     }
     
     private IEnumerator PlayOccasionalPlayerScreech()

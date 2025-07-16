@@ -29,6 +29,7 @@ namespace EnemyAI
             if (enemy.filledQuestionIcon != null)
             {
                 enemy.filledQuestionIcon.fillAmount = 1f;
+                enemy.filledQuestionIcon.gameObject.SetActive(true);
                 
             }
             

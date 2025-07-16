@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviour
             cart.hasActivated = true;
             Debug.Log($"[GameManager] Activated enemies for {cart.cartName}.");
         }
+
+        if (cartIndex == carts.Count-1)
+        {
+            AudioManager.Instance.stopCochoCoroutine();
+        }
     }
 
     public void PlayerLeftCart(int cartIndex)
