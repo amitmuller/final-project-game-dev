@@ -25,11 +25,11 @@ namespace EnemyAI
             enemy.moveToNoiseTimer = 0f;
             enemy.searchTimer      = enemy.searchDuration;
             enemy.isStop = false;
-
+            enemy.QuesitonIconSwitch(true);
             if (enemy.filledQuestionIcon != null)
             {
                 enemy.filledQuestionIcon.fillAmount = 1f;
-                enemy.filledQuestionIcon.gameObject.SetActive(true);
+                
             }
             
             enemy.StopMovement();
@@ -91,7 +91,7 @@ namespace EnemyAI
         public void ExitState(EnemyAIController enemy)
         {
             enemy.prevState = EnemyStateType.Searching;
-            enemy.filledQuestionIcon?.gameObject.SetActive(false);
+            enemy.QuesitonIconSwitch(false);
         }
     }
 }

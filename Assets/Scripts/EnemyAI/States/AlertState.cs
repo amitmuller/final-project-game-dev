@@ -21,6 +21,11 @@ namespace EnemyAI
             enemy.isAlertPatrolling = false;
             enemy.QuesitonIconSwitch(true);
             enemy.alertTimer = enemy.alertDuration;
+            if (enemy.filledQuestionIcon != null)
+            {
+                enemy.filledQuestionIcon.fillAmount = 1f;
+                enemy.filledQuestionIcon.gameObject.SetActive(true);
+            }
 
             //if (enemy.prevState == EnemyStateType.Chase)
             //{
@@ -40,7 +45,11 @@ namespace EnemyAI
             {
                 enemy.ChangeState(enemy.calmState);
             }
-                
+            if (enemy.filledQuestionIcon != null)
+            {
+                enemy.filledQuestionIcon.fillAmount =
+                    Mathf.Clamp01(enemy.alertTimer / enemy.alertDuration);
+            }
             
             // 3) if enemy is alert he will alert his friend in proximity
             //AlertNearbyEnemies(enemy, enemy.spreadRadius);
@@ -56,6 +65,7 @@ namespace EnemyAI
                 return;
             }
             if (enemy.CurrentStateType == EnemyStateType.Chase) return;
+            
             
             // 5) Otherwise patrol across alert patrol radius
             Debug.Log($"enemy patrolling = " + enemy.isAlertPatrolling);
