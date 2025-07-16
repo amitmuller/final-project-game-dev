@@ -7,7 +7,8 @@ using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems; // for ThrowableObject
+using UnityEngine.EventSystems;
+using UnityEngine.Rendering; // for ThrowableObject
 
 public class GameManager : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class GameManager : MonoBehaviour
     [Header("Pause Menu Settings")]
     [SerializeField] private EventSystem eventSystem;
     [SerializeField] private GameObject resumeButton;
+    [SerializeField] private VolumeProfile pauseVolumeProfile;
+    [SerializeField] private Volume globalVolume;
+
+    private VolumeProfile gameVolumeProfile;
 
     private void Awake()
     {
@@ -205,6 +210,10 @@ public class GameManager : MonoBehaviour
 
     public void enterPause()
     {
+        // Switching volume profiles
+        gameVolumeProfile = globalVolume.profile;
+        globalVolume.profile = pauseVolumeProfile;
+
         inPause = true;
         PauseMenu.SetActive(true);
         MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 0f, 0f, true, 50f, true);
@@ -212,6 +221,8 @@ public class GameManager : MonoBehaviour
     }
     public void exitPause()
     {
+        // Resuming to original volume profile
+        globalVolume.profile = gameVolumeProfile;
         eventSystem.SetSelectedGameObject(resumeButton);
         PauseMenu.SetActive(false);
         inPause = false;

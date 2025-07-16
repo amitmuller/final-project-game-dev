@@ -236,9 +236,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23db7de9cc62147428fb4d1c46f27bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnoffTime: 0.25
-  flickerInterval: 4
-  flickersCount: 2
+  maxStartDelay: 4
+  flickerInterval: 1.5
+  minLightIntensity: 0.57
+  maxLightIntensity: 0.94
+  flickerSpeed: 2.61
+  flickerDuration: 1.21
 --- !u!1 &3260820560514592112
 GameObject:
   m_ObjectHideFlags: 0

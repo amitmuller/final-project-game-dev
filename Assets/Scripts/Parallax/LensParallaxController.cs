@@ -24,7 +24,7 @@ public class LensParallaxController : MonoBehaviour
         initialCameraSize = primaryCamera.orthographicSize;
         initialLayerScale = controlledLayers[0].localScale;
         glowMaterial = glowLayer.material;
-        //baseColor = glowMaterial.GetColor("_GlowColor");
+        baseColor = glowMaterial.GetColor("_GlowColor");
     }
 
     private void Update()
@@ -46,6 +46,6 @@ public class LensParallaxController : MonoBehaviour
         }
 
         float newIntensity = Mathf.Lerp(maxIntensity, minIntensity, currentOffset);
-        //glowMaterial.SetColor("_GlowColor", baseColor * newIntensity);
+        glowMaterial.SetColor("_GlowColor", baseColor * newIntensity);
     }
 }
