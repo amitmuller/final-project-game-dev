@@ -238,9 +238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStartDelay: 4
   flickerInterval: 1.5
-  minLightIntensity: 0.57
-  maxLightIntensity: 0.94
-  flickerSpeed: 2.61
+  minLightIntensity: 0.25
+  maxLightIntensity: 0.36
+  flickerSpeed: 1.76
   flickerDuration: 1.21
 --- !u!1 &8375493989634485241
 GameObject:
