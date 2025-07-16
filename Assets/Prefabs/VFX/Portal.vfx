@@ -38,9 +38,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: -806
-    y: -1433
-    width: 2133
-    height: 3381
+    y: -1432
+    width: 2132
+    height: 3349
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,7 +405,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.08
+      m_SerializableObject: 0.1
     m_Space: -1
   m_Property:
     name: A
@@ -439,7 +439,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1.21
+      m_SerializableObject: 1.09
     m_Space: -1
   m_Property:
     name: B
@@ -755,7 +755,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":7.6424713134765629,"g":7.906699180603027,"b":0.08279281854629517,"a":1.0},"time":0.0},{"color":{"r":13.766359329223633,"g":3.4776194095611574,"b":0.4761931896209717,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.6549019813537598,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":10.556063652038575,"g":10.556063652038575,"b":10.556063652038575,"a":1.0},"time":0.0},{"color":{"r":13.76636028289795,"g":4.808211803436279,"b":0.5766017436981201,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.16470588743686677},{"alpha":0.6549019813537598,"time":1.0}],"gradientMode":0}'
     m_Space: -1
   m_Property:
     name: Color
@@ -3944,7 +3944,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.63
+      m_SerializableObject: 0.5
     m_Space: -1
   m_Property:
     name: _Scale
@@ -4011,7 +4011,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":4.0}'
+      m_SerializableObject: '{"x":0.0,"y":2.0}'
     m_Space: -1
   m_Property:
     name: SpeedRange
@@ -4263,7 +4263,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.71
+      m_SerializableObject: 0.35
     m_Space: -1
   m_Property:
     name: _Alpha
