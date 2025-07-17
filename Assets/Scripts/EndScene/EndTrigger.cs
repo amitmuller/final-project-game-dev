@@ -1,7 +1,11 @@
 using Characters.Player;
 using DG.Tweening;
+using System.Collections;
 using Unity.Cinemachine;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.Rendering.Universal.Internal;
+using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
@@ -11,6 +15,8 @@ public class EndTrigger : MonoBehaviour
 
     [SerializeField] private CinemachineBrain mainCameraBrain;
     [SerializeField] private GameObject endCamera;
+
+    [SerializeField] private float finalSceneDelay = 2f;
 
     private characterAnimation charAnim;
 
@@ -35,5 +41,13 @@ public class EndTrigger : MonoBehaviour
         endCamera.SetActive(true);
         var currentCamera = mainCameraBrain.ActiveVirtualCamera as CinemachineCamera;
         currentCamera.gameObject.SetActive(false);
+
+        StartCoroutine(FinalSceneStarter());
+    }
+
+    private IEnumerator FinalSceneStarter()
+    {
+        yield return new WaitForSeconds(finalSceneDelay);
+        SceneManager.LoadScene(2);
     }
 }
