@@ -39,6 +39,10 @@ public class TailGrabber : MonoBehaviour
     [Header("Impact Marker")]
     [SerializeField] private GameObject impactMarkerPrefab;
     private GameObject impactMarkerInstance;
+    
+    [Header("Throw Canvas")]
+    [SerializeField] private GameObject throwCanvas;
+    private bool canvasShown = false;
 
     private LineRenderer    aimLine;
     private characterAnimation anim;
@@ -145,6 +149,7 @@ public class TailGrabber : MonoBehaviour
 
             float force = Mathf.Lerp(minThrowForce, maxThrowForce, t);
 
+            
             delayedThrowCoroutine = StartCoroutine(DelayedThrow(force));
             anim.TransitionTo(PlayerAnimState.TailThrow);
             heldObject.GetComponent<Collider2D>().isTrigger = false;
@@ -160,12 +165,16 @@ public class TailGrabber : MonoBehaviour
             connector.Attach(heldObject);
             heldObject.GetComponent<ThrowableObject>()?.GrabObject();
             
-            
 
             var playerRenderer = GetComponentInParent<Renderer>();
             var objRenderer    = heldObject.GetComponent<Renderer>();
             if (playerRenderer != null && objRenderer != null)
                 playerHide.UpdateHeldObjectSorting();
+            if (!canvasShown)
+            {
+                throwCanvas.SetActive(true);
+                canvasShown = true;
+            }
         }
     }
 
@@ -184,7 +193,9 @@ public class TailGrabber : MonoBehaviour
             heldObject.isKinematic = false;
             heldObject.AddForce(dir * force, ForceMode2D.Impulse);
             heldObject = null;
-            delayedThrowCoroutine = null;
+            delayedThrowCoroutine = null; 
+            throwCanvas.SetActive(false);
+            
         }
     }
 
