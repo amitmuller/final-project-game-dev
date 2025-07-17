@@ -18,11 +18,13 @@ public class EndTrigger : MonoBehaviour
     [SerializeField] private float finalSceneDelay = 2f;
 
     private characterAnimation charAnim;
+    private bool isTriggered = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !isTriggered)
         {
+            isTriggered = true;
             player.GetComponent<characterMovement>().SetCanMove(false);
             charAnim = player.GetComponent<characterAnimation>();
             charAnim.TransitionTo(PlayerAnimState.Walk);
