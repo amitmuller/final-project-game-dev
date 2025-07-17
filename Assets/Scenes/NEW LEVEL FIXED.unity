@@ -295055,6 +295055,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5908722935878109159, guid: bd28b73b89d61264182ab1ff42a6875f, type: 3}
+      propertyPath: managedReferences[6128473383227621472].Velocity.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908722935878109159, guid: bd28b73b89d61264182ab1ff42a6875f, type: 3}
+      propertyPath: managedReferences[6128473695456067697].Velocity.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908722935878109159, guid: bd28b73b89d61264182ab1ff42a6875f, type: 3}
+      propertyPath: managedReferences[6128473695456067699].Velocity.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908722935878109159, guid: bd28b73b89d61264182ab1ff42a6875f, type: 3}
+      propertyPath: managedReferences[6128473383227621472].m_ImpulseDefinition.ImpulseType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908722935878109159, guid: bd28b73b89d61264182ab1ff42a6875f, type: 3}
+      propertyPath: managedReferences[6128473383227621472].m_ImpulseDefinition.ImpulseShape
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
