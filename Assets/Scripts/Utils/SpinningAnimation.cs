@@ -20,4 +20,9 @@ public class SpinningAnimation : MonoBehaviour
             new Vector3(0, 0, 360),
             fullRotationDuration);
     }
+
+    private void OnDestroy()
+    {
+        rotationAnim?.Kill();
+    }
 }

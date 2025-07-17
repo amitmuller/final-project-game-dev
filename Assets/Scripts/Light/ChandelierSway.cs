@@ -36,4 +36,9 @@ public class ChandelierSway : MonoBehaviour
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo);
     }
+
+    private void OnDestroy()
+    {
+        swayTween?.Kill();
+    }
 }
