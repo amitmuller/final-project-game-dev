@@ -232321,7 +232321,7 @@ Transform:
   m_GameObject: {fileID: 1572677265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.761023, y: 0.22482133, z: -10.8}
+  m_LocalPosition: {x: -19.757719, y: 0.22482133, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -232414,7 +232414,7 @@ MonoBehaviour:
     DefaultMode: 2
   DefaultBlend:
     Style: 1
-    Time: 2
+    Time: 1.2
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
