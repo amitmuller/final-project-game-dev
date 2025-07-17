@@ -2,7 +2,6 @@ using Characters.Player;
 using DG.Tweening;
 using System.Collections;
 using Unity.Cinemachine;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.SceneManagement;
@@ -47,6 +46,7 @@ public class EndTrigger : MonoBehaviour
 
     private IEnumerator FinalSceneStarter()
     {
+        Debug.Log($"Waiting for {finalSceneDelay}");
         yield return new WaitForSeconds(finalSceneDelay);
         SceneManager.LoadScene(2);
     }

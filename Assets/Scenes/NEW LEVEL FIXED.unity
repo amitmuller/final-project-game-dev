@@ -68090,11 +68090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8723115628770386424, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.66707575
+      value: 0.86179185
       objectReference: {fileID: 0}
     - target: {fileID: 8723115628770386424, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.74499
+      value: 0.5072621
       objectReference: {fileID: 0}
     - target: {fileID: 8742289389881611494, guid: 7a15d3d597bb34ae2843acf95abdcf2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -255491,6 +255491,10 @@ PrefabInstance:
       propertyPath: endCamera
       value: 
       objectReference: {fileID: 1544183795}
+    - target: {fileID: 2198872697516419367, guid: 032f173a9efbd7148b4fd37d6ce21de1, type: 3}
+      propertyPath: finalSceneDelay
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2198872697516419367, guid: 032f173a9efbd7148b4fd37d6ce21de1, type: 3}
       propertyPath: mainCameraBrain
       value: 
