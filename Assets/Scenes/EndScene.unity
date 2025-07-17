@@ -464,6 +464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277557106}
   - component: {fileID: 277557105}
+  - component: {fileID: 277557107}
   m_Layer: 0
   m_Name: endScene
   m_TagString: Untagged
@@ -523,6 +524,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277557107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277557104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b681285aa164e5486457e8041d8a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 277557105}
 --- !u!1 &597403464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064776585}
   - component: {fileID: 2064776584}
+  - component: {fileID: 2064776586}
   m_Layer: 0
   m_Name: titleScreen5
   m_TagString: Untagged
@@ -1649,6 +1664,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2064776586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064776583}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b681285aa164e5486457e8041d8a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
