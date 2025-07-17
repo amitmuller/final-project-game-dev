@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
 
         inPause = true;
         PauseMenu.SetActive(true);
-        MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 0f, 0f, true, 50f, true);
+        Time.timeScale = 0f;
         openSceneCoroutine = StartCoroutine(goToOpenScene());
     }
     public void exitPause()
@@ -235,7 +235,7 @@ public class GameManager : MonoBehaviour
         {
             StopCoroutine(openSceneCoroutine);
         }
-        MMTimeScaleEvent.Unfreeze();
+        Time.timeScale = 1f;
     }
 
     private IEnumerator goToOpenScene()
