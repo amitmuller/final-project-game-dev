@@ -153,6 +153,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -609,7 +635,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_0": -2262302748581330840
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_1": 4529667320364450227
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_10": 3965610701436892457
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_11": -4791083665328278056
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_12": 5210354556310786358
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_13": -4740628300736160419
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_14": 167819974964223796
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_15": 2763721328980239451
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_16": -6033589176080251276
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_17": -4251656741772835607
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_18": 3385371769412894166
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_19": -1388605282948669284
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_2": 5001546336213618633
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_3": 781764434405048580
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_4": 5456134498278833291
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_5": 7984006807505945967
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_6": -3429791950464987659
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_7": 8926456093959235922
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_8": -5302330785107245235
+      "\u05D7\u05DC\u05D5\u05E0\u05D5\u05EA 3_9": -3745437979201013009
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
