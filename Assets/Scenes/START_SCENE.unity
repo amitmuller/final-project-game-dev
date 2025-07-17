@@ -3696,7 +3696,7 @@ MonoBehaviour:
     m_ActionName: 'startScene/start[/Keyboard/anyKey]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: startScene
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1443356969
@@ -3713,8 +3713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 3
   m_MaxPlayerCount: -1
-  m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_AllowJoining: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
