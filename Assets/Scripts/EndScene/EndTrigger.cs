@@ -48,7 +48,6 @@ public class EndTrigger : MonoBehaviour
 
     private IEnumerator FinalSceneStarter()
     {
-        Debug.Log($"Waiting for {finalSceneDelay}");
         yield return new WaitForSeconds(finalSceneDelay);
         SceneManager.LoadScene(2);
     }
