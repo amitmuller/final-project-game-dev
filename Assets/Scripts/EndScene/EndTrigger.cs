@@ -14,6 +14,8 @@ public class EndTrigger : MonoBehaviour
 
     [SerializeField] private CinemachineBrain mainCameraBrain;
     [SerializeField] private GameObject endCamera;
+    [SerializeField] private LensParallaxController parallaxController;
+    [SerializeField] private float parallaxScale = 0.4f;
 
     [SerializeField] private float finalSceneDelay = 2f;
 
@@ -25,6 +27,8 @@ public class EndTrigger : MonoBehaviour
         if (collision.CompareTag("Player") && !isTriggered)
         {
             isTriggered = true;
+            parallaxController.SetParallaxScale(parallaxScale);
+
             player.GetComponent<characterMovement>().SetCanMove(false);
             charAnim = player.GetComponent<characterAnimation>();
             charAnim.TransitionTo(PlayerAnimState.Walk);
