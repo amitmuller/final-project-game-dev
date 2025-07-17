@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NEW LEVEL FIXED.unity
     guid: 1ef97d05b14034e72a3977bc8e4fa4f7
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: cfa019c49566e4be2aa774e0351d50ef
   - enabled: 0
     path: Assets/Scenes/BREAK-LEVEL.unity
     guid: c765784bf511f4e1a8a1b5d9d2ca65da

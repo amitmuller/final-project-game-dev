@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class LensParallaxController : MonoBehaviour
     private Vector3 initialLayerScale;
     private Material glowMaterial;
     private Color baseColor;
+    private bool isManualScale = false;
 
     private void Start()
     {
@@ -29,6 +31,11 @@ public class LensParallaxController : MonoBehaviour
 
     private void Update()
     {
+        if (isManualScale)
+        {
+            return;
+        }
+
         // Calculate the parallax effect based on camera size
         float currentOffset = (primaryCamera.orthographicSize - initialCameraSize) / (maxCameraSize - initialCameraSize);
 
@@ -47,5 +54,17 @@ public class LensParallaxController : MonoBehaviour
 
         float newIntensity = Mathf.Lerp(maxIntensity, minIntensity, currentOffset);
         glowMaterial.SetColor("_GlowColor", baseColor * newIntensity);
+    }
+
+    public void SetParallaxScale(float scale)
+    {
+        isManualScale = true;
+        for (int i = 0; i < controlledLayers.Length; i++)
+        {
+            if (controlledLayers[i] != null)
+            {
+                controlledLayers[i].DOScale(scale, 0.5f);
+            }
+        }
     }
 }
