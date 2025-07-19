@@ -627,6 +627,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: opening scene SHADOWS
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 404
+        width: 165
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e70b347216144aebfb9f34bda4bd73
+      internalID: 300265136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -647,6 +669,7 @@ TextureImporter:
       grass2: 3538052169148089160
       leafs: -8491021497799428151
       leafs2: -2414314421681475860
+      opening scene SHADOWS: 300265136
       opening scene nature__10: 3502456278513585878
       opening scene nature__11: -6523262513195800305
       opening scene nature__12: -3644508928638681622
