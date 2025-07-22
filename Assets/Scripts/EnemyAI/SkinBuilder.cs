@@ -13,6 +13,7 @@ public class CategorySkinFactory : MonoBehaviour
     [SpineSkin(dataField:"skeletonDataAsset")] public string shirtSkin;
     [SpineSkin(dataField:"skeletonDataAsset")] public string shoesSkin;
     [SpineSkin(dataField:"skeletonDataAsset")] public string facialHairSkin;
+    [SpineSkin(dataField:"skeletonDataAsset")] public string furSkin;
 
     SkeletonAnimation _skeletonAnim;
 
@@ -34,6 +35,7 @@ public class CategorySkinFactory : MonoBehaviour
         AppendIfValid(data, combined, shirtSkin);
         AppendIfValid(data, combined, shoesSkin);
         AppendIfValid(data, combined, facialHairSkin);
+        AppendIfValid(data, combined, furSkin);
 
         skeleton.SetSkin(combined);
         skeleton.SetSlotsToSetupPose();

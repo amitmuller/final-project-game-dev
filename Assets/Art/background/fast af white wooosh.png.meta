@@ -1,0 +1,1261 @@
+fileFormatVersion: 2
+guid: 83f0b8a8cf7b4460388ae2f86f507d9e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5006362933829491078
+    second: fast af white wooosh_0
+  - first:
+      213: 5561806202176064573
+    second: fast af white wooosh_1
+  - first:
+      213: -5470677746776806889
+    second: fast af white wooosh_2
+  - first:
+      213: -5504455130825423748
+    second: fast af white wooosh_3
+  - first:
+      213: 6736436922862216546
+    second: fast af white wooosh_4
+  - first:
+      213: -3728160749706678786
+    second: fast af white wooosh_5
+  - first:
+      213: 3626383625452560738
+    second: fast af white wooosh_6
+  - first:
+      213: 4848997030664035780
+    second: fast af white wooosh_7
+  - first:
+      213: 8544797379003204233
+    second: fast af white wooosh_8
+  - first:
+      213: -4096118843194504659
+    second: fast af white wooosh_9
+  - first:
+      213: 590521051401209650
+    second: fast af white wooosh_10
+  - first:
+      213: 1628351521251000854
+    second: fast af white wooosh_11
+  - first:
+      213: -3857244744068719865
+    second: fast af white wooosh_12
+  - first:
+      213: 1851978357210117308
+    second: fast af white wooosh_13
+  - first:
+      213: 8423966569281293414
+    second: fast af white wooosh_14
+  - first:
+      213: -8352058008983180834
+    second: fast af white wooosh_15
+  - first:
+      213: -5603753109080545035
+    second: fast af white wooosh_16
+  - first:
+      213: 2814525599812712271
+    second: fast af white wooosh_17
+  - first:
+      213: 1839334084020915415
+    second: fast af white wooosh_18
+  - first:
+      213: 7653250126503399545
+    second: fast af white wooosh_19
+  - first:
+      213: -1166364042347044546
+    second: fast af white wooosh_20
+  - first:
+      213: 8107259153489463115
+    second: fast af white wooosh_21
+  - first:
+      213: 4769077243333561379
+    second: fast af white wooosh_22
+  - first:
+      213: 6221476957080524041
+    second: fast af white wooosh_23
+  - first:
+      213: 8274216210157435948
+    second: fast af white wooosh_24
+  - first:
+      213: -4470074767911904797
+    second: fast af white wooosh_25
+  - first:
+      213: -5188134378538737804
+    second: fast af white wooosh_26
+  - first:
+      213: 4076707644250695559
+    second: fast af white wooosh_27
+  - first:
+      213: -3837244953964002106
+    second: fast af white wooosh_28
+  - first:
+      213: -8971574885375306587
+    second: fast af white wooosh_29
+  - first:
+      213: 3788995371904996991
+    second: fast af white wooosh_30
+  - first:
+      213: 7017722780792841578
+    second: fast af white wooosh_31
+  - first:
+      213: -1917204211764880195
+    second: fast af white wooosh_32
+  - first:
+      213: -2181282579574853279
+    second: fast af white wooosh_33
+  - first:
+      213: -2463337968173681126
+    second: fast af white wooosh_34
+  - first:
+      213: -6299359576535463545
+    second: fast af white wooosh_35
+  - first:
+      213: 5078494904209667035
+    second: fast af white wooosh_36
+  - first:
+      213: 746474841367834770
+    second: fast af white wooosh_37
+  - first:
+      213: 5629575109191619545
+    second: fast af white wooosh_38
+  - first:
+      213: -6700333859982084358
+    second: fast af white wooosh_39
+  - first:
+      213: 3141622806007019622
+    second: fast af white wooosh_40
+  - first:
+      213: -3815255022780225451
+    second: fast af white wooosh_41
+  - first:
+      213: -2962770977064635794
+    second: fast af white wooosh_42
+  - first:
+      213: -2116977849664561525
+    second: fast af white wooosh_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fast af white wooosh_0
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 2451
+        width: 1185
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689d69f309c2a7540800000000000000
+      internalID: 5006362933829491078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_1
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 2379
+        width: 1594
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3cc44ee5418f2d40800000000000000
+      internalID: 5561806202176064573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_2
+      rect:
+        serializedVersion: 2
+        x: 3306
+        y: 2439
+        width: 890
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71aebbef29f3414b0800000000000000
+      internalID: -5470677746776806889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_3
+      rect:
+        serializedVersion: 2
+        x: 2960
+        y: 2357
+        width: 873
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74031de83f3c93b0800000000000000
+      internalID: -5504455130825423748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_4
+      rect:
+        serializedVersion: 2
+        x: 4347
+        y: 2356
+        width: 1285
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265270fa0b1ac7d50800000000000000
+      internalID: 6736436922862216546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_5
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 2222
+        width: 1666
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efded200d89e24cc0800000000000000
+      internalID: -3728160749706678786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_6
+      rect:
+        serializedVersion: 2
+        x: 4044
+        y: 2253
+        width: 1079
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261a466a1b0835230800000000000000
+      internalID: 3626383625452560738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_7
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 2096
+        width: 1635
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd57a9bb191b4340800000000000000
+      internalID: 4848997030664035780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_8
+      rect:
+        serializedVersion: 2
+        x: 3638
+        y: 2119
+        width: 779
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982cc25a1f7359670800000000000000
+      internalID: 8544797379003204233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_9
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 2120
+        width: 1057
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a8b914d99a727c0800000000000000
+      internalID: -4096118843194504659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_10
+      rect:
+        serializedVersion: 2
+        x: 5717
+        y: 2055
+        width: 833
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237c82d74c3f13800800000000000000
+      internalID: 590521051401209650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_11
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1881
+        width: 1789
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61202a9c411199610800000000000000
+      internalID: 1628351521251000854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_12
+      rect:
+        serializedVersion: 2
+        x: 3936
+        y: 1950
+        width: 1144
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b9a028750587ac0800000000000000
+      internalID: -3857244744068719865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_13
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1832
+        width: 688
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb47831f08c83b910800000000000000
+      internalID: 1851978357210117308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_14
+      rect:
+        serializedVersion: 2
+        x: 4236
+        y: 1849
+        width: 1377
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c07c176f0f7e470800000000000000
+      internalID: 8423966569281293414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_15
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1771
+        width: 866
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9e91fed77871c80800000000000000
+      internalID: -8352058008983180834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_16
+      rect:
+        serializedVersion: 2
+        x: 5083
+        y: 1753
+        width: 1032
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8634cbc387b32b0800000000000000
+      internalID: -5603753109080545035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_17
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 1644
+        width: 1430
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47741cfe143f0720800000000000000
+      internalID: 2814525599812712271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_18
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1466
+        width: 1054
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dcc55daa90a68910800000000000000
+      internalID: 1839334084020915415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_19
+      rect:
+        serializedVersion: 2
+        x: 3769
+        y: 1550
+        width: 725
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970d27ff07ec53a60800000000000000
+      internalID: 7653250126503399545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_20
+      rect:
+        serializedVersion: 2
+        x: 5717
+        y: 1520
+        width: 981
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31ad19451e30dfe0800000000000000
+      internalID: -1166364042347044546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_21
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 1383
+        width: 2391
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4706c9fe35c28070800000000000000
+      internalID: 8107259153489463115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_22
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 1359
+        width: 1704
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ccb433c7a2f2240800000000000000
+      internalID: 4769077243333561379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_23
+      rect:
+        serializedVersion: 2
+        x: 3737
+        y: 1303
+        width: 1191
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90510156450275650800000000000000
+      internalID: 6221476957080524041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_24
+      rect:
+        serializedVersion: 2
+        x: 4076
+        y: 1200
+        width: 1444
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c7631fdcbe3d270800000000000000
+      internalID: 8274216210157435948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_25
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 1088
+        width: 1438
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e99c2b9eaa17f1c0800000000000000
+      internalID: -4470074767911904797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_26
+      rect:
+        serializedVersion: 2
+        x: 5178
+        y: 993
+        width: 1535
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47fd438454b0008b0800000000000000
+      internalID: -5188134378538737804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_27
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 951
+        width: 1254
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787aeacc000639830800000000000000
+      internalID: 4076707644250695559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_28
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 961
+        width: 858
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4c0d28b0e5fbac0800000000000000
+      internalID: -3837244953964002106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_29
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 763
+        width: 1093
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a49369dc209e7380800000000000000
+      internalID: -8971574885375306587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_30
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 802
+        width: 1046
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f761ffd3737359430800000000000000
+      internalID: 3788995371904996991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_31
+      rect:
+        serializedVersion: 2
+        x: 3839
+        y: 742
+        width: 1281
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65e25900b5f36160800000000000000
+      internalID: 7017722780792841578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_32
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 698
+        width: 831
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc1fdb5de8b465e0800000000000000
+      internalID: -1917204211764880195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_33
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 625
+        width: 1311
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16171b10d078ab1e0800000000000000
+      internalID: -2181282579574853279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_34
+      rect:
+        serializedVersion: 2
+        x: 4915
+        y: 634
+        width: 999
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1676455b2770ddd0800000000000000
+      internalID: -2463337968173681126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_35
+      rect:
+        serializedVersion: 2
+        x: 4071
+        y: 524
+        width: 999
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789062037dd2498a0800000000000000
+      internalID: -6299359576535463545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_36
+      rect:
+        serializedVersion: 2
+        x: 5226
+        y: 516
+        width: 1301
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd37c0755307a7640800000000000000
+      internalID: 5078494904209667035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_37
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 413
+        width: 1763
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290fe79c9e20c5a00800000000000000
+      internalID: 746474841367834770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_38
+      rect:
+        serializedVersion: 2
+        x: 4173
+        y: 449
+        width: 1193
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d35fbb2cb4402e40800000000000000
+      internalID: 5629575109191619545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_39
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 304
+        width: 1738
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6fe3faad1a303a0800000000000000
+      internalID: -6700333859982084358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_40
+      rect:
+        serializedVersion: 2
+        x: 3224
+        y: 351
+        width: 2577
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668705a0c49499b20800000000000000
+      internalID: 3141622806007019622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_41
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 198
+        width: 1284
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558e8a755cd7d0bc0800000000000000
+      internalID: -3815255022780225451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_42
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 255
+        width: 1741
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62b9396e7f12e6d0800000000000000
+      internalID: -2962770977064635794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fast af white wooosh_43
+      rect:
+        serializedVersion: 2
+        x: 4933
+        y: 214
+        width: 1188
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e9f59acdbfe92e0800000000000000
+      internalID: -2116977849664561525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fast af white wooosh_0: 5006362933829491078
+      fast af white wooosh_1: 5561806202176064573
+      fast af white wooosh_10: 590521051401209650
+      fast af white wooosh_11: 1628351521251000854
+      fast af white wooosh_12: -3857244744068719865
+      fast af white wooosh_13: 1851978357210117308
+      fast af white wooosh_14: 8423966569281293414
+      fast af white wooosh_15: -8352058008983180834
+      fast af white wooosh_16: -5603753109080545035
+      fast af white wooosh_17: 2814525599812712271
+      fast af white wooosh_18: 1839334084020915415
+      fast af white wooosh_19: 7653250126503399545
+      fast af white wooosh_2: -5470677746776806889
+      fast af white wooosh_20: -1166364042347044546
+      fast af white wooosh_21: 8107259153489463115
+      fast af white wooosh_22: 4769077243333561379
+      fast af white wooosh_23: 6221476957080524041
+      fast af white wooosh_24: 8274216210157435948
+      fast af white wooosh_25: -4470074767911904797
+      fast af white wooosh_26: -5188134378538737804
+      fast af white wooosh_27: 4076707644250695559
+      fast af white wooosh_28: -3837244953964002106
+      fast af white wooosh_29: -8971574885375306587
+      fast af white wooosh_3: -5504455130825423748
+      fast af white wooosh_30: 3788995371904996991
+      fast af white wooosh_31: 7017722780792841578
+      fast af white wooosh_32: -1917204211764880195
+      fast af white wooosh_33: -2181282579574853279
+      fast af white wooosh_34: -2463337968173681126
+      fast af white wooosh_35: -6299359576535463545
+      fast af white wooosh_36: 5078494904209667035
+      fast af white wooosh_37: 746474841367834770
+      fast af white wooosh_38: 5629575109191619545
+      fast af white wooosh_39: -6700333859982084358
+      fast af white wooosh_4: 6736436922862216546
+      fast af white wooosh_40: 3141622806007019622
+      fast af white wooosh_41: -3815255022780225451
+      fast af white wooosh_42: -2962770977064635794
+      fast af white wooosh_43: -2116977849664561525
+      fast af white wooosh_5: -3728160749706678786
+      fast af white wooosh_6: 3626383625452560738
+      fast af white wooosh_7: 4848997030664035780
+      fast af white wooosh_8: 8544797379003204233
+      fast af white wooosh_9: -4096118843194504659
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

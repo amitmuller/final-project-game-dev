@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TailConnector : MonoBehaviour
@@ -13,7 +14,7 @@ public class TailConnector : MonoBehaviour
         heldRigidbody.isKinematic = true;
         heldObjectTransform.SetParent(transform);
         // heldObjectTransform.localPosition = new Vector3(0,0,0); // Snap to tail
-        heldObjectTransform.localPosition = new Vector3(-0.5f,2f,0); // Snap to tail
+        heldObjectTransform.localPosition = new Vector3(0f,0f,0); // Snap to tail
     }
 
     public void Detach()
@@ -26,6 +27,13 @@ public class TailConnector : MonoBehaviour
             heldObjectTransform = null;
             heldRigidbody = null;
         }
+    }
+
+    public void reset()
+    {
+        heldObjectTransform.GetComponent<ThrowableObject>().turnOfParticles();
+        Destroy(heldObjectTransform.gameObject);
+        heldObjectTransform = null;
     }
 
     public bool IsConnected => heldObjectTransform != null;

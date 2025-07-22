@@ -1,0 +1,1014 @@
+fileFormatVersion: 2
+guid: 91f9d0b84885e47f2b35212d3720656f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8929548032062255836
+    second: particals wannabe_0
+  - first:
+      213: -3025022639137910224
+    second: particals wannabe_1
+  - first:
+      213: -8922676121017267987
+    second: particals wannabe_2
+  - first:
+      213: 6601609569254986787
+    second: particals wannabe_3
+  - first:
+      213: 1087348877729857117
+    second: particals wannabe_4
+  - first:
+      213: -1447662561403320032
+    second: particals wannabe_5
+  - first:
+      213: -7488755282656906038
+    second: particals wannabe_6
+  - first:
+      213: -6343026495744048275
+    second: particals wannabe_7
+  - first:
+      213: -5289267293480909961
+    second: particals wannabe_8
+  - first:
+      213: -1962867516859208636
+    second: particals wannabe_9
+  - first:
+      213: 8931229291940363783
+    second: particals wannabe_10
+  - first:
+      213: -8923926481393403688
+    second: particals wannabe_11
+  - first:
+      213: -3643508417031874552
+    second: particals wannabe_12
+  - first:
+      213: -2572751846918059024
+    second: particals wannabe_13
+  - first:
+      213: 4423707628636830749
+    second: particals wannabe_14
+  - first:
+      213: 125266339991612942
+    second: particals wannabe_15
+  - first:
+      213: -4696142568284041377
+    second: particals wannabe_16
+  - first:
+      213: -6280300172526207647
+    second: particals wannabe_17
+  - first:
+      213: -2791758679949797089
+    second: particals wannabe_18
+  - first:
+      213: 5106761985129498707
+    second: particals wannabe_19
+  - first:
+      213: -3166979931126454519
+    second: particals wannabe_20
+  - first:
+      213: 4603056053218255747
+    second: particals wannabe_21
+  - first:
+      213: 2768804976524882200
+    second: particals wannabe_22
+  - first:
+      213: 9130913878527008711
+    second: particals wannabe_23
+  - first:
+      213: -4124657804698664192
+    second: particals wannabe_24
+  - first:
+      213: 873972609811161946
+    second: particals wannabe_25
+  - first:
+      213: -6660480074280200548
+    second: particals wannabe_26
+  - first:
+      213: 6666044264642710904
+    second: particals wannabe_27
+  - first:
+      213: -4429317202906227486
+    second: particals wannabe_28
+  - first:
+      213: 1847373409186205056
+    second: particals wannabe_29
+  - first:
+      213: 5132431593839181459
+    second: particals wannabe_30
+  - first:
+      213: 7970799473766349836
+    second: particals wannabe_31
+  - first:
+      213: 5429878354423048902
+    second: particals wannabe_32
+  - first:
+      213: -8424830434039943259
+    second: particals wannabe_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: particals wannabe_0
+      rect:
+        serializedVersion: 2
+        x: 3247
+        y: 2206
+        width: 169
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2fbd7df902ceb70800000000000000
+      internalID: 8929548032062255836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_1
+      rect:
+        serializedVersion: 2
+        x: 3404
+        y: 2136
+        width: 90
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0329bacdfe5f406d0800000000000000
+      internalID: -3025022639137910224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_2
+      rect:
+        serializedVersion: 2
+        x: 4121
+        y: 1821
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8c7e0a7594c2480800000000000000
+      internalID: -8922676121017267987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_3
+      rect:
+        serializedVersion: 2
+        x: 4815
+        y: 1844
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32453492de0ad9b50800000000000000
+      internalID: 6601609569254986787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_4
+      rect:
+        serializedVersion: 2
+        x: 4905
+        y: 1861
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ef1041b0a071f00800000000000000
+      internalID: 1087348877729857117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_5
+      rect:
+        serializedVersion: 2
+        x: 4618
+        y: 1800
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0294ce8029ed8ebe0800000000000000
+      internalID: -1447662561403320032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_6
+      rect:
+        serializedVersion: 2
+        x: 4769
+        y: 1785
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4b76f5fb8921890800000000000000
+      internalID: -7488755282656906038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_7
+      rect:
+        serializedVersion: 2
+        x: 4874
+        y: 1772
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d630948420b09f7a0800000000000000
+      internalID: -6343026495744048275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_8
+      rect:
+        serializedVersion: 2
+        x: 4541
+        y: 1718
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7738af99b6fb896b0800000000000000
+      internalID: -5289267293480909961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_9
+      rect:
+        serializedVersion: 2
+        x: 4690
+        y: 1726
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c2474a46e72c4e0800000000000000
+      internalID: -1962867516859208636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_10
+      rect:
+        serializedVersion: 2
+        x: 4805
+        y: 1723
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e3ba9a8b912fb70800000000000000
+      internalID: 8931229291940363783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_11
+      rect:
+        serializedVersion: 2
+        x: 4823
+        y: 1732
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d838da6528d72480800000000000000
+      internalID: -8923926481393403688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_12
+      rect:
+        serializedVersion: 2
+        x: 4070
+        y: 1597
+        width: 73
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8085baa1668af6dc0800000000000000
+      internalID: -3643508417031874552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_13
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 1514
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fb083583dfbb4cd0800000000000000
+      internalID: -2572751846918059024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_14
+      rect:
+        serializedVersion: 2
+        x: 4745
+        y: 1443
+        width: 65
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c751386aa246d30800000000000000
+      internalID: 4423707628636830749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_15
+      rect:
+        serializedVersion: 2
+        x: 3870
+        y: 1290
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e638192190db100800000000000000
+      internalID: 125266339991612942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_16
+      rect:
+        serializedVersion: 2
+        x: 4495
+        y: 1336
+        width: 82
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fc6d22733f3deb0800000000000000
+      internalID: -4696142568284041377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_17
+      rect:
+        serializedVersion: 2
+        x: 3860
+        y: 1194
+        width: 55
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d30cd7444e7d8a0800000000000000
+      internalID: -6280300172526207647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_18
+      rect:
+        serializedVersion: 2
+        x: 3958
+        y: 1244
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f199afe954ea149d0800000000000000
+      internalID: -2791758679949797089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_19
+      rect:
+        serializedVersion: 2
+        x: 4499
+        y: 1192
+        width: 90
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358cc1cf7fcded640800000000000000
+      internalID: 5106761985129498707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_20
+      rect:
+        serializedVersion: 2
+        x: 3957
+        y: 1137
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907aa623880ac04d0800000000000000
+      internalID: -3166979931126454519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_21
+      rect:
+        serializedVersion: 2
+        x: 4225
+        y: 1153
+        width: 86
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3832945a71751ef30800000000000000
+      internalID: 4603056053218255747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_22
+      rect:
+        serializedVersion: 2
+        x: 3788
+        y: 1092
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8117916d475cc6620800000000000000
+      internalID: 2768804976524882200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_23
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 785
+        width: 187
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf594c7bc587be70800000000000000
+      internalID: 9130913878527008711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_24
+      rect:
+        serializedVersion: 2
+        x: 4143
+        y: 660
+        width: 135
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003c4ea749542c6c0800000000000000
+      internalID: -4124657804698664192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_25
+      rect:
+        serializedVersion: 2
+        x: 3579
+        y: 519
+        width: 204
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5327374579f02c00800000000000000
+      internalID: 873972609811161946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_26
+      rect:
+        serializedVersion: 2
+        x: 3927
+        y: 595
+        width: 139
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9616f249a83193a0800000000000000
+      internalID: -6660480074280200548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_27
+      rect:
+        serializedVersion: 2
+        x: 4443
+        y: 647
+        width: 88
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87d0f03c0fb828c50800000000000000
+      internalID: 6666044264642710904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_28
+      rect:
+        serializedVersion: 2
+        x: 3961
+        y: 437
+        width: 129
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec5f33b877e782c0800000000000000
+      internalID: -4429317202906227486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_29
+      rect:
+        serializedVersion: 2
+        x: 4123
+        y: 488
+        width: 123
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08dcb0ee35033a910800000000000000
+      internalID: 1847373409186205056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_30
+      rect:
+        serializedVersion: 2
+        x: 4411
+        y: 471
+        width: 145
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39eb6c0875f0a3740800000000000000
+      internalID: 5132431593839181459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_31
+      rect:
+        serializedVersion: 2
+        x: 3735
+        y: 363
+        width: 137
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0cb6b9e3e7fd9e60800000000000000
+      internalID: 7970799473766349836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_32
+      rect:
+        serializedVersion: 2
+        x: 4343
+        y: 316
+        width: 95
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cae7f8389dca5b40800000000000000
+      internalID: 5429878354423048902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particals wannabe_33
+      rect:
+        serializedVersion: 2
+        x: 4079
+        y: 252
+        width: 101
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af262e5b5df41b80800000000000000
+      internalID: -8424830434039943259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      particals wannabe_0: 8929548032062255836
+      particals wannabe_1: -3025022639137910224
+      particals wannabe_10: 8931229291940363783
+      particals wannabe_11: -8923926481393403688
+      particals wannabe_12: -3643508417031874552
+      particals wannabe_13: -2572751846918059024
+      particals wannabe_14: 4423707628636830749
+      particals wannabe_15: 125266339991612942
+      particals wannabe_16: -4696142568284041377
+      particals wannabe_17: -6280300172526207647
+      particals wannabe_18: -2791758679949797089
+      particals wannabe_19: 5106761985129498707
+      particals wannabe_2: -8922676121017267987
+      particals wannabe_20: -3166979931126454519
+      particals wannabe_21: 4603056053218255747
+      particals wannabe_22: 2768804976524882200
+      particals wannabe_23: 9130913878527008711
+      particals wannabe_24: -4124657804698664192
+      particals wannabe_25: 873972609811161946
+      particals wannabe_26: -6660480074280200548
+      particals wannabe_27: 6666044264642710904
+      particals wannabe_28: -4429317202906227486
+      particals wannabe_29: 1847373409186205056
+      particals wannabe_3: 6601609569254986787
+      particals wannabe_30: 5132431593839181459
+      particals wannabe_31: 7970799473766349836
+      particals wannabe_32: 5429878354423048902
+      particals wannabe_33: -8424830434039943259
+      particals wannabe_4: 1087348877729857117
+      particals wannabe_5: -1447662561403320032
+      particals wannabe_6: -7488755282656906038
+      particals wannabe_7: -6343026495744048275
+      particals wannabe_8: -5289267293480909961
+      particals wannabe_9: -1962867516859208636
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,11 +8,14 @@ public class ScrollingBckround : MonoBehaviour
 
     private float offset;
     private Material mat;
+    private Renderer spriteRenderer;
 
     void Start()
     {
         // Cache the material on this object's Renderer
         mat = GetComponent<Renderer>().material;
+        spriteRenderer = GetComponent<MeshRenderer>();
+        spriteRenderer.sortingOrder = -100;
     }
 
     void Update()

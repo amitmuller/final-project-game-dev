@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: d6fbfcc53b8da47d7b12e1c57fecdf39
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8618905085718504280
+    second: big pinky green whhosh_0
+  - first:
+      213: -8559996287917138657
+    second: big pinky green whhosh_1
+  - first:
+      213: -4659963186639014185
+    second: big pinky green whhosh_2
+  - first:
+      213: -6923809359503610191
+    second: big pinky green whhosh_3
+  - first:
+      213: 8517522012095237624
+    second: big pinky green whhosh_4
+  - first:
+      213: -4249107861014983724
+    second: big pinky green whhosh_5
+  - first:
+      213: 5020946684521951268
+    second: big pinky green whhosh_6
+  - first:
+      213: 5306834111186474618
+    second: big pinky green whhosh_7
+  - first:
+      213: 244559265528460009
+    second: big pinky green whhosh_8
+  - first:
+      213: 677360905989725364
+    second: big pinky green whhosh_9
+  - first:
+      213: 8215112252298361036
+    second: big pinky green whhosh_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: big pinky green whhosh_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2094
+        width: 1734
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8acd0fc4d7f736880800000000000000
+      internalID: -8618905085718504280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_1
+      rect:
+        serializedVersion: 2
+        x: 3387
+        y: 1965
+        width: 1388
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d590c9ab8c43980800000000000000
+      internalID: -8559996287917138657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1463
+        width: 2133
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6fbf9db2c745fb0800000000000000
+      internalID: -4659963186639014185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_3
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1357
+        width: 2069
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be234a4210b9ef90800000000000000
+      internalID: -6923809359503610191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1074
+        width: 1654
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fdc1896421543670800000000000000
+      internalID: 8517522012095237624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_5
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 764
+        width: 1913
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbc1e3c9e22805c0800000000000000
+      internalID: -4249107861014983724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_6
+      rect:
+        serializedVersion: 2
+        x: 2525
+        y: 659
+        width: 1842
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4203b1f486cfda540800000000000000
+      internalID: 5020946684521951268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_7
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 548
+        width: 1096
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a76123fd189a5a940800000000000000
+      internalID: 5306834111186474618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 236
+        width: 1481
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2ba543b59d46300800000000000000
+      internalID: 244559265528460009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_9
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 0
+        width: 1332
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc114ab728766900800000000000000
+      internalID: 677360905989725364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big pinky green whhosh_10
+      rect:
+        serializedVersion: 2
+        x: 3413
+        y: 121
+        width: 1617
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8f3346111f10270800000000000000
+      internalID: 8215112252298361036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      big pinky green whhosh_0: -8618905085718504280
+      big pinky green whhosh_1: -8559996287917138657
+      big pinky green whhosh_10: 8215112252298361036
+      big pinky green whhosh_2: -4659963186639014185
+      big pinky green whhosh_3: -6923809359503610191
+      big pinky green whhosh_4: 8517522012095237624
+      big pinky green whhosh_5: -4249107861014983724
+      big pinky green whhosh_6: 5020946684521951268
+      big pinky green whhosh_7: 5306834111186474618
+      big pinky green whhosh_8: 244559265528460009
+      big pinky green whhosh_9: 677360905989725364
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

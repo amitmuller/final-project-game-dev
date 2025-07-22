@@ -1,149 +1,159 @@
 goons.png
-size:2230,526
+size:3041,399
 filter:Linear,Linear
 pma:true
 Back Arm Hand
-bounds:1868,31,84,149
+bounds:2939,248,84,149
 offsets:1,1,86,151
-rotate:90
 Back Arm Middle
-bounds:1368,6,104,249
+bounds:1606,148,104,249
 Back Arm Top
-bounds:1499,309,96,215
+bounds:1807,182,96,215
 offsets:0,2,96,217
 Back Hand Open Hand
-bounds:1138,3,133,178
+bounds:1887,2,133,178
 offsets:1,1,135,180
-rotate:90
 Back Leg Foot
-bounds:1794,333,191,88
+bounds:2166,8,191,88
 offsets:1,1,193,90
 rotate:90
 Back Leg Middle
-bounds:797,14,115,339
+bounds:910,58,115,339
 offsets:1,0,116,339
-rotate:90
 Back Leg Top
-bounds:121,118,118,406
+bounds:2633,124,118,406
+rotate:90
+Back_Hand_Holding_A_Cigar
+bounds:2806,247,131,150
+offsets:0,0,132,150
+Back_Hand_Relaxed
+bounds:2428,219,114,178
+offsets:0,1,114,179
 Ear
-bounds:1035,132,41,49
+bounds:833,5,41,49
 offsets:1,1,43,51
 rotate:90
 Face Focused
-bounds:2002,159,153,129
+bounds:2544,244,153,129
 offsets:2,1,156,131
 rotate:90
 Face Natural
-bounds:2019,4,153,129
+bounds:2675,244,153,129
 offsets:2,1,156,131
 rotate:90
 Face Scared
-bounds:1868,117,153,132
+bounds:2499,64,153,132
 offsets:2,2,156,135
 rotate:90
 Front Arm Middle
-bounds:2,2,109,251
-rotate:90
+bounds:1495,146,109,251
 Front Arm Top
-bounds:1474,21,93,234
+bounds:1712,163,93,234
 offsets:0,18,94,252
 Front Hair
-bounds:1318,64,74,47
-rotate:90
+bounds:911,9,74,47
 Front Leg Foot
-bounds:1776,75,190,90
+bounds:2336,207,190,90
 offsets:1,1,192,92
 rotate:90
 Front Leg Middle
-bounds:1035,175,112,349
+bounds:796,48,112,349
 Front Leg Top
-bounds:2,113,117,411
-offsets:2,2,159,414
+bounds:1209,3,125,412
+offsets:0,0,159,414
+rotate:90
 Hair Back
-bounds:1113,138,44,35
+bounds:796,2,44,35
 offsets:2,1,47,37
+rotate:90
 Hat
-bounds:1686,2,180,70
+bounds:1027,58,180,70
 offsets:1,1,182,73
 Inserted Image
-bounds:1597,328,195,196
+bounds:2139,201,195,196
 offsets:1,1,197,199
 Loose Hair
-bounds:1499,262,75,45
+bounds:1014,11,75,45
 Neck
-bounds:1835,272,59,93
+bounds:2499,3,59,93
 offsets:1,1,61,95
 rotate:90
 Torso
-bounds:241,131,263,393
+bounds:2,4,263,393
 extra/Back Behind Fur Brown
-bounds:593,13,116,100
+bounds:2633,6,116,100
 offsets:1,1,120,102
 rotate:90
 extra/Back Behind Fur Pink
-bounds:695,13,116,100
+bounds:2735,6,116,100
 offsets:1,1,120,102
 rotate:90
 extra/Back Front Fur Brown
-bounds:1159,140,115,207
+bounds:1905,190,115,207
 offsets:1,1,117,209
-rotate:90
 extra/Back Front Fur Pink
-bounds:1569,53,115,207
+bounds:2022,190,115,207
 offsets:1,1,117,209
 extra/Back Shoe Brown
-bounds:1686,74,191,88
+bounds:2256,8,191,88
 offsets:1,1,193,90
 rotate:90
 extra/Beard
-bounds:1597,265,78,61
+bounds:2837,44,78,61
 offsets:1,1,80,63
+rotate:90
 extra/Beige Hat
-bounds:1976,454,180,70
+bounds:2022,8,180,70
 offsets:1,1,182,73
+rotate:90
 extra/Black Hat
-bounds:334,13,257,116
+bounds:1377,140,257,116
 offsets:1,1,259,118
+rotate:90
 extra/Blue Torso
-bounds:506,131,263,393
+bounds:267,4,263,393
 extra/Brown Hat
-bounds:2158,344,180,70
+bounds:2094,8,180,70
 offsets:1,1,182,73
 rotate:90
 extra/Brown Torso
-bounds:771,131,262,393
+bounds:532,4,262,393
 extra/Front Fur Brown
-bounds:1149,257,173,267
+bounds:1027,130,173,267
 offsets:1,1,175,269
 extra/Front Fur Pink
-bounds:1324,257,173,267
+bounds:1202,130,173,267
 offsets:1,1,175,269
 extra/Front Shoe Brown
-bounds:1884,334,190,90
+bounds:2346,15,190,90
 offsets:1,1,192,92
 rotate:90
 extra/Mustache 1
-bounds:1086,132,41,25
+bounds:884,5,41,25
 offsets:1,1,43,27
 rotate:90
 extra/Mustache French 2
-bounds:1318,37,47,25
+bounds:987,9,47,25
 offsets:1,1,49,27
+rotate:90
 extra/← scar
-bounds:1339,15,25,20
+bounds:1091,2,25,20
 offsets:1,1,27,22
+rotate:90
 eyelid
-bounds:1318,8,27,19
+bounds:1091,29,27,19
 rotate:90
 front arm Hand
-bounds:2133,171,83,141
+bounds:1623,5,83,141
 offsets:1,5,85,147
 front arm Hand Open
-bounds:1976,314,138,177
+bounds:1708,8,138,177
 offsets:1,1,140,179
 rotate:90
 pocket
-bounds:255,5,77,124
+bounds:2900,45,77,124
+rotate:90
 top hair under hat
-bounds:1677,267,156,59
+bounds:2438,61,156,59
 offsets:5,3,165,65
+rotate:90

@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 01fa1b63a45064014915b2ed78f48eb5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7037067625476938236
+    second: Boss_Room_0
+  - first:
+      213: 6357910586360459977
+    second: Boss_Room_1
+  - first:
+      213: 8055462570349649151
+    second: Boss_Room_2
+  - first:
+      213: 6404130625144737924
+    second: Boss_Room_3
+  - first:
+      213: -4080685439244433271
+    second: Boss_Room_4
+  - first:
+      213: 7058243740926614361
+    second: Boss_Room_5
+  - first:
+      213: 240863444447801441
+    second: Boss_Room_6
+  - first:
+      213: 2156467363696595981
+    second: Boss_Room_7
+  - first:
+      213: -4836459272309985921
+    second: Boss_Room_8
+  - first:
+      213: 992686530297003468
+    second: Boss_Room_9
+  - first:
+      213: -4663398859320857650
+    second: Boss_Room_10
+  - first:
+      213: -8312432246860703357
+    second: Boss_Room_11
+  - first:
+      213: -3190472171870269247
+    second: Boss_Room_12
+  - first:
+      213: -8197029165317021829
+    second: Boss_Room_13
+  - first:
+      213: -8594157953630336283
+    second: Boss_Room_14
+  - first:
+      213: 3925742313165420453
+    second: Boss_Room_15
+  - first:
+      213: -8469924431883188044
+    second: Boss_Room_16
+  - first:
+      213: -7451294595553186941
+    second: Boss_Room_17
+  - first:
+      213: -2963776609890625785
+    second: Boss_Room_18
+  - first:
+      213: 8768351424558141068
+    second: Boss_Room_19
+  - first:
+      213: 7765109763949548081
+    second: Boss_Room_20
+  - first:
+      213: 4118226015177186286
+    second: Boss_Room_21
+  - first:
+      213: -7722315897073274906
+    second: Boss_Room_22
+  - first:
+      213: 1931459675139839370
+    second: Boss_Room_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 108
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: window whites
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1966
+        width: 2563
+        height: 1863
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406ab035740575e90800000000000000
+      internalID: -7037067625476938236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backwall 4
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 2771
+        width: 1765
+        height: 969
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7da15f9ae171ecb0800000000000000
+      internalID: -4836459272309985921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 3342
+        width: 365
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdfaabc32bb6cd00800000000000000
+      internalID: 992686530297003468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogwheel2
+      rect:
+        serializedVersion: 2
+        x: 4944
+        y: 3329
+        width: 345
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3899d52a9ee44ac80800000000000000
+      internalID: -8312432246860703357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogwheel3
+      rect:
+        serializedVersion: 2
+        x: 5314
+        y: 3340
+        width: 271
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c057e9a67a29b3d0800000000000000
+      internalID: -3190472171870269247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogwheel 4
+      rect:
+        serializedVersion: 2
+        x: 5628
+        y: 3438
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f13c3676d4e3e80800000000000000
+      internalID: -8197029165317021829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pn 2
+      rect:
+        serializedVersion: 2
+        x: 5956
+        y: 3464
+        width: 23
+        height: 62
+      alignment: 9
+      pivot: {x: 0.54596215, y: 0.0824329}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea044effda6bb880800000000000000
+      internalID: -8594157953630336283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogwheel5
+      rect:
+        serializedVersion: 2
+        x: 5649
+        y: 3285
+        width: 139
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a7f1f795d90b7630800000000000000
+      internalID: 3925742313165420453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pin 1
+      rect:
+        serializedVersion: 2
+        x: 5846
+        y: 3337
+        width: 42
+        height: 47
+      alignment: 9
+      pivot: {x: 0.16035388, y: 0.14027697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b84333da98c47a80800000000000000
+      internalID: -8469924431883188044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pin3
+      rect:
+        serializedVersion: 2
+        x: 5994
+        y: 3293
+        width: 56
+        height: 54
+      alignment: 9
+      pivot: {x: 0.8868495, y: 0.118412726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ba3434b0fa79890800000000000000
+      internalID: -7451294595553186941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back cables
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 1874
+        width: 535
+        height: 796
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7079bd540ec8ed6d0800000000000000
+      internalID: -2963776609890625785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final room window
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 160
+        width: 3279
+        height: 2602
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e0496f9217fa970800000000000000
+      internalID: 8768351424558141068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back wall 1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 41
+        width: 969
+        height: 1765
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1325122603633cb60800000000000000
+      internalID: 7765109763949548081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backwall 2
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 78
+        width: 969
+        height: 1765
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb9863ddb0e62930800000000000000
+      internalID: 4118226015177186286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden separator
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 118
+        width: 99
+        height: 1678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef689f2b92d4d490800000000000000
+      internalID: -7722315897073274906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backwall3
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 66
+        width: 969
+        height: 1777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8593ba575cedca10800000000000000
+      internalID: 1931459675139839370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top roof
+      rect:
+        serializedVersion: 2
+        x: 3518
+        y: 2533
+        width: 1788
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b6b82e9091544f58215917c3f6fef7
+      internalID: -650703273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 71c3b956c415f4be0a0252cc8fc6ecaf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      1: 992686530297003468
+      Boss_Room_1: 6357910586360459977
+      Boss_Room_10: -4663398859320857650
+      Boss_Room_2: 8055462570349649151
+      Boss_Room_3: 6404130625144737924
+      Boss_Room_4: -4080685439244433271
+      Boss_Room_5: 7058243740926614361
+      Boss_Room_6: 240863444447801441
+      Boss_Room_7: 2156467363696595981
+      back cables: -2963776609890625785
+      back wall 1: 7765109763949548081
+      backwall 2: 4118226015177186286
+      backwall 4: -4836459272309985921
+      backwall3: 1931459675139839370
+      cogwheel 4: -8197029165317021829
+      cogwheel2: -8312432246860703357
+      cogwheel3: -3190472171870269247
+      cogwheel5: 3925742313165420453
+      final room window: 8768351424558141068
+      golden separator: -7722315897073274906
+      pin 1: -8469924431883188044
+      pin3: -7451294595553186941
+      pn 2: -8594157953630336283
+      top roof: -650703273
+      window whites: -7037067625476938236
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

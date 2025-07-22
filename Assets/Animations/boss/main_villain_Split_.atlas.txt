@@ -1,0 +1,50 @@
+main_villain_Split_.png
+size:2231,1178
+filter:Linear,Linear
+pma:true
+Arm With Cane + Top Feathers
+bounds:1442,277,457,899
+Back Feathers
+bounds:1901,633,174,543
+Back Of Front Feathers
+bounds:2077,887,149,120
+offsets:1,1,151,123
+rotate:90
+Body
+bounds:2,119,1438,1057
+Earring
+bounds:2069,348,53,57
+offsets:1,1,55,59
+Front Arm Middle
+bounds:1967,97,174,195
+offsets:1,1,176,197
+Front Arm Shoulder
+bounds:2137,654,61,89
+offsets:1,1,64,91
+rotate:90
+Front Arm Top
+bounds:1901,294,166,111
+offsets:1,1,168,114
+Front Feather
+bounds:1442,94,181,523
+rotate:90
+Hand With Martini Glass
+bounds:2077,1038,142,138
+Head
+bounds:1901,407,224,189
+offsets:1,1,226,191
+rotate:90
+Head Feather 1
+bounds:2077,667,58,110
+Head Feather 2
+bounds:2174,804,81,49
+rotate:90
+Head feather 3
+bounds:2077,779,95,106
+Neck
+bounds:2137,717,60,92
+offsets:1,1,62,94
+rotate:90
+Shadow
+bounds:2,2,1399,115
+offsets:1,1,1401,117

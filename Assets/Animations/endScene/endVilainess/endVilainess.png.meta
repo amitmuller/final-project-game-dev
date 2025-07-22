@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 2621c4bab523b43debbf2b9fee0decc1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4587945524030638104
+    second: endVilainess_0
+  - first:
+      213: 4783044753474687668
+    second: endVilainess_1
+  - first:
+      213: -2548250407084463229
+    second: endVilainess_2
+  - first:
+      213: -4788663266118732835
+    second: endVilainess_3
+  - first:
+      213: 4333707310111423121
+    second: endVilainess_4
+  - first:
+      213: 912240522730792527
+    second: endVilainess_5
+  - first:
+      213: -3592519334787878416
+    second: endVilainess_6
+  - first:
+      213: -2574562181383708235
+    second: endVilainess_7
+  - first:
+      213: 1927754835738908199
+    second: endVilainess_8
+  - first:
+      213: -4503659949999056445
+    second: endVilainess_9
+  - first:
+      213: -5789388246907045550
+    second: endVilainess_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: endVilainess_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 1200
+        height: 1620
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81880b86528abaf30800000000000000
+      internalID: 4587945524030638104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_1
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1242
+        width: 469
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b297a39cd9c06240800000000000000
+      internalID: 4783044753474687668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_2
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 1481
+        width: 156
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b6cf681cbc2acd0800000000000000
+      internalID: -2548250407084463229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_3
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1502
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3f70281204b8db0800000000000000
+      internalID: -4788663266118732835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_4
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1481
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a74bb66db642c30800000000000000
+      internalID: 4333707310111423121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_5
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 1242
+        width: 172
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46e5131cede8ac00800000000000000
+      internalID: 912240522730792527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_6
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 774
+        width: 472
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1fe31f2bec42ec0800000000000000
+      internalID: -3592519334787878416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_7
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 764
+        width: 114
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1287e2651554cd0800000000000000
+      internalID: -2574562181383708235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_8
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 1
+        width: 328
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72652463fc2c0ca10800000000000000
+      internalID: 1927754835738908199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_9
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 523
+        width: 192
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9172b0329cf71c0800000000000000
+      internalID: -4503659949999056445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endVilainess_10
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 2
+        width: 283
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259b84c1016f7afa0800000000000000
+      internalID: -5789388246907045550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      endVilainess_0: 4587945524030638104
+      endVilainess_1: 4783044753474687668
+      endVilainess_10: -5789388246907045550
+      endVilainess_2: -2548250407084463229
+      endVilainess_3: -4788663266118732835
+      endVilainess_4: 4333707310111423121
+      endVilainess_5: 912240522730792527
+      endVilainess_6: -3592519334787878416
+      endVilainess_7: -2574562181383708235
+      endVilainess_8: 1927754835738908199
+      endVilainess_9: -4503659949999056445
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

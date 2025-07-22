@@ -1,45 +1,59 @@
-using System;
-using MoreMountains.Feedbacks;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UI;
 
-namespace UI
+public class StartSceneController : MonoBehaviour
 {
-    public class startScene:MonoBehaviour
+    [Header("Opening Screen (first frame)")]
+    [Tooltip("Shown until the player presses Play")]
+    public GameObject openingScreen;
+
+    [SerializeField]
+    private GameObject animation;
+    
+    [SerializeField]
+    private CameraFade cameraFade;
+    
+    [Header("Audio Sources")]
+    [Tooltip("Looping nature ambience")]
+    [SerializeField] private AudioSource ambienceSource;
+    
+
+    void Awake()
     {
-        
-        [SerializeField] private GameObject startCaption;
-        [SerializeField] private MMF_Player feedback;
-        private Animator _animator;
-        private bool afterAnimation = false; 
-
-        private void Awake()
+        // show only opening screen
+        openingScreen.SetActive(true);
+        if (ambienceSource != null)
         {
-            startCaption.SetActive(false);
-            _animator = GetComponent<Animator>();
+            ambienceSource.loop = true;
+            ambienceSource.Play();
         }
 
-        public void onEndStartAnimation()
-        {
-            startCaption.SetActive(true);
-            afterAnimation = true;
-        }
-        
-        public void OnPressPlay(InputAction.CallbackContext context)
-        {
-            if (afterAnimation)
-            {
-                startCaption.SetActive(false);
-                _animator.SetTrigger("start");
-            }
-        }
-        
-        public void OnEndScene()
-        {
-            SceneManager.LoadScene(1);
-        }
+    }
+
+    /// <summary>
+    /// Bound to your “Play” action. First press hides the opening screen
+    /// and launches the rest of the frames.
+    /// </summary>
+    public void OnPressPlay(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.performed) return;
+
+        openingScreen.SetActive(false);
+        animation.SetActive(true);
     }
     
-    
+    public void OnEndAnimation()
+    {
+        cameraFade.FadeOutOverTime(false, ()=>SceneManager.LoadScene(1));
+    }
+
+    void Update()
+    {
+        // cheat: skip to end
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+            SceneManager.LoadScene(1);
+    }
 }

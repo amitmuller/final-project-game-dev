@@ -28,7 +28,8 @@ public class characterMovement : MonoBehaviour
     [SerializeField] private float maxAirTurnSpeed = 80f;
     [SerializeField] private float friction;
 
-    private bool canMove;
+    [HideInInspector] public bool canMove;
+    private bool caught = false;
 
     [Header("Calculations")]
     public float directionX;
@@ -66,14 +67,14 @@ public class characterMovement : MonoBehaviour
     
     [Header("raise noise Settings")]
     [SerializeField] private float noiseLevelToAdd = 0.1f;
+    [SerializeField] private SpriteRenderer shadow ;
     [SerializeField] private float noiseTriggerSpeed = 4f;
     private float noiseCooldown = 0.01f; // Raise noise at most every 0.2 seconds
     private float lastNoiseTime = -Mathf.Infinity;
+
+    private characterAnimation _animation;
     
-    [Header("Animation Settings")]
-    public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, walking, walkingHiding, IntoHidingDown, intoHiding, PeekingHeadUp;
-    public string currentAnimationName;
+    
     
     private float size;
     private Vector2 rawMoveInput;
@@ -81,10 +82,10 @@ public class characterMovement : MonoBehaviour
 
     private void Awake()
     {
-        currentAnimationName = "idle";
-        SetCharacterState(currentAnimationName);
         body = GetComponent<Rigidbody2D>();
         hide = GetComponent<PlayerHide>();
+        _animation = GetComponent<characterAnimation>();
+        
         size = transform.localScale.y;
 
         if (aimLine != null)
@@ -94,13 +95,20 @@ public class characterMovement : MonoBehaviour
         }
     }
 
-    private void OnEnable() => canMove = true;
+    private void OnEnable(){
+        
+        canMove = true;
+        GameManager.OnPlayerDead += HandlePlayerDead;
+        GameManager.OnPlayerRevived += HandlePlayerRevived;
+        
+    }
 
     private void OnDisable()
     {
         directionX = 0;
         body.linearVelocity = Vector2.zero;
         canMove = false;
+        GameManager.OnPlayerDead -= HandlePlayerDead;
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -110,7 +118,7 @@ public class characterMovement : MonoBehaviour
         {
             aimDirection = _input;
         }
-        else if (canMove)
+        else if (canMove && !GameManager.Instance.getInPause)
         { 
             directionX = _input.x;
             rawMoveInput = _input;
@@ -160,7 +168,7 @@ public class characterMovement : MonoBehaviour
         float horizontalSpeed = Mathf.Abs(body.linearVelocity.x);
         if (horizontalSpeed >= noiseTriggerSpeed && Time.time - lastNoiseTime >= noiseCooldown)
         {
-            NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
+            // NoiseUIManager.Instance?.AddNoise(noiseLevelToAdd);
             lastNoiseTime = Time.time;
         }
 
@@ -277,71 +285,63 @@ public class characterMovement : MonoBehaviour
             rawMoveInput = Vector2.zero;
             desiredVelocity = Vector2.zero;
             velocity = Vector2.zero;
-            body.linearVelocity = Vector2.zero;
+            // body.linearVelocity = Vector2.zero;
         }
     }
+    
+    private void HandlePlayerDead()
+    {
+        caughtPlayerAnimation();
+    }
+    private void HandlePlayerRevived()
+    {
+        resetPlayerAnimation();
+        SetCanMove(true);
+        
+    }
+
+    private void caughtPlayerAnimation()
+    {
+        caught = true;
+        SetCanMove(false);
+        _animation.TransitionTo(PlayerAnimState.Caught);
+        
+    }
+    private void resetPlayerAnimation()
+    {
+        caught = false;
+        SetCanMove(true);
+        _animation.TransitionTo(PlayerAnimState.Idle);
+        
+    }
+
     // ------------------------ Animations -------------------------- //
     private void AnimationHandler()
     {
-        if (currentAnimationName == IntoHidingDown.name || currentAnimationName == intoHiding.name) return;
-        
-        var currentSpeed = Mathf.Abs(body.linearVelocity.x);
-        if (hide.IsHiding())
+        if(!caught && canMove)
         {
-            if (currentSpeed < 0.01f) SetCharacterState("idle");
-            
-            if (currentAnimationName != walkingHiding.name) SetCharacterState("walkingHiding");
-            
-            return;
-        }
+            if (hide.IsHiding())
+            {
+                if (Mathf.Abs(body.linearVelocity.x) < 0.01f)
+                    _animation.TransitionTo(PlayerAnimState.HideIdle);
+                else
+                    _animation.TransitionTo(PlayerAnimState.HideWalk);
+            }
+            else
+            {
+                if (Mathf.Abs(body.linearVelocity.x) < 0.01f)
+                    _animation.TransitionTo(PlayerAnimState.Idle);
+                else
+                    _animation.TransitionTo(PlayerAnimState.Walk);
+            }
 
-        if (currentSpeed < 0.01f)
-            SetCharacterState("idle");
-        else
-            SetCharacterState("walking");
+            // then adjust playback speed as before
+            var currentSpeed = Mathf.Abs(body.linearVelocity.x);
+            var t = currentSpeed / maxSpeed;
+            _animation.skeletonAnimation.timeScale = Mathf.Lerp(1f, 1.5f, t);
+        }
+    }
+
+
     
-        // then adjust playback speed as before
-        var t = currentSpeed / maxSpeed;  
-        skeletonAnimation.timeScale = Mathf.Lerp(1f, 1.5f, t);
-    }
-
-
-    private void SetAnimation(AnimationReferenceAsset animation, bool loop, float timeScale = 1f)
-    {
-        if (skeletonAnimation == null || animation == null) return;
-        if (currentAnimationName == animation.name) return;
-
-        var entry = skeletonAnimation.state.SetAnimation(0, animation, loop);
-        entry.TimeScale = timeScale;              
-        currentAnimationName = animation.name;
-    }
-    public void SetCharacterState(string state)
-    {
-        // Debug.Log(("player animation state is: " + state));
-        if (state.Equals("idle"))
-        {
-            SetAnimation(idle, true);
-        }
-        else if (state.Equals("walking"))
-        {
-            SetAnimation(walking, true);
-        }
-        else if (state.Equals("intoHidingDown"))
-        {
-            SetAnimation(IntoHidingDown, false, 3f);
-        }
-        else if (state.Equals("intoHiding"))
-        {
-            SetAnimation(intoHiding, false, 3f);
-        }
-        else if (state.Equals("walkingHiding"))
-        {
-            SetAnimation(walkingHiding, true);
-        }
-        else if(state.Equals("PeekingHeadUp"))
-        {
-            SetAnimation(PeekingHeadUp, true);
-        }
-        
-    }
 }

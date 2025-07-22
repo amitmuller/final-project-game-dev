@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: e3e87bc1139344678b4f934c7c6a2b62
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1646616502951572021
+    second: opening scene nature__0
+  - first:
+      213: 7077030751926238824
+    second: opening scene nature__1
+  - first:
+      213: -6655242278138910414
+    second: opening scene nature__2
+  - first:
+      213: -2206520958963120475
+    second: opening scene nature__3
+  - first:
+      213: -220041488711505074
+    second: opening scene nature__4
+  - first:
+      213: 428098915649808688
+    second: opening scene nature__5
+  - first:
+      213: -2414314421681475860
+    second: opening scene nature__6
+  - first:
+      213: -8829181382533443539
+    second: opening scene nature__7
+  - first:
+      213: -8455267646561263805
+    second: opening scene nature__8
+  - first:
+      213: -2058765943139518802
+    second: opening scene nature__9
+  - first:
+      213: 3502456278513585878
+    second: opening scene nature__10
+  - first:
+      213: -6523262513195800305
+    second: opening scene nature__11
+  - first:
+      213: -3644508928638681622
+    second: opening scene nature__12
+  - first:
+      213: -5878141645894436571
+    second: opening scene nature__13
+  - first:
+      213: 8486007046569179638
+    second: opening scene nature__14
+  - first:
+      213: -8491021497799428151
+    second: opening scene nature__15
+  - first:
+      213: -3029955488238108272
+    second: opening scene nature__16
+  - first:
+      213: 852251406237115441
+    second: opening scene nature__17
+  - first:
+      213: 3560863064035100478
+    second: opening scene nature__18
+  - first:
+      213: 3287475470424193997
+    second: opening scene nature__19
+  - first:
+      213: 3504730130289811467
+    second: opening scene nature__20
+  - first:
+      213: 2395266751071290588
+    second: opening scene nature__21
+  - first:
+      213: -5466902725049246316
+    second: opening scene nature__22
+  - first:
+      213: -1642243851619549285
+    second: opening scene nature__23
+  - first:
+      213: 4048947586559640216
+    second: opening scene nature__24
+  - first:
+      213: 6667845583775711041
+    second: opening scene nature__25
+  - first:
+      213: -3248001777561203109
+    second: opening scene nature__26
+  - first:
+      213: 5994209136436726435
+    second: opening scene nature__27
+  - first:
+      213: 5935794548705260654
+    second: opening scene nature__28
+  - first:
+      213: -2456186055088772383
+    second: opening scene nature__29
+  - first:
+      213: 7764913412243085820
+    second: opening scene nature__30
+  - first:
+      213: 389316650249737043
+    second: opening scene nature__31
+  - first:
+      213: -1756354099876394301
+    second: opening scene nature__32
+  - first:
+      213: 5847919431550745359
+    second: opening scene nature__33
+  - first:
+      213: 453889303167423864
+    second: opening scene nature__34
+  - first:
+      213: -5635295939255495857
+    second: opening scene nature__35
+  - first:
+      213: 2096992927029594749
+    second: opening scene nature__36
+  - first:
+      213: 2900678896985763468
+    second: opening scene nature__37
+  - first:
+      213: -7814556000465032058
+    second: opening scene nature__38
+  - first:
+      213: -8889882953126533447
+    second: opening scene nature__39
+  - first:
+      213: -1388284775287609927
+    second: opening scene nature__40
+  - first:
+      213: 80062570041909282
+    second: opening scene nature__41
+  - first:
+      213: 717049960923944753
+    second: opening scene nature__42
+  - first:
+      213: 3538052169148089160
+    second: opening scene nature__43
+  - first:
+      213: 8142984218793987527
+    second: opening scene nature__44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 108
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: top tree 1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1145
+        width: 484
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd8644c30b0629e0800000000000000
+      internalID: -1646616502951572021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top tree 2
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1272
+        width: 462
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e341129f9a63260800000000000000
+      internalID: 7077030751926238824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top tree 3
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 1263
+        width: 384
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2396e55b864d3a3a0800000000000000
+      internalID: -6655242278138910414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top tree4
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 1233
+        width: 1121
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039690412b9e0f500800000000000000
+      internalID: 428098915649808688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafs2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 498
+        width: 500
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceea29733d1ae7ed0800000000000000
+      internalID: -2414314421681475860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 855
+        width: 2428
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d201a94cf42787580800000000000000
+      internalID: -8829181382533443539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene nature__9
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 508
+        width: 149
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea63f73584bcd63e0800000000000000
+      internalID: -2058765943139518802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene nature__10
+      rect:
+        serializedVersion: 2
+        x: 2739
+        y: 497
+        width: 268
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de8322bd693b9030800000000000000
+      internalID: 3502456278513585878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene nature__12
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 395
+        width: 358
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed70c7507a1c6dc0800000000000000
+      internalID: -3644508928638681622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene nature__14
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 389
+        width: 82
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9b734b27a54c570800000000000000
+      internalID: 8486007046569179638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafs
+      rect:
+        serializedVersion: 2
+        x: 2990
+        y: 11
+        width: 368
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7b5736fe4d92a80800000000000000
+      internalID: -8491021497799428151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene nature__16
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 328
+        width: 109
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091825e698f63f5d0800000000000000
+      internalID: -3029955488238108272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 286
+        width: 136
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbb176c5857f9d20800000000000000
+      internalID: 3287475470424193997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene nature__21
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 307
+        width: 212
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd488ef5b62bd3120800000000000000
+      internalID: 2395266751071290588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bush 2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 20
+        width: 481
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d13dbbfe8a124b0800000000000000
+      internalID: -5466902725049246316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bush
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 16
+        width: 333
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353d7434e61276500800000000000000
+      internalID: 389316650249737043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene nature__32
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 49
+        width: 113
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca0111704d20a7e0800000000000000
+      internalID: -1756354099876394301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass2
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 17
+        width: 510
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8434fd2d3bfa91130800000000000000
+      internalID: 3538052169148089160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opening scene SHADOWS
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 404
+        width: 165
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e70b347216144aebfb9f34bda4bd73
+      internalID: 300265136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 95b891efbc64f4f18b2ee335f5db3e5a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bush: 389316650249737043
+      bush 2: -5466902725049246316
+      grass: 3287475470424193997
+      grass2: 3538052169148089160
+      leafs: -8491021497799428151
+      leafs2: -2414314421681475860
+      opening scene SHADOWS: 300265136
+      opening scene nature__10: 3502456278513585878
+      opening scene nature__11: -6523262513195800305
+      opening scene nature__12: -3644508928638681622
+      opening scene nature__13: -5878141645894436571
+      opening scene nature__14: 8486007046569179638
+      opening scene nature__16: -3029955488238108272
+      opening scene nature__17: 852251406237115441
+      opening scene nature__18: 3560863064035100478
+      opening scene nature__20: 3504730130289811467
+      opening scene nature__21: 2395266751071290588
+      opening scene nature__23: -1642243851619549285
+      opening scene nature__24: 4048947586559640216
+      opening scene nature__25: 6667845583775711041
+      opening scene nature__26: -3248001777561203109
+      opening scene nature__27: 5994209136436726435
+      opening scene nature__28: 5935794548705260654
+      opening scene nature__29: -2456186055088772383
+      opening scene nature__3: -2206520958963120475
+      opening scene nature__30: 7764913412243085820
+      opening scene nature__32: -1756354099876394301
+      opening scene nature__33: 5847919431550745359
+      opening scene nature__34: 453889303167423864
+      opening scene nature__35: -5635295939255495857
+      opening scene nature__36: 2096992927029594749
+      opening scene nature__37: 2900678896985763468
+      opening scene nature__38: -7814556000465032058
+      opening scene nature__39: -8889882953126533447
+      opening scene nature__4: -220041488711505074
+      opening scene nature__40: -1388284775287609927
+      opening scene nature__41: 80062570041909282
+      opening scene nature__42: 717049960923944753
+      opening scene nature__44: 8142984218793987527
+      opening scene nature__8: -8455267646561263805
+      opening scene nature__9: -2058765943139518802
+      top tree 1: -1646616502951572021
+      top tree 2: 7077030751926238824
+      top tree 3: -6655242278138910414
+      top tree4: 428098915649808688
+      train: -8829181382533443539
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

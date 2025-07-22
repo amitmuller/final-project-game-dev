@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using EnemyAI;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine.Rendering.Universal;
 
 namespace EnemyUtils
@@ -15,6 +16,12 @@ namespace EnemyUtils
         /// <param name="enemy"></param>
         public static bool EnemyEnterChaseModeIfNeeded(EnemyAIController enemy)
         {
+            var playerHidden = enemy.IsPlayerHiding();
+            if (playerHidden)
+            {
+                return false;
+            }
+
             var isPlayerInFront =
                 (enemy.GetIsWalkingRight() && enemy.playerTransform.position.x < enemy.transform.position.x) ||
                 (!enemy.GetIsWalkingRight() && enemy.playerTransform.position.x > enemy.transform.position.x);
@@ -24,12 +31,12 @@ namespace EnemyUtils
                 return true;
             }
             
-            var playerHidden  = enemy.IsPlayerHiding();
-            if (!playerHidden && enemy.IsInChasingDistanceFromPlayer())
-            {
-                enemy.ChangeState(enemy.chaseState);
-                return true;
-            }
+            // if (!playerHidden && enemy.IsInChasingDistanceFromPlayer())
+            // {
+            //     Debug.Log("enemy.chaseState");
+            //     enemy.ChangeState(enemy.chaseState);
+            //     return true;
+            // }
             return false;
         }
         
