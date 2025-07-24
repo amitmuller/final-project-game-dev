@@ -38,8 +38,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject resumeButton;
     [SerializeField] private VolumeProfile pauseVolumeProfile;
     [SerializeField] private Volume globalVolume;
+    [Tooltip("Time before the game returns to the open scene")]
+    [SerializeField] private float maxIdleTime = 60f;
 
     private VolumeProfile gameVolumeProfile;
+    private float currentIdleTime = 0f;
 
     private void Awake()
     {
@@ -129,6 +132,21 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        if (Input.anyKey)
+        {
+            currentIdleTime = 0f;
+        }
+        else
+        {
+            currentIdleTime += Time.unscaledDeltaTime;
+        }
+
+        if (currentIdleTime >= maxIdleTime && !inPause)
+        {
+            currentIdleTime = 0f;
+            onOpenScene();
+        }
     }
 
 
