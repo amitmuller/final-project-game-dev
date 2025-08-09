@@ -93,7 +93,7 @@ namespace Interactable_objects
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.bodyType = RigidbodyType2D.Static; // Freeze in place
-            var myRenderer = GetComponent<MeshRenderer>();
+            var myRenderer = GetComponent<Renderer>();
             if (transform.position.y<-3)
             {
                 myRenderer.sortingOrder= 12;
